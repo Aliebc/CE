@@ -1,0 +1,62 @@
+/opt/zyp/zyp/filer.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 11:06:16
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 11:06:20
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 11:06:32
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 11:07:05
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[23/Jan/2022 11:07:11] "POST /getd/ HTTP/1.1" 200 195231
+[23/Jan/2022 11:07:20] "POST /dtype/ HTTP/1.1" 200 67
+[23/Jan/2022 11:08:06] "POST /dtype/ HTTP/1.1" 200 67
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 11:08:14
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[23/Jan/2022 11:08:15] "POST /dtype/ HTTP/1.1" 200 578
+[23/Jan/2022 11:08:33] "POST /getd/ HTTP/1.1" 200 195231
+[23/Jan/2022 11:08:53] "POST /dtype/ HTTP/1.1" 200 467
+[23/Jan/2022 11:09:01] "POST /dtype/ HTTP/1.1" 200 467
+[23/Jan/2022 11:09:25] "POST /dtype/ HTTP/1.1" 200 467
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 11:15:08
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
