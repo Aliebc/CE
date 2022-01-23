@@ -44,3 +44,10 @@ def dtype(request):
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
     return 0
 
+def dhist(request):
+    try:
+        dta=filer.get_file_data(request)
+    except:
+        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+    return HttpResponse("dhist")
+
