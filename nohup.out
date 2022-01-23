@@ -1,9 +1,9 @@
-/opt/zyp/zyp/filer.py changed, reloading.
+/opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 23, 2022 - 11:06:16
+January 23, 2022 - 11:50:13
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
@@ -12,7 +12,18 @@ Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 23, 2022 - 11:06:20
+January 23, 2022 - 11:50:15
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[23/Jan/2022 11:50:29] "POST /dhist/ HTTP/1.1" 200 149
+[23/Jan/2022 11:50:32] "POST /dhist/ HTTP/1.1" 200 149
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 11:51:25
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
@@ -21,7 +32,7 @@ Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 23, 2022 - 11:06:32
+January 23, 2022 - 11:51:35
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
@@ -30,33 +41,161 @@ Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 23, 2022 - 11:07:05
+January 23, 2022 - 11:51:41
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-[23/Jan/2022 11:07:11] "POST /getd/ HTTP/1.1" 200 195231
-[23/Jan/2022 11:07:20] "POST /dtype/ HTTP/1.1" 200 67
-[23/Jan/2022 11:08:06] "POST /dtype/ HTTP/1.1" 200 67
 /opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 23, 2022 - 11:08:14
+January 23, 2022 - 11:51:55
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-[23/Jan/2022 11:08:15] "POST /dtype/ HTTP/1.1" 200 578
-[23/Jan/2022 11:08:33] "POST /getd/ HTTP/1.1" 200 195231
-[23/Jan/2022 11:08:53] "POST /dtype/ HTTP/1.1" 200 467
-[23/Jan/2022 11:09:01] "POST /dtype/ HTTP/1.1" 200 467
-[23/Jan/2022 11:09:25] "POST /dtype/ HTTP/1.1" 200 467
+/opt/zyp/zyp/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 11:52:40
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 11:52:42
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[23/Jan/2022 11:52:53] "POST /dsummary/ HTTP/1.1" 200 67
 /opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 23, 2022 - 11:15:08
+January 23, 2022 - 11:55:54
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
+[23/Jan/2022 11:56:23] "POST /corr/ HTTP/1.1" 200 242
+[23/Jan/2022 11:56:39] "POST /dsummary/ HTTP/1.1" 200 73
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 11:57:02
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[23/Jan/2022 11:57:03] "POST /dsummary/ HTTP/1.1" 200 98
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 11:57:24
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[23/Jan/2022 11:57:43] "POST /dsummary/ HTTP/1.1" 200 128
+[23/Jan/2022 11:57:45] "POST /dsummary/ HTTP/1.1" 200 128
+[23/Jan/2022 11:57:46] "POST /dsummary/ HTTP/1.1" 200 128
+[23/Jan/2022 11:58:00] "POST /dsummary/ HTTP/1.1" 200 128
+[23/Jan/2022 11:58:36] "POST /corr/ HTTP/1.1" 200 423
+[23/Jan/2022 11:58:53] "POST /dhist/ HTTP/1.1" 200 149
+[23/Jan/2022 11:59:23] "POST /dhist/ HTTP/1.1" 200 149
+[23/Jan/2022 11:59:51] "POST /dtype/ HTTP/1.1" 200 67
+[23/Jan/2022 11:59:54] "POST /dtype/ HTTP/1.1" 200 467
+[23/Jan/2022 12:00:01] "POST /dtype/ HTTP/1.1" 200 467
+[23/Jan/2022 12:00:03] "POST /dtype/ HTTP/1.1" 200 467
+[23/Jan/2022 12:00:19] "POST /dsummary/ HTTP/1.1" 200 128
+[23/Jan/2022 12:16:00] "GET / HTTP/1.1" 200 71
+[23/Jan/2022 12:16:14] "GET / HTTP/1.1" 200 71
+[23/Jan/2022 13:10:08] "POST /corr/ HTTP/1.1" 200 423
+[23/Jan/2022 13:10:21] "POST /dhist/ HTTP/1.1" 200 149
+[23/Jan/2022 13:10:26] "POST /dhist/ HTTP/1.1" 200 2140
+[23/Jan/2022 13:10:34] "POST /dhist/ HTTP/1.1" 200 68
+[23/Jan/2022 13:10:40] "POST /dhist/ HTTP/1.1" 200 67
+[23/Jan/2022 13:10:45] "POST /dhist/ HTTP/1.1" 200 67
+[23/Jan/2022 13:10:48] "POST /dhist/ HTTP/1.1" 200 67
+[23/Jan/2022 13:10:53] "POST /dhist/ HTTP/1.1" 200 109
+[23/Jan/2022 13:11:16] "POST /dhist/ HTTP/1.1" 200 67
+[23/Jan/2022 13:11:28] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:36] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:39] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:50] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:51] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:52] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:52] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:53] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:54] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:54] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:55] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:55] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:11:56] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:12:31] "POST /dtype/ HTTP/1.1" 200 467
+[23/Jan/2022 13:12:34] "POST /dtype/ HTTP/1.1" 200 467
+[23/Jan/2022 13:12:36] "POST /dtype/ HTTP/1.1" 200 467
+[23/Jan/2022 13:12:39] "POST /dtype/ HTTP/1.1" 200 467
+[23/Jan/2022 13:12:49] "POST /dtype/ HTTP/1.1" 200 467
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 13:15:45
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[23/Jan/2022 13:15:50] "POST /dsummary/ HTTP/1.1" 200 206
+[23/Jan/2022 13:15:55] "POST /dsummary/ HTTP/1.1" 200 206
+[23/Jan/2022 13:15:58] "POST /dsummary/ HTTP/1.1" 200 206
+[23/Jan/2022 13:16:00] "POST /dsummary/ HTTP/1.1" 200 206
+[23/Jan/2022 13:16:04] "POST /dsummary/ HTTP/1.1" 200 206
+[23/Jan/2022 13:16:10] "POST /dsummary/ HTTP/1.1" 200 206
+[23/Jan/2022 13:16:39] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:16:49] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:02] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:03] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:03] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:12] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:12] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:26] "POST /dsummary/ HTTP/1.1" 200 67
+[23/Jan/2022 13:17:30] "POST /dsummary/ HTTP/1.1" 200 67
+[23/Jan/2022 13:17:34] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:46] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:46] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:46] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:47] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:47] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:50] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:50] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:52] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:52] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:53] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:53] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:17:53] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:18:01] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:18:17] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:18:17] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:18:18] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:18:18] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:18:19] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:18:19] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:18:35] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:19:13] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:19:16] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:19:19] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:22:54] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:22:59] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:23:02] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:23:02] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:23:02] "POST /dsummary/ HTTP/1.1" 200 171
+[23/Jan/2022 13:26:19] "POST /dhist/ HTTP/1.1" 200 249
+[23/Jan/2022 13:26:21] "POST /dhist/ HTTP/1.1" 200 249
