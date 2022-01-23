@@ -11,7 +11,7 @@ from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
 from . import ce
 
 
-file_dir_path="/opt/zyp/file"
+file_dir_path="/opt/zypfile"
 
 def recv_file(request):
     if request.method == 'POST':

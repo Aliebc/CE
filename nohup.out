@@ -1,0 +1,149 @@
+[23/Jan/2022 08:41:57] "POST /getd/ HTTP/1.1" 200 195231
+/opt/zyp/zyp/ce.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/zyp/zyp/urls.py", line 18, in <module>
+    from . import ce
+  File "/opt/zyp/zyp/ce.py", line 19
+    return {"respCode":code,"respData":data,"errMsg":err}
+    ^
+IndentationError: unexpected indent
+
+/opt/zyp/zyp/ce.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 09:11:34
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/ce.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/zyp/zyp/urls.py", line 18, in <module>
+    from . import ce
+  File "/opt/zyp/zyp/ce.py", line 19
+    return {"respCode":code,"respData":data,"errMsg":err}
+    ^
+IndentationError: unexpected indent
+
+/opt/zyp/zyp/ce.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 09:11:48
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/filer.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 09:13:42
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[23/Jan/2022 09:13:47] "POST /filer/ HTTP/1.1" 200 172
+Bad Request: /filer/
+[23/Jan/2022 09:13:51] "POST /filer/ HTTP/1.1" 400 70
+Bad Request: /filer/
+[23/Jan/2022 09:13:56] "POST /filer/ HTTP/1.1" 400 70
+/opt/zyp/zyp/filer.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+January 23, 2022 - 09:27:13
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+Internal Server Error: /filer/
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/filer.py", line 27, in recv_file
+    dest=open(os.path.join(file_dir_path,uid+suffixinfo),"wb+")
+FileNotFoundError: [Errno 2] No such file or directory: '/opt/zypfile/d8c9ea1fb862fb95c00161155c33f958.xlsx'
+[23/Jan/2022 09:27:22] "POST /filer/ HTTP/1.1" 500 60268
+[23/Jan/2022 09:28:00] "POST /filer/ HTTP/1.1" 200 172
+[23/Jan/2022 09:28:20] "POST /filer/ HTTP/1.1" 200 172
+[23/Jan/2022 09:28:31] "POST /getd/ HTTP/1.1" 200 1771
