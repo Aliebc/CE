@@ -25,8 +25,8 @@ def dsummary(request):
 def dcorr(request):
     try:
         dta=filer.get_file_data(request)
-        argu1=request.POST.get('argu1')
-        argu1=request.POST.get('argu2')
+        argu1=json.loads(request.body)['argu1']
+        argu2=json.loads(request.body)['argu2']
         cord=DataFrame(dta).corr()
         d=cord.to_json()
     except:
@@ -36,7 +36,7 @@ def dcorr(request):
 def dtype(request):
     try:
         dta=filer.get_file_data(request)
-        argu1=request.POST.get('argu1')
+        argu1=json.loads(request.body)['argu1']
         retu=dta[argu1]
         #print(retu.value_counts().to_json())
         return JsonResponse(ce.ret(0,json.loads(retu.value_counts().to_json()),None))
@@ -47,6 +47,7 @@ def dtype(request):
 def dhist(request):
     try:
         dta=filer.get_file_data(request)
+
     except:
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
     return HttpResponse("dhist")

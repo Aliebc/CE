@@ -38,8 +38,12 @@ def recv_file(request):
 
 def get_file_data(request):
     if request.method == 'POST': 
-        uid=request.POST.get("uid",default=None)
-        f_suffix=request.POST.get("f_suffix",default=None)
+        try:
+            rp=json.loads(request.body)
+            uid=rp['uid']
+            f_suffix=rp['f_suffix']
+        except:
+            return JsonResponse(ce.ret(-1,None,"Error(#1:Format)."))
         if uid and f_suffix:
             f_name=str(uid)+str(f_suffix)
             f_path=os.path.join(file_dir_path,f_name)
