@@ -27,4 +27,5 @@ urlpatterns = [
     path('getd/',filer.getd),
     path('corr/',datac.dcorr),
     path('dtype/',datac.dtype),
+    path('dhist/',datac.dhist),
 ]
