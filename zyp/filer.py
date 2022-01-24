@@ -23,18 +23,18 @@ def recv_file(request):
                 suffixinfo=str(pathlib.Path(str(myf.name)).suffix)
                 name_x=re.match(r'^(.*).(xls|xlsx|dta|csv)$',myf.name)
                 if not name_x:
-                    return JsonResponse(ce.ret(-1,None,"File type not allowed."),status=400)
+                    return JsonResponse(ce.ret(-1,None,"File type not allowed."))
                 dest=open(os.path.join(file_dir_path,uid+suffixinfo),"wb+")
                 for chunk in myf.chunks():
                     dest.write(chunk)
                 dest.close()
                 return JsonResponse(ce.ret(0,{"f_name":myf.name,"f_suffix":suffixinfo,"uid":uid,"size":myf.size,"timestamp":int(time.time())},None))
             else:
-                return JsonResponse(ce.ret(-1,None,"File(file) field not found."),status=400)
+                return JsonResponse(ce.ret(-1,None,"File(file) field not found."))
         else:
-            return JsonResponse(ce.ret(-1,None,"Files field not found."),status=400)
+            return JsonResponse(ce.ret(-1,None,"Files field not found."))
     else:
-        return JsonResponse(ce.ret(-1,None,"Only POST method is allowed."),status=400)
+        return JsonResponse(ce.ret(-1,None,"Only POST method is allowed."))
 
 def get_file_data(request):
     if request.method == 'POST': 

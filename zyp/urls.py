@@ -29,4 +29,5 @@ urlpatterns = [
     path('dtype/',datac.dtype),
     path('dhist/',datac.dhist),
     path('dsummary/',datac.dsummary),
+    path('lm3/',datac.dlm3)
 ]
