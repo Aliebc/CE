@@ -37,13 +37,20 @@ def recv_file(request):
         return JsonResponse(ce.ret(-1,None,"Only POST method is allowed."))
 
 def get_file_data(request):
-    if request.method == 'POST': 
-        try:
-            rp=json.loads(request.body)
-            uid=rp['uid']
-            f_suffix=rp['f_suffix']
-        except:
-            return JsonResponse(ce.ret(-1,None,"Error(#1:Format)."))
+    if request.method in ['POST','GET']: 
+        if request.method=='POST':
+            try:
+                rp=json.loads(request.body)
+                uid=rp['uid']
+                f_suffix=rp['f_suffix']
+            except:
+                return JsonResponse(ce.ret(-1,None,"Error(#1:Format)."))
+        else:
+            try:
+                uid=request.GET.get('uid',default=None)
+                f_suffix=request.GET.get('f_suffix',default=None)
+            except:
+                return JsonResponse(ce.ret(-1,None,'Error(#1:Format).'))
         if uid and f_suffix:
             f_name=str(uid)+str(f_suffix)
             f_path=os.path.join(file_dir_path,f_name)
@@ -99,3 +106,8 @@ def getd(request):
             return JsonResponse(ce.ret(-1,None,"Error(#1:Format)."))
     else:
         return JsonResponse(ce.ret(-1,None,"Only POST method is allowed."))
+
+
+def imgtest(request):
+    sv=open("/opt/test/t2.svg","r").read()
+    return HttpResponse(sv,content_type="image/svg+xml")

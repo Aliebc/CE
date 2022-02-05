@@ -18,6 +18,7 @@ from django.urls import path
 from . import ce
 from . import filer
 from . import datac
+from . import imgc
 
 
 urlpatterns = [
@@ -29,5 +30,7 @@ urlpatterns = [
     path('dtype/',datac.dtype),
     path('dhist/',datac.dhist),
     path('dsummary/',datac.dsummary),
-    path('lm3/',datac.dlm3)
+    path('lm3/',datac.dlm3),
+    path('dbar/',filer.imgtest),
+    path('dimg_density/',imgc.density)
 ]
