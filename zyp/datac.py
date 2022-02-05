@@ -61,7 +61,6 @@ def dsummary(request):
         return JsonResponse(ce.ret(0,json.loads(retu.describe().to_json()),None))
     except:
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
-    return 0
 
 def dlm3(request):
     try:
