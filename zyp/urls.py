@@ -36,5 +36,7 @@ urlpatterns = [
     path('dimg_hist/',imgc.hist),
     path('dimg_hetero_density/',imgc.hetero_density),
     path('dimg_density_type/',imgc.type_density),
-    path(r'*',ce.ce_not_found),
+    path('dimg_hetero_regress/',imgc.type_regress),
+    path('dimg_regress/',imgc.two_reg),
+    path('test/',ce.test),
 ]

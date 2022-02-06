@@ -4,8 +4,6 @@ import re
 import time
 import json
 import math
-from turtle import width
-from pandas import DataFrame
 import hashlib
 import pathlib
 import pandas as pd
@@ -77,14 +75,18 @@ def hetero_density(request):
         try:
             dta=filer.get_file_data(request)
             argu1=request.GET.get('argu1',default=None)
+            argu_type=request.GET.get('argu_type',default=None)
             title=request.GET.get('title',default=str("Density of "+argu1))
             width=int(request.GET.get('width',default=12))
             segment=int(request.GET.get('segment',default=None))
             height=int(request.GET.get('height',default=8))
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
-        dta2=datac.heter_compare_df(dta,argu1,float(segment))
-        img_density=(ggplot(dta2,aes(x=argu1,colour=argu1+'_type'))+geom_density()+ggtitle(title))
+        try:
+            dta2=datac.heter_compare_df(dta,argu_type,float(segment))
+            img_density=(ggplot(dta2,aes(x=argu1,colour=argu_type+'_type'))+geom_density()+ggtitle(title))
+        except:
+            return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
         return sav_and_ret_svg(img_density,width,height)
     elif request.method =='POST':
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
@@ -103,6 +105,52 @@ def type_density(request):
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
         img_density=(ggplot(dta,aes(x=argu1,colour=argu2))+geom_density()+ggtitle(title))
+        return sav_and_ret_svg(img_density,width,height)
+    elif request.method =='POST':
+        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+    else:
+        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+
+
+def type_regress(request):
+    if request.method =='GET':
+        try:
+            dta=filer.get_file_data(request)
+            argu1=request.GET.get('argu1',default=None)
+            argu2=request.GET.get('argu2',default=None)
+            argu_type=request.GET.get('argu_type',default=None)
+            title=request.GET.get('title',default=str("Density of "+argu1))
+            width=int(request.GET.get('width',default=12))
+            segment=int(request.GET.get('segment',default=None))
+            height=int(request.GET.get('height',default=8))
+        except:
+            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+        try:
+            dta2=datac.heter_compare_df(dta,argu_type,float(segment))
+            img_density=(ggplot(dta2,aes(x=argu1,y=argu2,colour=argu_type+'_type'))+geom_smooth(method='lm')+geom_point()+ggtitle(title))
+        except:
+            return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
+        return sav_and_ret_svg(img_density,width,height)
+    elif request.method =='POST':
+        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+    else:
+        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+
+def two_reg(request):
+    if request.method =='GET':
+        try:
+            dta=filer.get_file_data(request)
+            argu1=request.GET.get('argu1',default=None)
+            argu2=request.GET.get('argu2',default=None)
+            title=request.GET.get('title',default=str("Density of "+argu1))
+            width=int(request.GET.get('width',default=12))
+            height=int(request.GET.get('height',default=8))
+        except:
+            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+        try:
+            img_density=(ggplot(dta,aes(x=argu1,y=argu2))+geom_smooth(method='lm')+geom_point(fill='blue')+ggtitle(title))
+        except:
+            return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
         return sav_and_ret_svg(img_density,width,height)
     elif request.method =='POST':
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
