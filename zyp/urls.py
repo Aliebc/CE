@@ -32,5 +32,9 @@ urlpatterns = [
     path('dsummary/',datac.dsummary),
     path('lm3/',datac.dlm3),
     path('dbar/',filer.imgtest),
-    path('dimg_density/',imgc.density)
+    path('dimg_density/',imgc.density),
+    path('dimg_hist/',imgc.hist),
+    path('dimg_hetero_density/',imgc.hetero_density),
+    path('dimg_density_type/',imgc.type_density),
+    path(r'*',ce.ce_not_found),
 ]

@@ -27,3 +27,6 @@ def ce_main(request):
     y=request.POST.get("rrr",default="No")
     z=request.environ['HTTP_X_FORWARDED_FOR']
     return JsonResponse(ret(0,request.environ['HTTP_X_FORWARDED_FOR'],None))
+
+def ce_not_found(request):
+    return JsonResponse(ret(-1,None,"Not Found"))
