@@ -72,3 +72,13 @@ def dlm3(request):
         return JsonResponse(ce.ret(0,{"reg":reg,"RegList":retu.tolist(),"DataList":{argu1:json.loads(dta[argu1].to_json()),argu2:json.loads(dta[argu2].to_json())}},None))
     except:
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+
+def heter_compare_apply(value,y,c_name):
+    if value>y:
+        return str(c_name)+">"+str(y)
+    else:
+        return str(c_name)+"<="+str(y)
+
+def heter_compare_df(df,col_name,s):
+    df.loc[:,col_name+'_type']=df[col_name].apply(heter_compare_apply,y=s,c_name=col_name)
+    return df

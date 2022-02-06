@@ -1,123 +1,41 @@
-[26/Jan/2022 11:12:51] "OPTIONS /filer/ HTTP/1.1" 200 76
-[26/Jan/2022 11:12:51] "POST /filer/ HTTP/1.1" 200 169
-[26/Jan/2022 11:13:39] "OPTIONS /getd/ HTTP/1.1" 200 76
-[26/Jan/2022 11:13:39] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:14:28] "OPTIONS /corr/ HTTP/1.1" 200 47
-[26/Jan/2022 11:14:28] "POST /corr/ HTTP/1.1" 200 423
 /opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 26, 2022 - 11:21:28
+February 06, 2022 - 10:28:53
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-[26/Jan/2022 11:30:48] "POST /dtype/ HTTP/1.1" 200 467
-[26/Jan/2022 11:31:21] "POST /dtype/ HTTP/1.1" 200 67
-[26/Jan/2022 11:31:49] "POST /dtype/ HTTP/1.1" 200 467
-[26/Jan/2022 11:32:19] "POST /dsummary/ HTTP/1.1" 200 206
-[26/Jan/2022 11:33:19] "POST /dtype/ HTTP/1.1" 200 467
-[26/Jan/2022 11:34:29] "POST /dtype/ HTTP/1.1" 200 467
-[26/Jan/2022 11:40:39] "POST /filer/ HTTP/1.1" 200 169
-[26/Jan/2022 11:40:43] "POST /filer/ HTTP/1.1" 200 169
-[26/Jan/2022 11:41:32] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:48:12] "OPTIONS /filer/ HTTP/1.1" 200 76
-[26/Jan/2022 11:48:12] "POST /filer/ HTTP/1.1" 200 169
-[26/Jan/2022 11:48:12] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:48:34] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:48:36] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:48:37] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:48:38] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:48:39] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:48:41] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:48:42] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:48:54] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:48:56] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:49:14] "OPTIONS /filer/ HTTP/1.1" 200 76
-[26/Jan/2022 11:49:15] "POST /filer/ HTTP/1.1" 200 70
-[26/Jan/2022 11:49:50] "OPTIONS /filer/ HTTP/1.1" 200 76
-[26/Jan/2022 11:49:50] "POST /filer/ HTTP/1.1" 200 70
-[26/Jan/2022 11:49:55] "POST /filer/ HTTP/1.1" 200 70
-[26/Jan/2022 11:49:58] "OPTIONS /filer/ HTTP/1.1" 200 76
-[26/Jan/2022 11:49:58] "POST /filer/ HTTP/1.1" 200 172
-[26/Jan/2022 11:50:00] "OPTIONS /getd/ HTTP/1.1" 200 76
-[26/Jan/2022 11:50:00] "POST /getd/ HTTP/1.1" 200 1771
-[26/Jan/2022 11:53:03] "POST /filer/ HTTP/1.1" 200 70
-[26/Jan/2022 11:53:07] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:53:10] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:53:12] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:53:14] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:53:16] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:53:19] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 11:54:28] "OPTIONS /filer/ HTTP/1.1" 200 76
-[26/Jan/2022 11:54:28] "POST /filer/ HTTP/1.1" 200 169
-[26/Jan/2022 11:54:28] "POST /getd/ HTTP/1.1" 200 195231
-[26/Jan/2022 13:37:31] "POST /dsummary/ HTTP/1.1" 200 206
-[26/Jan/2022 13:37:34] "POST /dsummary/ HTTP/1.1" 200 206
-[31/Jan/2022 02:06:50] "GET / HTTP/1.1" 200 71
-[31/Jan/2022 02:06:55] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:01] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:03] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:04] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:04] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:05] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:07] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:08] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:09] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:11] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:12] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:16] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:19] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:20] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:21] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:22] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:23] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:24] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:25] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:26] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:27] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:07:32] "POST / HTTP/1.1" 200 61
-[31/Jan/2022 02:16:07] "POST /dtype/ HTTP/1.1" 200 467
-[31/Jan/2022 02:16:10] "POST /dtype/ HTTP/1.1" 200 467
-[31/Jan/2022 02:16:13] "POST /dtype/ HTTP/1.1" 200 467
-[31/Jan/2022 02:16:17] "POST /dtype/ HTTP/1.1" 200 467
-[31/Jan/2022 02:16:19] "POST /dtype/ HTTP/1.1" 200 467
-[31/Jan/2022 02:16:20] "POST /dtype/ HTTP/1.1" 200 467
-[31/Jan/2022 02:16:21] "POST /dtype/ HTTP/1.1" 200 467
-[31/Jan/2022 02:16:22] "POST /dtype/ HTTP/1.1" 200 467
-[31/Jan/2022 02:16:25] "POST /dtype/ HTTP/1.1" 200 467
-[31/Jan/2022 02:16:29] "POST /dsummary/ HTTP/1.1" 200 206
-[31/Jan/2022 02:16:31] "POST /dsummary/ HTTP/1.1" 200 206
-[31/Jan/2022 02:16:39] "POST /getd/ HTTP/1.1" 200 195231
-[31/Jan/2022 02:16:42] "POST /getd/ HTTP/1.1" 200 195231
-[31/Jan/2022 02:16:43] "POST /getd/ HTTP/1.1" 200 195231
-[31/Jan/2022 02:16:44] "POST /getd/ HTTP/1.1" 200 195231
-[31/Jan/2022 02:16:48] "POST /getd/ HTTP/1.1" 200 195231
-[31/Jan/2022 02:16:49] "POST /getd/ HTTP/1.1" 200 195231
-[31/Jan/2022 02:16:50] "POST /getd/ HTTP/1.1" 200 195231
-[31/Jan/2022 02:30:16] "POST /getd/ HTTP/1.1" 200 195231
-[31/Jan/2022 02:30:23] "POST /getd/ HTTP/1.1" 200 195231
-[31/Jan/2022 04:31:17] "POST /getd/ HTTP/1.1" 200 195231
-/opt/zyp/zyp/filer.py changed, reloading.
+/opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 31, 2022 - 04:32:05
+February 06, 2022 - 10:29:08
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-/opt/zyp/zyp/filer.py changed, reloading.
+/opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 31, 2022 - 04:32:08
+February 06, 2022 - 10:29:49
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-/opt/zyp/zyp/urls.py changed, reloading.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/467c9942eb6a342fcbf45d5b5bff3179.svg
+/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 22899 missing from current font.
+/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 30007 missing from current font.
+[06/Feb/2022 10:30:05] "GET /dimg_density_type/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=SEX&width=12&height=8&title= HTTP/1.1" 200 117066
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/a8a6cd480ac00d3d8c346c2921e8d8e0.svg
+/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 22899 missing from current font.
+/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 30007 missing from current font.
+[06/Feb/2022 10:30:08] "GET /dimg_density_type/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=SEX&width=12&height=8&title= HTTP/1.1" 200 117066
+/opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
@@ -155,16 +73,25 @@ Traceback (most recent call last):
   File "<frozen importlib._bootstrap>", line 971, in _find_and_load
   File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
   File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 781, in get_code
-  File "<frozen importlib._bootstrap_external>", line 741, in source_to_code
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 33
-    path('imgtest/',filer.filer.imgtest)
-       ^
+  File "/opt/zyp/zyp/urls.py", line 20, in <module>
+    from . import datac
+  File "/opt/zyp/zyp/datac.py", line 83
+    df.loc[:,col_name+'_type']=df.
+                                 ^
 SyntaxError: invalid syntax
 
-/opt/zyp/zyp/urls.py changed, reloading.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 06, 2022 - 10:33:42
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
@@ -202,16 +129,16 @@ Traceback (most recent call last):
   File "<frozen importlib._bootstrap>", line 971, in _find_and_load
   File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
   File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 781, in get_code
-  File "<frozen importlib._bootstrap_external>", line 741, in source_to_code
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 33
-    path('imgtest/',filer.filer.imgtest),
-       ^
+  File "/opt/zyp/zyp/urls.py", line 20, in <module>
+    from . import datac
+  File "/opt/zyp/zyp/datac.py", line 83
+    global col_name=col_name
+                   ^
 SyntaxError: invalid syntax
 
-/opt/zyp/zyp/urls.py changed, reloading.
+/opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
@@ -249,792 +176,291 @@ Traceback (most recent call last):
   File "<frozen importlib._bootstrap>", line 971, in _find_and_load
   File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
   File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 781, in get_code
-  File "<frozen importlib._bootstrap_external>", line 741, in source_to_code
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
   File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 33
-    path('imgtest/',filer.imgtest),
-       ^
+  File "/opt/zyp/zyp/urls.py", line 20, in <module>
+    from . import datac
+  File "/opt/zyp/zyp/datac.py", line 83
+    global c_name=col_name
+                 ^
 SyntaxError: invalid syntax
 
-/opt/zyp/zyp/urls.py changed, reloading.
+/opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 31, 2022 - 05:01:26
+February 06, 2022 - 10:35:03
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-Not Found: /imgtst
-[31/Jan/2022 05:01:27] "GET /imgtst HTTP/1.1" 404 3042
-[31/Jan/2022 05:01:32] "GET /imgtest HTTP/1.1" 301 0
-[31/Jan/2022 05:01:40] "GET /imgtest/ HTTP/1.1" 200 2
-[31/Jan/2022 05:01:49] "GET /imgtest/ HTTP/1.1" 200 2
-/opt/zyp/zyp/filer.py changed, reloading.
+/opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 31, 2022 - 05:02:13
+February 06, 2022 - 10:36:04
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-/opt/zyp/zyp/filer.py changed, reloading.
+/opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 31, 2022 - 05:02:16
+February 06, 2022 - 10:37:58
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-/opt/zyp/zyp/filer.py changed, reloading.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/zyp/zyp/urls.py", line 20, in <module>
+    from . import datac
+  File "/opt/zyp/zyp/datac.py", line 84
+    return df.loc[:,col_name+'_type']=df.apply(heter_compare_apply,axis=1,args=(col_name,s))
+                                     ^
+SyntaxError: invalid syntax
+
+/opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 31, 2022 - 05:02:21
+February 06, 2022 - 10:38:16
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-/opt/zyp/zyp/filer.py changed, reloading.
+/opt/zyp/zyp/datac.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 31, 2022 - 05:02:35
+February 06, 2022 - 10:49:17
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-/opt/zyp/zyp/filer.py changed, reloading.
+/opt/zyp/zyp/imgc.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/zyp/zyp/urls.py", line 21, in <module>
+    from . import imgc
+  File "/opt/zyp/zyp/imgc.py", line 15, in <module>
+    from datac import heter_compare_apply,heter_compare_df
+ModuleNotFoundError: No module named 'datac'
+
+/opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 31, 2022 - 05:02:43
+February 06, 2022 - 10:50:54
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-/opt/zyp/zyp/filer.py changed, reloading.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/f1435f5ecb616f8d1a3bd713965dabdb.svg
+/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 22899 missing from current font.
+/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 30007 missing from current font.
+[06/Feb/2022 10:50:54] "GET /dimg_density_type/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=SEX&width=12&height=8&title= HTTP/1.1" 200 117066
+/opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 31, 2022 - 05:02:47
+February 06, 2022 - 10:51:57
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-[31/Jan/2022 05:02:49] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:02:52] "GET /imgtest/ HTTP/1.1" 200 84713
-/opt/zyp/zyp/filer.py changed, reloading.
+/opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 31, 2022 - 05:03:20
+February 06, 2022 - 10:52:01
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-[31/Jan/2022 05:03:21] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:03:22] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:03:24] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:03:24] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:03:33] "GET /imgtest/ HTTP/1.1" 200 84713
-/opt/zyp/zyp/filer.py changed, reloading.
+/opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-January 31, 2022 - 05:07:11
+February 06, 2022 - 10:52:29
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-Internal Server Error: /imgtest/
+/opt/zyp/zyp/imgc.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 06, 2022 - 10:52:32
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/imgc.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 06, 2022 - 10:52:40
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[06/Feb/2022 10:52:49] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=40&width=&height=&title= HTTP/1.1" 200 66
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/1aca7a3b087c3ab709be1a93cfc189cd.svg
+Internal Server Error: /dimg_hetero_density/
 Traceback (most recent call last):
   File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/opt/zyp/zyp/filer.py", line 106, in imgtest
-    return HttpResponse(x,content_type="image/svg+xml")
-NameError: name 'x' is not defined
-[31/Jan/2022 05:07:11] "GET /imgtest/ HTTP/1.1" 500 65212
-Internal Server Error: /imgtest/
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/opt/zyp/zyp/filer.py", line 106, in imgtest
-    return HttpResponse(x,content_type="image/svg+xml")
-NameError: name 'x' is not defined
-[31/Jan/2022 05:07:12] "GET /imgtest/ HTTP/1.1" 500 65212
-/opt/zyp/zyp/filer.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-January 31, 2022 - 05:07:25
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[31/Jan/2022 05:07:28] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:07:31] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:07:32] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:07:32] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:07:33] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:07:33] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:07:34] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:07:34] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:07:35] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:07:40] "GET /imgtest/ HTTP/1.1" 200 84713
-[31/Jan/2022 05:12:11] "GET /imgtest/ HTTP/1.1" 200 84713
-/opt/zyp/zyp/urls.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-January 31, 2022 - 05:14:07
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[31/Jan/2022 05:14:10] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 05:14:20] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 05:14:31] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 05:15:22] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 05:15:44] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 05:17:26] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 05:17:51] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 05:18:00] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 05:18:01] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 05:18:03] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 05:18:04] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 05:18:06] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 07:12:52] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 12:55:51] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 13:32:46] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 13:32:50] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 16:25:24] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 16:25:25] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 16:25:28] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 16:25:29] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 16:25:29] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 16:25:30] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 16:25:30] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[31/Jan/2022 16:25:31] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:11:51] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:11:58] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:12:03] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:12:03] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:12:04] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:12:05] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:12:07] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:12:08] "GET /dbar/?uid=12&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:35:31] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:36:25] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:36:26] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:36:32] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:36:34] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:36:35] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:36:36] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:36:37] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 03:36:46] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 06:58:15] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 06:58:18] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 06:58:20] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 06:58:22] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 06:58:24] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 06:58:26] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 07:30:13] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 07:30:17] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 07:30:18] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 07:30:20] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 07:30:22] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[03/Feb/2022 07:40:22] "OPTIONS /filer/ HTTP/1.1" 200 76
-[03/Feb/2022 07:40:22] "POST /filer/ HTTP/1.1" 200 172
-[03/Feb/2022 07:40:23] "POST /getd/ HTTP/1.1" 200 1771
-[03/Feb/2022 07:40:34] "OPTIONS /filer/ HTTP/1.1" 200 76
-[03/Feb/2022 07:40:35] "POST /filer/ HTTP/1.1" 200 169
-[03/Feb/2022 07:40:35] "POST /getd/ HTTP/1.1" 200 195231
-[03/Feb/2022 07:42:16] "OPTIONS /filer/ HTTP/1.1" 200 76
-[03/Feb/2022 07:42:16] "POST /filer/ HTTP/1.1" 200 169
-[03/Feb/2022 07:42:16] "POST /getd/ HTTP/1.1" 200 195231
-[03/Feb/2022 07:42:24] "POST /dtype/ HTTP/1.1" 200 467
-[03/Feb/2022 07:42:27] "POST /dtype/ HTTP/1.1" 200 75
-[04/Feb/2022 09:36:13] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[04/Feb/2022 09:36:15] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[04/Feb/2022 09:36:17] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[05/Feb/2022 09:56:36] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[05/Feb/2022 09:56:37] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[05/Feb/2022 09:56:39] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[05/Feb/2022 09:56:42] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[05/Feb/2022 09:56:43] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[05/Feb/2022 09:56:43] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[05/Feb/2022 09:56:44] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-[05/Feb/2022 09:56:46] "GET /dbar/?uid=&f_suffix=&argu1=&argu2= HTTP/1.1" 200 84713
-Not Found: /histp/
-[05/Feb/2022 13:45:11] "POST /histp/ HTTP/1.1" 404 3040
-Not Found: /dimg_density/
-[05/Feb/2022 13:46:47] "GET /dimg_density/ HTTP/1.1" 404 3060
-Not Found: /dimg_density/
-[05/Feb/2022 13:55:10] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 404 3166
-/opt/zyp/zyp/urls.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 13:56:22
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/urls.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 674, in exec_module
-  File "<frozen importlib._bootstrap_external>", line 781, in get_code
-  File "<frozen importlib._bootstrap_external>", line 741, in source_to_code
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 35
-    path('dimg_density/',imgc.)
-                              ^
-SyntaxError: invalid syntax
-
-/opt/zyp/zyp/urls.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 13:56:58
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-Internal Server Error: /dimg_density/
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 188, in _get_response
-    self.check_response(response, callback)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 311, in check_response
-    "instead." % name
-ValueError: The view zyp.imgc.density didn't return an HttpResponse object. It returned None instead.
-[05/Feb/2022 13:57:01] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 500 60912
+  File "/opt/zyp/zyp/imgc.py", line 88, in hetero_density
+    return sav_and_ret_svg(img_density,width,height)
+  File "/opt/zyp/zyp/imgc.py", line 25, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 304, in _build
+    layers.compute_statistic(layout)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 73, in compute_statistic
+    l.compute_statistic(layout)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 324, in compute_statistic
+    data = self.stat.compute_layer(data, params, layout)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat.py", line 255, in compute_layer
+    cls.__name__)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/utils.py", line 385, in check_required_aesthetics
+    msg.format(name, ', '.join(missing_aes)))
+plotnine.exceptions.PlotnineError: 'stat_density requires the following missing aesthetics: x'
+[06/Feb/2022 10:53:01] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=40&title= HTTP/1.1" 500 100651
 /opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-February 05, 2022 - 13:57:15
+February 06, 2022 - 10:54:15
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-[05/Feb/2022 13:57:19] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 200 1
-[05/Feb/2022 13:57:21] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 200 1
-[05/Feb/2022 13:57:25] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 200 1
-[05/Feb/2022 13:57:26] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 200 1
-[05/Feb/2022 13:57:32] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 200 1
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 13:58:05
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[05/Feb/2022 13:58:06] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 200 3
-[05/Feb/2022 13:58:07] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 200 3
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 13:59:06
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 13:59:25
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[05/Feb/2022 13:59:25] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 200 3
-[05/Feb/2022 13:59:38] "GET /dimg_density/ HTTP/1.1" 200 3
-[05/Feb/2022 13:59:42] "POST /dimg_density/ HTTP/1.1" 200 3
-[05/Feb/2022 13:59:44] "POS /dimg_density/ HTTP/1.1" 200 67
-[05/Feb/2022 13:59:46] "POS /dimg_density/ HTTP/1.1" 200 67
-[05/Feb/2022 13:59:48] "POS /dimg_density/ HTTP/1.1" 200 67
-[05/Feb/2022 13:59:50] "POS /dimg_density/ HTTP/1.1" 200 67
-[05/Feb/2022 13:59:59] "POST /dimg_density/ HTTP/1.1" 200 3
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 14:00:38
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 21, in <module>
-    from . import imgc
-  File "/opt/zyp/zyp/imgc.py", line 22
-    elif:
-        ^
-SyntaxError: invalid syntax
-
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 21, in <module>
-    from . import imgc
-  File "/opt/zyp/zyp/imgc.py", line 24
-    else:
-       ^
-IndentationError: expected an indented block
-
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 14:00:59
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 21, in <module>
-    from . import imgc
-  File "/opt/zyp/zyp/imgc.py", line 22
-    return HttpResponse('yes')
-         ^
-IndentationError: expected an indented block
-
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 21, in <module>
-    from . import imgc
-  File "/opt/zyp/zyp/imgc.py", line 22
-    return HttpResponse('yes')
-         ^
-SyntaxError: invalid syntax
-
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 21, in <module>
-    from . import imgc
-  File "/opt/zyp/zyp/imgc.py", line 23
-    return HttpResponse('yes')
-         ^
-SyntaxError: invalid syntax
-
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 21, in <module>
-    from . import imgc
-  File "/opt/zyp/zyp/imgc.py", line 24
-    return HttpResponse('yes')
-         ^
-SyntaxError: invalid syntax
-
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 21, in <module>
-    from . import imgc
-  File "/opt/zyp/zyp/imgc.py", line 26
-    return HttpResponse('yes')
-         ^
-IndentationError: expected an indented block
-
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 14:03:24
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 14:04:08
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 14:04:14
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 14:04:26
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 14:04:33
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/filer.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 14:05:49
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/filer.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 14:06:37
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/filer.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 14:06:42
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[05/Feb/2022 14:06:44] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 200 66
-[05/Feb/2022 14:06:47] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=&height=&title= HTTP/1.1" 200 66
-[05/Feb/2022 14:06:50] "POST /dtype/ HTTP/1.1" 200 467
-[05/Feb/2022 14:06:52] "POST /dtype/ HTTP/1.1" 200 467
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 05, 2022 - 14:07:48
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/2df7393480615873f2c015d8ca14d3b1.svg
+[06/Feb/2022 10:54:17] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=40&title= HTTP/1.1" 200 115990
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/88459ec5472550ae9610b29c349fcc4b.svg
+[06/Feb/2022 10:54:26] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=40&title= HTTP/1.1" 200 115990
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/e7e31ec4716d3667d725f411eb00ad1b.svg
+[06/Feb/2022 10:54:40] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=45&title= HTTP/1.1" 200 116843
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/e342375e3b10d6567107a2cc60744780.svg
+[06/Feb/2022 10:54:48] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title= HTTP/1.1" 200 115538
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/7b4d28ca31a2ff9522f5daa634616378.svg
+[06/Feb/2022 10:55:27] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title= HTTP/1.1" 200 115538
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/361b34eb08bbcbe27b05ca062a28713d.svg
+[06/Feb/2022 10:55:37] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title= HTTP/1.1" 200 115538
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/6cf44bd572835df043816fea9658cc0f.svg
+[06/Feb/2022 10:56:23] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title= HTTP/1.1" 200 115538
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/00dcb9259b7d89abe63bd2ba49035abf.svg
+[06/Feb/2022 10:56:49] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 131967
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/71025d710140fd9dd908a13209726707.svg
+[06/Feb/2022 10:57:12] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&segment=70&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 81790
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/6240739e3bf1769bf0d56ecc6e206749.svg
+[06/Feb/2022 10:57:24] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&segment=5&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 130875
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/1808c90d8d075f58da540fb57929439b.svg
+[06/Feb/2022 10:57:49] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&segment=5&title= HTTP/1.1" 200 113804
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/e90a83baf080f2e5b4cb53e2aa5a8a10.svg
+[06/Feb/2022 10:58:01] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&segment=5&title= HTTP/1.1" 200 113804
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/8f4d785589db6a22c7c68c7097da362e.svg
+[06/Feb/2022 10:58:14] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 131967
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/52e773d5ac8ecfab9902722db92d84ae.svg
+/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 22899 missing from current font.
+/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 30007 missing from current font.
+[06/Feb/2022 10:59:10] "GET /dimg_density_type/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=SEX&width=12&height=8&title= HTTP/1.1" 200 117066
