@@ -38,5 +38,7 @@ urlpatterns = [
     path('dimg_density_type/',imgc.type_density),
     path('dimg_hetero_regress/',imgc.type_regress),
     path('dimg_regress/',imgc.two_reg),
+    path('dimg_line/',imgc.two_line),
+    path('dimg_bar_type/',imgc.type_bar),
     path('test/',ce.test),
 ]

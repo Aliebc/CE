@@ -1,399 +1,86 @@
-/opt/zyp/zyp/datac.py changed, reloading.
+/opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-February 06, 2022 - 10:28:53
+February 06, 2022 - 16:09:29
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-/opt/zyp/zyp/datac.py changed, reloading.
+/opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-February 06, 2022 - 10:29:08
+February 06, 2022 - 16:09:58
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
-/opt/zyp/zyp/datac.py changed, reloading.
+/opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-February 06, 2022 - 10:29:49
+February 06, 2022 - 16:11:02
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/imgc.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 06, 2022 - 16:11:13
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/imgc.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 06, 2022 - 16:11:26
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/imgc.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 06, 2022 - 16:11:29
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/imgc.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 06, 2022 - 16:12:29
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 06, 2022 - 16:12:53
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/467c9942eb6a342fcbf45d5b5bff3179.svg
-/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 22899 missing from current font.
-/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 30007 missing from current font.
-[06/Feb/2022 10:30:05] "GET /dimg_density_type/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=SEX&width=12&height=8&title= HTTP/1.1" 200 117066
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/a8a6cd480ac00d3d8c346c2921e8d8e0.svg
-/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 22899 missing from current font.
-/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 30007 missing from current font.
-[06/Feb/2022 10:30:08] "GET /dimg_density_type/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=SEX&width=12&height=8&title= HTTP/1.1" 200 117066
-/opt/zyp/zyp/datac.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 20, in <module>
-    from . import datac
-  File "/opt/zyp/zyp/datac.py", line 83
-    df.loc[:,col_name+'_type']=df.
-                                 ^
-SyntaxError: invalid syntax
-
-/opt/zyp/zyp/datac.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:33:42
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/datac.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 20, in <module>
-    from . import datac
-  File "/opt/zyp/zyp/datac.py", line 83
-    global col_name=col_name
-                   ^
-SyntaxError: invalid syntax
-
-/opt/zyp/zyp/datac.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 20, in <module>
-    from . import datac
-  File "/opt/zyp/zyp/datac.py", line 83
-    global c_name=col_name
-                 ^
-SyntaxError: invalid syntax
-
-/opt/zyp/zyp/datac.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:35:03
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/datac.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:36:04
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/datac.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:37:58
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/datac.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 20, in <module>
-    from . import datac
-  File "/opt/zyp/zyp/datac.py", line 84
-    return df.loc[:,col_name+'_type']=df.apply(heter_compare_apply,axis=1,args=(col_name,s))
-                                     ^
-SyntaxError: invalid syntax
-
-/opt/zyp/zyp/datac.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:38:16
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/datac.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:49:17
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 21, in <module>
-    from . import imgc
-  File "/opt/zyp/zyp/imgc.py", line 15, in <module>
-    from datac import heter_compare_apply,heter_compare_df
-ModuleNotFoundError: No module named 'datac'
-
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:50:54
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/f1435f5ecb616f8d1a3bd713965dabdb.svg
-/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 22899 missing from current font.
-/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 30007 missing from current font.
-[06/Feb/2022 10:50:54] "GET /dimg_density_type/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=SEX&width=12&height=8&title= HTTP/1.1" 200 117066
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:51:57
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:52:01
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:52:29
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:52:32
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:52:40
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[06/Feb/2022 10:52:49] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=40&width=&height=&title= HTTP/1.1" 200 66
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/1aca7a3b087c3ab709be1a93cfc189cd.svg
-Internal Server Error: /dimg_hetero_density/
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/c1d90f6143d1cbed85abbd670b14a592.svg
+Internal Server Error: /dimg_bar_type/
 Traceback (most recent call last):
   File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/opt/zyp/zyp/imgc.py", line 88, in hetero_density
+  File "/opt/zyp/zyp/imgc.py", line 217, in type_bar
     return sav_and_ret_svg(img_density,width,height)
-  File "/opt/zyp/zyp/imgc.py", line 25, in sav_and_ret_svg
+  File "/opt/zyp/zyp/imgc.py", line 33, in sav_and_ret_svg
     img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
   File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
     fig, p = self.draw(return_ggplot=True)
@@ -405,104 +92,32 @@ Traceback (most recent call last):
     l.compute_statistic(layout)
   File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 324, in compute_statistic
     data = self.stat.compute_layer(data, params, layout)
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat.py", line 255, in compute_layer
-    cls.__name__)
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/utils.py", line 385, in check_required_aesthetics
-    msg.format(name, ', '.join(missing_aes)))
-plotnine.exceptions.PlotnineError: 'stat_density requires the following missing aesthetics: x'
-[06/Feb/2022 10:53:01] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=40&title= HTTP/1.1" 500 100651
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 10:54:15
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat.py", line 276, in compute_layer
+    return groupby_apply(data, 'PANEL', fn)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/utils.py", line 634, in groupby_apply
+    lst.append(func(d, *args, **kwargs))
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat.py", line 274, in fn
+    return cls.compute_panel(pdata, pscales, **params)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat.py", line 307, in compute_panel
+    new = cls.compute_group(old, scales, **params)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_count.py", line 53, in compute_group
+    raise PlotnineError(msg)
+plotnine.exceptions.PlotnineError: 'stat_count() must not be used with a y aesthetic'
+[06/Feb/2022 16:12:59] "GET /dimg_bar_type/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=SEX&title= HTTP/1.1" 500 115276
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/2df7393480615873f2c015d8ca14d3b1.svg
-[06/Feb/2022 10:54:17] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=40&title= HTTP/1.1" 200 115990
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/5835c3ce639787739836e4b79bee0bb5.svg
+[06/Feb/2022 16:14:28] "GET /dimg_density_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&width=12&height=8&title= HTTP/1.1" 200 313528
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/88459ec5472550ae9610b29c349fcc4b.svg
-[06/Feb/2022 10:54:26] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=40&title= HTTP/1.1" 200 115990
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/e7e31ec4716d3667d725f411eb00ad1b.svg
-[06/Feb/2022 10:54:40] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=45&title= HTTP/1.1" 200 116843
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/e342375e3b10d6567107a2cc60744780.svg
-[06/Feb/2022 10:54:48] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title= HTTP/1.1" 200 115538
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/7b4d28ca31a2ff9522f5daa634616378.svg
-[06/Feb/2022 10:55:27] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title= HTTP/1.1" 200 115538
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/361b34eb08bbcbe27b05ca062a28713d.svg
-[06/Feb/2022 10:55:37] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title= HTTP/1.1" 200 115538
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/6cf44bd572835df043816fea9658cc0f.svg
-[06/Feb/2022 10:56:23] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title= HTTP/1.1" 200 115538
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/00dcb9259b7d89abe63bd2ba49035abf.svg
-[06/Feb/2022 10:56:49] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 131967
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/71025d710140fd9dd908a13209726707.svg
-[06/Feb/2022 10:57:12] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&segment=70&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 81790
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/6240739e3bf1769bf0d56ecc6e206749.svg
-[06/Feb/2022 10:57:24] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&segment=5&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 130875
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/1808c90d8d075f58da540fb57929439b.svg
-[06/Feb/2022 10:57:49] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&segment=5&title= HTTP/1.1" 200 113804
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/e90a83baf080f2e5b4cb53e2aa5a8a10.svg
-[06/Feb/2022 10:58:01] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&segment=5&title= HTTP/1.1" 200 113804
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/8f4d785589db6a22c7c68c7097da362e.svg
-[06/Feb/2022 10:58:14] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 131967
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/52e773d5ac8ecfab9902722db92d84ae.svg
-/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 22899 missing from current font.
-/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 30007 missing from current font.
-[06/Feb/2022 10:59:10] "GET /dimg_density_type/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=SEX&width=12&height=8&title= HTTP/1.1" 200 117066
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/c00a0605415cdde16714730224ebb78f.svg
-/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 22899 missing from current font.
-/usr/local/python3/lib/python3.6/site-packages/matplotlib/textpath.py:74: RuntimeWarning: Glyph 30007 missing from current font.
-[06/Feb/2022 11:02:05] "GET /dimg_density_type/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=SEX&width=12&height=8&title= HTTP/1.1" 200 117066
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/f68eb91d77e8c5adad63a864d506691e.svg
-[06/Feb/2022 11:03:53] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title=TfA HTTP/1.1" 200 127664
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 11:05:04
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/8a7a23da113057c3a81e0a92e4b47991.svg
-Internal Server Error: /dimg_hetero_density/
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
-    return self._engine.get_loc(casted_key)
-  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 1675, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 1683, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'y'
-
-The above exception was the direct cause of the following exception:
-
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/22c8dc6c10e5731cf489beaf613a5ca1.svg
+Internal Server Error: /dimg_bar_type/
 Traceback (most recent call last):
   File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
     response = get_response(request)
   File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
     response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/opt/zyp/zyp/imgc.py", line 88, in hetero_density
+  File "/opt/zyp/zyp/imgc.py", line 217, in type_bar
     return sav_and_ret_svg(img_density,width,height)
-  File "/opt/zyp/zyp/imgc.py", line 25, in sav_and_ret_svg
+  File "/opt/zyp/zyp/imgc.py", line 33, in sav_and_ret_svg
     img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
   File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
     fig, p = self.draw(return_ggplot=True)
@@ -512,646 +127,291 @@ Traceback (most recent call last):
     layers.compute_statistic(layout)
   File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 73, in compute_statistic
     l.compute_statistic(layout)
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 323, in compute_statistic
-    data = self.stat.setup_data(data)
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_smooth.py", line 154, in setup_data
-    np.isfinite(data['y'])]
-  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/frame.py", line 2906, in __getitem__
-    indexer = self.columns.get_loc(key)
-  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
-    raise KeyError(key) from err
-KeyError: 'y'
-[06/Feb/2022 11:05:06] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title=TfA HTTP/1.1" 500 159684
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 324, in compute_statistic
+    data = self.stat.compute_layer(data, params, layout)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat.py", line 276, in compute_layer
+    return groupby_apply(data, 'PANEL', fn)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/utils.py", line 634, in groupby_apply
+    lst.append(func(d, *args, **kwargs))
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat.py", line 274, in fn
+    return cls.compute_panel(pdata, pscales, **params)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat.py", line 307, in compute_panel
+    new = cls.compute_group(old, scales, **params)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_count.py", line 53, in compute_group
+    raise PlotnineError(msg)
+plotnine.exceptions.PlotnineError: 'stat_count() must not be used with a y aesthetic'
+[06/Feb/2022 16:14:48] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title= HTTP/1.1" 500 116089
 /opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-February 06, 2022 - 11:05:25
+February 06, 2022 - 16:16:08
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/7ee657b8fb0f7423229642296caa5726.svg
-Internal Server Error: /dimg_hetero_density/
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
-    return self._engine.get_loc(casted_key)
-  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 1675, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 1683, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'y'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/opt/zyp/zyp/imgc.py", line 88, in hetero_density
-    return sav_and_ret_svg(img_density,width,height)
-  File "/opt/zyp/zyp/imgc.py", line 25, in sav_and_ret_svg
-    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
-    fig, p = self.draw(return_ggplot=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
-    self._build()
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 312, in _build
-    layers.setup_data()
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 59, in setup_data
-    l.setup_data()
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 363, in setup_data
-    data = self.geom.setup_data(data)
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/geoms/geom_area.py", line 30, in setup_data
-    data['ymax'] = data['y']
-  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/frame.py", line 2906, in __getitem__
-    indexer = self.columns.get_loc(key)
-  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
-    raise KeyError(key) from err
-KeyError: 'y'
-[06/Feb/2022 11:05:27] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title=TfA HTTP/1.1" 500 159977
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/6aa9c733cc2df04667ed21458aebc96e.svg
+[06/Feb/2022 16:16:09] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title= HTTP/1.1" 200 35368
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/1ef720bb56eea725dee02bc96fe2b120.svg
-Internal Server Error: /dimg_hetero_density/
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2898, in get_loc
-    return self._engine.get_loc(casted_key)
-  File "pandas/_libs/index.pyx", line 70, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 101, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 1675, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 1683, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'y'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/opt/zyp/zyp/imgc.py", line 88, in hetero_density
-    return sav_and_ret_svg(img_density,width,height)
-  File "/opt/zyp/zyp/imgc.py", line 25, in sav_and_ret_svg
-    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
-    fig, p = self.draw(return_ggplot=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
-    self._build()
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 312, in _build
-    layers.setup_data()
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 59, in setup_data
-    l.setup_data()
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 363, in setup_data
-    data = self.geom.setup_data(data)
-  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/geoms/geom_area.py", line 30, in setup_data
-    data['ymax'] = data['y']
-  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/frame.py", line 2906, in __getitem__
-    indexer = self.columns.get_loc(key)
-  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/indexes/base.py", line 2900, in get_loc
-    raise KeyError(key) from err
-KeyError: 'y'
-[06/Feb/2022 11:05:46] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title=TfA HTTP/1.1" 500 159977
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/b45367695b0553ddc1a9b88e883f00a1.svg
+[06/Feb/2022 16:16:20] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title= HTTP/1.1" 200 35368
 /opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-February 06, 2022 - 11:06:00
+February 06, 2022 - 16:16:53
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/a275274b01e4770e97a816095d2131f0.svg
-[06/Feb/2022 11:06:00] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title=TfA HTTP/1.1" 200 127664
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/11e57f1444fbf5b51f7d51cd8e18f0aa.svg
+[06/Feb/2022 16:16:54] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title= HTTP/1.1" 200 39650
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/1bda6033c519343f27dafa70fe977019.svg
-[06/Feb/2022 11:06:45] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&segment=70&title=TfA HTTP/1.1" 200 127664
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/466d151b8deacef4500a31ac0b51a24e.svg
+[06/Feb/2022 16:17:08] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/09d089a1d1d2b2036fd63db544593250.svg
+[06/Feb/2022 16:17:27] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/c64261666b2c4a3ef24fe3bdcc8e59e9.svg
+[06/Feb/2022 16:17:31] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/b77bb436dfc0d7dadb7d3414d47d06e8.svg
+[06/Feb/2022 16:17:55] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0d2df1648b032c128ae9094a3a5d0028.svg
+[06/Feb/2022 16:18:36] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/f34a2b3b9d1362484dd01e1e02d1af29.svg
+[06/Feb/2022 16:19:33] "GET /dimg_density_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&width=12&height=8&title=Effects%20of%20different%20dietary%20types%20on%20growth%20rate%20of%20chicks HTTP/1.1" 200 344965
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/9f72ff0ca5fea2afec6d45d47dbac163.svg
+[06/Feb/2022 16:19:46] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/78821d969d14b88948c5ab9912f119ed.svg
+[06/Feb/2022 16:20:09] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/823b33a94ba36cd9413dd0ed2588b0c8.svg
+[06/Feb/2022 16:21:27] "GET /dimg_hetero_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&segment=45&argu_type=AGE&title= HTTP/1.1" 200 910404
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/4508def7b6a66b51f6f271251e6df386.svg
+[06/Feb/2022 16:21:39] "GET /dimg_line/?uid=bfeab4a14df3269b503d2a7d8b9fd8d5&f_suffix=.dta&argu1=year&argu2=nhtemp&title=Line%20T1 HTTP/1.1" 200 68413
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/cd89cff6246d6de3e362aa2cafeed671.svg
+[06/Feb/2022 16:21:46] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 58112
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/b2a8c4ccb890a91799160a241fc7a570.svg
+[06/Feb/2022 16:22:34] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 58112
+[06/Feb/2022 16:22:40] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=AGE&title= HTTP/1.1" 200 66
+[06/Feb/2022 16:22:54] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&title= HTTP/1.1" 200 66
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/47cce035b9ffa72279ea26c91b574846.svg
+[06/Feb/2022 16:23:00] "GET /dimg_hetero_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&segment=45&argu_type=AGE&title= HTTP/1.1" 200 910404
+[06/Feb/2022 16:23:17] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&title= HTTP/1.1" 200 66
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/eb665a142cbdffa85b477c9aba033e89.svg
+[06/Feb/2022 16:23:38] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 58112
+[06/Feb/2022 16:24:00] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.inde&title= HTTP/1.1" 200 66
+[06/Feb/2022 16:24:15] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 66
+[06/Feb/2022 16:25:41] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 66
 /opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-February 06, 2022 - 11:09:21
+February 06, 2022 - 16:25:58
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
+[06/Feb/2022 16:25:58] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 66
+[06/Feb/2022 16:26:03] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 66
 /opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-February 06, 2022 - 11:09:29
+February 06, 2022 - 16:26:10
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/96ff8f2c6666632ba40767dd00cc2d83.svg
+[06/Feb/2022 16:26:51] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 59461
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/684ce3a69130adb95fad7fcb8884c434.svg
+[06/Feb/2022 16:27:01] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=5&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 59723
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/028fce4d13b5bbd15894f8ca52ec2c32.svg
+[06/Feb/2022 16:27:11] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 59461
 /opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-February 06, 2022 - 11:09:34
+February 06, 2022 - 16:27:58
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/66002ea76363576bc382b51b578df639.svg
-[06/Feb/2022 11:09:59] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=40&title= HTTP/1.1" 200 117048
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/b1e97a5fdd6e48634d2dcc4f6df1aad2.svg
+[06/Feb/2022 16:27:59] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 59461
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/e5c3b0ddc675b7ece37dddc7c547867c.svg
-[06/Feb/2022 11:10:15] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=40&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 132153
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/f95b56f3f5ad9f10a88651fbf0a72792.svg
+[06/Feb/2022 16:28:04] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 69389
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/92c72f2a779b66c536484dd6bedc447d.svg
-[06/Feb/2022 11:10:21] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=40&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 132153
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/2708d1bbcfc678720ef07d8cde93486a.svg
+[06/Feb/2022 16:28:21] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 69389
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/d0e8d7252278e94725111f1239aa0922.svg
-[06/Feb/2022 11:10:51] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 132169
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/67233ebfb2fd0a2c3da4e398b527b9ae.svg
+[06/Feb/2022 16:28:28] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 69389
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/325c62c7f7689242a47cf18e88c0c292.svg
-[06/Feb/2022 11:11:42] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 132169
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/a1ef8e6fafa0794a479eb7fe4ea0b138.svg
-[06/Feb/2022 11:13:53] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 132169
-Internal Server Error: /dimg_hetero_density/
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/opt/zyp/zyp/imgc.py", line 87, in hetero_density
-    dta2=datac.heter_compare_df(dta,argu_type,float(segment))
-  File "/opt/zyp/zyp/datac.py", line 83, in heter_compare_df
-    df.loc[:,col_name+'_type']=df[col_name].apply(heter_compare_apply,y=s,c_name=col_name)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/http/response.py", line 178, in __getitem__
-    return self.headers[header]
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/datastructures.py", line 316, in __getitem__
-    return self._store[key.lower()][1]
-KeyError: 'age'
-[06/Feb/2022 11:14:22] "GET /dimg_hetero_density/?uid=d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test HTTP/1.1" 500 74225
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0bf7ffb5b682c3827144a975663c69b4.svg
+[06/Feb/2022 16:28:54] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 69389
 /opt/zyp/zyp/imgc.py changed, reloading.
 Watching for file changes with StatReloader
 Performing system checks...
 
 System check identified no issues (0 silenced).
-February 06, 2022 - 11:15:23
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[06/Feb/2022 11:15:24] "GET /dimg_hetero_density/?uid=d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 63
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/8eb22e16fcfdeff72dda36b0189b7b8e.svg
-[06/Feb/2022 11:15:34] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 132169
-[06/Feb/2022 11:15:38] "GET /dimg_hetero_density/?uid=d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 63
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/845f9ca1c69aef56a04019ea12a31e69.svg
-[06/Feb/2022 11:15:44] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 132169
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 16 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/4bd13669a6836e915cd5a139396be41d.svg
-[06/Feb/2022 11:16:47] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test&width=16 HTTP/1.1" 200 132271
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 16 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/8b7662a666c1192ca2df1539960bd86e.svg
-[06/Feb/2022 11:26:28] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test&width=16 HTTP/1.1" 200 132271
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 16 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/c46e25873063d85dff3e8119e23fd1ca.svg
-[06/Feb/2022 11:46:16] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test&width=16 HTTP/1.1" 200 132271
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 16 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/c510de1d5f35f7dd61e5863504cdfb05.svg
-[06/Feb/2022 11:46:24] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test&width=16 HTTP/1.1" 200 132271
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 16 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/e88eedbecdd1c59b46b79523098c76a2.svg
-[06/Feb/2022 11:46:32] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test&width=16 HTTP/1.1" 200 132271
-Not Found: /dhete/
-[06/Feb/2022 12:07:09] "POST /dhete/ HTTP/1.1" 404 3602
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/91fa99d7c0d6d317f328fa70b48da7b1.svg
-[06/Feb/2022 12:08:35] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=12&height=8&title=Test1 HTTP/1.1" 200 73553
-/opt/zyp/zyp/urls.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 39, in <module>
-    path('test/',ce.test),
-AttributeError: module 'zyp.ce' has no attribute 'test'
-
-/opt/zyp/zyp/ce.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:12:02
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/ce.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:12:07
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[06/Feb/2022 12:12:13] "GET /test HTTP/1.1" 301 0
-Internal Server Error: /test/
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
-    response = get_response(request)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-  File "/opt/zyp/zyp/ce.py", line 37, in test
-    rp=HttpResponse(open('/opt/zypfile/testb.xlsx').read(),headers={'Content-Type':'application/octet-stream','Content-Disposition':'attachment ;filename=test.xlsx'})
-  File "/usr/local/python3/lib/python3.6/codecs.py", line 321, in decode
-    (result, consumed) = self._buffer_decode(data, self.errors, final)
-UnicodeDecodeError: 'utf-8' codec can't decode bytes in position 15-16: invalid continuation byte
-[06/Feb/2022 12:12:17] "GET /test/ HTTP/1.1" 500 77386
-/opt/zyp/zyp/ce.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:13:05
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[06/Feb/2022 12:13:05] "GET /test/ HTTP/1.1" 200 9687
-/opt/zyp/zyp/ce.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:14:44
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/ce.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:15:29
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[06/Feb/2022 12:15:42] "GET /test/ HTTP/1.1" 200 9687
-/opt/zyp/zyp/ce.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:15:57
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[06/Feb/2022 12:15:59] "GET /test/ HTTP/1.1" 200 5005
-[06/Feb/2022 12:17:24] "GET /test/ HTTP/1.1" 200 5005
-[06/Feb/2022 12:18:16] "GET /test/ HTTP/1.1" 200 5005
-[06/Feb/2022 12:18:48] "GET /test/ HTTP/1.1" 200 5005
-[06/Feb/2022 12:18:54] "GET /test/ HTTP/1.1" 200 5005
-[06/Feb/2022 12:19:08] "GET /test/ HTTP/1.1" 200 5005
-[06/Feb/2022 12:19:43] "GET /test/ HTTP/1.1" 200 5005
-/opt/zyp/zyp/ce.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:20:34
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[06/Feb/2022 12:20:55] "GET /test/ HTTP/1.1" 200 5005
-[06/Feb/2022 12:20:57] "GET /test/ HTTP/1.1" 200 5005
-[06/Feb/2022 12:21:58] "GET /test HTTP/1.1" 301 0
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-Exception in thread django-main-thread:
-Traceback (most recent call last):
-  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
-    self.run()
-  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
-    self._target(*self._args, **self._kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
-    fn(*args, **kwargs)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
-    self.check(display_num_errors=True)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
-    databases=databases,
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
-    new_errors = check(app_configs=app_configs, databases=databases)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
-    return check_resolver(resolver)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
-    return check_method()
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
-    for pattern in self.url_patterns:
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
-    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
-    res = instance.__dict__[self.name] = self.func(instance)
-  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
-    return import_module(self.urlconf_name)
-  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
-  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
-  File "/opt/zyp/zyp/urls.py", line 21, in <module>
-    from . import imgc
-  File "/opt/zyp/zyp/imgc.py", line 118
-    
-    ^
-SyntaxError: unexpected EOF while parsing
-
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:25:03
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:25:20
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:25:49
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:25:57
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:26:04
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:26:15
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-Not Found: /dimg_hetero_regress/
-[06/Feb/2022 12:26:19] "GET /dimg_hetero_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&segment=45&argu_type=AGE&width=&height=&title= HTTP/1.1" 404 3803
-Not Found: /dimg_hetero_regress/
-[06/Feb/2022 12:26:27] "GET /dimg_hetero_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&segment=45&argu_type=AGE&width=&height=&title= HTTP/1.1" 404 3803
-/opt/zyp/zyp/urls.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:26:35
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[06/Feb/2022 12:26:36] "GET /dimg_hetero_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&segment=45&argu_type=AGE&width=&height=&title= HTTP/1.1" 200 66
-[06/Feb/2022 12:26:37] "GET /dimg_hetero_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&segment=45&argu_type=AGE&width=&height=&title= HTTP/1.1" 200 66
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/62cb08449fe0c4e6a59651e4180f9340.svg
-[06/Feb/2022 12:26:43] "GET /dimg_hetero_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&segment=45&argu_type=AGE&title= HTTP/1.1" 200 36213
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:27:16
+February 06, 2022 - 16:29:17
 Django version 3.2.10, using settings 'zyp.settings'
 Starting development server at http://0.0.0.0:11112/
 Quit the server with CONTROL-C.
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/7001149f8dc010043480d2e6a00c540d.svg
-[06/Feb/2022 12:27:18] "GET /dimg_hetero_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&segment=45&argu_type=AGE&title= HTTP/1.1" 200 910404
-[06/Feb/2022 12:28:11] "GET /dimg_hetero_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&segment=45&argu_type=AGE&width=&height=&title= HTTP/1.1" 200 66
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/7c548066ec3268a14c477a7fa9a9d6a7.svg
+[06/Feb/2022 16:29:22] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=1 HTTP/1.1" 200 69389
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/9e7d4cfa46588f51b5d0b8cbeb67ab0e.svg
-[06/Feb/2022 12:28:18] "GET /dimg_hetero_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&segment=45&argu_type=AGE&title= HTTP/1.1" 200 910404
-[06/Feb/2022 12:33:18] "POST /filer/ HTTP/1.1" 200 173
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0ad5caa199ed8ebcfe6f5bb716936721.svg
+[06/Feb/2022 16:29:43] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75347
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/46da92f8e17c03a3cef49680d85c0b2d.svg
-[06/Feb/2022 12:34:38] "GET /dimg_density_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&width=12&height=8&title= HTTP/1.1" 200 313528
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/e85700ac2a35cf0a8ec177a1a5b9d1fc.svg
+[06/Feb/2022 16:29:48] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75347
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/467df649a5cab7a54d7ca4b2d4f53abd.svg
-[06/Feb/2022 12:35:58] "GET /dimg_density_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&width=12&height=8&title= HTTP/1.1" 200 313528
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/8dbdc32fd379c74748748073d23d3664.svg
+[06/Feb/2022 16:29:58] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75347
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/988397d4a530b54ca3c0ec43e4b7f1df.svg
-[06/Feb/2022 12:36:20] "GET /dimg_density_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&width=12&height=8&title=Effects%20of%20different%20dietary%20types%20on%20growth%20rate%20of%20chicks HTTP/1.1" 200 344965
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/81ad6fa38e99549a6ebf66ba72252df4.svg
+[06/Feb/2022 16:30:01] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75347
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/acc477e47af147244861ba8525c1eaa0.svg
-[06/Feb/2022 12:36:27] "GET /dimg_density_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&width=12&height=8&title=Effects%20of%20different%20dietary%20types%20on%20growth%20rate%20of%20chicks HTTP/1.1" 200 344965
-[06/Feb/2022 12:41:29] "OPTIONS /filer/ HTTP/1.1" 200 76
-[06/Feb/2022 12:41:29] "POST /filer/ HTTP/1.1" 200 171
-[06/Feb/2022 12:41:29] "POST /getd/ HTTP/1.1" 200 5907
-[06/Feb/2022 12:41:34] "POST /dtype/ HTTP/1.1" 200 698
-[06/Feb/2022 12:41:46] "POST /dtype/ HTTP/1.1" 200 698
-[06/Feb/2022 12:42:08] "POST /filer/ HTTP/1.1" 200 171
-Not Found: /dimg_regress/
-[06/Feb/2022 12:46:10] "GET /dimg_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&width=12&height=8&title= HTTP/1.1" 404 3872
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:46:58
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/urls.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:47:18
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:47:33
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:47:50
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-[06/Feb/2022 12:47:52] "GET /dimg_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&width=12&height=8&title= HTTP/1.1" 200 66
-[06/Feb/2022 12:47:54] "GET /dimg_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&width=12&height=8&title= HTTP/1.1" 200 66
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:48:17
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0646c1dfe9a70e9d455c94e5f9357e52.svg
+[06/Feb/2022 16:30:24] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75347
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0790ae946fbc8e74ee415fcf1589aac6.svg
-[06/Feb/2022 12:48:19] "GET /dimg_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&width=12&height=8&title= HTTP/1.1" 200 878148
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/b3cdbc5126c4d5c076ef733933e14d42.svg
+[06/Feb/2022 16:30:29] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.5&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75347
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/ae119cf78c42426401c92333e9fe4a84.svg
-[06/Feb/2022 12:48:55] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title= HTTP/1.1" 200 53120
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/5890225a41dac4a97a94d9699b79e6bf.svg
+[06/Feb/2022 16:30:53] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 58112
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/315102c26a6740f48d612189985bf46d.svg
-[06/Feb/2022 12:49:16] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title= HTTP/1.1" 200 53120
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/2705fb8f96fc6c5d8bce51b3a96537c8.svg
+[06/Feb/2022 16:31:14] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.6&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75410
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/1c0df68a70dab1a109ccbce9e54f2110.svg
-[06/Feb/2022 12:49:26] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 57605
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:50:01
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/44be4509fcbee9962c4ff9770061eccf.svg
+[06/Feb/2022 16:33:16] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.6&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75410
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/332d7fbdd84850dd9fa319b3665d0421.svg
-[06/Feb/2022 12:50:03] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 57605
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:50:19
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0fe89f941fecb7448fe3f188b929c0bf.svg
+[06/Feb/2022 16:35:22] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.6&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75410
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/f8deb3fa581490178191370b9358cd0b.svg
-[06/Feb/2022 12:50:22] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 57605
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:50:34
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/aeb06a5d2a0f950d77515718f1970386.svg
+[06/Feb/2022 16:35:46] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.35&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75239
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/915a2e96f80dfe5e33137026c1f772a0.svg
-[06/Feb/2022 12:50:35] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 58112
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/d93bea93192215d5a91397689df7800b.svg
+[06/Feb/2022 16:35:53] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.6&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75410
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/53ddf1fb29f0902902e9c02dcb2cd624.svg
-[06/Feb/2022 12:50:48] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 58112
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/cf33e77172d86335e00fdcab5cd5607a.svg
+[06/Feb/2022 16:36:12] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75480
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/babe3883c875338232edb374de0a41e8.svg
-[06/Feb/2022 12:50:58] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 58112
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/bbccb90e9c2a902dec3ce3638d85309c.svg
+[06/Feb/2022 16:36:23] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.6&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75410
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/519371903279bc350d1ffda7527e78b5.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/81ddbb05b984ee83a232d367c9290e0f.svg
+[06/Feb/2022 16:37:12] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75480
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 15 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/9d1d35765f3e074cb503cf37aef375fc.svg
+[06/Feb/2022 16:37:24] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=15&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75573
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 15 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/60b51a5a32719edd4c7e3f1417a98305.svg
+[06/Feb/2022 16:39:39] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=15&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75573
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/ff2ba91af2a967a71e359b2df670347a.svg
+[06/Feb/2022 16:40:08] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75480
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 15 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/525c8287d35c61d2eee6ab46efed327b.svg
+[06/Feb/2022 16:40:24] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=15&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75573
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 15 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/ae9828abf189ac6e43ae5cd655fd7470.svg
+[06/Feb/2022 16:40:53] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=15&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75573
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 15 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/a7d3598454b65678716577fc4f854e7e.svg
+[06/Feb/2022 16:41:05] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=15&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75573
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 15 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/dc958c6511d2b7950c6c49706ff38558.svg
+[06/Feb/2022 16:41:52] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=15&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75573
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 15 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/4f68f14b7a3fa9f0bec615aabacb9f93.svg
+[06/Feb/2022 16:43:05] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=15&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75573
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 15 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/790d8cd4b383643b2f86da2c01c06a21.svg
+[06/Feb/2022 16:43:37] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=15&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75573
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 15 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/7295f11e941ca9cd48e625d65c10cb85.svg
+[06/Feb/2022 16:44:19] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=15&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75573
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/de249f944687e98c55030d91788a3fcf.svg
+[06/Feb/2022 19:31:49] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.35&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75239
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 15 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/c6250b6e1373f771c5f0a587d404620f.svg
+[06/Feb/2022 19:42:17] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=15&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75573
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/4cfe117fc3989ab2b352f748ab79ed2c.svg
+[07/Feb/2022 02:00:08] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75480
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/efd3e6342bda3bdf1b66a92fb2ae9eb9.svg
+[07/Feb/2022 02:06:30] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/93ec75212d5ec43ba84bc8af96e15b07.svg
+[07/Feb/2022 02:11:38] "GET /dimg_line/?uid=bfeab4a14df3269b503d2a7d8b9fd8d5&f_suffix=.dta&argu1=year&argu2=nhtemp&title=Line%20T1 HTTP/1.1" 200 68413
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 15 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/cd76bc111c7eff5b284b0475d97e59a0.svg
+[07/Feb/2022 02:14:52] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=15&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75573
+[07/Feb/2022 02:20:05] "POST /corr/ HTTP/1.1" 200 317
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/029407e620717acc8e16357d794e5dd8.svg
+[07/Feb/2022 02:22:01] "POST /dimg_density/ HTTP/1.1" 200 89
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/eab03ff5a4424f551e1b23559cda4054.svg
 /usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_bin.py:95: PlotnineWarning: 'stat_bin()' using 'bins = 19'. Pick better value with 'binwidth'.
 findfont: Font family ['SimHei'] not found. Falling back to DejaVu Sans.
 findfont: Font family ['SimHei'] not found. Falling back to DejaVu Sans.
 findfont: Font family ['SimHei'] not found. Falling back to DejaVu Sans.
-[06/Feb/2022 12:53:55] "GET /dimg_hist/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&title=AGE%20OF%20VILLAGE HTTP/1.1" 200 22496
+[07/Feb/2022 02:22:32] "GET /dimg_hist/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&title=AGE%20OF%20VILLAGE HTTP/1.1" 200 22496
+[07/Feb/2022 02:22:58] "POST /corr/ HTTP/1.1" 200 317
+[07/Feb/2022 02:26:15] "POST /corr/ HTTP/1.1" 200 317
+[07/Feb/2022 02:44:54] "POST /corr/ HTTP/1.1" 200 67
+[07/Feb/2022 02:45:31] "POST /corr/ HTTP/1.1" 200 317
+[07/Feb/2022 02:46:09] "GET /corr/ HTTP/1.1" 200 67
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/a97232614e5361af1160d94dea93b7a7.svg
-[06/Feb/2022 12:54:05] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 132169
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/af15fa10963440819c3689f4a376fabc.svg
+[07/Feb/2022 02:50:30] "GET /dimg_hetero_regress/?argu1=price.index&argu2=y&argu_type=price.index&f_suffix=.csv&height=8&segment=4.6&title=Heterogeneous%20regression%20Test2&uid=7ee5c94ee2efd348882ec472d9678d62&width=12 HTTP/1.1" 200 75410
+[07/Feb/2022 02:51:54] "GET /corr/ HTTP/1.1" 200 67
+[07/Feb/2022 02:51:58] "GET /corr/ HTTP/1.1" 200 67
+[07/Feb/2022 02:51:59] "GET / HTTP/1.1" 200 71
+[07/Feb/2022 02:52:03] "GET / HTTP/1.1" 200 71
+[07/Feb/2022 02:52:03] "GET /corr/ HTTP/1.1" 200 67
+[07/Feb/2022 03:03:55] "GET /test/ HTTP/1.1" 200 5005
+[07/Feb/2022 03:17:44] "POST /filer/ HTTP/1.1" 200 70
+[07/Feb/2022 03:18:10] "POST /filer/ HTTP/1.1" 200 70
+[07/Feb/2022 03:18:20] "POST /filer/ HTTP/1.1" 200 70
+[07/Feb/2022 03:18:27] "POST /getd/ HTTP/1.1" 200 195231
+[07/Feb/2022 03:19:05] "POST /getd/ HTTP/1.1" 200 1771
+Not Found: /getd2/
+[07/Feb/2022 03:19:19] "POST /getd2/ HTTP/1.1" 404 4063
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0709124b2f02ee3ad6da15c7f663c5d3.svg
-[06/Feb/2022 12:54:12] "GET /dimg_density_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&width=12&height=8&title=Effects%20of%20different%20dietary%20types%20on%20growth%20rate%20of%20chicks HTTP/1.1" 200 344965
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:55:25
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
-/opt/zyp/zyp/imgc.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
-
-System check identified no issues (0 silenced).
-February 06, 2022 - 12:55:29
-Django version 3.2.10, using settings 'zyp.settings'
-Starting development server at http://0.0.0.0:11112/
-Quit the server with CONTROL-C.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/85015896c137db2951c2da9d3bba49a9.svg
+[07/Feb/2022 03:23:48] "GET /dimg_regress/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu2=edu_x2&width=12&height=8&title= HTTP/1.1" 200 894879
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0854a1b0c1efb27ee67e18cd171ad921.svg
-[06/Feb/2022 12:55:37] "GET /dimg_density_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&width=12&height=8&title=Effects%20of%20different%20dietary%20types%20on%20growth%20rate%20of%20chicks HTTP/1.1" 200 344965
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/fcd94884f9433e65066bbdcacf5095cd.svg
+[07/Feb/2022 03:27:06] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
 /usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/3e4d77639203a244549b6c5cf37158e9.svg
-[06/Feb/2022 12:56:18] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=12&height=8&title=Test1 HTTP/1.1" 200 73553
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
-/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/12409fcb68a38fdccca3626b1305f81c.svg
-[06/Feb/2022 12:57:54] "GET /dimg_density_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&width=12&height=8&title=Effects%20of%20different%20dietary%20types%20on%20growth%20rate%20of%20chicks HTTP/1.1" 200 344965
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/7bea5c1c411b1c18298377c1feac85e4.svg
+[07/Feb/2022 03:27:42] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
