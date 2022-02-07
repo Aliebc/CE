@@ -44,7 +44,8 @@ def get_file_data(request):
                 uid=rp['uid']
                 f_suffix=rp['f_suffix']
             except:
-                return JsonResponse(ce.ret(-1,None,"Error(#1:Format)."))
+                uid=request.POST.get('uid',default=None)
+                f_suffix=request.POST.get('f_suffix',default=None)
         else:
             try:
                 uid=request.GET.get('uid',default=None)

@@ -2,12 +2,12 @@ import os
 import re
 import time
 import json
-import math
 from pandas import DataFrame
 import hashlib
 import pathlib
 import pandas as pd
 import numpy as npy
+import scipy.stats as st
 from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
 from . import ce
 from . import filer
@@ -25,13 +25,14 @@ def dsummary(request):
 def dcorr(request):
     try:
         dta=filer.get_file_data(request)
-        #argu1=json.loads(request.body)['argu1']
-        #argu2=json.loads(request.body)['argu2']
+        argu1=json.loads(request.body)['argu1']
+        argu2=json.loads(request.body)['argu2']
+        c2=st.pearsonr(dta[argu1],dta[argu2])
         cord=DataFrame(dta).corr()
         d=cord.to_json()
     except:
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
-    return JsonResponse(ce.ret(0,json.loads(d),None))
+    return JsonResponse(ce.ret(0,{"CorrMartix":json.loads(d),"Significance":c2},None))
 
 def dtype(request):
     try:
