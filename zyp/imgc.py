@@ -6,6 +6,7 @@ import json
 import math
 import hashlib
 import pathlib
+from urllib import request
 import pandas as pd
 import numpy as npy
 from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
@@ -27,13 +28,22 @@ def sav_svg(img,width,height):
     return img_uid
 
 
-def sav_and_ret_svg(img,width,height):
+def sav_and_ret_svg(img,width,height,request=None):
     img_uid=str(hashlib.md5((str(time.time())).encode("utf-8")).hexdigest())
     f_name=img_uid+".svg"
     img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
     img_file=open(os.path.join(image_path,f_name),'r')
     img_cont=img_file.readline()+right+"<!--Image tuid:"+img_uid+"-->\n"+img_file.read()
-    res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
+    if request:
+        try:
+            if request.GET.get('dl',default=None)=='1':
+                res=HttpResponse(img_cont,headers={'Content-Type':'application/octet-stream','image-tuid':img_uid,"Content-Disposition":"attachment ;filename="+img_uid+".svg"})
+            else:
+                res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
+        except:
+            res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
+    else:
+        res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
     return res
 
 def ret_svg_tuid(request):
@@ -55,7 +65,7 @@ def density(request):
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
         img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title))
-        return sav_and_ret_svg(img_density,width,height)
+        return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
         try:
             dta=filer.get_file_data(request)
@@ -67,7 +77,7 @@ def density(request):
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
         img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title))
         return JsonResponse(ce.ret(0,{'tuid':sav_svg(img_density,width,height)},None))
-        return sav_and_ret_svg(img_density,width,height)
+        return sav_and_ret_svg(img_density,width,height,request)
     else:
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
 
@@ -83,7 +93,7 @@ def hist(request):
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
         img_density=(ggplot(dta,aes(x=argu1))+geom_histogram()+ggtitle(title)+theme(text=element_text(family='SimHei')))
-        return sav_and_ret_svg(img_density,width,height)
+        return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
     else:
@@ -107,7 +117,7 @@ def hetero_density(request):
             img_density=(ggplot(dta2,aes(x=argu1,colour=argu_type+'_type'))+geom_density()+ggtitle(title))
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
-        return sav_and_ret_svg(img_density,width,height)
+        return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
     else:
@@ -125,7 +135,7 @@ def type_density(request):
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
         img_density=(ggplot(dta,aes(x=argu1,colour=argu2))+geom_density()+ggtitle(title))
-        return sav_and_ret_svg(img_density,width,height)
+        return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
     else:
@@ -150,7 +160,7 @@ def type_regress(request):
             img_density=(ggplot(dta2,aes(x=argu1,y=argu2,colour=argu_type+'_type'))+geom_smooth(method='lm')+geom_point()+ggtitle(title))
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
-        return sav_and_ret_svg(img_density,width,height)
+        return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
     else:
@@ -162,7 +172,7 @@ def two_reg(request):
             dta=filer.get_file_data(request)
             argu1=request.GET.get('argu1',default=None)
             argu2=request.GET.get('argu2',default=None)
-            title=request.GET.get('title',default=str("Density of "+argu1))
+            title=request.GET.get('title',default=str("Regression of "+argu2+" ~ "+argu1))
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except:
@@ -171,7 +181,7 @@ def two_reg(request):
             img_density=(ggplot(dta,aes(x=argu1,y=argu2))+geom_smooth(method='lm')+geom_point(fill='blue')+ggtitle(title))
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
-        return sav_and_ret_svg(img_density,width,height)
+        return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
     else:
@@ -183,7 +193,7 @@ def two_line(request):
             dta=filer.get_file_data(request)
             argu1=request.GET.get('argu1',default=None)
             argu2=request.GET.get('argu2',default=None)
-            title=request.GET.get('title',default=str("Density of "+argu1))
+            title=request.GET.get('title',default=str("Broken line of "+argu2+" ~ "+argu1))
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except:
@@ -192,7 +202,7 @@ def two_line(request):
             img_density=(ggplot(dta,aes(x=argu1,y=argu2))+geom_line()+geom_point(fill='blue')+ggtitle(title))
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
-        return sav_and_ret_svg(img_density,width,height)
+        return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
     else:
@@ -204,7 +214,7 @@ def type_bar(request):
             dta=filer.get_file_data(request)
             argu1=request.GET.get('argu1',default=None)
             argu2=request.GET.get('argu2',default=None)
-            title=request.GET.get('title',default=str("Density of "+argu1))
+            title=request.GET.get('title',default=str("Bar of mean("+argu1+") with type of "+argu2))
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except:
@@ -214,7 +224,7 @@ def type_bar(request):
         dta2['errbar_max']=dta2[argu1]+dta3[argu1]
         dta2['errbar_min']=dta2[argu1]-dta3[argu1]
         img_density=(ggplot(dta2,aes(x=argu2,y=argu1,fill=argu2))+geom_bar(stat = 'identity')+geom_errorbar(aes(ymax='errbar_max',ymin='errbar_min'))+ggtitle(title))
-        return sav_and_ret_svg(img_density,width,height)
+        return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
     else:

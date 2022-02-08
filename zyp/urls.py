@@ -41,4 +41,6 @@ urlpatterns = [
     path('dimg_line/',imgc.two_line),
     path('dimg_bar_type/',imgc.type_bar),
     path('test/',ce.test),
+    path('ols/',datac.ols),
+    path('getf/',filer.ret_file),
 ]

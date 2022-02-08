@@ -112,3 +112,19 @@ def getd(request):
 def imgtest(request):
     sv=open("/opt/test/t2.svg","r").read()
     return HttpResponse(sv,content_type="image/svg+xml")
+
+def ret_file(request):
+    try:
+        if request.method == 'POST':
+            rp=json.loads(request.body)
+            uid=rp['uid']
+            f_suffix=rp['f_suffix']
+        elif request.method == 'GET':
+            uid=request.GET.get('uid')
+            f_suffix=request.GET.get('f_suffix')
+        f_name=str(uid)+str(f_suffix)
+        f_path=os.path.join(file_dir_path,f_name)
+        f_cont=open(f_path,'rb').read()
+    except:
+        return JsonResponse(ce.ret(-1,None,"Error(#1):Type"))
+    return HttpResponse(f_cont,headers={'Content-Type':'application/octet-stream',"Content-Disposition":"attachment ;filename="+f_name})

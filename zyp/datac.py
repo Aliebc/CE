@@ -12,6 +12,7 @@ from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
 from . import ce
 from . import filer
 from numpy import mean, median, var, std
+import statsmodels.api as sm
 
 def dsummary(request):
     try:
@@ -83,3 +84,34 @@ def heter_compare_apply(value,y,c_name):
 def heter_compare_df(df,col_name,s):
     df.loc[:,col_name+'_type']=df[col_name].apply(heter_compare_apply,y=s,c_name=col_name)
     return df
+
+#By Andy at 2022/2/7 17:30
+#Modified By Aliebc at 2022/2/7 17:50
+
+def ols(request):
+    try:
+        dta = filer.get_file_data(request)
+        argu1=json.loads(request.body)['argu1']
+        argu2=json.loads(request.body)['argu2']
+        x=sm.add_constant(dta[argu1])
+        model = sm.OLS(dta[argu2], x)
+        results = model.fit()
+        pvals = results.pvalues
+        coeff = results.params
+        conf_lower = results.conf_int()[0]
+        conf_higher = results.conf_int()[1]
+        r2 = results.rsquared
+        r2adj = results.rsquared_adj
+
+        results_df = pd.DataFrame({"pvals":pvals,
+                                "coeff":coeff,
+                                "conf_lower":conf_lower,
+                                "conf_higher":conf_higher,
+                                "r_squared":r2,
+                                "r_squared_adj":r2adj
+                                    })
+    #Reordering...
+        results_df = results_df[["r_squared","r_squared_adj","coeff","pvals","conf_lower","conf_higher"]]
+    except:
+        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+    return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json())},None))
