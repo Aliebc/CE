@@ -199,7 +199,7 @@ def two_line(request):
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
         try:
-            img_density=(ggplot(dta,aes(x=argu1,y=argu2))+geom_line()+geom_point(fill='blue')+ggtitle(title))
+            img_density=(ggplot(dta,aes(x=argu1,y=argu2,group=1))+geom_line()+geom_point(fill='blue')+ggtitle(title))
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
         return sav_and_ret_svg(img_density,width,height,request)

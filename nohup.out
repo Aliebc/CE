@@ -3299,3 +3299,2526 @@ Not Found: /getf/uid=40052a872a323cf2df3bdffb733dae8a&f_suffix=.dta&argu1=&argu2
 [08/Feb/2022 14:41:33] "OPTIONS /filer/ HTTP/1.1" 200 76
 [08/Feb/2022 14:41:33] "POST /filer/ HTTP/1.1" 200 173
 [08/Feb/2022 14:41:33] "POST /getd/ HTTP/1.1" 200 2800
+[08/Feb/2022 14:48:48] "GET /getf/?uid=b1253059624448495745af4f5f7aa67e&f_suffix=.dta&argu1=weight&argu2=feed&count=&argu_type=&segment= HTTP/1.1" 200 2942
+[09/Feb/2022 00:05:03] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 00:05:04] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 00:05:04] "POST /getd/ HTTP/1.1" 200 242
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/c0906b2290566b788c5f045ed11ca0ff.svg
+[09/Feb/2022 00:05:59] "GET /dimg_regress/?uid=0abf374d78790fce500c1f9624364481&f_suffix=.xlsx&argu1=Distance&argu2=Force&count=&argu_type=&segment= HTTP/1.1" 200 30848
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/369987de34c75a8b7d66c90cb5f13a8f.svg
+[09/Feb/2022 00:06:12] "GET /dimg_regress/?uid=0abf374d78790fce500c1f9624364481&f_suffix=.xlsx&argu1=Distance&argu2=Force&count=&argu_type=&segment=&dl=1 HTTP/1.1" 200 30848
+[09/Feb/2022 00:07:43] "GET /getf/?uid=0abf374d78790fce500c1f9624364481&f_suffix=.xlsx&argu1=Distance&argu2=Force&count=&argu_type=&segment= HTTP/1.1" 200 5005
+[09/Feb/2022 00:07:57] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 00:07:57] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 00:07:57] "POST /getd/ HTTP/1.1" 200 242
+[09/Feb/2022 00:08:01] "GET /getf/?uid=f61fc22d3641b41488d6767fbc4f681e&f_suffix=.xlsx&argu1=&argu2=&count=&argu_type=&segment= HTTP/1.1" 200 5005
+[09/Feb/2022 00:14:49] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 00:14:49] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 00:14:49] "POST /getd/ HTTP/1.1" 200 1979
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/1e3c169d9d2f0c3fe6fdc1442b6cd806.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py:401: PlotnineWarning: geom_errorbar : Removed 60 rows containing missing values.
+[09/Feb/2022 00:15:46] "GET /dimg_bar_type/?uid=87d840f959b11c1d98b6fcfbe3bf0aa0&f_suffix=.dta&argu1=nhtemp&argu2=year&count=&argu_type=&segment= HTTP/1.1" 200 163518
+[09/Feb/2022 01:15:25] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 01:15:25] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 01:15:25] "POST /getd/ HTTP/1.1" 200 242
+[09/Feb/2022 01:24:28] "POST /getd/ HTTP/1.1" 200 67
+[09/Feb/2022 01:24:39] "POST /getd/ HTTP/1.1" 200 67
+[09/Feb/2022 03:06:11] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 03:06:11] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 03:06:11] "POST /getd/ HTTP/1.1" 200 1979
+[09/Feb/2022 04:36:51] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 04:36:51] "POST /filer/ HTTP/1.1" 200 170
+[09/Feb/2022 04:36:51] "POST /getd/ HTTP/1.1" 200 341
+[09/Feb/2022 04:37:46] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=year&argu2=rate&width=&height=&title= HTTP/1.1" 200 66
+[09/Feb/2022 04:37:48] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=year&argu2=rate&width=&height=&title= HTTP/1.1" 200 66
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/2844fcbe9833f3870791a9be2f801bb1.svg
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 217, in evaluate
+    new_val = env.eval(col, inner_namespace=data)
+  File "/usr/local/python3/lib/python3.6/site-packages/patsy/eval.py", line 166, in eval
+    + self._namespaces))
+  File "<string>", line 1, in <module>
+NameError: name 'year' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 205, in two_line
+    return sav_and_ret_svg(img_density,width,height,request)
+  File "/opt/zyp/zyp/imgc.py", line 34, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 293, in _build
+    layers.compute_aesthetics(self)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 69, in compute_aesthetics
+    l.compute_aesthetics(plot)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 301, in compute_aesthetics
+    evaled = evaluate(self.mapping._starting, self.data, plot.environment)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 220, in evaluate
+    _TPL_EVAL_FAIL.format(ae, col, str(e)))
+plotnine.exceptions.PlotnineError: "Could not evaluate the 'x' mapping: 'year' (original error: name 'year' is not defined)"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py", line 76, in __call__
+    return self.application(environ, start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 130, in get_response
+    response = self._middleware_chain(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+[09/Feb/2022 04:37:52] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=year&argu2=rate HTTP/1.1" 500 59
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/2a63c0b83c6b89f4344eaebc67a46df7.svg
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 217, in evaluate
+    new_val = env.eval(col, inner_namespace=data)
+  File "/usr/local/python3/lib/python3.6/site-packages/patsy/eval.py", line 166, in eval
+    + self._namespaces))
+  File "<string>", line 1, in <module>
+NameError: name 'year' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 205, in two_line
+    return sav_and_ret_svg(img_density,width,height,request)
+  File "/opt/zyp/zyp/imgc.py", line 34, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 293, in _build
+    layers.compute_aesthetics(self)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 69, in compute_aesthetics
+    l.compute_aesthetics(plot)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 301, in compute_aesthetics
+    evaled = evaluate(self.mapping._starting, self.data, plot.environment)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 220, in evaluate
+    _TPL_EVAL_FAIL.format(ae, col, str(e)))
+plotnine.exceptions.PlotnineError: "Could not evaluate the 'x' mapping: 'year' (original error: name 'year' is not defined)"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py", line 76, in __call__
+    return self.application(environ, start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 130, in get_response
+    response = self._middleware_chain(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+[09/Feb/2022 04:37:55] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=year&argu2=rate HTTP/1.1" 500 59
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/349f0df07863878e24d1e12451e8f267.svg
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 217, in evaluate
+    new_val = env.eval(col, inner_namespace=data)
+  File "/usr/local/python3/lib/python3.6/site-packages/patsy/eval.py", line 166, in eval
+    + self._namespaces))
+  File "<string>", line 1, in <module>
+NameError: name 'year' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 205, in two_line
+    return sav_and_ret_svg(img_density,width,height,request)
+  File "/opt/zyp/zyp/imgc.py", line 34, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 293, in _build
+    layers.compute_aesthetics(self)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 69, in compute_aesthetics
+    l.compute_aesthetics(plot)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 301, in compute_aesthetics
+    evaled = evaluate(self.mapping._starting, self.data, plot.environment)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 220, in evaluate
+    _TPL_EVAL_FAIL.format(ae, col, str(e)))
+plotnine.exceptions.PlotnineError: "Could not evaluate the 'x' mapping: 'year' (original error: name 'year' is not defined)"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py", line 76, in __call__
+    return self.application(environ, start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 130, in get_response
+    response = self._middleware_chain(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+[09/Feb/2022 04:37:56] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=year&argu2=rate HTTP/1.1" 500 59
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/eaf1a4aac8c2306f8b69ad0c2821749b.svg
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 217, in evaluate
+    new_val = env.eval(col, inner_namespace=data)
+  File "/usr/local/python3/lib/python3.6/site-packages/patsy/eval.py", line 166, in eval
+    + self._namespaces))
+  File "<string>", line 1, in <module>
+NameError: name 'year' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 205, in two_line
+    return sav_and_ret_svg(img_density,width,height,request)
+  File "/opt/zyp/zyp/imgc.py", line 34, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 293, in _build
+    layers.compute_aesthetics(self)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 69, in compute_aesthetics
+    l.compute_aesthetics(plot)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 301, in compute_aesthetics
+    evaled = evaluate(self.mapping._starting, self.data, plot.environment)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 220, in evaluate
+    _TPL_EVAL_FAIL.format(ae, col, str(e)))
+plotnine.exceptions.PlotnineError: "Could not evaluate the 'x' mapping: 'year' (original error: name 'year' is not defined)"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py", line 76, in __call__
+    return self.application(environ, start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 130, in get_response
+    response = self._middleware_chain(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+[09/Feb/2022 04:38:06] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=year&argu2=rate&width=12&height=8 HTTP/1.1" 500 59
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/338a44cfce0657bdab83d158540c53ac.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py:401: PlotnineWarning: geom_errorbar : Removed 5 rows containing missing values.
+[09/Feb/2022 04:38:32] "GET /dimg_bar_type/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=rate&argu2=time&count=&argu_type=&segment= HTTP/1.1" 200 35041
+/opt/zyp/zyp/imgc.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 04:45:33
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/d1c8dc28bf2763cf3c3b98f191694030.svg
+[09/Feb/2022 04:45:34] "GET /dimg_line/?uid=bfeab4a14df3269b503d2a7d8b9fd8d5&f_suffix=.dta&argu1=year&argu2=nhtemp&title=Line%20T1 HTTP/1.1" 200 68413
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/145a8c4d94985bd104f38ac39556eb82.svg
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 217, in evaluate
+    new_val = env.eval(col, inner_namespace=data)
+  File "/usr/local/python3/lib/python3.6/site-packages/patsy/eval.py", line 166, in eval
+    + self._namespaces))
+  File "<string>", line 1, in <module>
+NameError: name 'year' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 205, in two_line
+    return sav_and_ret_svg(img_density,width,height,request)
+  File "/opt/zyp/zyp/imgc.py", line 34, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 293, in _build
+    layers.compute_aesthetics(self)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 69, in compute_aesthetics
+    l.compute_aesthetics(plot)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 301, in compute_aesthetics
+    evaled = evaluate(self.mapping._starting, self.data, plot.environment)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 220, in evaluate
+    _TPL_EVAL_FAIL.format(ae, col, str(e)))
+plotnine.exceptions.PlotnineError: "Could not evaluate the 'x' mapping: 'year' (original error: name 'year' is not defined)"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py", line 76, in __call__
+    return self.application(environ, start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 130, in get_response
+    response = self._middleware_chain(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+[09/Feb/2022 04:45:40] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=year&argu2=rate&width=12&height=8 HTTP/1.1" 500 59
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/fcda60c1815eefe9ead215c80594a516.svg
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 217, in evaluate
+    new_val = env.eval(col, inner_namespace=data)
+  File "/usr/local/python3/lib/python3.6/site-packages/patsy/eval.py", line 166, in eval
+    + self._namespaces))
+  File "<string>", line 1, in <module>
+NameError: name 'year' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 205, in two_line
+    return sav_and_ret_svg(img_density,width,height,request)
+  File "/opt/zyp/zyp/imgc.py", line 34, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 293, in _build
+    layers.compute_aesthetics(self)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 69, in compute_aesthetics
+    l.compute_aesthetics(plot)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 301, in compute_aesthetics
+    evaled = evaluate(self.mapping._starting, self.data, plot.environment)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 220, in evaluate
+    _TPL_EVAL_FAIL.format(ae, col, str(e)))
+plotnine.exceptions.PlotnineError: "Could not evaluate the 'x' mapping: 'year' (original error: name 'year' is not defined)"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py", line 76, in __call__
+    return self.application(environ, start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 130, in get_response
+    response = self._middleware_chain(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+[09/Feb/2022 04:45:42] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=year&argu2=rate&width=12&height=8 HTTP/1.1" 500 59
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/23a880647efd923878f358f9b0f8d0dc.svg
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 217, in evaluate
+    new_val = env.eval(col, inner_namespace=data)
+  File "/usr/local/python3/lib/python3.6/site-packages/patsy/eval.py", line 166, in eval
+    + self._namespaces))
+  File "<string>", line 1, in <module>
+NameError: name 'year' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 205, in two_line
+    return sav_and_ret_svg(img_density,width,height,request)
+  File "/opt/zyp/zyp/imgc.py", line 34, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 293, in _build
+    layers.compute_aesthetics(self)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 69, in compute_aesthetics
+    l.compute_aesthetics(plot)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 301, in compute_aesthetics
+    evaled = evaluate(self.mapping._starting, self.data, plot.environment)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 220, in evaluate
+    _TPL_EVAL_FAIL.format(ae, col, str(e)))
+plotnine.exceptions.PlotnineError: "Could not evaluate the 'x' mapping: 'year' (original error: name 'year' is not defined)"
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/deprecation.py", line 117, in __call__
+    response = response or self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/wsgiref/handlers.py", line 137, in run
+    self.result = application(self.environ, self.start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/contrib/staticfiles/handlers.py", line 76, in __call__
+    return self.application(environ, start_response)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/wsgi.py", line 133, in __call__
+    response = self.get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 130, in get_response
+    response = self._middleware_chain(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 49, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 114, in response_for_exception
+    response = handle_uncaught_exception(request, get_resolver(get_urlconf()), sys.exc_info())
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 149, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 57, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 345, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 275, in get_traceback_data
+    frames = self.get_traceback_frames()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 437, in get_traceback_frames
+    frames.extend(self.get_exception_traceback_frames(exc_value, tb))
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 482, in get_exception_traceback_frames
+    'vars': self.filter.get_traceback_frame_variables(self.request, tb.tb_frame),
+  File "/usr/local/python3/lib/python3.6/site-packages/django/views/debug.py", line 231, in get_traceback_frame_variables
+    for name, value in tb_frame.f_locals.items():
+AttributeError: 'VarLookupDict' object has no attribute 'items'
+[09/Feb/2022 05:00:17] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=year&argu2=rate&width=12&height=8 HTTP/1.1" 500 59
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/d4d896b60b367518333402e8508b9ec4.svg
+[09/Feb/2022 05:00:24] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=time&argu2=rate&width=12&height=8 HTTP/1.1" 200 30664
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/77a86edd9483b0ad559d5dabaa6de719.svg
+[09/Feb/2022 05:00:33] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=time&argu2=rate&width=12&height=8 HTTP/1.1" 200 30664
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/7ab886284fc80165e525aa1c055806cb.svg
+[09/Feb/2022 05:01:16] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=time&argu2=rate&width=12&height=8 HTTP/1.1" 200 30664
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/812ed187fb77940b23c0284ad89bd2c9.svg
+[09/Feb/2022 05:01:23] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=time&argu2=rate&width=12&height=8&title=Gross%20profit%20rate%20of%20600320.SH HTTP/1.1" 200 33575
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/5c21b8df2f05f74b373aa60cf3f26f1f.svg
+[09/Feb/2022 05:01:39] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=time&argu2=rate&width=12&height=8&title=Gross%20profit%20rate%20of%20600320.SH HTTP/1.1" 200 33575
+[09/Feb/2022 07:29:29] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 07:29:29] "POST /filer/ HTTP/1.1" 200 173
+[09/Feb/2022 07:29:29] "POST /getd/ HTTP/1.1" 200 2800
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/5848af0016bcea9b8025d1212c932ad1.svg
+[09/Feb/2022 07:29:37] "GET /dimg_bar_type/?uid=e060fb20b56226dbcc8b31fe05166a0c&f_suffix=.dta&argu1=weight&argu2=feed&count=&argu_type=&segment= HTTP/1.1" 200 44487
+[09/Feb/2022 07:29:46] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 07:29:46] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 07:29:46] "POST /getd/ HTTP/1.1" 200 341
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/8400214c5242831307fd6a9e64f6de90.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_smooth.py:206: PlotnineWarning: Smoothing requires 2 or more points. Got 1. Not enough points for smoothing. If this message a surprise, make sure the column mapped to the x aesthetic has the right dtype.
+[09/Feb/2022 07:30:08] "GET /dimg_regress/?uid=27215be5abf17f1f4af58429b1fc028e&f_suffix=.xlsx&argu1=rate&argu2=time&count=&argu_type=&segment= HTTP/1.1" 200 32047
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/ab80b98b9b0bdf29a85e4455e17d1a00.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_smooth.py:206: PlotnineWarning: Smoothing requires 2 or more points. Got 1. Not enough points for smoothing. If this message a surprise, make sure the column mapped to the x aesthetic has the right dtype.
+[09/Feb/2022 07:30:19] "GET /dimg_regress/?uid=27215be5abf17f1f4af58429b1fc028e&f_suffix=.xlsx&argu1=time&argu2=rate&count=&argu_type=&segment= HTTP/1.1" 200 32074
+[09/Feb/2022 07:33:39] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 07:33:39] "POST /filer/ HTTP/1.1" 200 173
+[09/Feb/2022 07:33:39] "POST /getd/ HTTP/1.1" 200 2800
+[09/Feb/2022 07:35:37] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 07:35:37] "POST /filer/ HTTP/1.1" 200 173
+[09/Feb/2022 07:35:37] "POST /getd/ HTTP/1.1" 200 2800
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:23:16
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:23:38
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:24:09
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:24:39
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:24:55
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/zyp/zyp/urls.py", line 20, in <module>
+    from . import datac
+  File "/opt/zyp/zyp/datac.py", line 97
+    except:
+    ^
+IndentationError: unexpected unindent
+
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/zyp/zyp/urls.py", line 20, in <module>
+    from . import datac
+  File "/opt/zyp/zyp/datac.py", line 97
+    except:
+    ^
+IndentationError: unexpected unindent
+
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:26:06
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:26:46
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:26:49
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[09/Feb/2022 11:27:07] "POST /dtest_mean/ HTTP/1.1" 200 67
+[09/Feb/2022 11:27:09] "POST /dtest_mean/ HTTP/1.1" 200 67
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:27:32
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[09/Feb/2022 11:27:32] "POST /dtest_mean/ HTTP/1.1" 200 78
+[09/Feb/2022 11:28:35] "POST /dtest_mean/ HTTP/1.1" 200 78
+[09/Feb/2022 11:30:12] "POST /dtest_mean/ HTTP/1.1" 200 60
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:35:26
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/urls.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:35:45
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:38:36
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:38:43
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:39:28
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:39:37
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:39:47
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:40:04
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:40:13
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:40:18
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:41:10
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:41:31
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:41:34
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:42:33
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:45:13
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:45:58
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:46:07
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:46:13
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+Exception in thread django-main-thread:
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/threading.py", line 916, in _bootstrap_inner
+    self.run()
+  File "/usr/local/python3/lib/python3.6/threading.py", line 864, in run
+    self._target(*self._args, **self._kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/autoreload.py", line 64, in wrapper
+    fn(*args, **kwargs)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/commands/runserver.py", line 118, in inner_run
+    self.check(display_num_errors=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/management/base.py", line 423, in check
+    databases=databases,
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/registry.py", line 76, in run_checks
+    new_errors = check(app_configs=app_configs, databases=databases)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 13, in check_url_config
+    return check_resolver(resolver)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/checks/urls.py", line 23, in check_resolver
+    return check_method()
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 416, in check
+    for pattern in self.url_patterns:
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 602, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/utils/functional.py", line 48, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/urls/resolvers.py", line 595, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/python3/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/opt/zyp/zyp/urls.py", line 20, in <module>
+    from . import datac
+  File "/opt/zyp/zyp/datac.py", line 115
+    return JsonResponse(ce.ret(0,{'More':re1,'Less',re2}))
+                                                   ^
+SyntaxError: invalid syntax
+
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:46:47
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:46:56
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[09/Feb/2022 11:47:55] "POST /dimg_hetero_corr/ HTTP/1.1" 200 67
+[09/Feb/2022 11:47:57] "POST /dimg_hetero_corr/ HTTP/1.1" 200 67
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 11:49:27
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[09/Feb/2022 11:49:28] "POST /dimg_hetero_corr/ HTTP/1.1" 200 150
+[09/Feb/2022 11:49:33] "POST /dimg_hetero_corr/ HTTP/1.1" 200 150
+[09/Feb/2022 11:49:37] "POST /dimg_hetero_corr/ HTTP/1.1" 200 150
+[09/Feb/2022 11:50:00] "POST /dimg_hetero_corr/ HTTP/1.1" 200 150
+[09/Feb/2022 11:52:29] "POST /dtype/ HTTP/1.1" 200 467
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/37240ce4275ea5bfff4fc986e51c0ac5.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_bin.py:95: PlotnineWarning: 'stat_bin()' using 'bins = 19'. Pick better value with 'binwidth'.
+findfont: Font family ['SimHei'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['SimHei'] not found. Falling back to DejaVu Sans.
+findfont: Font family ['SimHei'] not found. Falling back to DejaVu Sans.
+[09/Feb/2022 11:54:13] "GET /dimg_hist/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&title=AGE%20OF%20VILLAGE HTTP/1.1" 200 22496
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/fc51ef4130989a61286247a1d20bb98d.svg
+[09/Feb/2022 11:56:34] "GET /dimg_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&width=12&height=8&title=Test1 HTTP/1.1" 200 73553
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/12639079123b1bfa9d65b23f4f334e08.svg
+[09/Feb/2022 11:56:51] "GET /dimg_line/?uid=bfeab4a14df3269b503d2a7d8b9fd8d5&f_suffix=.dta&argu1=year&argu2=nhtemp&title=Line%20T1 HTTP/1.1" 200 68413
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/b031d514f396af88a2b74764e7efde39.svg
+[09/Feb/2022 11:56:54] "GET /dimg_line/?uid=e7aa53ece8ac4043701e51741438c682&f_suffix=.xlsx&argu1=time&argu2=rate&width=12&height=8&title=Gross%20profit%20rate%20of%20600320.SH HTTP/1.1" 200 33575
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/61c8f5c5c205c54059fca5c239405588.svg
+[09/Feb/2022 11:57:03] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 58112
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/946ad852f40224f3f331839b21394b8b.svg
+[09/Feb/2022 11:57:15] "GET /dimg_density_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&width=12&height=8&title=Effects%20of%20different%20dietary%20types%20on%20growth%20rate%20of%20chicks HTTP/1.1" 200 344965
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/258877305b760b2e078b8f7084c76b3a.svg
+[09/Feb/2022 11:57:25] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/62bedab8bcc3979213283cd81899d31d.svg
+[09/Feb/2022 11:57:35] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 132169
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/1c50ebba5f50cd315fb19d3d77ff43bf.svg
+[09/Feb/2022 11:57:44] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75480
+[09/Feb/2022 12:02:12] "POST /dimg_hetero_corr/ HTTP/1.1" 200 150
+[09/Feb/2022 12:02:30] "POST /dimg_hetero_corr/ HTTP/1.1" 200 119
+[09/Feb/2022 12:02:40] "POST /dimg_hetero_corr/ HTTP/1.1" 200 150
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/5c1d132c57003bf5fa910a0ec611a174.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_bin.py:95: PlotnineWarning: 'stat_bin()' using 'bins = 19'. Pick better value with 'binwidth'.
+[09/Feb/2022 12:02:55] "GET /dimg_hist/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&title=AGE%20OF%20VILLAGE HTTP/1.1" 200 22496
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/caf151697adc5ad7863867f991119a05.svg
+[09/Feb/2022 12:04:05] "GET /dimg_density_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&width=12&height=8&title=Effects%20of%20different%20dietary%20types%20on%20growth%20rate%20of%20chicks HTTP/1.1" 200 344965
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0c38b054b3ff2d2828b597e769bc1585.svg
+[09/Feb/2022 12:04:24] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/71d2f62223c0d2ed79781776eeede3fe.svg
+[09/Feb/2022 12:05:18] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/4a53928d1e12c2c87384a32c8b599032.svg
+[09/Feb/2022 12:05:28] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1&dl=1 HTTP/1.1" 200 41512
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/bb86984765593c8534dea8304965c76a.svg
+[09/Feb/2022 12:06:40] "GET /dimg_line/?uid=bfeab4a14df3269b503d2a7d8b9fd8d5&f_suffix=.dta&argu1=year&argu2=nhtemp&title=Line%20T1 HTTP/1.1" 200 68413
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/b1522886ee514c479a8c1bcdddb23cac.svg
+[09/Feb/2022 12:06:55] "GET /dimg_line/?uid=bfeab4a14df3269b503d2a7d8b9fd8d5&f_suffix=.dta&argu1=year&argu2=nhtemp&title=Line%20T1&dl=1 HTTP/1.1" 200 68413
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/f682b9c312e38d519d9c324f7dbb5dec.svg
+[09/Feb/2022 12:07:46] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1 HTTP/1.1" 200 58112
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0e69b4c188f636f4b786bd3324b4e7c0.svg
+[09/Feb/2022 12:08:04] "GET /dimg_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&width=12&height=8&title=Reg%20Test1&dl=1 HTTP/1.1" 200 58112
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0384d811a889cc8cb8c0a708761ca245.svg
+[09/Feb/2022 12:09:40] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test HTTP/1.1" 200 132169
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/9a4da7cd2e704128c00e811c198b4ada.svg
+[09/Feb/2022 12:09:51] "GET /dimg_hetero_density/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=edu_x1&argu_type=AGE&segment=45&title=Heterogeneity%20analysis%20test&dl=1 HTTP/1.1" 200 132169
+[09/Feb/2022 12:11:03] "POST /dimg_hetero_corr/ HTTP/1.1" 200 150
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/c58cdce40231168e857ad0485d27cc11.svg
+[09/Feb/2022 12:12:15] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2 HTTP/1.1" 200 75480
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/08c266c68e5e20e586d7fc56446e7bc3.svg
+[09/Feb/2022 12:12:26] "GET /dimg_hetero_regress/?uid=7ee5c94ee2efd348882ec472d9678d62&f_suffix=.csv&argu1=price.index&argu2=y&segment=4.57&argu_type=price.index&width=12&height=8&title=Heterogeneous%20regression%20Test2&dl=1 HTTP/1.1" 200 75480
+[09/Feb/2022 12:13:36] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 12:13:36] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 12:13:36] "POST /getd/ HTTP/1.1" 200 341
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/dc260ac65d441a5678d714c26a87f164.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_bin.py:95: PlotnineWarning: 'stat_bin()' using 'bins = 19'. Pick better value with 'binwidth'.
+[09/Feb/2022 12:15:15] "GET /dimg_hist/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&title=AGE%20OF%20VILLAGE HTTP/1.1" 200 22496
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/5f741450144585d6e6e80229fcf7c5d6.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_bin.py:95: PlotnineWarning: 'stat_bin()' using 'bins = 19'. Pick better value with 'binwidth'.
+[09/Feb/2022 12:15:26] "GET /dimg_hist/?uid=8d288928ff8f90878f83dbdc290f2f77&f_suffix=.dta&argu1=AGE&title=AGE%20OF%20VILLAGE&dl=1 HTTP/1.1" 200 22496
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/b81b4481be8e3cbc0993791939e2f94f.svg
+[09/Feb/2022 12:29:56] "GET /dimg_bar_type/?uid=df386aaa0dfe3fefc30b4cc9afbecee2&f_suffix=.dta&argu1=weight&argu2=feed&title=Bar%20Test1 HTTP/1.1" 200 41512
+[09/Feb/2022 12:31:46] "POST /dtype/ HTTP/1.1" 200 467
+[09/Feb/2022 12:32:53] "POST /corr/ HTTP/1.1" 200 317
+[09/Feb/2022 12:56:52] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 12:56:52] "POST /filer/ HTTP/1.1" 200 173
+[09/Feb/2022 12:56:52] "POST /getd/ HTTP/1.1" 200 2800
+[09/Feb/2022 12:57:02] "POST /ols/ HTTP/1.1" 200 67
+[09/Feb/2022 12:57:09] "GET /getf/?uid=ab448e9c2ddf2e6077b243bed874d594&f_suffix=.dta&argu1=weight&argu2=feed&count=&argu_type=&segment= HTTP/1.1" 200 2942
+[09/Feb/2022 13:12:45] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 13:12:45] "POST /filer/ HTTP/1.1" 200 173
+[09/Feb/2022 13:12:45] "POST /getd/ HTTP/1.1" 200 2800
+[09/Feb/2022 13:12:56] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 13:12:56] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 13:12:56] "POST /getd/ HTTP/1.1" 200 5907
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/21e0f8452d34bc24565c435b9350a4c2.svg
+[09/Feb/2022 13:13:20] "GET /dimg_hetero_regress/?uid=a28a839ca9fdfbf3c539d17c301d0e20&f_suffix=.csv&argu1=lag.quarterly.revenue&argu2=y&count=&argu_type=price.index&segment=4.57 HTTP/1.1" 200 78686
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/c06d1f1bd3decc864dc64c1437ed51ad.svg
+[09/Feb/2022 13:15:00] "GET /dimg_hetero_regress/?uid=a28a839ca9fdfbf3c539d17c301d0e20&f_suffix=.csv&argu1=y&argu2=y&count=&argu_type=price.index&segment=4.57 HTTP/1.1" 200 72302
+[09/Feb/2022 13:17:08] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 13:17:08] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 13:17:08] "POST /getd/ HTTP/1.1" 200 5904
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/0e9d6fe7f4ca1677e68e15336540144e.svg
+[09/Feb/2022 13:17:34] "GET /dimg_hetero_regress/?uid=85b9c69d8abe8988560e266a512c2edb&f_suffix=.csv&argu1=lag.quarterly.revenue&argu2=y&count=&argu_type=price.index&segment=3.57 HTTP/1.1" 200 68953
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/9c8802d900b31f1210ed734c95dab05c.svg
+[09/Feb/2022 13:17:48] "GET /dimg_hetero_regress/?uid=85b9c69d8abe8988560e266a512c2edb&f_suffix=.csv&argu1=lag.quarterly.revenue&argu2=y&count=&argu_type=price.index&segment=4.57 HTTP/1.1" 200 78686
+[09/Feb/2022 13:24:45] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 13:24:45] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 13:24:45] "POST /getd/ HTTP/1.1" 200 341
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/d3d227497ccd2292451b86de6a2c6173.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py:324: PlotnineWarning: stat_density : Removed 5 rows containing non-finite values.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py:324: PlotnineWarning: stat_density : Removed 5 rows containing non-finite values.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py:324: PlotnineWarning: stat_density : Removed 5 rows containing non-finite values.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py:324: PlotnineWarning: stat_density : Removed 5 rows containing non-finite values.
+Internal Server Error: /dimg_density/
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 68, in density
+    return sav_and_ret_svg(img_density,width,height,request)
+  File "/opt/zyp/zyp/imgc.py", line 34, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 304, in _build
+    layers.compute_statistic(layout)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 73, in compute_statistic
+    l.compute_statistic(layout)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 324, in compute_statistic
+    data = self.stat.compute_layer(data, params, layout)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat.py", line 276, in compute_layer
+    return groupby_apply(data, 'PANEL', fn)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/utils.py", line 635, in groupby_apply
+    return pd.concat(lst, axis=axis, ignore_index=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/reshape/concat.py", line 284, in concat
+    sort=sort,
+  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/reshape/concat.py", line 331, in __init__
+    raise ValueError("No objects to concatenate")
+ValueError: No objects to concatenate
+[09/Feb/2022 13:24:52] "GET /dimg_density/?uid=30f9fd9a709648d966ea2bb4e0fdebe0&f_suffix=.xlsx&argu1=Unnamed:%202&width=12&height=8 HTTP/1.1" 500 110943
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/2c55e74f24bd50de3c0c835ed8ecab68.svg
+[09/Feb/2022 13:24:58] "GET /dimg_density/?uid=30f9fd9a709648d966ea2bb4e0fdebe0&f_suffix=.xlsx&argu1=rate&width=12&height=8 HTTP/1.1" 200 73801
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/365207f0f59053526efa0a265c20e160.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_density.py:153: PlotnineWarning: To compute the density of a group with only one value set the bandwidth manually. e.g `bw=0.1`
+/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_density.py:155: PlotnineWarning: Groups with fewer than 2 data points have been removed.
+[09/Feb/2022 13:25:04] "GET /dimg_density/?uid=30f9fd9a709648d966ea2bb4e0fdebe0&f_suffix=.xlsx&argu1=time&width=12&height=8 HTTP/1.1" 200 19261
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/1a7162b5724ae445fedba242180513f7.svg
+/usr/local/python3/lib/python3.6/site-packages/plotnine/stats/stat_bin.py:95: PlotnineWarning: 'stat_bin()' using 'bins = 2'. Pick better value with 'binwidth'.
+[09/Feb/2022 13:25:09] "GET /dimg_hist/?uid=30f9fd9a709648d966ea2bb4e0fdebe0&f_suffix=.xlsx&argu1=time&width=12&height=8 HTTP/1.1" 200 25806
+[09/Feb/2022 13:27:22] "POST /getd/ HTTP/1.1" 200 65
+[09/Feb/2022 13:27:26] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 13:27:26] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 13:27:26] "POST /getd/ HTTP/1.1" 200 5904
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/7e5c0d8502de1a7afcc853124890c20e.svg
+[09/Feb/2022 13:28:41] "GET /dimg_regress/?uid=0e72b153667988b0cf8bfc18cc48e962&f_suffix=.csv&argu1=lag.quarterly.revenue&argu2=y&count=&argu_type=&segment= HTTP/1.1" 200 63544
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/ff3194cd9caec70ab8c5cf50f4644d96.svg
+[09/Feb/2022 13:29:03] "GET /dimg_regress/?uid=0e72b153667988b0cf8bfc18cc48e962&f_suffix=.csv&argu1=lag.quarterly.revenue&argu2=y&count=&argu_type=&segment=&dl=1 HTTP/1.1" 200 63544
+[09/Feb/2022 13:29:29] "GET /dimg_hetero_regress/?uid=0e72b153667988b0cf8bfc18cc48e962&f_suffix=.csv&argu1=lag.quarterly.revenue&argu2=y&count=&argu_type=&segment= HTTP/1.1" 200 66
+[09/Feb/2022 13:29:34] "GET /dimg_hetero_regress/?uid=0e72b153667988b0cf8bfc18cc48e962&f_suffix=.csv&argu1=lag.quarterly.revenue&argu2=y&count=&argu_type=&segment= HTTP/1.1" 200 66
+[09/Feb/2022 13:31:16] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 13:31:16] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 13:31:16] "POST /getd/ HTTP/1.1" 200 5904
+Internal Server Error: /dimg_bar_type/
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 222, in type_bar
+    dta2=dta.groupby([argu2]).mean().reset_index()
+  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/frame.py", line 6525, in groupby
+    dropna=dropna,
+  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/groupby/groupby.py", line 533, in __init__
+    dropna=self.dropna,
+  File "/usr/local/python3/lib/python3.6/site-packages/pandas/core/groupby/grouper.py", line 786, in get_grouper
+    raise KeyError(gpr)
+KeyError: ''
+[09/Feb/2022 13:31:35] "GET /dimg_bar_type/?uid=c7b0ac96dcfed95362286d343aeec061&f_suffix=.csv&argu1=&argu2=&count=&argu_type=&segment= HTTP/1.1" 500 91543
+[09/Feb/2022 13:32:21] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 13:32:21] "POST /filer/ HTTP/1.1" 200 171
+[09/Feb/2022 13:32:21] "POST /getd/ HTTP/1.1" 200 5904
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/d6d8ab24fcc3877b2694ed60d82fc2cd.svg
+Internal Server Error: /dimg_regress/
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 217, in evaluate
+    new_val = env.eval(col, inner_namespace=data)
+  File "/usr/local/python3/lib/python3.6/site-packages/patsy/eval.py", line 164, in eval
+    code = compile(expr, source_name, "eval", self.flags, False)
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 184, in two_reg
+    return sav_and_ret_svg(img_density,width,height,request)
+  File "/opt/zyp/zyp/imgc.py", line 34, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 293, in _build
+    layers.compute_aesthetics(self)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 69, in compute_aesthetics
+    l.compute_aesthetics(plot)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 301, in compute_aesthetics
+    evaled = evaluate(self.mapping._starting, self.data, plot.environment)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 220, in evaluate
+    _TPL_EVAL_FAIL.format(ae, col, str(e)))
+plotnine.exceptions.PlotnineError: "Could not evaluate the 'x' mapping: '' (original error: unexpected EOF while parsing (<string>, line 0))"
+[09/Feb/2022 13:32:24] "GET /dimg_regress/?uid=3020c42f727d62fd44abfd5c3339288e&f_suffix=.csv&argu1=&argu2=&count=&argu_type=&segment= HTTP/1.1" 500 114816
+[09/Feb/2022 13:32:29] "GET /dimg_hetero_regress/?uid=3020c42f727d62fd44abfd5c3339288e&f_suffix=.csv&argu1=&argu2=&count=&argu_type=&segment= HTTP/1.1" 200 66
+[09/Feb/2022 13:33:50] "POST /ols/ HTTP/1.1" 200 530
+[09/Feb/2022 14:10:38] "OPTIONS /filer/ HTTP/1.1" 200 76
+[09/Feb/2022 14:10:38] "POST /filer/ HTTP/1.1" 200 173
+[09/Feb/2022 14:10:38] "POST /getd/ HTTP/1.1" 200 2800
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/9e45a966ff43a4e0ec6716bd4520c8bf.svg
+Internal Server Error: /dimg_regress/
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 217, in evaluate
+    new_val = env.eval(col, inner_namespace=data)
+  File "/usr/local/python3/lib/python3.6/site-packages/patsy/eval.py", line 164, in eval
+    code = compile(expr, source_name, "eval", self.flags, False)
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 184, in two_reg
+    return sav_and_ret_svg(img_density,width,height,request)
+  File "/opt/zyp/zyp/imgc.py", line 34, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 293, in _build
+    layers.compute_aesthetics(self)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 69, in compute_aesthetics
+    l.compute_aesthetics(plot)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 301, in compute_aesthetics
+    evaled = evaluate(self.mapping._starting, self.data, plot.environment)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 220, in evaluate
+    _TPL_EVAL_FAIL.format(ae, col, str(e)))
+plotnine.exceptions.PlotnineError: "Could not evaluate the 'x' mapping: '' (original error: unexpected EOF while parsing (<string>, line 0))"
+[09/Feb/2022 14:16:05] "GET /dimg_regress/?uid=f2b9f575580cf92e964d89a05cc34497&f_suffix=.dta&argu1=&argu2=&count=&argu_type=&segment= HTTP/1.1" 500 107506
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:725: PlotnineWarning: Saving 12 x 8 in image.
+/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py:726: PlotnineWarning: Filename: /opt/zypimg/e5556362cddc8a49431cc272866b990b.svg
+Internal Server Error: /dimg_regress/
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 217, in evaluate
+    new_val = env.eval(col, inner_namespace=data)
+  File "/usr/local/python3/lib/python3.6/site-packages/patsy/eval.py", line 164, in eval
+    code = compile(expr, source_name, "eval", self.flags, False)
+  File "<string>", line 0
+    
+    ^
+SyntaxError: unexpected EOF while parsing
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/usr/local/python3/lib/python3.6/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/opt/zyp/zyp/imgc.py", line 184, in two_reg
+    return sav_and_ret_svg(img_density,width,height,request)
+  File "/opt/zyp/zyp/imgc.py", line 34, in sav_and_ret_svg
+    img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 731, in save
+    fig, p = self.draw(return_ggplot=True)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 209, in draw
+    self._build()
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/ggplot.py", line 293, in _build
+    layers.compute_aesthetics(self)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 69, in compute_aesthetics
+    l.compute_aesthetics(plot)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/layer.py", line 301, in compute_aesthetics
+    evaled = evaluate(self.mapping._starting, self.data, plot.environment)
+  File "/usr/local/python3/lib/python3.6/site-packages/plotnine/mapping/evaluation.py", line 220, in evaluate
+    _TPL_EVAL_FAIL.format(ae, col, str(e)))
+plotnine.exceptions.PlotnineError: "Could not evaluate the 'x' mapping: '' (original error: unexpected EOF while parsing (<string>, line 0))"
+[09/Feb/2022 14:16:12] "GET /dimg_regress/?uid=f2b9f575580cf92e964d89a05cc34497&f_suffix=.dta&argu1=&argu2=&count=&argu_type=&segment= HTTP/1.1" 500 107506
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 14:29:43
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 14:30:49
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 14:31:12
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[09/Feb/2022 14:32:12] "POST /ols/ HTTP/1.1" 200 67
+[09/Feb/2022 14:32:15] "POST /ols/ HTTP/1.1" 200 67
+[09/Feb/2022 14:33:06] "POST /ols/ HTTP/1.1" 200 67
+[09/Feb/2022 14:33:07] "POST /ols/ HTTP/1.1" 200 67
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 14:33:24
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[09/Feb/2022 14:33:25] "POST /ols/ HTTP/1.1" 200 427
+[09/Feb/2022 14:33:25] "POST /ols/ HTTP/1.1" 200 427
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 14:33:35
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[09/Feb/2022 14:33:36] "POST /ols/ HTTP/1.1" 200 427
+[09/Feb/2022 14:33:37] "POST /ols/ HTTP/1.1" 200 427
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 14:33:57
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[09/Feb/2022 14:33:58] "POST /ols/ HTTP/1.1" 200 427
+[09/Feb/2022 14:33:59] "POST /ols/ HTTP/1.1" 200 427
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 14:34:24
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[09/Feb/2022 14:34:25] "POST /ols/ HTTP/1.1" 200 495
+[09/Feb/2022 14:34:26] "POST /ols/ HTTP/1.1" 200 495
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 14:34:38
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.
+[09/Feb/2022 14:34:39] "POST /ols/ HTTP/1.1" 200 556
+/opt/zyp/zyp/datac.py changed, reloading.
+Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+February 09, 2022 - 14:35:11
+Django version 3.2.10, using settings 'zyp.settings'
+Starting development server at http://0.0.0.0:11112/
+Quit the server with CONTROL-C.

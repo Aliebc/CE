@@ -11,8 +11,9 @@ import scipy.stats as st
 from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
 from . import ce
 from . import filer
-from numpy import mean, median, var, std
+from numpy import mean, median, pv, var, std
 import statsmodels.api as sm
+from scipy.stats import ttest_ind
 
 def dsummary(request):
     try:
@@ -85,6 +86,36 @@ def heter_compare_df(df,col_name,s):
     df.loc[:,col_name+'_type']=df[col_name].apply(heter_compare_apply,y=s,c_name=col_name)
     return df
 
+
+def ttest(request):
+    try:
+        dta = filer.get_file_data(request)
+        argu1=json.loads(request.body)['argu1']
+        argu2=json.loads(request.body)['argu2']
+        try:
+            pval=ttest_ind(dta[argu1],dta[argu2]).pvalue
+            return JsonResponse(ce.ret(0,{'pvalue':pval},None))
+        except:
+            return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+    except:
+        return JsonResponse(ce.ret(-1,None,"Error(#3:Req)."))
+
+def type_corr(request):
+    try:
+        dta=filer.get_file_data(request)
+        xe=json.loads(request.body)
+        argu1=xe['argu1']
+        argu2=xe['argu2']
+        argu_type=xe['argu_type']
+        segment=xe['segment']
+        dta2=dta[dta[argu_type]>segment]
+        re1=st.pearsonr(dta2[argu1],dta2[argu2])
+        dta3=dta[dta[argu_type]<=segment]
+        re2=st.pearsonr(dta3[argu1],dta3[argu2])
+        return JsonResponse(ce.ret(0,{'More':re1,'Less':re2},None))
+    except:
+        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+
 #By Andy at 2022/2/7 17:30
 #Modified By Aliebc at 2022/2/7 17:50
 
@@ -102,16 +133,20 @@ def ols(request):
         conf_higher = results.conf_int()[1]
         r2 = results.rsquared
         r2adj = results.rsquared_adj
-
+        ll = results.llf
+        f_test = results.f_test
+        fvalue = results.fvalue
         results_df = pd.DataFrame({"pvals":pvals,
                                 "coeff":coeff,
                                 "conf_lower":conf_lower,
                                 "conf_higher":conf_higher,
                                 "r_squared":r2,
-                                "r_squared_adj":r2adj
+                                "r_squared_adj":r2adj,
+                                "log_likelihood": ll,
+                                "f_statistic":fvalue
                                     })
     #Reordering...
-        results_df = results_df[["r_squared","r_squared_adj","coeff","pvals","conf_lower","conf_higher"]]
+        #results_df = results_df[["r_squared","r_squared_adj","coeff","pvals","conf_lower","conf_higher"]]
     except:
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
     return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json())},None))
