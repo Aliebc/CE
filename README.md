@@ -14,6 +14,18 @@ If you are in China, we suggest you install packages from Tsinghua University py
 ```
 python3 -m pip install numpy scipy pandas openpyxl xlrd Django plotnine -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
+Now config your path to save files and image, open the file **zyp/config.json**
+
+```
+{
+    "file_path":"/opt/zypfile",
+    "img_path":"/opt/zypimg",
+    "api_domain":"http://127.0.0.1:8000/"
+}
+```
+
+Now change the value of **file_path** and **img_path** to your custom settings(be sure you have the permission!)
+
 
 After installing the required packages, you should enter the main directory of our project which is named after **zyp**, and execute following commands.
 ```

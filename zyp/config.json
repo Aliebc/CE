@@ -1,0 +1,5 @@
+{
+    "file_path":"/opt/zypfile",
+    "img_path":"/opt/zypimg",
+    "api_domain":"http://127.0.0.1:8000/"
+}

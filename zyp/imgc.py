@@ -15,7 +15,7 @@ from . import datac
 from . import filer
 from plotnine import *
 
-image_path="/opt/zypimg"
+image_path=filer.image_path
 right="<!--This image is created by computational economics project by Aliebc, Tsinghua University(E-mail:ad_xyz@outlook.com).-->\n"
 
 def sav_svg(img,width,height):

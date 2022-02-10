@@ -10,8 +10,18 @@ import numpy as npy
 from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
 from . import ce
 
+try:
+    conf=json.loads(open('zyp/config.json','r').read())
+    file_dir_path=conf['file_path']
+    image_path=conf['img_path']
+    if(os.path.isdir(file_dir_path) and os.path.isdir(image_path)):
+        print('Load config file successfully!')
+    else:
+        raise RuntimeError("Cannot open and load the config file!")
+except:
+    raise RuntimeError("Cannot open and load the config file!")
 
-file_dir_path="/opt/zypfile"
+file_dir_path=conf['file_path']
 
 def recv_file(request):
     if request.method == 'POST':
