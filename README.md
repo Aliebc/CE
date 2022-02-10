@@ -9,6 +9,12 @@ Our project use django, so you should install **python3** and the following pack
 
 Numpy Scipy Pandas openpyxl xlrd Django plotnine matplotlib
 
+If you are in China, we suggest you install packages from Tsinghua University pypi mirrors.
+
+```
+python3 -m pip install numpy scipy pandas openpyxl xlrd Django plotnine -i https://pypi.tuna.tsinghua.edu.cn/simple/
+```
+
 After installing the required packages, you should enter the main directory of our project which is named after **zyp**, and execute following commands.
 ```
 cd zyp
