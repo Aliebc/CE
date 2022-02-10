@@ -109,7 +109,7 @@ def hetero_density(request):
             title=request.GET.get('title',default=str("Density of "+argu1))
             width=int(request.GET.get('width',default=12))
             segment=float(request.GET.get('segment',default=None))
-            height=int(request.GET.get('height',default=8))
+            height=int(request.GET.get('height',default=8))+'_type'
         except:
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
         try:

@@ -136,6 +136,7 @@ def ols(request):
         ll = results.llf
         f_test = results.f_test
         fvalue = results.fvalue
+        y=results.summary()
         results_df = pd.DataFrame({"pvals":pvals,
                                 "coeff":coeff,
                                 "conf_lower":conf_lower,
@@ -149,4 +150,4 @@ def ols(request):
         #results_df = results_df[["r_squared","r_squared_adj","coeff","pvals","conf_lower","conf_higher"]]
     except:
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
-    return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json())},None))
+    return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None))
