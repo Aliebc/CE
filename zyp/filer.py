@@ -11,7 +11,7 @@ from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
 from . import ce
 
 try:
-    conf=json.loads(open(os.path.join('zyp','config.json',encoding="utf-8"),'r').read())
+    conf=json.loads(open(os.path.join('zyp','config.json'),'r',encoding="utf-8").read())
     file_dir_path=conf['file_path']
     image_path=conf['img_path']
     if(os.path.isdir(file_dir_path) and os.path.isdir(image_path)):
