@@ -22,7 +22,7 @@ except:
     raise RuntimeError("Cannot open and load the config file!")
 
 def rend1(request):
-    htmls=open('zyp/render_main.source').read().replace('__DOMAIN__',conf['api_domain'])
+    htmls=open('zyp/render_main.html').read().replace('__DOMAIN__',conf['api_domain'])
     if request.method == 'GET':
         return HttpResponse(htmls)
     else:
