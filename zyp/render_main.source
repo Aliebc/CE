@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>计算经济学数据处理工具箱</title>
         <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.5.1/layer.min.js"></script>
+        <script src="https://www.layuicdn.com/layer-v3.5.1/layer.js"></script>
         <script>
             tesm="";
             apid={
@@ -15,7 +15,8 @@
                 "fl":"__DOMAIN__dtype/",
                 "hist":"__DOMAIN__dhist/",
                 "ols":"__DOMAIN__ols/",
-                "down":"__DOMAIN__getf/"
+                "down":"__DOMAIN__getf/",
+                "version":"__DOMAIN__version/"
             };
 
             function form2JsonString(formId) {
@@ -72,6 +73,9 @@
                         success:function(dta){
                             tstamp2=new Date().getTime();
                             callback(dta);
+                        },
+                        error:function(e){
+                            alert("请求API时发生网络类错误,请检查配置");
                         }
                 });
             }
@@ -79,7 +83,9 @@
             keys=[];
 
             function copyright(){
-                layer.open({"title":"关于","content":"CE Toolbox v0.1 alpha<br>计算经济学工具箱,此分支由AliebcX维护<br>&copy; 2021-2022 AB.X Org. All rights reserved.<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和中国大陆地区相关法律法规<hr>本项目使用的Python库:<br>Numpy Pandas Scipy Django <br> openpyxl xlrd plotnine matplotlib",area:['600px']});
+                call_api("version",function(e){
+                    layer.open({"title":"关于","content":"CE Toolbox alpha<br>计算经济学工具箱,此分支由AliebcX维护<br>&copy; 2021-2022 CE Toolbox All rights reserved.<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和中国大陆地区相关法律法规<hr>CE-API版本号:"+e['respData']['version']+"<br>API域名配置:__DOMAIN__",area:['600px']});
+                });
             }
 
             function table_init(){
@@ -146,7 +152,7 @@
                         $("body").append(`<div id='th-contextmenu' class='nav-top-option-menu'></div>`);
                         $("#th-contextmenu").css({"left":e.pageX,"top":e.pageY});
                         $("#th-contextmenu").append(`<div id='th-contextmenu-info1' class='nav-top-option-menu-in'>当前列:${$(e.target).attr('table-main-th-key')}</div><div id='th-contextmenu-info2' class='nav-top-option-menu-in'>类型:${$(e.target).attr('table-main-th-type')}</div><hr>`);
-                        $("#th-contextmenu").append(`<div id='th-contextmenu-summary' class='nav-top-option-menu-in'>描述性统计</div>`);
+                        $("#th-contextmenu").append(`<div id='th-contextmenu-summary' class='nav-top-option-menu-in' menu-key='${$(e.target).attr('table-main-th-key')}'>描述性统计</div>`);
                         $("#th-contextmenu").append(`<div id='th-contextmenu-type' class='nav-top-option-menu-in'>分类统计</div><hr>`);
                         $("#th-contextmenu").append(`<div id='th-contextmenu-ImgDensity' img-api='dimg_density' class='nav-top-option-menu-in' menu-key='${$(e.target).attr('table-main-th-key')}'>概率密度图</div>`);
                         $("#th-contextmenu").append(`<div id='th-contextmenu-ImgHist' img-api='dimg_hist' class='nav-top-option-menu-in' menu-key='${$(e.target).attr('table-main-th-key')}'>直方图</div>`);
@@ -155,6 +161,22 @@
                         $("#th-contextmenu-ImgDensity,#th-contextmenu-ImgHist").click(function(e){
                             $("#argu1").val($(e.target).attr('menu-key'));
                             call_img($(e.target).attr('img-api'));
+                        });
+
+                        $("#th-contextmenu-summary").click(function(e){
+                            $("#argu1").val($(e.target).attr('menu-key'));
+                            call_api("summary",function(e){
+                                if(e['respCode']!=0){
+                                    layer.msg(e['errMsg']);
+                                }else{
+                                    cons_t="";
+                                    for(key3 in e['respData']){
+                                        cons_t+=`${key3}:${e['respData'][key3]}<br>`;
+                                    }
+                                    layer.open({title:"描述性统计结果",content:cons_t});
+                                }
+                                
+                            });
                         });
 
                     });
@@ -364,7 +386,7 @@
                                             }
                                             //$("#nav-left-menu").html(`OLS分析结果<br>${estr}`);
                                             layer.close(index);
-                                            layer.open({"title":"OLS分析结果","content":e['respData']['s_text'].replace(/\n/g,"<br>").replace(/ /g,"&nbsp;"),"area":['80%']});
+                                            layer.open({"title":"OLS分析结果","content":e['respData']['s_text'].replace(/\n/g,"<br>").replace(/ /g,"&nbsp;"),"area":['80%','100%']});
                                         }else{
                                             layer.msg(e['errMsg']);
                                         }
