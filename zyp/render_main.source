@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>计算经济学数据处理工具箱</title>
+        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/layer/3.5.1/layer.min.js"></script>
+        <script>
+            tesm="";
+            apid={
+                "yl":"__DOMAIN__getd/",
+                "summary":"__DOMAIN__dsummary/",
+                "hgt":"__DOMAIN__lm3/",
+                "corr":"__DOMAIN__corr/",
+                "fl":"__DOMAIN__dtype/",
+                "hist":"__DOMAIN__dhist/",
+                "ols":"__DOMAIN__ols/",
+                "down":"__DOMAIN__getf/"
+            };
+
+            function form2JsonString(formId) {
+                var paramArray = $('#' + formId).serializeArray();  
+                var jsonObj={};  
+                $(paramArray).each(function(){  
+                    jsonObj[this.name]=this.value;  
+                });  
+                return JSON.stringify(jsonObj);
+            }
+
+            function toggleFullScreen() {
+                if (!document.fullscreenElement && // alternative standard method
+                    !document.mozFullScreenElement && !document.webkitFullscreenElement) {// current working methods
+                    if (document.documentElement.requestFullscreen) {
+                        document.documentElement.requestFullscreen();
+                    } else if (document.documentElement.mozRequestFullScreen) {
+                        document.documentElement.mozRequestFullScreen();
+                    } else if (document.documentElement.webkitRequestFullscreen) {
+                        document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+                    }
+                } else {
+                    if (document.cancelFullScreen) {
+                        document.cancelFullScreen();
+                    } else if (document.mozCancelFullScreen) {
+                        document.mozCancelFullScreen();
+                    } else if (document.webkitCancelFullScreen) {
+                        document.webkitCancelFullScreen();
+                    }
+                }
+            }
+
+            function call_img(api_str){
+                layer.open({"type":0,"content":`<img id='dimg' onerror="layer.closeAll();layer.msg('图片加载出错了,请重新调整参数！');" src='__DOMAIN__${api_str}/?${$.param($("#jk").serializeArray())}'>`,area:['80%','100%'],"title":"图片","btn":['保存','关闭'],"yes":function(ind){
+                    $("#lhref").attr('href',$("#dimg").attr('src')+"&dl=1");
+                    document.getElementById("lhref").click();
+                }});
+            }
+
+            function call_api(id,callback){
+                $.ajax({
+                        url:apid[id],
+                        type:"POST",
+                        data:form2JsonString("jk"),
+                        dataType:"json",
+                        processData:false,
+                        beforeSend:function(){
+                            tstamp1=new Date().getTime();
+                        },
+                        xhr:function(){
+                            var xhr = new XMLHttpRequest();
+                            return xhr;
+                        },
+                        success:function(dta){
+                            tstamp2=new Date().getTime();
+                            callback(dta);
+                        }
+                });
+            }
+
+            keys=[];
+
+            function copyright(){
+                layer.open({"title":"关于","content":"CE Toolbox v0.1 alpha<br>计算经济学工具箱,此分支由AliebcX维护<br>&copy; 2021-2022 AB.X Org. All rights reserved.<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和中国大陆地区相关法律法规<hr>本项目使用的Python库:<br>Numpy Pandas Scipy Django <br> openpyxl xlrd plotnine matplotlib",area:['600px']});
+            }
+
+            function table_init(){
+                call_api("yl",function(cons){
+                    if(cons['respCode']==0){
+                        $("[step='1']").hide();
+                        $("[step='2']").show();
+                        $("#table-main-head,#table-main-body").html("");
+                        keys=new Array();
+                        $("#table-main-head").append(`<th table-main-th-key2='Row' cked='false'>Row</th>`);
+                        for(key in cons['respData']['DataList'][0]){
+                            $("#table-main-head").append(`<th table-main-th-key='${key}' table-main-th-type='${typeof( cons['respData']['DataList'][0][key])}' cked='false'>${key}</th>`);
+                            keys.push(key);
+                        }
+                        for(x in cons['respData']['DataList']){
+                            $("#table-main-body").append(`<tr id='table-main-tr-${x}'></tr>`);
+                            $(`#table-main-tr-${x}`).append(`<td table-main-td-key='Row'>${parseInt(x)+1}</td>`);
+                            for(key in keys){
+                                $(`#table-main-tr-${x}`).append(`<td table-main-td-key='${keys[key]}' table-main-td-type='${typeof(cons['respData']['DataList'][x][keys[key]])}'>${cons['respData']['DataList'][x][keys[key]]}</td>`);
+                                //console.log(cons['respData']['DataList'][x][keys[key]]);
+                            }
+                        }
+                        $("#table1").show();
+                        $("#wait-info").remove();
+                        $("[table-main-td-type='string']").css("color","red");
+                        $("#default-info").html(`基本信息<br>共${cons['respData']['DataList'].length}条记录<br>共${keys.length}个键值<br>`);
+                    }else{
+                        layer.msg("读取数据失败,请重新打开或更换文件");
+                        $("[step='1']").show();
+                        $("#jdt").hide();
+                        $("[step='2']").hide();
+                    }
+                    $("[table-main-th-key]").click(function(e){
+                        key=$(e.target).attr("table-main-th-key");
+                        if($(e.target).attr('cked')=='false'){
+                            $(`[table-main-td-key='${key}']`).css("background","grey");
+                            $(e.target).attr('cked','true');
+                        }else{
+                            $(e.target).attr('cked','false');
+                            key=$(e.target).attr("table-main-th-key");
+                            $(`[table-main-td-key='${key}']`).css("background","white");
+                        }
+                    });
+
+                    /*$("[table-main-th-key]").dblclick(function (e) {
+                        key=$(e.target).attr("table-main-th-key");
+                        $("#argu1").val(key);
+                        call_api("fl",function (e2) {
+                            if(e2['respCode']==0){
+                                console.log(e2['respData']);
+                                str="";
+                                for(key2 in e2['respData']){
+                                    str+=`<br>${key2}:${e2['respData'][key2]}`;
+                                }
+                                $("#nav-left").html(`列${key}的分类统计结果:<br>${str}`);
+                            }else{
+                                
+                            }
+                        });
+                    });*/
+
+                    $("[table-main-th-key]").contextmenu(function(e){
+                        e.preventDefault();
+                        $("body").append(`<div id='th-contextmenu' class='nav-top-option-menu'></div>`);
+                        $("#th-contextmenu").css({"left":e.pageX,"top":e.pageY});
+                        $("#th-contextmenu").append(`<div id='th-contextmenu-info1' class='nav-top-option-menu-in'>当前列:${$(e.target).attr('table-main-th-key')}</div><div id='th-contextmenu-info2' class='nav-top-option-menu-in'>类型:${$(e.target).attr('table-main-th-type')}</div><hr>`);
+                        $("#th-contextmenu").append(`<div id='th-contextmenu-summary' class='nav-top-option-menu-in'>描述性统计</div>`);
+                        $("#th-contextmenu").append(`<div id='th-contextmenu-type' class='nav-top-option-menu-in'>分类统计</div><hr>`);
+                        $("#th-contextmenu").append(`<div id='th-contextmenu-ImgDensity' img-api='dimg_density' class='nav-top-option-menu-in' menu-key='${$(e.target).attr('table-main-th-key')}'>概率密度图</div>`);
+                        $("#th-contextmenu").append(`<div id='th-contextmenu-ImgHist' img-api='dimg_hist' class='nav-top-option-menu-in' menu-key='${$(e.target).attr('table-main-th-key')}'>直方图</div>`);
+                        $("#th-contextmenu").mouseleave(function(e){$("#th-contextmenu").remove()});
+
+                        $("#th-contextmenu-ImgDensity,#th-contextmenu-ImgHist").click(function(e){
+                            $("#argu1").val($(e.target).attr('menu-key'));
+                            call_img($(e.target).attr('img-api'));
+                        });
+
+                    });
+
+
+                });
+            }
+
+            $(document).ready(function(){
+                $("[step][step!='1']").hide();
+                $("#go1").click(function(){
+                    $("#file0").click();
+                });
+
+                $("#isuid").click(function(e){
+                    layer.open({"content":"UID:<input type='text' placeholder='UID' users='true' v_name='uid'><br>数据文件种类:<br><select users='true' v_name='f_suffix'><option value='null'>请选择</option><option value='.xls'>Excel 2003(*.xls)</option><option value='.xlsx'>Excel 2010(*.xlsx)</option><option value='.dta'>STATA(*.dta)</option><option value='.csv'>CSV with ',' and UTF-8(*.csv)</option></select>","title":"使用UID查看数据"
+                    ,"yes":function(ind){
+                        table_init();
+                        layer.close(ind);
+                    }});
+                    $("[users='true']").change(function(e){
+                        $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                    });
+                });
+
+                $("#file0").change(function(){
+                    if($("#file0")[0].files[0].name.match(/.*.(dta|xls|xlsx|csv)/)){
+                        layer.msg($("#file0")[0].files[0].name);
+                        f0=new FormData();
+                        f0.append('file',$("#file0")[0].files[0]);
+                        $.ajax({
+                        url:"__DOMAIN__filer/",
+                        type:"POST",
+                        processData: false,
+                        contentType: false,
+                        data:f0,
+                        beforeSend:function(){
+                            
+                            $("#jdt").show();
+                        },
+                        xhr:function(){
+                            var xhr = new XMLHttpRequest();
+                            xhr.upload.addEventListener('progress',function(e){
+                                progressRate = ((e.loaded / e.total) * 100).toFixed(2) + '%';
+                                $("#jdt2").css("width",progressRate);
+                                //layer.msg("上传中...."+progressRate);
+                            });
+                            return xhr;
+                        },
+                        success:function(cod){
+                            if(cod['respCode']==0){
+                                layer.msg("上传完成");
+                                $("#f_suffix").val(cod['respData']['f_suffix']);
+                                $("#uid").val(cod['respData']['uid']);
+                                $("#f_name").val(cod['respData']['f_name']);
+                                //$("#nav-top").html(`数据集: ${cod['respData']['f_name']} ( UID: ${cod['respData']['uid']} 大小: ${(cod['respData']['size']/1024).toFixed(2)}KB )`);
+                                $("[step='1']").hide();
+                                $("[step][step!='1']").show();
+                                $("#jdt2").css("width",'0%');
+                                table_init();
+                            }else{
+                                alert("上传失败-错误原因:"+cod['errMsg']);
+                            }
+                        },
+                        error:function(e){
+                            alert("XHR错误,请检查配置或联系网站管理员");
+                        }
+                        });
+                    }else{
+                        layer.msg("文件后缀名不合规,请重新选择");
+                        $("#jdt").hide();
+                    }
+                });
+
+            });
+
+            $(document).ready(function(){
+                $("#nav-top-file").click(function(e){
+                    $(".nav-top-option-menu").hide();
+                    if($("#nav-top-file-menu").length==0){
+                        $("body").append(`<div id='nav-top-file-menu' class='nav-top-option-menu'></div>`);
+                        $("#nav-top-file-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
+                        $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-uid' class='nav-top-option-menu-in'>查看UID</div>`);
+                        $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-save' class='nav-top-option-menu-in'>下载数据表</div>`);
+                        $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-open' class='nav-top-option-menu-in'>打开新文件</div><hr>`);
+                        $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-close' class='nav-top-option-menu-in'>关闭所有渲染</div>`);
+                        $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-property' class='nav-top-option-menu-in'>浏览器属性</div>`);
+                        $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-reload' class='nav-top-option-menu-in'>回到首页</div>`);
+                        $("#nav-top-file-menu").mouseleave(function(e){
+                            $("#nav-top-file-menu").hide();
+                        });
+                        $("#nav-top-file-menu-reload").click(function(e){
+                            location.reload();
+                        });
+                        $("#nav-top-file-menu-uid").click(function(){
+                            layer.open({content:$("#uid").val(),title:"UID","btn":['确定','复制'],"btn2":function(ind){
+                                navigator.clipboard.writeText($("#uid").val());
+                                layer.close(ind);
+                                layer.msg("已复制到剪切板");
+                            }});
+                        });
+                        $("#nav-top-file-menu-property").click(function(){
+                            layer.open({title:"属性",content:"User-Agent: "+navigator.userAgent+"<br>Platform: "+navigator.platform});
+                        });
+                        $("#nav-top-file-menu-open").click(function(){
+                            $("#file0").click();
+                        });
+                        $("#nav-top-file-menu-close").click(function(){
+                            $("html").remove();
+                        });
+                        $("#nav-top-file-menu-save").click(function(e){
+                            $("#lhref").attr('href',apid['down']+"?"+$.param($("#jk").serializeArray()))
+                            document.getElementById("lhref").click();
+                        });
+                    }else{
+                        $("#nav-top-file-menu").show();
+                    }
+                });
+
+                $("#nav-top-view").click(function(e){
+                    $(".nav-top-option-menu").hide();
+                    if($("#nav-top-view-menu").length==0){
+                        $("body").append(`<div id='nav-top-view-menu' class='nav-top-option-menu'></div>`);
+                        $("#nav-top-view-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
+                        $("#nav-top-view-menu").append(`<div id='nav-top-view-menu-fulls' class='nav-top-option-menu-in'>全屏模式</div>`);
+                        $("#nav-top-view-menu").mouseleave(function(e){
+                            $("#nav-top-view-menu").hide();
+                        });
+                        $("#nav-top-view-menu-fulls").click(function(){
+                            toggleFullScreen();
+                        });
+
+
+                    }else{
+                        $("#nav-top-view-menu").show();
+                    }
+                });
+
+                $("#nav-top-api").click(function(e){
+                    $(".nav-top-option-menu").hide();
+                    if($("#nav-top-api-menu").length==0){
+                        $("body").append(`<div id='nav-top-api-menu' class='nav-top-option-menu'></div>`);
+                        $("#nav-top-api-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-tworeg' class='nav-top-option-menu-in'>一次散点拟合图接口</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-heterreg' class='nav-top-option-menu-in'>异质性散点拟合图接口</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-typebar' class='nav-top-option-menu-in'>分类均值柱状图接口</div><hr>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-ols' class='nav-top-option-menu-in'>OLS接口</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-corr' class='nav-top-option-menu-in'>相关系数接口</div>`);
+                        $("#nav-top-api-menu").mouseleave(function(e){
+                            $("#nav-top-api-menu").hide();
+                        });
+
+                        $("#nav-top-api-menu-tworeg").click(function(){
+                            layer.open({title:"一次散点拟合图接口",content:`
+                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
+                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            </div>
+                            `,
+                            yes:function(e){
+                                call_img("dimg_regress");
+                            }
+                            });
+                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                            for(key in keys){
+                                $("select[keys='true']").append(`<option>${keys[key]}</option>`);
+                            }
+                            $("select[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+
+                        $("#nav-top-api-menu-typebar").click(function(e){
+                            layer.open({title:"分类均值柱状图接口",content:`
+                            <div>选择求均值变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
+                            选择分类变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            </div>
+                            `,
+                            yes:function(e){
+                                call_img("dimg_bar_type");
+                            }
+                            });
+                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                            for(key in keys){
+                                $("select[keys='true']").append(`<option>${keys[key]}</option>`);
+                            }
+                            $("select[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+
+                        $("#nav-top-api-menu-ols").click(function(e){
+                            layer.open({title:"OLS接口",content:`
+                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
+                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            </div>
+                            `,
+                            yes:function(index){
+                                call_api("ols",function(e){
+                                    try{
+                                        if(e['respCode']==0){
+                                            estr="";
+                                            for(key in e['respData']['Regression Summary']){
+                                                estr+=key+":<br>";
+                                                for(key2 in e['respData']['Regression Summary'][key]){
+                                                    estr+=key2+":"+e['respData']['Regression Summary'][key][key2]+"<br>";
+                                                }
+                                            }
+                                            //$("#nav-left-menu").html(`OLS分析结果<br>${estr}`);
+                                            layer.close(index);
+                                            layer.open({"title":"OLS分析结果","content":e['respData']['s_text'].replace(/\n/g,"<br>").replace(/ /g,"&nbsp;"),"area":['80%']});
+                                        }else{
+                                            layer.msg(e['errMsg']);
+                                        }
+                                    }catch(err){
+                                        layer.msg(err.message);
+                                    }
+                                    
+                                });
+                            }
+                            });
+                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                            for(key in keys){
+                                $("[keys='true']").append(`<option>${keys[key]}</option>`);
+                            }
+                            $("[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+
+                        $("#nav-top-api-menu-heterreg").click(function(e){
+                            layer.open({title:"异质性散点拟合图接口",content:`
+                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
+                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br><br>
+                            选择门槛变量:<select keys='true' id='explain_v3' v_name='argu_type'></select><br><br>
+                            输入门槛划分值:<input keys='true' id='explain_v4' v_name='segment'>
+                            </div>
+                            `,
+                            yes:function(e){
+                                call_img("dimg_hetero_regress");
+                            }
+                            });
+                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                            for(key in keys){
+                                $("[keys='true']").append(`<option>${keys[key]}</option>`);
+                            }
+                            $("[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+
+
+                    }else{
+                        $("#nav-top-api-menu").show();
+                    }
+                });
+
+                $("#nav-top-more").click(function(e){
+                    $(".nav-top-option-menu").hide();
+                    if($("#nav-top-more-menu").length==0){
+                        $("body").append(`<div id='nav-top-more-menu' class='nav-top-option-menu'></div>`);
+                        $("#nav-top-more-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
+                        $("#nav-top-more-menu").append(`<div id='nav-top-more-menu-about' class='nav-top-option-menu-in'>关于CE Toolbox</div>`);
+                        $("#nav-top-more-menu").append(`<div id='nav-top-more-menu-apidoc' class='nav-top-option-menu-in'>API文档</div>`);
+                        $("#nav-top-more-menu").append(`<div id='nav-top-more-menu-bug' class='nav-top-option-menu-in'>问题反馈</div>`);
+                        $("#nav-top-more-menu").mouseleave(function(e){
+                            $("#nav-top-more-menu").hide();
+                        });
+                        $("#nav-top-more-menu-about").click(function(){
+                            copyright();
+                        });
+                        $("#nav-top-more-menu-apidoc").click(function(){
+                            layer.open({type:2,content:"https://www.apifox.cn/apidoc/shared-b79d3f14-e20a-4a46-ab68-9e8beabcf077/doc-434951",title:"API文档",area:['80%','100%']})
+                        });
+                        $("#nav-top-more-menu-bug").click(function(){
+                            layer.open({type:2,content:"https://www.wjx.cn/vj/wW0cmkm.aspx",title:"问题反馈",area:['80%','100%']})
+                        });
+                    }else{
+                        $("#nav-top-more-menu").show();
+                    }
+                });
+
+                $("#nav-top-edit").click(function(e){
+                    $(".nav-top-option-menu").hide();
+                    if($("#nav-top-edit-menu").length==0){
+                        $("body").append(`<div id='nav-top-edit-menu' class='nav-top-option-menu'></div>`);
+                        $("#nav-top-edit-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-about' class='nav-top-option-menu-in'>筛选</div>`);
+                        $("#nav-top-edit-menu").mouseleave(function(e){
+                            $("#nav-top-edit-menu").hide();
+                        });
+                    }else{
+                        $("#nav-top-edit-menu").show();
+                    }
+                });
+
+                $("body").contextmenu(function(e){
+                    e.preventDefault();
+                });
+
+                $("#logo").click(function(e){
+                    copyright();
+                });
+
+            });
+        </script>
+        <style>
+            body{
+                margin: 0px;
+                background: cornsilk;
+            }
+            div#l0{
+                position: absolute;
+                text-align: center;
+                display: table;
+                background-color: grey;
+                background-image: linear-gradient(#e66465, #9198e5);
+                left: 0%;
+                top:0%;
+                height: 100%;
+                width:60%;
+            }
+            div#text0{
+                position: absolute;
+                text-align: center;
+                width: 100%;
+                display: table-cell;
+                font-size: 30px;
+                top:80%;
+                color:rgb(36, 34, 34);
+            }
+            img#ico0{
+                position: relative;
+                transform: translate(0,20%);
+                transition-duration: 1s;
+                width: 50%;
+            }
+            #ico0:hover{
+                transition-duration: 1s;
+                transform: rotate(7deg);
+            }
+            div#l1{
+                position: absolute;
+                background: cornsilk;
+                left: 60%;
+                width: 40%;
+                height: 100%;
+                text-align: center;
+            }
+            #text2{
+                margin-top: 30%;
+                font-size: 30px;
+            }
+            #go1{
+                position: relative;
+                transform: translate(-50%,0);
+                line-height: 40px;
+                margin-top:30%;
+                width: 200px;
+                height: 40px;
+                left: 50%;
+                color: white;
+                background: rgb(75, 75, 232);
+                border-radius: 20px;
+                user-select: none;
+                -webkit-user-select: none;
+                cursor: default;
+            }
+            #go1:hover{
+                background: rgb(103, 103, 232);
+            }
+            #go1:active{
+                background:rgb(55, 55, 237);
+            }
+            #jdt{
+                position: relative;
+                left: 50%;
+                background: #9198e5;
+                transform: translate(-50%,0);
+                border-radius: 5px;
+                width: 80%;
+                height: 10px;
+            }
+            #jdt2{
+                position: relative;
+                width: 0%;
+                transition-duration: 0.3s;
+                background: #e66465;
+                height: 100%;
+                border-radius: 5px;
+            }
+            [step="1"]{
+                transition-duration: 0.5s;
+                user-select: none;
+                -webkit-user-select: none;
+                cursor: default;
+            }
+            #nav-left{
+                position: absolute;
+
+                color: white;
+                line-height: 40px;
+                width: 20%;
+                background:darkcyan;
+                height: calc(100% - 30px);
+                top:30px;
+                overflow: scroll;
+            }
+            ::-webkit-scrollbar {
+                display: none; /* Chrome Safari */
+            }
+            #table-main{
+                overflow: scroll;
+                position: absolute;
+                width: 80%;
+                left: 20%;
+                height: calc(100% - 30px);
+                top:30px;
+            }
+            #nav-top{
+                line-height: 30px;
+                color: white;
+                font-size: 15px;
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                top:0%;
+                padding-left: 20px;
+                height: 30px;
+                background: rgb(63, 63, 235);
+            }
+            table.gridtable {
+                font-family: verdana,arial,sans-serif;
+                font-size:12px;
+                color:#333333;
+                border-width: 1px;
+                border-color: #666666;
+                border-collapse: collapse;
+            }
+            table.gridtable th {
+                border-width: 1px;
+                user-select: none;
+                -webkit-user-select: none;
+                cursor: s-resize;
+                padding: 8px;
+                border-style: solid;
+                border-color: #666666;
+                background-color: #dedede;
+            }
+            table.gridtable th:hover{
+                background-color: #4b4b4b;
+            }
+            table.gridtable td {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #666666;
+                background-color: #ffffff;
+            }
+            #default-info{
+                padding-left: 5px;
+            }
+            div.nav-top-option{
+                line-height: 30px;
+                display: inline-block;
+                text-align: center;
+                padding-left: 15px;
+                padding-right: 15px;
+                height: 100%;
+                user-select: none;
+                -webkit-user-select: none;
+                cursor: default;
+            }
+            div.nav-top-option:hover{
+                background: gainsboro;
+            }
+            div.nav-top-option:active{
+                background: rgb(183, 182, 182);
+            }
+            .nav-top-option-menu{
+                user-select: none;
+                -webkit-user-select: none;
+                position: absolute;
+                width:200px;
+                background: rgb(170, 238, 191);
+                overflow: hidden;
+                box-shadow: 1px 1px 1px 0.5px grey;
+                cursor: default;
+            }
+            .nav-top-option-menu-in{
+                position: relative;
+                margin-bottom: 5px;
+                width: 100%;
+                height: 30px;
+                font-size: 14px;
+                line-height: 30px;
+                padding-left: 10px;
+            }
+            .nav-top-option-menu-in:hover{
+                background: #9198e5;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="l0" step="1">
+            <div id="text0" hidden="true">Data Analysis Demo<br><span style="font-size: 20px;"></span></div>
+            <img id="ico0" src="https://abxmc.live/CE/images/dta.svg">
+        </div>
+        <div id="l1" step="1">
+            <div id="text1">
+                <div id="text2">计算经济学<br>数据处理工具箱前端测试</div>
+                
+                <div id="go1">开始体验</div>
+                <p>可分析<strong>dta(推荐)/xls/xlsx/csv</strong>文件</p>
+                <div id="jdt" hidden="true">
+                    <div id="jdt2">
+
+                    </div>
+                </div>
+                <div style="margin-top: 25px;" id="isuid"><a style="color: rgb(17, 70, 53);">已有UID?</a></div>
+            </div>
+        </div>
+        <input type="file" id="file0" hidden="true">
+        <input type="text" id="f_name" hidden="true">
+        <form id="jk" style="margin-top: 10px;" hidden="true">
+            <input type="text" id="uid" hidden="true" name="uid">
+            <input type="text" id="f_suffix" hidden="true" name="f_suffix">
+            <input type="text" placeholder="参数1" id="argu1" name="argu1">
+            <input type="text" placeholder="参数2" id="argu2" name="argu2">
+            <input type="text"  id="argu3" name="count">
+            <input type="text" id="argu_type" name="argu_type">
+            <input type="text" id="segment" name="segment">
+        </form>
+        <div>
+            <div step="2" id="nav-top" hidden="true">
+                <div id="logo" style="display: inline-block;font-weight: bold;padding-right: 20px;user-select: none;cursor: default;-webkit-user-select: none;">CE Toolbox</div>
+                <div id="nav-top-file" class="nav-top-option">文件</div>
+                <div id="nav-top-edit" class="nav-top-option">编辑</div>
+                <div id="nav-top-view" class="nav-top-option">视图</div>
+                <div id="nav-top-api" class="nav-top-option">调用</div>
+                <div id="nav-top-more" class="nav-top-option">更多</div>
+            </div>
+            <div step="2" id="nav-left" hidden="true">
+                <div id="default-info">
+
+                </div>
+                <hr>
+                <div id="nav-left-menu" style="padding-left: 5px;">
+
+                </div>
+    
+            </div>
+            <div step="2" id="table-main" hidden="true">
+                <div id="wait-info">正在加载中....</div>
+                <table class="gridtable" id="table1" hidden="true">
+                    <thead id="table-main-head">
+                        <th>T1</th>
+                        <th>T2</th>
+                    </thead>
+                    <tbody id="table-main-body">
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a id="lhref" hidden="true">f</a>
+        
+    </body>
+</html>

@@ -19,7 +19,7 @@ def calc_corr(a, b):
 def ret(code,data,err):
     return {"respCode":code,"respData":data,"errMsg":err}
 
-def ce_main(request):
+def ce_version(request):
     if(request.method not in ["POST","GET"]):
         return JsonResponse(ret(-1,"","Bad Method"))
     return JsonResponse(ret(0,{"api_name":"CE API","version":"1.0.16"},None))
