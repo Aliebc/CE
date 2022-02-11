@@ -11,7 +11,7 @@ from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
 from . import ce
 
 try:
-    conf=json.loads(open(os.path.join('zyp','config.json'),'r').read())
+    conf=json.loads(open(os.path.join('zyp','config.json',encoding="utf-8"),'r').read())
     file_dir_path=conf['file_path']
     image_path=conf['img_path']
     if(os.path.isdir(file_dir_path) and os.path.isdir(image_path)):
@@ -22,7 +22,7 @@ except:
     raise RuntimeError("Cannot open and load the config file!")
 
 def rend1(request):
-    htmls=open(os.path.join('zyp','render_main.source')).read().replace('__DOMAIN__',conf['api_domain'])
+    htmls=open(os.path.join('zyp','render_main.source'),encoding="utf-8").read().replace('__DOMAIN__',conf['api_domain'])
     if request.method == 'GET':
         return HttpResponse(htmls)
     else:
