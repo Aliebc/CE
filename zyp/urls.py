@@ -23,7 +23,8 @@ from . import imgc
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',ce.ce_main),
+    path('version/',ce.ce_version),
+    path('',filer.rend1),
     path('filer/',filer.recv_file),
     path('getd/',filer.getd),
     path('corr/',datac.dcorr),
@@ -45,4 +46,5 @@ urlpatterns = [
     path('ols/',datac.ols),
     path('dimg_hetero_corr/',datac.type_corr),
     path('getf/',filer.ret_file),
+    path('binary_probit/',datac.binary_probit),
 ]

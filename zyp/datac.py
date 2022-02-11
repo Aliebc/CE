@@ -14,6 +14,7 @@ from . import filer
 from numpy import mean, median, pv, var, std
 import statsmodels.api as sm
 from scipy.stats import ttest_ind
+from sklearn import preprocessing
 
 def dsummary(request):
     try:
@@ -151,3 +152,45 @@ def ols(request):
     except:
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
     return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None))
+
+def binary_probit(request):
+    try:
+        dta = filer.get_file_data(request)
+        argu1=json.loads(request.body)['argu1']
+        argu1=dta[argu1]
+        argu2=json.loads(request.body)['argu2']
+
+        if len(set(argu2.tolist())) == 2:
+            argu2=dta[argu2]
+            argu2 = preprocessing.label_encoder.fit_transform(argu2)
+            argu1=sm.add_constant(argu1)
+            model = sm.Probit(argu2, argu1)
+            results = model.fit()
+
+            pvals = results.pvalues
+            coeff = results.params
+            conf_lower = results.conf_int()[0]
+            conf_higher = results.conf_int()[1]
+            ll = results.llf
+            pseudor2 = results.prsquared
+            llnull = results.llnull
+            llrpvalue = results.llr_pvalue
+            f_test = results.f_test
+            fvalue = results.fvalue
+
+            results_df = pd.DataFrame({"pvals":pvals,
+                                   "coeff":coeff,
+                                   "conf_lower":conf_lower,
+                                   "conf_higher":conf_higher,
+                                   "log_likelihood":ll,
+                                   "psuedo_r_squared":pseudor2,
+                                   "ll_null":llnull,
+                                   "llr_p_value":llrpvalue,
+                                   "f_statistic":fvalue
+                                    })
+            results_df = results_df[["pseudo_r_squared","log_likelihood","ll_null","llr_p_value","f_statistic","coeff","pvals","conf_lower","conf_higher"]]
+        else:
+            return JsonResponse(ce.ret(-1,None,"Invalid argu2 input"))
+    except:
+        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+    return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df)},None))

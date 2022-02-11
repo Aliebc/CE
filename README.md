@@ -24,26 +24,30 @@ Now config your path to save files and image, open the file **zyp/config.json**
 }
 ```
 
-Now change the value of **file_path** and **img_path** to your custom settings(be sure you have the permission!)
+Now change the value of **file_path** and **img_path** to your custom settings(be sure you have the permission!), and set **api_domain** to your own domain.
 
 
 After installing the required packages, you should enter the main directory of our project which is named after **zyp**, and execute following commands.
 ```
 cd zyp
-python3 manage.py runserver 0.0.0.0:8000
+python3 manage.py runserver 0.0.0.0:Port
+#Port is a positive integer(we suggest you select a port >1024 when you debug it, 8000 is common)
 ```
 Now our project is running on your computer!
 
 ## How to call?
 At first, you should test whether you configure our project correctly.
 ```
-curl 127.0.0.1:Port
+curl 127.0.0.1:Port/version/
 
 {"respCode": 0, "respData": {"api_name": "CE API", "version": "1.0.16"}, "errMsg": null}
 ```
 If your consequence is consistent with given JSON string, congratulations!
-
+## Enjoy it!
+We provide a simple HTML page for our project, you can browse **http://127.0.0.1:Port** and enjoy it!
 ## API Documents
+If you don't satisfy our preinstall page, you can change it according to existing API.
+
 We provide intact API documents for public, with URL:
 
 https://www.apifox.cn/apidoc/shared-b79d3f14-e20a-4a46-ab68-9e8beabcf077
