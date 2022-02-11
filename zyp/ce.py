@@ -7,14 +7,7 @@ import pandas as pd
 import numpy as npy
 from django.http import HttpResponse,JsonResponse
 
-
-def calc_corr(a, b):
-	a_avg = sum(a)/len(a)
-	b_avg = sum(b)/len(b)
-	cov_ab = sum([(x - a_avg)*(y - b_avg) for x,y in zip(a, b)])
-	sq = math.sqrt(sum([(x - a_avg)**2 for x in a])*sum([(x - b_avg)**2 for x in b]))
-	corr_factor = cov_ab/sq
-	return corr_factor
+ce_version_str="1.1.3"
 
 def ret(code,data,err):
     return {"respCode":code,"respData":data,"errMsg":err}
@@ -22,7 +15,7 @@ def ret(code,data,err):
 def ce_version(request):
     if(request.method not in ["POST","GET"]):
         return JsonResponse(ret(-1,"","Bad Method"))
-    return JsonResponse(ret(0,{"api_name":"CE API","version":"1.1.2"},None))
+    return JsonResponse(ret(0,{"api_name":"CE API","version":ce_version_str},None))
 
 def ce_not_found(request):
     return JsonResponse(ret(-1,None,"Not Found"))
