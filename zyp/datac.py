@@ -37,6 +37,21 @@ def dcorr(request):
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
     return JsonResponse(ce.ret(0,{"CorrMartix":json.loads(d),"Significance":c2},None))
 
+def xcorr(request):
+    try:
+        dta=filer.get_file_data(request)
+        cord=json.loads(DataFrame(dta).corr().to_json())
+        ret={}
+        for i in cord:
+            ret[i]={}
+            for j in cord[i]:
+                cor=st.pearsonr(dta[i],dta[j])
+                ret[i][j]=cor
+    except Exception as e:
+        print(repr(e))
+        return JsonResponse(ce.ret(-1,None,repr(e)))
+    return JsonResponse(ce.ret(0,{"CorrMartix":ret},None))
+
 def dtype(request):
     try:
         dta=filer.get_file_data(request)
@@ -63,6 +78,17 @@ def dsummary(request):
         argu1=json.loads(request.body)['argu1']
         retu=dta[argu1]
         return JsonResponse(ce.ret(0,json.loads(retu.describe().to_json()),None))
+    except:
+        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+
+def xsummary(request):
+    try:
+        dta=filer.get_file_data(request)
+        a2={}
+        for key in dta:
+            r2=dta[key]
+            a2[key]=json.loads(r2.describe().to_json())
+        return JsonResponse(ce.ret(0,a2,None))
     except:
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
 
@@ -149,8 +175,8 @@ def ols(request):
                                     })
     #Reordering...
         #results_df = results_df[["r_squared","r_squared_adj","coeff","pvals","conf_lower","conf_higher"]]
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+    except Exception as e:
+        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal):"+str(e)))
     return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None))
 
 def binary_probit(request):

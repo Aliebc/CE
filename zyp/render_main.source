@@ -10,8 +10,10 @@
             apid={
                 "yl":"__DOMAIN__getd/",
                 "summary":"__DOMAIN__dsummary/",
+                "summary2":"__DOMAIN__xsummary/",
                 "hgt":"__DOMAIN__lm3/",
                 "corr":"__DOMAIN__corr/",
+                "xcorr":"__DOMAIN__xcorr/",
                 "fl":"__DOMAIN__dtype/",
                 "hist":"__DOMAIN__dhist/",
                 "ols":"__DOMAIN__ols/",
@@ -21,11 +23,63 @@
                 "logit":"__DOMAIN__binary_logit/"
             };
 
+            function Json2Table_describe(jso){
+                esth={
+                    'count':'Obs.',
+                    'mean':'Mean',
+                    'std':'Std Dev.',
+                    'min':'Min',
+                    'max':'Max'
+                }
+                estr="<table class='gridtable'><thead><th>Variable</th>";
+                for (k in esth){
+                    estr+=`<th>${esth[k]}</th>`;
+                }
+                estr+=`</thead>`;
+                for(y in jso){
+                    estr+=`<tr><td>${y}</td>`;
+                    for(i in jso[y]){
+                        if(esth[i]){
+                            estr+=`<td>${jso[y][i]}</td>`;
+                        }
+                    }
+                    estr+=`<tr>`;
+                }
+                estr+=`</table>`;
+                return estr;
+            }
+
+            function Json2Table_xcorr(jso){
+                estr="<table class='gridtable'><thead><th>Variable</th>";
+                //let range = (start, end) => new Array(end - start).fill(start).map((el, i) => start + i);
+                let r=0;
+                for (k in jso){
+                    r++;
+                    estr+=`<th>(${r})</th>`;
+                }
+                estr+=`</thead>`;
+                r=0;
+                for(y in jso){
+                    r++;
+                    estr+=`<tr><td>(${r})${y}</td>`;
+                    for(i in jso[y]){
+                        estr+=`<td>${jso[y][i][0].toFixed(3)}</td>`;
+                    }
+                    estr+=`<tr>`;
+                }
+                estr+=`</table>`;
+                return estr;
+            }
+
             function form2JsonString(formId) {
                 var paramArray = $('#' + formId).serializeArray();  
                 var jsonObj={};  
-                $(paramArray).each(function(){  
-                    jsonObj[this.name]=this.value;  
+                $(paramArray).each(function(){
+                    try{
+                        jsonObj[this.name]=JSON.parse(this.value);
+                    }catch{
+                        jsonObj[this.name]=this.value;  
+                    }
                 });  
                 return JSON.stringify(jsonObj);
             }
@@ -66,14 +120,12 @@
                         dataType:"json",
                         processData:false,
                         beforeSend:function(){
-                            tstamp1=new Date().getTime();
                         },
                         xhr:function(){
                             var xhr = new XMLHttpRequest();
                             return xhr;
                         },
                         success:function(dta){
-                            tstamp2=new Date().getTime();
                             callback(dta);
                         },
                         error:function(e){
@@ -86,7 +138,7 @@
 
             function copyright(){
                 call_api("version",function(e){
-                    layer.open({"title":"关于","content":"CE-Toolbox __CET_VERSION__<br>计算经济学工具箱(CE-API内置图形交互界面)<br>此接口由AliebcX维护<br>&copy; 2021-__YEAR__ CE-Toolbox All rights reserved.<hr>CE-API "+e['respData']['version']+"<br>CE-API由清华大学经管学院刘潇老师助研项目组共同维护<br><a href='https://github.com/Aliebc/CE/graphs/contributors'>查看贡献者</a><br>&copy; 2021-__YEAR__ CE-API All rights reserved.<hr>CE版本以CE-API版本为主<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和中国大陆地区相关法律法规",area:['600px']});
+                    layer.open({"title":"关于","content":"CE-Toolbox __CET_VERSION__<br>计算经济学工具箱(CE-API内置图形交互界面)<br>CE-Toolbox作者:AliebcX<br>&copy; 2021-__YEAR__ CE-Toolbox All rights reserved.<hr>CE-API "+e['respData']['version']+"<br>CE-API由清华大学经管学院刘潇老师助研项目组共同维护<br><a href='https://github.com/Aliebc/CE/graphs/contributors'>查看贡献者</a><br>&copy; 2021-__YEAR__ CE-API All rights reserved.<hr>CE版本以CE-API版本为主<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和中国大陆地区相关法律法规",area:['600px']});
                 });
             }
 
@@ -106,8 +158,7 @@
                             $("#table-main-body").append(`<tr id='table-main-tr-${x}'></tr>`);
                             $(`#table-main-tr-${x}`).append(`<td table-main-td-key='Row'>${parseInt(x)+1}</td>`);
                             for(key in keys){
-                                $(`#table-main-tr-${x}`).append(`<td table-main-td-key='${keys[key]}' table-main-td-type='${typeof(cons['respData']['DataList'][x][keys[key]])}'>${cons['respData']['DataList'][x][keys[key]]}</td>`);
-                                //console.log(cons['respData']['DataList'][x][keys[key]]);
+                                $(`#table-main-tr-${x}`).append(`<td table-main-td-key='${keys[key]}' table-main-td-value='${cons['respData']['DataList'][x][keys[key]]}' table-main-td-type='${typeof(cons['respData']['DataList'][x][keys[key]])}'>${cons['respData']['DataList'][x][keys[key]]}</td>`);
                             }
                         }
                         $("#table1").show();
@@ -365,6 +416,8 @@
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-heterreg' class='nav-top-option-menu-in'>异质性散点拟合图接口</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-typebar' class='nav-top-option-menu-in'>分类均值柱状图接口</div><hr>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-corr' class='nav-top-option-menu-in'>相关系数接口</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xcorr' class='nav-top-option-menu-in'>高级相关系数矩阵</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xsummary' class='nav-top-option-menu-in'>高级描述性统计</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-ols' class='nav-top-option-menu-in'>OLS回归接口</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-probit' class='nav-top-option-menu-in'>Probit估计接口</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-logit' class='nav-top-option-menu-in'>Logit估计接口</div>`);
@@ -391,6 +444,71 @@
                             });
                         });
 
+                        $("#nav-top-api-menu-xsummary").click(function(){
+                            s_cont="";
+                            for(key in keys){
+                                s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                            }
+                            layer.open({title:"高级描述性统计",content:`
+                            <div>选择计算变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
+                            </div>
+                            `,
+                            yes:function(e){
+                                call_api("summary2",function(e){
+                                    if(e['respCode']==0){
+                                        x2={};
+                                        $("input.ckeys:checked").each(function(){
+                                            x2[$(this).val()]=e['respData'][$(this).val()]
+                                        });
+                                        estr=Json2Table_describe(x2);
+                                        layer.open({title:"高级描述性统计结果",content:estr})
+                                    }else{
+                                        layer.msg(e['errMsg']);
+                                    }
+                                });
+                            }
+                            });
+                            $("#all_c").click(function(e){
+                                $("input.ckeys").prop('checked','true');
+                            });
+                        });
+
+                        $("#nav-top-api-menu-xcorr").click(function(){
+                            s_cont="";
+                            for(key in keys){
+                                s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                            }
+                            layer.open({title:"高级相关系数",content:`
+                            <div>选择计算变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
+                            </div>
+                            `,
+                            yes:function(e){
+                                call_api("xcorr",function(e){
+                                    if(e['respCode']==0){
+                                        x2={};
+                                        x3=[];
+                                        $("input.ckeys:checked").each(function(){
+                                            x3.push($(this).val());
+                                        });
+                                        for(i in x3){
+                                            x2[x3[i]]={}
+                                            for (j in x3){
+                                                x2[x3[i]][x3[j]]=e['respData']['CorrMartix'][x3[i]][x3[j]]
+                                            }
+                                        }
+                                        estr=Json2Table_xcorr(x2);
+                                        layer.open({title:"高级相关系数矩阵",content:estr})
+                                    }else{
+                                        layer.msg(e['errMsg']);
+                                    }
+                                });
+                            }
+                            });
+                            $("#all_c").click(function(e){
+                                $("input.ckeys").prop('checked','true');
+                            });
+                        });
+
                         $("#nav-top-api-menu-typebar").click(function(e){
                             layer.open({title:"分类均值柱状图接口",content:`
                             <div>选择求均值变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
@@ -411,12 +529,22 @@
                         });
 
                         $("#nav-top-api-menu-ols").click(function(e){
+                            s_cont="";
+                            for(key in keys){
+                                s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                            }
                             layer.open({title:"OLS接口",content:`
-                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
-                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            <div>
+                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br><br>
+                            选择解释变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
                             </div>
                             `,
                             yes:function(index){
+                                x2=[];
+                                $("input.ckeys:checked").each(function(){
+                                    x2.push($(this).val());
+                                });
+                                $("#argu1").val(JSON.stringify(x2));
                                 call_api("ols",function(e){
                                     try{
                                         if(e['respCode']==0){
@@ -428,16 +556,17 @@
                                     }catch(err){
                                         layer.msg(err.message);
                                     }
-                                    
                                 });
                             }
                             });
-                            
+                            $("#all_c").click(function(e){
+                                $("input.ckeys").prop('checked','true');
+                            });
                             $("select[keys='true']").append(`<option value='null'>请选择</option>`);
                             for(key in keys){
-                                $("[keys='true']").append(`<option>${keys[key]}</option>`);
+                                $("select[keys='true']").append(`<option>${keys[key]}</option>`);
                             }
-                            $("[keys='true']").change(function(e){
+                            $("select[keys='true']").change(function(e){
                                 $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
                             });
                         });
