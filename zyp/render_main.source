@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>计算经济学数据处理工具箱</title>
-        <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="https://www.layuicdn.com/layer-v3.5.1/layer.js"></script>
+        <title>计算经济学工具箱</title>
+        <script src="__CDN_JQUERY__"></script>
+        <script src="__CDN_LAYER__"></script>
         <script>
             tesm="";
             apid={
@@ -16,7 +16,9 @@
                 "hist":"__DOMAIN__dhist/",
                 "ols":"__DOMAIN__ols/",
                 "down":"__DOMAIN__getf/",
-                "version":"__DOMAIN__version/"
+                "version":"__DOMAIN__version/",
+                "probit":"__DOMAIN__binary_probit/",
+                "logit":"__DOMAIN__binary_logit/"
             };
 
             function form2JsonString(formId) {
@@ -84,7 +86,7 @@
 
             function copyright(){
                 call_api("version",function(e){
-                    layer.open({"title":"关于","content":"CE Toolbox alpha<br>计算经济学工具箱,此分支由AliebcX维护<br>&copy; 2021-2022 CE Toolbox All rights reserved.<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和中国大陆地区相关法律法规<hr>CE-API版本号:"+e['respData']['version']+"<br>API域名配置:__DOMAIN__",area:['600px']});
+                    layer.open({"title":"关于","content":"CE-Toolbox __CET_VERSION__<br>计算经济学工具箱(CE-API内置图形交互界面)<br>此接口由AliebcX维护<br>&copy; 2021-__YEAR__ CE-Toolbox All rights reserved.<hr>CE-API "+e['respData']['version']+"<br>CE-API由清华大学经管学院刘潇老师助研项目组共同维护<br><a href='https://github.com/Aliebc/CE/graphs/contributors'>查看贡献者</a><br>&copy; 2021-__YEAR__ CE-API All rights reserved.<hr>CE版本以CE-API版本为主<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和中国大陆地区相关法律法规",area:['600px']});
                 });
             }
 
@@ -130,37 +132,62 @@
                         }
                     });
 
-                    /*$("[table-main-th-key]").dblclick(function (e) {
-                        key=$(e.target).attr("table-main-th-key");
-                        $("#argu1").val(key);
-                        call_api("fl",function (e2) {
-                            if(e2['respCode']==0){
-                                console.log(e2['respData']);
-                                str="";
-                                for(key2 in e2['respData']){
-                                    str+=`<br>${key2}:${e2['respData'][key2]}`;
-                                }
-                                $("#nav-left").html(`列${key}的分类统计结果:<br>${str}`);
-                            }else{
-                                
-                            }
-                        });
-                    });*/
-
                     $("[table-main-th-key]").contextmenu(function(e){
                         e.preventDefault();
                         $("body").append(`<div id='th-contextmenu' class='nav-top-option-menu'></div>`);
                         $("#th-contextmenu").css({"left":e.pageX,"top":e.pageY});
                         $("#th-contextmenu").append(`<div id='th-contextmenu-info1' class='nav-top-option-menu-in'>当前列:${$(e.target).attr('table-main-th-key')}</div><div id='th-contextmenu-info2' class='nav-top-option-menu-in'>类型:${$(e.target).attr('table-main-th-type')}</div><hr>`);
                         $("#th-contextmenu").append(`<div id='th-contextmenu-summary' class='nav-top-option-menu-in' menu-key='${$(e.target).attr('table-main-th-key')}'>描述性统计</div>`);
-                        $("#th-contextmenu").append(`<div id='th-contextmenu-type' class='nav-top-option-menu-in'>分类统计</div><hr>`);
+                        $("#th-contextmenu").append(`<div id='th-contextmenu-type' class='nav-top-option-menu-in' menu-key='${$(e.target).attr('table-main-th-key')}'>分类统计</div><hr>`);
                         $("#th-contextmenu").append(`<div id='th-contextmenu-ImgDensity' img-api='dimg_density' class='nav-top-option-menu-in' menu-key='${$(e.target).attr('table-main-th-key')}'>概率密度图</div>`);
+                        $("#th-contextmenu").append(`<div id='th-contextmenu-ImgDensity2' img-api='dimg_density' class='nav-top-option-menu-in' menu-key='${$(e.target).attr('table-main-th-key')}'>概率密度图(分类)</div>`);
                         $("#th-contextmenu").append(`<div id='th-contextmenu-ImgHist' img-api='dimg_hist' class='nav-top-option-menu-in' menu-key='${$(e.target).attr('table-main-th-key')}'>直方图</div>`);
+                        $("#th-contextmenu").append(`<div id='th-contextmenu-ImgLine' img-api='2' class='nav-top-option-menu-in' menu-key='${$(e.target).attr('table-main-th-key')}'>折线图</div>`);
                         $("#th-contextmenu").mouseleave(function(e){$("#th-contextmenu").remove()});
 
                         $("#th-contextmenu-ImgDensity,#th-contextmenu-ImgHist").click(function(e){
                             $("#argu1").val($(e.target).attr('menu-key'));
                             call_img($(e.target).attr('img-api'));
+                        });
+
+                        $("#th-contextmenu-ImgLine").click(function(e){
+                            $("#argu2").val($(e.target).attr('menu-key'));
+                            layer.open({title:"折线图图接口",content:`
+                            <div>
+                            选择分类(横轴)变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br>
+                            </div>
+                            `,
+                            yes:function(e){
+                                call_img("dimg_line");
+                            }
+                            });
+                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                            for(key in keys){
+                                $("select[keys='true']").append(`<option>${keys[key]}</option>`);
+                            }
+                            $("select[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+
+                        $("#th-contextmenu-ImgDensity2").click(function(e){
+                            $("#argu1").val($(e.target).attr('menu-key'));
+                            layer.open({title:"分类概率密度图接口",content:`
+                            <div>
+                            选择分类变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            </div>
+                            `,
+                            yes:function(e){
+                                call_img("dimg_density_type");
+                            }
+                            });
+                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                            for(key in keys){
+                                $("select[keys='true']").append(`<option>${keys[key]}</option>`);
+                            }
+                            $("select[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
                         });
 
                         $("#th-contextmenu-summary").click(function(e){
@@ -174,6 +201,22 @@
                                         cons_t+=`${key3}:${e['respData'][key3]}<br>`;
                                     }
                                     layer.open({title:"描述性统计结果",content:cons_t});
+                                }
+                                
+                            });
+                        });
+
+                        $("#th-contextmenu-type").click(function(e){
+                            $("#argu1").val($(e.target).attr('menu-key'));
+                            call_api("fl",function(e){
+                                if(e['respCode']!=0){
+                                    layer.msg(e['errMsg']);
+                                }else{
+                                    cons_t="";
+                                    for(key3 in e['respData']){
+                                        cons_t+=`${key3}:${e['respData'][key3]}<br>`;
+                                    }
+                                    layer.open({title:"分类统计结果",content:cons_t});
                                 }
                                 
                             });
@@ -222,7 +265,6 @@
                             xhr.upload.addEventListener('progress',function(e){
                                 progressRate = ((e.loaded / e.total) * 100).toFixed(2) + '%';
                                 $("#jdt2").css("width",progressRate);
-                                //layer.msg("上传中...."+progressRate);
                             });
                             return xhr;
                         },
@@ -232,7 +274,6 @@
                                 $("#f_suffix").val(cod['respData']['f_suffix']);
                                 $("#uid").val(cod['respData']['uid']);
                                 $("#f_name").val(cod['respData']['f_name']);
-                                //$("#nav-top").html(`数据集: ${cod['respData']['f_name']} ( UID: ${cod['respData']['uid']} 大小: ${(cod['respData']['size']/1024).toFixed(2)}KB )`);
                                 $("[step='1']").hide();
                                 $("[step][step!='1']").show();
                                 $("#jdt2").css("width",'0%');
@@ -323,8 +364,10 @@
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-tworeg' class='nav-top-option-menu-in'>一次散点拟合图接口</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-heterreg' class='nav-top-option-menu-in'>异质性散点拟合图接口</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-typebar' class='nav-top-option-menu-in'>分类均值柱状图接口</div><hr>`);
-                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-ols' class='nav-top-option-menu-in'>OLS接口</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-corr' class='nav-top-option-menu-in'>相关系数接口</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-ols' class='nav-top-option-menu-in'>OLS回归接口</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-probit' class='nav-top-option-menu-in'>Probit估计接口</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-logit' class='nav-top-option-menu-in'>Logit估计接口</div>`);
                         $("#nav-top-api-menu").mouseleave(function(e){
                             $("#nav-top-api-menu").hide();
                         });
@@ -377,14 +420,6 @@
                                 call_api("ols",function(e){
                                     try{
                                         if(e['respCode']==0){
-                                            estr="";
-                                            for(key in e['respData']['Regression Summary']){
-                                                estr+=key+":<br>";
-                                                for(key2 in e['respData']['Regression Summary'][key]){
-                                                    estr+=key2+":"+e['respData']['Regression Summary'][key][key2]+"<br>";
-                                                }
-                                            }
-                                            //$("#nav-left-menu").html(`OLS分析结果<br>${estr}`);
                                             layer.close(index);
                                             layer.open({"title":"OLS分析结果","content":e['respData']['s_text'].replace(/\n/g,"<br>").replace(/ /g,"&nbsp;"),"area":['80%','100%']});
                                         }else{
@@ -397,6 +432,71 @@
                                 });
                             }
                             });
+                            
+                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                            for(key in keys){
+                                $("[keys='true']").append(`<option>${keys[key]}</option>`);
+                            }
+                            $("[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+
+                        $("#nav-top-api-menu-probit").click(function(e){
+                            layer.open({title:"Probit估计接口",content:`
+                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
+                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            </div>
+                            `,
+                            yes:function(index){
+                                call_api("probit",function(e){
+                                    try{
+                                        if(e['respCode']==0){
+                                            layer.close(index);
+                                            layer.open({"title":"probit分析结果","content":e['respData']['s_text'].replace(/\n/g,"<br>").replace(/ /g,"&nbsp;"),"area":['80%','100%']});
+                                        }else{
+                                            layer.msg(e['errMsg']);
+                                        }
+                                    }catch(err){
+                                        layer.msg(err.message);
+                                    }
+                                    
+                                });
+                            }
+                            });
+                            
+                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                            for(key in keys){
+                                $("[keys='true']").append(`<option>${keys[key]}</option>`);
+                            }
+                            $("[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+
+                        $("#nav-top-api-menu-logit").click(function(e){
+                            layer.open({title:"Logit估计接口",content:`
+                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
+                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            </div>
+                            `,
+                            yes:function(index){
+                                call_api("logit",function(e){
+                                    try{
+                                        if(e['respCode']==0){
+                                            layer.close(index);
+                                            layer.open({"title":"Logit分析结果","content":e['respData']['s_text'].replace(/\n/g,"<br>").replace(/ /g,"&nbsp;"),"area":['80%','100%']});
+                                        }else{
+                                            layer.msg(e['errMsg']);
+                                        }
+                                    }catch(err){
+                                        layer.msg(err.message);
+                                    }
+                                    
+                                });
+                            }
+                            });
+                            
                             $("select[keys='true']").append(`<option value='null'>请选择</option>`);
                             for(key in keys){
                                 $("[keys='true']").append(`<option>${keys[key]}</option>`);
@@ -428,6 +528,38 @@
                         });
 
 
+                        $("#nav-top-api-menu-corr").click(function(e){
+                                layer.open({title:"相关系数接口",content:`
+                            <div>选择变量1:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
+                            选择变量2:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            </div>
+                            `,
+                            yes:function(index){
+                                call_api("corr",function(e){
+                                    try{
+                                        if(e['respCode']==0){
+                                            layer.close(index);
+                                            estr=`变量1:${$("#argu1").val()}<br>变量2:${$("#argu2").val()}<br>相关系数:${e['respData']['Significance'][0]}<br>显著性:${e['respData']['Significance'][1]}`;
+                                            layer.open({title:"相关系数分析结果",content:estr});
+                                        }else{
+                                            layer.msg(e['errMsg']);
+                                        }
+                                    }catch(err){
+                                        layer.msg(err.message);
+                                    }
+                                });
+                            }
+                            });
+                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                            for(key in keys){
+                                $("[keys='true']").append(`<option>${keys[key]}</option>`);
+                            }
+                            $("[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+
+
                     }else{
                         $("#nav-top-api-menu").show();
                     }
@@ -438,7 +570,7 @@
                     if($("#nav-top-more-menu").length==0){
                         $("body").append(`<div id='nav-top-more-menu' class='nav-top-option-menu'></div>`);
                         $("#nav-top-more-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
-                        $("#nav-top-more-menu").append(`<div id='nav-top-more-menu-about' class='nav-top-option-menu-in'>关于CE Toolbox</div>`);
+                        $("#nav-top-more-menu").append(`<div id='nav-top-more-menu-about' class='nav-top-option-menu-in'>关于CE</div>`);
                         $("#nav-top-more-menu").append(`<div id='nav-top-more-menu-apidoc' class='nav-top-option-menu-in'>API文档</div>`);
                         $("#nav-top-more-menu").append(`<div id='nav-top-more-menu-bug' class='nav-top-option-menu-in'>问题反馈</div>`);
                         $("#nav-top-more-menu").mouseleave(function(e){
@@ -463,7 +595,11 @@
                     if($("#nav-top-edit-menu").length==0){
                         $("body").append(`<div id='nav-top-edit-menu' class='nav-top-option-menu'></div>`);
                         $("#nav-top-edit-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
-                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-about' class='nav-top-option-menu-in'>筛选</div>`);
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-choose' class='nav-top-option-menu-in' debug="true">筛选</div>`);
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-loss' class='nav-top-option-menu-in' debug="true">缺失值处理</div>`);
+                        $("[debug=true]").click(function(e){
+                            layer.msg($(e.target).html()+"接口正在开发中,暂时不可使用!");
+                        });
                         $("#nav-top-edit-menu").mouseleave(function(e){
                             $("#nav-top-edit-menu").hide();
                         });
@@ -476,7 +612,7 @@
                     e.preventDefault();
                 });
 
-                $("#logo").click(function(e){
+                $("#logo,#text0").click(function(e){
                     copyright();
                 });
 
@@ -681,15 +817,15 @@
     </head>
     <body>
         <div id="l0" step="1">
-            <div id="text0" hidden="true">Data Analysis Demo<br><span style="font-size: 20px;"></span></div>
+            <div id="text0" hidden="true">CE Toolbox<br><span style="font-size: 20px;"></span></div>
             <img id="ico0" src="https://abxmc.live/CE/images/dta.svg">
         </div>
         <div id="l1" step="1">
             <div id="text1">
-                <div id="text2">计算经济学<br>数据处理工具箱前端测试</div>
+                <div id="text2">计算经济学<br>数据处理工具箱</div>
                 
-                <div id="go1">开始体验</div>
-                <p>可分析<strong>dta(推荐)/xls/xlsx/csv</strong>文件</p>
+                <div id="go1">选择数据文件</div>
+                <p>支持<strong>dta(推荐)/xls/xlsx/csv</strong>文件</p>
                 <div id="jdt" hidden="true">
                     <div id="jdt2">
 
@@ -724,7 +860,7 @@
                 </div>
                 <hr>
                 <div id="nav-left-menu" style="padding-left: 5px;">
-
+                    提示:右键列名查看更多选项
                 </div>
     
             </div>

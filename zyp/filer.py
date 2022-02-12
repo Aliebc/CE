@@ -22,9 +22,19 @@ except:
     raise RuntimeError("Cannot open and load the config file!")
 
 def rend1(request):
-    htmls=open(os.path.join('zyp','render_main.source'),encoding="utf-8").read().replace('__DOMAIN__',conf['api_domain'])
+    skey={
+        '__DOMAIN__':conf['api_domain'],
+        '__YEAR__':time.strftime("%Y",time.localtime()),
+        '__CET_VERSION__':'0.2.1',
+        '__CDN_JQUERY__':'https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js',
+        '__CDN_LAYER__':'https://www.layuicdn.com/layer-v3.5.1/layer.js'
+    }
+    html_src=open(os.path.join('zyp','render_main.source'),encoding="utf-8").read()
+    html_str=html_src
+    for key in skey:
+        html_str=html_str.replace(key,skey[key])
     if request.method == 'GET':
-        return HttpResponse(htmls)
+        return HttpResponse(html_str)
     else:
         return JsonResponse(ce.ret(-1,None,"Bad Method"))
 
