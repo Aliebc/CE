@@ -87,7 +87,7 @@ def hist(request):
         try:
             dta=filer.get_file_data(request)
             argu1=request.GET.get('argu1',default=None)
-            title=request.GET.get('title',default=str("Density of "+argu1))
+            title=request.GET.get('title',default=str("Histogram of "+argu1))
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except:
@@ -106,7 +106,7 @@ def hetero_density(request):
             dta=filer.get_file_data(request)
             argu1=request.GET.get('argu1',default=None)
             argu_type=request.GET.get('argu_type',default=None)
-            title=request.GET.get('title',default=str("Density of "+argu1))
+            title=request.GET.get('title',default=str("Heterogeneity Density of "+argu1))
             width=int(request.GET.get('width',default=12))
             segment=float(request.GET.get('segment',default=None))
             height=int(request.GET.get('height',default=8))+'_type'
@@ -129,7 +129,7 @@ def type_density(request):
             dta=filer.get_file_data(request)
             argu1=request.GET.get('argu1',default=None)
             argu2=request.GET.get('argu2',default=None)
-            title=request.GET.get('title',default=str("Density of "+argu1))
+            title=request.GET.get('title',default=str("Type Density of "+argu1))
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except:
@@ -149,7 +149,7 @@ def type_regress(request):
             argu1=request.GET.get('argu1',default=None)
             argu2=request.GET.get('argu2',default=None)
             argu_type=request.GET.get('argu_type',default=None)
-            title=request.GET.get('title',default=str("Density of "+argu1))
+            title=request.GET.get('title',default=str("Regression of "+argu1+ " ~ "+argu2))
             width=int(request.GET.get('width',default=12))
             segment=float(request.GET.get('segment',default=None))
             height=int(request.GET.get('height',default=8))

@@ -7,7 +7,7 @@ import pandas as pd
 import numpy as npy
 from django.http import HttpResponse,JsonResponse
 
-ce_version_str="1.1.3"
+ce_version_str="1.1.4 Debug"
 
 def ret(code,data,err):
     return {"respCode":code,"respData":data,"errMsg":err}
