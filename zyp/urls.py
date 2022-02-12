@@ -47,4 +47,5 @@ urlpatterns = [
     path('dimg_hetero_corr/',datac.type_corr),
     path('getf/',filer.ret_file),
     path('binary_probit/',datac.binary_probit),
+    path('binary_logit/',datac.binary_logit),
 ]
