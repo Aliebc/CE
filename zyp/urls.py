@@ -19,12 +19,13 @@ from . import ce
 from . import filer
 from . import datac
 from . import imgc
+from . import editr
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('version/',ce.ce_version),
     path('',filer.rend1),
+    path('version/',ce.ce_version),
     path('filer/',filer.recv_file),
     path('getd/',filer.getd),
     path('corr/',datac.dcorr),
@@ -34,7 +35,6 @@ urlpatterns = [
     path('dsummary/',datac.dsummary),
     path('xsummary/',datac.xsummary),
     path('lm3/',datac.dlm3),
-    path('dbar/',filer.imgtest),
     path('dimg_density/',imgc.density),
     path('dimg_hist/',imgc.hist),
     path('dimg_hetero_density/',imgc.hetero_density),
@@ -50,4 +50,6 @@ urlpatterns = [
     path('getf/',filer.ret_file),
     path('binary_probit/',datac.binary_probit),
     path('binary_logit/',datac.binary_logit),
+    path('select_simple/',editr.sql_select_simple),
+    path('select_advance/',editr.sql_select_advance),
 ]

@@ -2,11 +2,9 @@ import os
 import re
 import time
 import json
-import math
 import hashlib
 import pathlib
 import pandas as pd
-import numpy as npy
 from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
 from . import ce
 
@@ -25,7 +23,7 @@ def rend1(request):
     skey={
         '__DOMAIN__':conf['api_domain'],
         '__YEAR__':time.strftime("%Y",time.localtime()),
-        '__CET_VERSION__':'0.2.1',
+        '__CET_VERSION__':'0.2.2',
         '__CDN_JQUERY__':'https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js',
         '__CDN_LAYER__':'https://www.layuicdn.com/layer-v3.5.1/layer.js'
     }
@@ -108,8 +106,6 @@ def getd(request):
             f_suffix=rp['f_suffix']
         except:
             return JsonResponse(ce.ret(-1,None,"Error(#1:Format)."))
-        #uid=request.POST.get("uid",default=None)
-        #f_suffix=request.POST.get("f_suffix",default=None)
         if uid and f_suffix:
             f_name=str(uid)+str(f_suffix)
             f_path=os.path.join(file_dir_path,f_name)
@@ -121,10 +117,12 @@ def getd(request):
                 elif f_suffix == '.dta':
                     fdata=pd.read_stata(f_path)
                 elif f_suffix == '.csv':
-                    #f_sep=request.POST.get("f_sep",default=None)
                     fdata=pd.read_csv(f_path)
+                    
                 else:
                     return JsonResponse(ce.ret(-1,None,"Error(#2:Suffix)."))
+                if fdata.shape[0]>1000:
+                    fdata=fdata.head(1000)
                 return JsonResponse(ce.ret(0,{"DataList":json.loads(fdata.to_json(orient='records'))},None))
             except:
                 return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
@@ -132,11 +130,6 @@ def getd(request):
             return JsonResponse(ce.ret(-1,None,"Error(#1:Format)."))
     else:
         return JsonResponse(ce.ret(-1,None,"Only POST method is allowed."))
-
-
-def imgtest(request):
-    sv=open("/opt/test/t2.svg","r").read()
-    return HttpResponse(sv,content_type="image/svg+xml")
 
 def ret_file(request):
     try:

@@ -20,7 +20,9 @@
                 "down":"__DOMAIN__getf/",
                 "version":"__DOMAIN__version/",
                 "probit":"__DOMAIN__binary_probit/",
-                "logit":"__DOMAIN__binary_logit/"
+                "logit":"__DOMAIN__binary_logit/",
+                "select_simple":"__DOMAIN__select_simple/",
+                "select_advance":"__DOMAIN__select_advance/"
             };
 
             function Json2Table_describe(jso){
@@ -51,7 +53,6 @@
 
             function Json2Table_xcorr(jso){
                 estr="<table class='gridtable'><thead><th>Variable</th>";
-                //let range = (start, end) => new Array(end - start).fill(start).map((el, i) => start + i);
                 let r=0;
                 for (k in jso){
                     r++;
@@ -68,6 +69,7 @@
                     estr+=`<tr>`;
                 }
                 estr+=`</table>`;
+                console.log(estr);
                 return estr;
             }
 
@@ -113,6 +115,7 @@
             }
 
             function call_api(id,callback){
+                var f;
                 $.ajax({
                         url:apid[id],
                         type:"POST",
@@ -120,16 +123,23 @@
                         dataType:"json",
                         processData:false,
                         beforeSend:function(){
+                            f=layer.msg('已提交,等待中..', {
+                                icon: 16
+                                ,shade: 0.3
+                                ,time: false
+                            });
                         },
                         xhr:function(){
                             var xhr = new XMLHttpRequest();
                             return xhr;
                         },
                         success:function(dta){
+                            layer.close(f);
                             callback(dta);
                         },
-                        error:function(e){
-                            alert("请求API时发生网络类错误,请检查配置");
+                        error:function(e,c,t){
+                            layer.close(f);
+                            alert("请求API时本地错误:"+c);
                         }
                 });
             }
@@ -138,8 +148,39 @@
 
             function copyright(){
                 call_api("version",function(e){
-                    layer.open({"title":"关于","content":"CE-Toolbox __CET_VERSION__<br>计算经济学工具箱(CE-API内置图形交互界面)<br>CE-Toolbox作者:AliebcX<br>&copy; 2021-__YEAR__ CE-Toolbox All rights reserved.<hr>CE-API "+e['respData']['version']+"<br>CE-API由清华大学经管学院刘潇老师助研项目组共同维护<br><a href='https://github.com/Aliebc/CE/graphs/contributors'>查看贡献者</a><br>&copy; 2021-__YEAR__ CE-API All rights reserved.<hr>CE版本以CE-API版本为主<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和中国大陆地区相关法律法规",area:['600px']});
+                    layer.open({"title":"关于","content":"CE-Toolbox __CET_VERSION__<br>计算经济学工具箱(CE-API内置图形交互界面)<br>CE-Toolbox作者:AliebcX<br>&copy; 2021-__YEAR__ CE-Toolbox All rights reserved.<hr>CE-API "+e['respData']['version']+"<br>CE-API由清华大学经管学院刘潇老师助研项目组共同维护<br>CE-API当前配置在__DOMAIN__<br><a href='https://github.com/Aliebc/CE/graphs/contributors'>查看贡献者</a><br>&copy; 2021-__YEAR__ CE-API All rights reserved.<hr>CE版本以CE-API版本为主<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和中国大陆地区相关法律法规",area:['600px']});
                 });
+            }
+
+            function table2_show(api_name){
+                call_api(api_name,function(cons){
+                    if(cons['respCode']==0){
+                        $("#table-show-head,#table-show-body").html("");
+                        keys2=new Array();
+                        $("#table-show-head").append(`<th table-show-th-key2='Row' cked='false'>Row</th>`);
+                        for(key in cons['respData']['DataList'][0]){
+                            $("#table-show-head").append(`<th table-show-th-key='${key}' table-show-th-type='${typeof( cons['respData']['DataList'][0][key])}' cked='false'>${key}</th>`);
+                            keys2.push(key);
+                        }
+                        for(x in cons['respData']['DataList']){
+                            $("#table-show-body").append(`<tr id='table-show-tr-${x}'></tr>`);
+                            $(`#table-show-tr-${x}`).append(`<td table-show-td-key='Row'>${parseInt(x)+1}</td>`);
+                            for(key in keys2){
+                                $(`#table-show-tr-${x}`).append(`<td table-show-td-key='${keys2[key]}' table-show-td-value='${cons['respData']['DataList'][x][keys2[key]]}' table-show-td-type='${typeof(cons['respData']['DataList'][x][keys2[key]])}'>${cons['respData']['DataList'][x][keys2[key]]}</td>`);
+                            }
+                        }
+                        $("#table1").hide();
+                        $("#table2").show();
+                        $("[table-show-td-type='string']").css("color","red");
+                    }else{
+                        layer.msg(cons['errMsg']);
+                    }
+                });
+            }
+
+            function table1_show(){
+                $("#table2").hide();
+                $("#table1").show();
             }
 
             function table_init(){
@@ -164,7 +205,7 @@
                         $("#table1").show();
                         $("#wait-info").remove();
                         $("[table-main-td-type='string']").css("color","red");
-                        $("#default-info").html(`基本信息<br>共${cons['respData']['DataList'].length}条记录<br>共${keys.length}个键值<br>`);
+                        $("#default-info").html(`原始数据基本信息<br>共${cons['respData']['DataList'].length}条记录<br>共${keys.length}个键值<br>`);
                     }else{
                         layer.msg("读取数据失败,请重新打开或更换文件");
                         $("[step='1']").show();
@@ -394,11 +435,15 @@
                         $("body").append(`<div id='nav-top-view-menu' class='nav-top-option-menu'></div>`);
                         $("#nav-top-view-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
                         $("#nav-top-view-menu").append(`<div id='nav-top-view-menu-fulls' class='nav-top-option-menu-in'>全屏模式</div>`);
+                        $("#nav-top-view-menu").append(`<div id='nav-top-view-menu-show1' class='nav-top-option-menu-in'>显示原始数据</div>`);
                         $("#nav-top-view-menu").mouseleave(function(e){
                             $("#nav-top-view-menu").hide();
                         });
                         $("#nav-top-view-menu-fulls").click(function(){
                             toggleFullScreen();
+                        });
+                        $("#nav-top-view-menu-show1").click(function(e){
+                            table1_show();
                         });
 
 
@@ -453,13 +498,17 @@
                             <div>选择计算变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
                             </div>
                             `,
-                            yes:function(e){
+                            yes:function(ind){
+                                x3=[];
+                                $("input.ckeys:checked").each(function(){
+                                    x3.push($(this).val());
+                                });
                                 call_api("summary2",function(e){
+                                    x2={};
+                                    for(k in x3){
+                                        x2[x3[k]]=e['respData'][x3[k]]
+                                    }
                                     if(e['respCode']==0){
-                                        x2={};
-                                        $("input.ckeys:checked").each(function(){
-                                            x2[$(this).val()]=e['respData'][$(this).val()]
-                                        });
                                         estr=Json2Table_describe(x2);
                                         layer.open({title:"高级描述性统计结果",content:estr})
                                     }else{
@@ -482,20 +531,26 @@
                             <div>选择计算变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
                             </div>
                             `,
-                            yes:function(e){
+                            yes:function(ind){
+                                x3=[];
+                                $("input.ckeys:checked").each(function(){
+                                    x3.push($(this).val());
+                                });
                                 call_api("xcorr",function(e){
                                     if(e['respCode']==0){
                                         x2={};
-                                        x3=[];
-                                        $("input.ckeys:checked").each(function(){
-                                            x3.push($(this).val());
-                                        });
-                                        for(i in x3){
+                                        
+                                        try{
+                                            for(i in x3){
                                             x2[x3[i]]={}
                                             for (j in x3){
                                                 x2[x3[i]][x3[j]]=e['respData']['CorrMartix'][x3[i]][x3[j]]
                                             }
                                         }
+                                        }catch(e){
+                                            layer.msg("Error:"+e.message);
+                                        }
+                                        console.log(x2);
                                         estr=Json2Table_xcorr(x2);
                                         layer.open({title:"高级相关系数矩阵",content:estr})
                                     }else{
@@ -658,7 +713,7 @@
 
 
                         $("#nav-top-api-menu-corr").click(function(e){
-                                layer.open({title:"相关系数接口",content:`
+                            layer.open({title:"相关系数接口",content:`
                             <div>选择变量1:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
                             选择变量2:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
                             </div>
@@ -724,13 +779,46 @@
                     if($("#nav-top-edit-menu").length==0){
                         $("body").append(`<div id='nav-top-edit-menu' class='nav-top-option-menu'></div>`);
                         $("#nav-top-edit-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
-                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-choose' class='nav-top-option-menu-in' debug="true">筛选</div>`);
-                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-loss' class='nav-top-option-menu-in' debug="true">缺失值处理</div>`);
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-choose' class='nav-top-option-menu-in' debug="true">P1筛选</div>`);
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-loss' class='nav-top-option-menu-in' debug="true">P1缺失值处理</div><hr>`);
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-SelectSimple' class='nav-top-option-menu-in'>简单语句筛选</div>`);
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-SelectAdvance' class='nav-top-option-menu-in'>高级语句筛选</div>`);
                         $("[debug=true]").click(function(e){
                             layer.msg($(e.target).html()+"接口正在开发中,暂时不可使用!");
                         });
                         $("#nav-top-edit-menu").mouseleave(function(e){
                             $("#nav-top-edit-menu").hide();
+                        });
+                        $("#nav-top-edit-menu-SelectAdvance").click(function(e){
+                            $("#argu1,#argu2").val("");
+                            layer.open({title:"高级语句筛选",content:`
+                            <div>查询语句:<br><input type='text' keys='true' id='explain_v1' v_name='argu1'></input><br>
+                                FROM YOUR_TABLE <br>
+                                <input type='text' keys='true' id='explain_v2' v_name='argu2'></input><br>
+                            </div>
+                            `,
+                            yes:function(index){
+                                layer.close(index);
+                                table2_show("select_advance");
+                            }
+                            });
+                            $("[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+                        $("#nav-top-edit-menu-SelectSimple").click(function(e){
+                            layer.open({title:"简单语句筛选",content:`
+                            <div>查询语句:<br>WHERE<input type='text' keys='true' id='explain_v1' v_name='argu1'></input><br>
+                            </div>
+                            `,
+                            yes:function(index){
+                                layer.close(index);
+                                table2_show("select_simple");
+                            }
+                            });
+                            $("[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
                         });
                     }else{
                         $("#nav-top-edit-menu").show();
@@ -1001,6 +1089,22 @@
                         <th>T2</th>
                     </thead>
                     <tbody id="table-main-body">
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>4</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="gridtable" id="table2" hidden="true">
+                    <thead id="table-show-head">
+                        <th>T1</th>
+                        <th>T2</th>
+                    </thead>
+                    <tbody id="table-show-body">
                         <tr>
                             <td>1</td>
                             <td>2</td>
