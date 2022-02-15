@@ -1,29 +1,13 @@
-import os
-import re
-import time
 import json
-from pandas import DataFrame
-import hashlib
-import pathlib
 import pandas as pd
 import numpy as npy
 import scipy.stats as st
-from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
+from django.http import JsonResponse
 from . import ce
+from .ce import ret2
 from . import filer
-from numpy import mean, median, pv, var, std
 import statsmodels.api as sm
-from scipy.stats import ttest_ind
 from sklearn import preprocessing
-
-def dsummary(request):
-    try:
-        argu1=request.POST.get('argu1')
-        dta=filer.get_file_data(request)
-        return HttpResponse(mean(dta[argu1]))
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
-    return 1
 
 def dcorr(request):
     try:
@@ -31,16 +15,16 @@ def dcorr(request):
         argu1=json.loads(request.body)['argu1']
         argu2=json.loads(request.body)['argu2']
         c2=st.pearsonr(dta[argu1],dta[argu2])
-        cord=DataFrame(dta).corr()
+        cord=dta.corr()
         d=cord.to_json()
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
-    return JsonResponse(ce.ret(0,{"CorrMartix":json.loads(d),"Significance":c2},None))
+    except Exception as e:
+        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
+    return ret2(0,{"CorrMartix":json.loads(d),"Significance":c2},None)
 
 def xcorr(request):
     try:
         dta=filer.get_file_data(request)
-        cord=json.loads(DataFrame(dta).corr().to_json())
+        cord=json.loads(dta.corr().to_json())
         ret={}
         for i in cord:
             ret[i]={}
@@ -48,29 +32,17 @@ def xcorr(request):
                 cor=st.pearsonr(dta[i],dta[j])
                 ret[i][j]=cor
     except Exception as e:
-        print(repr(e))
-        return JsonResponse(ce.ret(-1,None,repr(e)))
-    return JsonResponse(ce.ret(0,{"CorrMartix":ret},None))
+        return ret2(-1,None,repr(e))
+    return ret2(0,{"CorrMartix":ret},None)
 
 def dtype(request):
     try:
         dta=filer.get_file_data(request)
         argu1=json.loads(request.body)['argu1']
         retu=dta[argu1]
-        #print(retu.value_counts().to_json())
         return JsonResponse(ce.ret(0,json.loads(retu.value_counts().to_json()),None))
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
-
-def dhist(request):
-    try:
-        dta=filer.get_file_data(request)
-        argu1=json.loads(request.body)['argu1']
-        count=int(json.loads(request.body)['count'])
-        retu=dta[argu1]
-        return JsonResponse(ce.ret(0,json.loads(pd.cut(retu,count).value_counts().to_json()),None))
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+    except Exception as e:
+        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
 
 def dsummary(request):
     try:
@@ -78,8 +50,8 @@ def dsummary(request):
         argu1=json.loads(request.body)['argu1']
         retu=dta[argu1]
         return JsonResponse(ce.ret(0,json.loads(retu.describe().to_json()),None))
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+    except Exception as e:
+        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
 
 def xsummary(request):
     try:
@@ -89,8 +61,8 @@ def xsummary(request):
             r2=dta[key]
             a2[key]=json.loads(r2.describe().to_json())
         return JsonResponse(ce.ret(0,a2,None))
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+    except Exception as e:
+        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
 
 def dlm3(request):
     try:
@@ -100,8 +72,8 @@ def dlm3(request):
         reg=json.loads(request.body)['reg']
         retu=npy.polyfit(dta[argu1],dta[argu2],reg)
         return JsonResponse(ce.ret(0,{"reg":reg,"RegList":retu.tolist(),"DataList":{argu1:json.loads(dta[argu1].to_json()),argu2:json.loads(dta[argu2].to_json())}},None))
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+    except Exception as e:
+        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
 
 def heter_compare_apply(value,y,c_name):
     if value>y:
@@ -112,20 +84,6 @@ def heter_compare_apply(value,y,c_name):
 def heter_compare_df(df,col_name,s):
     df.loc[:,col_name+'_type']=df[col_name].apply(heter_compare_apply,y=s,c_name=col_name)
     return df
-
-
-def ttest(request):
-    try:
-        dta = filer.get_file_data(request)
-        argu1=json.loads(request.body)['argu1']
-        argu2=json.loads(request.body)['argu2']
-        try:
-            pval=ttest_ind(dta[argu1],dta[argu2]).pvalue
-            return JsonResponse(ce.ret(0,{'pvalue':pval},None))
-        except:
-            return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#3:Req)."))
 
 def type_corr(request):
     try:
@@ -140,8 +98,8 @@ def type_corr(request):
         dta3=dta[dta[argu_type]<=segment]
         re2=st.pearsonr(dta3[argu1],dta3[argu2])
         return JsonResponse(ce.ret(0,{'More':re1,'Less':re2},None))
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+    except Exception as e:
+        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
 
 #By Andy at 2022/2/7 17:30
 #Modified By Aliebc at 2022/2/7 17:50
@@ -212,7 +170,7 @@ def binary_probit(request):
                                "f_statistic":f_test
                                 })
         results_df = results_df[["pseudo_r_squared","log_likelihood","ll_null","llr_p_value","f_statistic","coeff","pvals","conf_lower","conf_higher"]]
-    except:
+    except Exception as e:
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal). Check if argu2 is binary."))
     return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None))
 
@@ -249,6 +207,6 @@ def binary_logit(request):
                                "f_statistic":f_test
                                 })
         results_df = results_df[["pseudo_r_squared","log_likelihood","ll_null","llr_p_value","f_statistic","coeff","pvals","conf_lower","conf_higher"]]
-    except:
+    except Exception as e:
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal). Check if argu2 is binary."))
     return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None))

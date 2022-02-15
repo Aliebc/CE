@@ -5,7 +5,7 @@ import json
 import hashlib
 import pathlib
 import pandas as pd
-from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
+from django.http import HttpResponse,JsonResponse
 from . import ce
 
 try:
@@ -19,13 +19,19 @@ try:
 except:
     raise RuntimeError("Cannot open and load the config file!")
 
+def generate_uid(m_name='md5'):
+    return str(hashlib.md5((str(m_name)+str(time.time())).encode("utf-8")).hexdigest())
+
 def rend1(request):
+    if(conf['api_domain'][-1]!='/'):
+        conf['api_domain']+='/'
     skey={
         '__DOMAIN__':conf['api_domain'],
         '__YEAR__':time.strftime("%Y",time.localtime()),
-        '__CET_VERSION__':'0.2.2',
+        '__CET_VERSION__':'0.4.1',
         '__CDN_JQUERY__':'https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js',
-        '__CDN_LAYER__':'https://www.layuicdn.com/layer-v3.5.1/layer.js'
+        '__CDN_LAYER__':'https://www.layuicdn.com/layer-v3.5.1/layer.js',
+        '__REGION__':'中国大陆地区'
     }
     html_src=open(os.path.join('zyp','render_main.source'),encoding="utf-8").read()
     html_str=html_src
@@ -146,3 +152,19 @@ def ret_file(request):
     except:
         return JsonResponse(ce.ret(-1,None,"Error(#1):Type"))
     return HttpResponse(f_cont,headers={'Content-Type':'application/octet-stream',"Content-Disposition":"attachment ;filename="+f_name})
+
+def del_file(request):
+    try:
+        if request.method == 'POST':
+            rp=json.loads(request.body)
+            uid=rp['uid']
+            f_suffix=rp['f_suffix']
+        elif request.method == 'GET':
+            uid=request.GET.get('uid')
+            f_suffix=request.GET.get('f_suffix')
+        f_name=str(uid)+str(f_suffix)
+        f_path=os.path.join(file_dir_path,f_name)
+        os.remove(f_path)
+    except:
+        return JsonResponse(ce.ret(-1,None,"Error(#1):Type"))
+    return JsonResponse(ce.ret(0,"Your data has been deleted.",None))
