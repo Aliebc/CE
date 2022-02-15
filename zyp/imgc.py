@@ -1,30 +1,19 @@
-from email.policy import default
 import os
-import re
 import time
-import json
-import math
 import hashlib
-import pathlib
-from urllib import request
-import pandas as pd
-import numpy as npy
-from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
+from django.http import HttpResponse,JsonResponse
 from . import ce
 from . import datac
 from . import filer
 from plotnine import *
 
 image_path=filer.image_path
-right="<!--This image is created by computational economics project by Aliebc, Tsinghua University(E-mail:ad_xyz@outlook.com).-->\n"
+right="<!--This image is created by computational economics project(CE-API) by Aliebc, Tsinghua University(E-mail:ad_xyz@outlook.com).-->\n"
 
 def sav_svg(img,width,height):
     img_uid=str(hashlib.md5((str(time.time())).encode("utf-8")).hexdigest())
     f_name=img_uid+".svg"
     img.save(os.path.join(image_path,f_name),format="svg",width=width,height=height)
-    #img_file=open(os.path.join(image_path,f_name),'r')
-    #img_cont=img_file.readline()+right+"<!--Image tuid:"+img_uid+"-->\n"+img_file.read()
-    #res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
     return img_uid
 
 
@@ -229,3 +218,6 @@ def type_bar(request):
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
     else:
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+
+def tuid(request):
+    return None

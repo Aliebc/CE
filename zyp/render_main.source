@@ -22,8 +22,19 @@
                 "probit":"__DOMAIN__binary_probit/",
                 "logit":"__DOMAIN__binary_logit/",
                 "select_simple":"__DOMAIN__select_simple/",
-                "select_advance":"__DOMAIN__select_advance/"
+                "select_advance":"__DOMAIN__select_advance/",
+                "del":"__DOMAIN__delf/"
             };
+
+            function getQueryVariable(variable){
+                var query = window.location.search.substring(1);
+                var vars = query.split("&");
+                for (var i=0;i<vars.length;i++) {
+                        var pair = vars[i].split("=");
+                        if(pair[0] == variable){return pair[1];}
+                }
+                return(false);
+            }
 
             function Json2Table_describe(jso){
                 esth={
@@ -148,16 +159,22 @@
 
             function copyright(){
                 call_api("version",function(e){
-                    layer.open({"title":"关于","content":"CE-Toolbox __CET_VERSION__<br>计算经济学工具箱(CE-API内置图形交互界面)<br>CE-Toolbox作者:AliebcX<br>&copy; 2021-__YEAR__ CE-Toolbox All rights reserved.<hr>CE-API "+e['respData']['version']+"<br>CE-API由清华大学经管学院刘潇老师助研项目组共同维护<br>CE-API当前配置在__DOMAIN__<br><a href='https://github.com/Aliebc/CE/graphs/contributors'>查看贡献者</a><br>&copy; 2021-__YEAR__ CE-API All rights reserved.<hr>CE版本以CE-API版本为主<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和中国大陆地区相关法律法规",area:['600px']});
+                    layer.open({"title":"关于","content":"CE-Toolbox __CET_VERSION__<br>计算经济学工具箱(CE-API内置图形交互界面)<br>CE-Toolbox作者:AliebcX<br>&copy; 2021-__YEAR__ CE-Toolbox All rights reserved.<hr>CE-API "+e['respData']['version']+"<br>CE-API由清华大学经管学院刘潇老师助研项目组共同维护<br>CE-API当前配置在__DOMAIN__<br><a href='https://github.com/Aliebc/CE/graphs/contributors'>查看贡献者</a><br>&copy; 2021-__YEAR__ CE-API All rights reserved.<hr>CE版本以CE-API版本为主<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和__REGION__相关法律法规",maxHeight:'100%'});
                 });
             }
 
             function table2_show(api_name){
                 call_api(api_name,function(cons){
                     if(cons['respCode']==0){
-                        $("#table-show-head,#table-show-body").html("");
+                        window.open("__DOMAIN__?uid="+cons['respData']['uid']+"&f_suffix=.xlsx");
+                        /*$("#table-show-head,#table-show-body").html("");
                         keys2=new Array();
-                        $("#table-show-head").append(`<th table-show-th-key2='Row' cked='false'>Row</th>`);
+                        if (cons['respData']['DataList']==0){
+                            $("#table-show-head").append(`<th table-show-th-key2='Row' cked='false'>Empty Set</th>`);
+                        }else{
+                            $("#table-show-head").append(`<th table-show-th-key2='Row' cked='false'>Row</th>`);
+                        }
+                        
                         for(key in cons['respData']['DataList'][0]){
                             $("#table-show-head").append(`<th table-show-th-key='${key}' table-show-th-type='${typeof( cons['respData']['DataList'][0][key])}' cked='false'>${key}</th>`);
                             keys2.push(key);
@@ -171,7 +188,7 @@
                         }
                         $("#table1").hide();
                         $("#table2").show();
-                        $("[table-show-td-type='string']").css("color","red");
+                        $("[table-show-td-type='string']").css("color","red");*/
                     }else{
                         layer.msg(cons['errMsg']);
                     }
@@ -190,7 +207,12 @@
                         $("[step='2']").show();
                         $("#table-main-head,#table-main-body").html("");
                         keys=new Array();
-                        $("#table-main-head").append(`<th table-main-th-key2='Row' cked='false'>Row</th>`);
+                        if(cons['respData']['DataList']==0){
+                            $("#table-main-head").append(`<th table-main-th-key2='Row' cked='false'>Empty Set</th>`);
+                        }else{
+                            $("#table-main-head").append(`<th table-main-th-key2='Row' cked='false'>Row</th>`);
+                        }
+                        
                         for(key in cons['respData']['DataList'][0]){
                             $("#table-main-head").append(`<th table-main-th-key='${key}' table-main-th-type='${typeof( cons['respData']['DataList'][0][key])}' cked='false'>${key}</th>`);
                             keys.push(key);
@@ -199,15 +221,16 @@
                             $("#table-main-body").append(`<tr id='table-main-tr-${x}'></tr>`);
                             $(`#table-main-tr-${x}`).append(`<td table-main-td-key='Row'>${parseInt(x)+1}</td>`);
                             for(key in keys){
-                                $(`#table-main-tr-${x}`).append(`<td table-main-td-key='${keys[key]}' table-main-td-value='${cons['respData']['DataList'][x][keys[key]]}' table-main-td-type='${typeof(cons['respData']['DataList'][x][keys[key]])}'>${cons['respData']['DataList'][x][keys[key]]}</td>`);
+                                $(`#table-main-tr-${x}`).append(`<td table-main-td-key='${keys[key]}' table-main-td-value='${cons['respData']['DataList'][x][keys[key]]}' table-main-td-type='${typeof(cons['respData']['DataList'][x][keys[key]])}' class='std-td'>${cons['respData']['DataList'][x][keys[key]]}</td>`);
                             }
                         }
                         $("#table1").show();
                         $("#wait-info").remove();
-                        $("[table-main-td-type='string']").css("color","red");
-                        $("#default-info").html(`原始数据基本信息<br>共${cons['respData']['DataList'].length}条记录<br>共${keys.length}个键值<br>`);
+                        $("[table-main-td-type='string']").css("color","blue");
+                        $("#default-info").html(`数据基本信息<br>共${cons['respData']['DataList'].length}条记录<br>共${keys.length}个键值<br>`);
+                        $("[table-main-td-value='null']").css('background','red');
                     }else{
-                        layer.msg("读取数据失败,请重新打开或更换文件");
+                        layer.msg("数据不存在,或读取数据失败");
                         $("[step='1']").show();
                         $("#jdt").hide();
                         $("[step='2']").hide();
@@ -215,12 +238,12 @@
                     $("[table-main-th-key]").click(function(e){
                         key=$(e.target).attr("table-main-th-key");
                         if($(e.target).attr('cked')=='false'){
-                            $(`[table-main-td-key='${key}']`).css("background","grey");
+                            $(`[table-main-td-key='${key}'][table-main-td-value!='null']`).css("background","grey");
                             $(e.target).attr('cked','true');
                         }else{
                             $(e.target).attr('cked','false');
                             key=$(e.target).attr("table-main-th-key");
-                            $(`[table-main-td-key='${key}']`).css("background","white");
+                            $(`[table-main-td-key='${key}'][table-main-td-value!='null']`).css("background","white");
                         }
                     });
 
@@ -321,6 +344,9 @@
             }
 
             $(document).ready(function(){
+                $("#table-main,#nav-left").click(function(){
+                    $(".nav-top-option-menu").remove();
+                })
                 $("[step][step!='1']").hide();
                 $("#go1").click(function(){
                     $("#file0").click();
@@ -387,6 +413,11 @@
             });
 
             $(document).ready(function(){
+                if(getQueryVariable("uid")&&getQueryVariable("f_suffix")){
+                    $("#uid").val(getQueryVariable("uid"));
+                    $("#f_suffix").val(getQueryVariable("f_suffix"));
+                    table_init();
+                }
                 $("#nav-top-file").click(function(e){
                     $(".nav-top-option-menu").hide();
                     if($("#nav-top-file-menu").length==0){
@@ -395,15 +426,32 @@
                         $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-uid' class='nav-top-option-menu-in'>查看UID</div>`);
                         $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-save' class='nav-top-option-menu-in'>下载数据表</div>`);
                         $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-open' class='nav-top-option-menu-in'>打开新文件</div><hr>`);
-                        $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-close' class='nav-top-option-menu-in'>关闭所有渲染</div>`);
-                        $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-property' class='nav-top-option-menu-in'>浏览器属性</div>`);
+                        $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-share' class='nav-top-option-menu-in'>复制分享链接</div>`);
+                        $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-remove' class='nav-top-option-menu-in'>删除数据</div>`);
                         $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-reload' class='nav-top-option-menu-in'>回到首页</div>`);
+                        $("#nav-top-file-menu-remove").click(function(e){
+                            if(confirm("确认后将立即删除:\n1.本UID关联的数据\n2.本UID的分享链接")==true){
+                                call_api("del",function(d){
+                                    if(d['respCode']==0){
+                                        $("html").html(`成功删除,<a href='__DOMAIN__'>回到首页</a>`);
+                                    }else{
+                                        layer.msg(d['errMsg']);
+                                    }
+                                });
+                            }else{
+
+                            }
+                        });
                         $("#nav-top-file-menu").mouseleave(function(e){
                             $("#nav-top-file-menu").hide();
                         });
                         $("#nav-top-file-menu-reload").click(function(e){
-                            location.reload();
+                            window.location.href="__DOMAIN__";
                         });
+                        $("#nav-top-file-menu-share").click(function(e){
+                            navigator.clipboard.writeText(`__DOMAIN__?uid=${$("#uid").val()}&f_suffix=${$("#f_suffix").val()}`);
+                            layer.msg("已复制到剪切板");
+                        })
                         $("#nav-top-file-menu-uid").click(function(){
                             layer.open({content:$("#uid").val(),title:"UID","btn":['确定','复制'],"btn2":function(ind){
                                 navigator.clipboard.writeText($("#uid").val());
@@ -435,7 +483,7 @@
                         $("body").append(`<div id='nav-top-view-menu' class='nav-top-option-menu'></div>`);
                         $("#nav-top-view-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
                         $("#nav-top-view-menu").append(`<div id='nav-top-view-menu-fulls' class='nav-top-option-menu-in'>全屏模式</div>`);
-                        $("#nav-top-view-menu").append(`<div id='nav-top-view-menu-show1' class='nav-top-option-menu-in'>显示原始数据</div>`);
+                        //$("#nav-top-view-menu").append(`<div id='nav-top-view-menu-show1' class='nav-top-option-menu-in'>显示原始数据</div>`);
                         $("#nav-top-view-menu").mouseleave(function(e){
                             $("#nav-top-view-menu").hide();
                         });
@@ -461,8 +509,9 @@
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-heterreg' class='nav-top-option-menu-in'>异质性散点拟合图接口</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-typebar' class='nav-top-option-menu-in'>分类均值柱状图接口</div><hr>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-corr' class='nav-top-option-menu-in'>相关系数接口</div>`);
-                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xcorr' class='nav-top-option-menu-in'>高级相关系数矩阵</div>`);
-                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xsummary' class='nav-top-option-menu-in'>高级描述性统计</div>`);
+                        //$("#nav-top-api-menu").append(`<div id='nav-top-api-menu-testmean' class='nav-top-option-menu-in'>均值假设检验</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xcorr' class='nav-top-option-menu-in'>中级相关系数矩阵</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xsummary' class='nav-top-option-menu-in'>中级描述性统计</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-ols' class='nav-top-option-menu-in'>OLS回归接口</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-probit' class='nav-top-option-menu-in'>Probit估计接口</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-logit' class='nav-top-option-menu-in'>Logit估计接口</div>`);
@@ -494,7 +543,7 @@
                             for(key in keys){
                                 s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
                             }
-                            layer.open({title:"高级描述性统计",content:`
+                            layer.open({title:"中级描述性统计",content:`
                             <div>选择计算变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
                             </div>
                             `,
@@ -510,7 +559,7 @@
                                     }
                                     if(e['respCode']==0){
                                         estr=Json2Table_describe(x2);
-                                        layer.open({title:"高级描述性统计结果",content:estr})
+                                        layer.open({title:"中级描述性统计结果",content:estr})
                                     }else{
                                         layer.msg(e['errMsg']);
                                     }
@@ -527,7 +576,7 @@
                             for(key in keys){
                                 s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
                             }
-                            layer.open({title:"高级相关系数",content:`
+                            layer.open({title:"中级相关系数",content:`
                             <div>选择计算变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
                             </div>
                             `,
@@ -552,7 +601,7 @@
                                         }
                                         console.log(x2);
                                         estr=Json2Table_xcorr(x2);
-                                        layer.open({title:"高级相关系数矩阵",content:estr})
+                                        layer.open({title:"中级相关系数矩阵",content:estr})
                                     }else{
                                         layer.msg(e['errMsg']);
                                     }
@@ -627,44 +676,65 @@
                         });
 
                         $("#nav-top-api-menu-probit").click(function(e){
-                            layer.open({title:"Probit估计接口",content:`
-                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
-                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            s_cont="";
+                            for(key in keys){
+                                s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                            }
+                            layer.open({title:"Probit接口",content:`
+                            <div>
+                            选择被解释变量(要求二值,如性别):<select keys='true' id='explain_v2' v_name='argu2'></select><br><br>
+                            选择解释变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
                             </div>
                             `,
                             yes:function(index){
+                                x2=[];
+                                $("input.ckeys:checked").each(function(){
+                                    x2.push($(this).val());
+                                });
+                                $("#argu1").val(JSON.stringify(x2));
                                 call_api("probit",function(e){
                                     try{
                                         if(e['respCode']==0){
                                             layer.close(index);
-                                            layer.open({"title":"probit分析结果","content":e['respData']['s_text'].replace(/\n/g,"<br>").replace(/ /g,"&nbsp;"),"area":['80%','100%']});
+                                            layer.open({"title":"Probit分析结果","content":e['respData']['s_text'].replace(/\n/g,"<br>").replace(/ /g,"&nbsp;"),"area":['80%','100%']});
                                         }else{
                                             layer.msg(e['errMsg']);
                                         }
                                     }catch(err){
                                         layer.msg(err.message);
                                     }
-                                    
                                 });
                             }
                             });
-                            
+                            $("#all_c").click(function(e){
+                                $("input.ckeys").prop('checked','true');
+                            });
                             $("select[keys='true']").append(`<option value='null'>请选择</option>`);
                             for(key in keys){
-                                $("[keys='true']").append(`<option>${keys[key]}</option>`);
+                                $("select[keys='true']").append(`<option>${keys[key]}</option>`);
                             }
-                            $("[keys='true']").change(function(e){
+                            $("select[keys='true']").change(function(e){
                                 $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
                             });
                         });
 
                         $("#nav-top-api-menu-logit").click(function(e){
-                            layer.open({title:"Logit估计接口",content:`
-                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
-                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            s_cont="";
+                            for(key in keys){
+                                s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                            }
+                            layer.open({title:"Logit接口",content:`
+                            <div>
+                            选择被解释变量(要求二值,如性别):<select keys='true' id='explain_v2' v_name='argu2'></select><br><br>
+                            选择解释变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
                             </div>
                             `,
                             yes:function(index){
+                                x2=[];
+                                $("input.ckeys:checked").each(function(){
+                                    x2.push($(this).val());
+                                });
+                                $("#argu1").val(JSON.stringify(x2));
                                 call_api("logit",function(e){
                                     try{
                                         if(e['respCode']==0){
@@ -676,16 +746,17 @@
                                     }catch(err){
                                         layer.msg(err.message);
                                     }
-                                    
                                 });
                             }
                             });
-                            
+                            $("#all_c").click(function(e){
+                                $("input.ckeys").prop('checked','true');
+                            });
                             $("select[keys='true']").append(`<option value='null'>请选择</option>`);
                             for(key in keys){
-                                $("[keys='true']").append(`<option>${keys[key]}</option>`);
+                                $("select[keys='true']").append(`<option>${keys[key]}</option>`);
                             }
-                            $("[keys='true']").change(function(e){
+                            $("select[keys='true']").change(function(e){
                                 $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
                             });
                         });
@@ -782,19 +853,49 @@
                         $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-choose' class='nav-top-option-menu-in' debug="true">P1筛选</div>`);
                         $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-loss' class='nav-top-option-menu-in' debug="true">P1缺失值处理</div><hr>`);
                         $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-SelectSimple' class='nav-top-option-menu-in'>简单语句筛选</div>`);
-                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-SelectAdvance' class='nav-top-option-menu-in'>高级语句筛选</div>`);
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-SelectAdvance' class='nav-top-option-menu-in'>高级筛选接口(SQL)</div>`);
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-loss2' class='nav-top-option-menu-in'>P2缺失值处理</div>`);
                         $("[debug=true]").click(function(e){
                             layer.msg($(e.target).html()+"接口正在开发中,暂时不可使用!");
                         });
                         $("#nav-top-edit-menu").mouseleave(function(e){
                             $("#nav-top-edit-menu").hide();
                         });
+                        $("#nav-top-edit-menu-loss2").click(function(e){
+                            s_cont="";
+                            for(key in keys){
+                                s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                            }
+                            layer.open({title:"P2缺失值处理",content:`
+                            <div>选择删去缺失值的变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
+                            </div>
+                            `,
+                            yes:function(ind){
+                                x3=[];
+                                $("input.ckeys:checked").each(function(){
+                                    x3.push($(this).val());
+                                    console.log(x3);
+                                });
+                                v1="";
+                                for(i=0;i<x3.length-1;i++){
+                                    v1+=x3[i]+" is not null AND ";
+                                }
+                                v1+=x3[x3.length-1]+" is not null";
+                                console.log(v1);
+                                $("#argu1").val(v1);
+                                layer.close(ind);
+                                table2_show("select_simple");
+                            }});
+                            $("#all_c").click(function(e){
+                                $("input.ckeys").prop('checked','true');
+                            });
+                        });
                         $("#nav-top-edit-menu-SelectAdvance").click(function(e){
                             $("#argu1,#argu2").val("");
                             layer.open({title:"高级语句筛选",content:`
                             <div>查询语句:<br><input type='text' keys='true' id='explain_v1' v_name='argu1'></input><br>
                                 FROM YOUR_TABLE <br>
-                                <input type='text' keys='true' id='explain_v2' v_name='argu2'></input><br>
+                                <input type='text' keys='true' id='explain_v2' v_name='argu2'></input><br><br>基于SQLite3
                             </div>
                             `,
                             yes:function(index){
@@ -807,8 +908,9 @@
                             });
                         });
                         $("#nav-top-edit-menu-SelectSimple").click(function(e){
+                            $("#argu1,#argu2").val("");
                             layer.open({title:"简单语句筛选",content:`
-                            <div>查询语句:<br>WHERE<input type='text' keys='true' id='explain_v1' v_name='argu1'></input><br>
+                            <div>查询语句:<br>WHERE <input type='text' keys='true' id='explain_v1' v_name='argu1'></input><br>
                             </div>
                             `,
                             yes:function(index){
@@ -822,6 +924,75 @@
                         });
                     }else{
                         $("#nav-top-edit-menu").show();
+                    }
+                });
+
+                $("#nav-top-api2").click(function(e){
+                    $(".nav-top-option-menu").hide();
+                    if($("#nav-top-api2-menu").length==0){
+                        $("body").append(`<div id='nav-top-api2-menu' class='nav-top-option-menu'></div>`);
+                        $("#nav-top-api2-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
+                        $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-mean' class='nav-top-option-menu-in'>方差均值估计</div>`);
+                        $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-mean2' class='nav-top-option-menu-in'>均值差估计</div>`);
+                        $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-std2' class='nav-top-option-menu-in'>方差比估计(F)</div><hr>`);
+                        $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-meant' class='nav-top-option-menu-in'>均值检验(T-test)</div>`);
+                        $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-chit' class='nav-top-option-menu-in'>独立性检验(Chi-test)</div>`);
+                        $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-vart' class='nav-top-option-menu-in'>方差齐性检验(Hartley-test)</div>`);
+                        $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-anova' class='nav-top-option-menu-in'>方差分析(ANOVA)</div>`);
+                        $("#nav-top-api2-menu").mouseleave(function(e){
+                            $("#nav-top-api2-menu").hide();
+                        });
+
+                        $("#nav-top-api2-menu-meant").click(function(e){
+                            layer.open({title:$(e.target).html(),content:`
+                            <div>选择变量1:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
+                            选择变量2:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            </div>
+                            `,
+                            yes:function(index){
+                                call_api("corr",function(e){
+                                    try{
+                                        if(e['respCode']==0){
+                                            layer.close(index);
+                                            estr=`变量1:${$("#argu1").val()}<br>变量2:${$("#argu2").val()}<br>相关系数:${e['respData']['Significance'][0]}<br>显著性:${e['respData']['Significance'][1]}`;
+                                            layer.open({title:"相关系数分析结果",content:estr});
+                                        }else{
+                                            layer.msg(e['errMsg']);
+                                        }
+                                    }catch(err){
+                                        layer.msg(err.message);
+                                    }
+                                });
+                            }
+                            });
+                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                            for(key in keys){
+                                $("[keys='true']").append(`<option>${keys[key]}</option>`);
+                            }
+                            $("[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+
+                    }else{
+                        $("#nav-top-api2-menu").show();
+                    }
+                });
+
+                $("#nav-top-api3").click(function(e){
+                    $(".nav-top-option-menu").hide();
+                    if($("#nav-top-api3-menu").length==0){
+                        $("body").append(`<div id='nav-top-api3-menu' class='nav-top-option-menu'></div>`);
+                        $("#nav-top-api3-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
+                        $("#nav-top-api3-menu").append(`<div id='nav-top-api3-menu-mean' class='nav-top-option-menu-in'>QQ-Plot</div>`);
+                        $("#nav-top-api3-menu").append(`<div id='nav-top-api3-menu-advance' class='nav-top-option-menu-in'>高级绘图接口(ggplot2)</div>`);
+                        $("#nav-top-api3-menu").mouseleave(function(e){
+                            $("#nav-top-api3-menu").hide();
+                        });
+
+
+                    }else{
+                        $("#nav-top-api3-menu").show();
                     }
                 });
 
@@ -1068,7 +1239,9 @@
                 <div id="nav-top-file" class="nav-top-option">文件</div>
                 <div id="nav-top-edit" class="nav-top-option">编辑</div>
                 <div id="nav-top-view" class="nav-top-option">视图</div>
-                <div id="nav-top-api" class="nav-top-option">调用</div>
+                <div id="nav-top-api" class="nav-top-option">统计</div>
+                <div id="nav-top-api2" class="nav-top-option">分析</div>
+                <div id="nav-top-api3" class="nav-top-option">绘图</div>
                 <div id="nav-top-more" class="nav-top-option">更多</div>
             </div>
             <div step="2" id="nav-left" hidden="true">
@@ -1077,7 +1250,9 @@
                 </div>
                 <hr>
                 <div id="nav-left-menu" style="padding-left: 5px;">
-                    提示:右键列名查看更多选项
+                    提示:右键列名查看更多选项<br>
+                    为了保证浏览器速度,您的每次操作最多显示前1000条数据<br>请您设置合理的排序方式和筛选条件<br>
+                    <a href="https://www.apifox.cn/apidoc/shared-b79d3f14-e20a-4a46-ab68-9e8beabcf077/doc-453684" target="_blank">筛选语句帮助文档</a>
                 </div>
     
             </div>
