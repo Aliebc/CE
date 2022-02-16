@@ -1,37 +1,27 @@
-from .filer import get_file_data,generate_uid,file_dir_path
-import os
-import json
-from .ce import ret2
+from .filer import get_file_data,put_file_excel
+from .ce import ret_success,ret_error,request_analyse
 from pandasql import sqldf
 
 pysqldf = lambda q: sqldf(q, globals())
 
-def put_file(df):
-    uid=generate_uid()
-    f_name=os.path.join(file_dir_path,uid+".xlsx")
-    df.to_excel(f_name,index=False,sheet_name="CE-API")
-    return uid
+class SQL_API_STD:
+    def __init__(self,request):
+        self.request=request
+        self.args = request_analyse(self.request)
+    def execute(self,sql_str):
+        try:
+            global dta
+            dta = get_file_data(self.request)
+            dta2=pysqldf(sql_str)
+            uid=put_file_excel(dta2)
+            return ret_success({"uid":uid,"f_suffix":".xlsx"})
+        except Exception as e:
+            return ret_error(e)
 
 def sql_select_simple(request):
-    try:
-        global dta
-        dta=get_file_data(request)
-        argu1=json.loads(request.body)['argu1']
-        dta2=pysqldf("SELECT * FROM dta WHERE "+argu1)
-        uid=put_file(dta2)
-        return ret2(0,{"uid":uid},None)
-    except Exception as e:
-        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
-
+    r=SQL_API_STD(request)
+    return SQL_API_STD(request).execute("SELECT * FROM dta WHERE "+r.args['argu1'])
 
 def sql_select_advance(request):
-    try:
-        global dta
-        dta=get_file_data(request)
-        argu1=json.loads(request.body)['argu1']
-        argu2=json.loads(request.body)['argu2']
-        dta2=pysqldf(argu1+" FROM dta "+argu2)
-        uid=put_file(dta2)
-        return ret2(0,{"uid":uid},None)
-    except Exception as e:
-        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
+    r=SQL_API_STD(request)
+    return r.execute(r.args['argu1']+" FROM dta "+r.args['argu2'])

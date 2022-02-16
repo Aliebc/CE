@@ -28,6 +28,8 @@ urlpatterns = [
     path('dimg_regress/',imgc.two_reg),
     path('dimg_line/',imgc.two_line),
     path('dimg_bar_type/',imgc.type_bar),
+    path('dimg_qq/',imgc.qqplot),
+    path('dimg_advance/',imgc.plot_advance),
     path('dtest_mean/',testr.meant),
     path('ols/',datac.ols),
     path('dimg_hetero_corr/',datac.type_corr),

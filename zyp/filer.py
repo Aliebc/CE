@@ -80,7 +80,7 @@ def get_file_data(request):
                 uid=request.GET.get('uid',default=None)
                 f_suffix=request.GET.get('f_suffix',default=None)
             except:
-                return JsonResponse(ce.ret(-1,None,'Error(#1:Format).'))
+                raise RuntimeError("Bad Request")
         if uid and f_suffix:
             f_name=str(uid)+str(f_suffix)
             f_path=os.path.join(file_dir_path,f_name)
@@ -95,14 +95,14 @@ def get_file_data(request):
                     #f_sep=request.POST.get("f_sep",default=None)
                     fdata=pd.read_csv(f_path)
                 else:
-                    return JsonResponse(ce.ret(-1,None,"Error(#2:Suffix)."))
+                    raise RuntimeError("Suffix Not allowed")
                 return fdata
             except:
-                return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+                raise RuntimeError("Read Error")
         else:
-            return JsonResponse(ce.ret(-1,None,"Error(#1:Format)."))
+            raise RuntimeError("Suffix Not allowed")
     else:
-        return JsonResponse(ce.ret(-1,None,"Only POST method is allowed."))
+        raise RuntimeError("Method Not allowed")
 
 def getd(request):
     if request.method == 'POST':
@@ -168,3 +168,9 @@ def del_file(request):
     except:
         return JsonResponse(ce.ret(-1,None,"Error(#1):Type"))
     return JsonResponse(ce.ret(0,"Your data has been deleted.",None))
+
+def put_file_excel(df):
+    uid=generate_uid()
+    f_name=os.path.join(file_dir_path,uid+".xlsx")
+    df.to_excel(f_name,index=False,sheet_name="CE-API")
+    return uid
