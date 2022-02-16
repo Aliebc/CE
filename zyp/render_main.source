@@ -23,7 +23,8 @@
                 "logit":"__DOMAIN__binary_logit/",
                 "select_simple":"__DOMAIN__select_simple/",
                 "select_advance":"__DOMAIN__select_advance/",
-                "del":"__DOMAIN__delf/"
+                "del":"__DOMAIN__delf/",
+                "test_mean":"__DOMAIN__dtest_mean/"
             };
 
             function getQueryVariable(variable){
@@ -118,8 +119,24 @@
                 }
             }
 
+            function img_std(aim,cont,api_name){
+                layer.open({title:$(aim.target).html(),content:cont,
+                    yes:function(e){
+                    call_img(api_name);
+                }
+                });
+                $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                for(key in keys){
+                    $("select[keys='true']").append(`<option>${keys[key]}</option>`);
+                }
+                $("[keys='true']").change(function(e){
+                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                });
+            }
+
             function call_img(api_str){
-                layer.open({"type":0,"content":`<img id='dimg' onerror="layer.closeAll();layer.msg('图片加载出错了,请重新调整参数！');" src='__DOMAIN__${api_str}/?${$.param($("#jk").serializeArray())}'>`,area:['80%','100%'],"title":"图片","btn":['保存','关闭'],"yes":function(ind){
+                $("#argu1").val($("#argu1").val().replace(/'/g,'UNESCAPED1'));
+                layer.open({"type":0,"content":`<img id='dimg' onerror="layer.closeAll();layer.msg('图片加载出错了,请重新调整参数！');" src='__DOMAIN__${api_str}/?${$.param($("#jk").serializeArray()).replace(/UNESCAPED1/g,"%27")}'>`,area:['80%','100%'],"title":"图片","btn":['保存','关闭'],"yes":function(ind){
                     $("#lhref").attr('href',$("#dimg").attr('src')+"&dl=1");
                     document.getElementById("lhref").click();
                 }});
@@ -150,7 +167,7 @@
                         },
                         error:function(e,c,t){
                             layer.close(f);
-                            alert("请求API时本地错误:"+c);
+                            alert("请求API时发生本地错误,原因:"+c);
                         }
                 });
             }
@@ -167,37 +184,10 @@
                 call_api(api_name,function(cons){
                     if(cons['respCode']==0){
                         window.open("__DOMAIN__?uid="+cons['respData']['uid']+"&f_suffix=.xlsx");
-                        /*$("#table-show-head,#table-show-body").html("");
-                        keys2=new Array();
-                        if (cons['respData']['DataList']==0){
-                            $("#table-show-head").append(`<th table-show-th-key2='Row' cked='false'>Empty Set</th>`);
-                        }else{
-                            $("#table-show-head").append(`<th table-show-th-key2='Row' cked='false'>Row</th>`);
-                        }
-                        
-                        for(key in cons['respData']['DataList'][0]){
-                            $("#table-show-head").append(`<th table-show-th-key='${key}' table-show-th-type='${typeof( cons['respData']['DataList'][0][key])}' cked='false'>${key}</th>`);
-                            keys2.push(key);
-                        }
-                        for(x in cons['respData']['DataList']){
-                            $("#table-show-body").append(`<tr id='table-show-tr-${x}'></tr>`);
-                            $(`#table-show-tr-${x}`).append(`<td table-show-td-key='Row'>${parseInt(x)+1}</td>`);
-                            for(key in keys2){
-                                $(`#table-show-tr-${x}`).append(`<td table-show-td-key='${keys2[key]}' table-show-td-value='${cons['respData']['DataList'][x][keys2[key]]}' table-show-td-type='${typeof(cons['respData']['DataList'][x][keys2[key]])}'>${cons['respData']['DataList'][x][keys2[key]]}</td>`);
-                            }
-                        }
-                        $("#table1").hide();
-                        $("#table2").show();
-                        $("[table-show-td-type='string']").css("color","red");*/
                     }else{
                         layer.msg(cons['errMsg']);
                     }
                 });
-            }
-
-            function table1_show(){
-                $("#table2").hide();
-                $("#table1").show();
             }
 
             function table_init(){
@@ -483,17 +473,16 @@
                         $("body").append(`<div id='nav-top-view-menu' class='nav-top-option-menu'></div>`);
                         $("#nav-top-view-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
                         $("#nav-top-view-menu").append(`<div id='nav-top-view-menu-fulls' class='nav-top-option-menu-in'>全屏模式</div>`);
-                        //$("#nav-top-view-menu").append(`<div id='nav-top-view-menu-show1' class='nav-top-option-menu-in'>显示原始数据</div>`);
+                        //$("#nav-top-view-menu").append(`<div id='nav-top-view-menu-nonull' class='nav-top-option-menu-in'>不突出显示缺失值</div>`);
                         $("#nav-top-view-menu").mouseleave(function(e){
                             $("#nav-top-view-menu").hide();
                         });
                         $("#nav-top-view-menu-fulls").click(function(){
                             toggleFullScreen();
                         });
-                        $("#nav-top-view-menu-show1").click(function(e){
-                            table1_show();
-                        });
-
+                        $("#nav-top-view-menu-nonull").click(function(e){
+                            $("");
+                        })
 
                     }else{
                         $("#nav-top-view-menu").show();
@@ -505,13 +494,9 @@
                     if($("#nav-top-api-menu").length==0){
                         $("body").append(`<div id='nav-top-api-menu' class='nav-top-option-menu'></div>`);
                         $("#nav-top-api-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
-                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-tworeg' class='nav-top-option-menu-in'>一次散点拟合图接口</div>`);
-                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-heterreg' class='nav-top-option-menu-in'>异质性散点拟合图接口</div>`);
-                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-typebar' class='nav-top-option-menu-in'>分类均值柱状图接口</div><hr>`);
-                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-corr' class='nav-top-option-menu-in'>相关系数接口</div>`);
-                        //$("#nav-top-api-menu").append(`<div id='nav-top-api-menu-testmean' class='nav-top-option-menu-in'>均值假设检验</div>`);
-                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xcorr' class='nav-top-option-menu-in'>中级相关系数矩阵</div>`);
-                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xsummary' class='nav-top-option-menu-in'>中级描述性统计</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-corr' class='nav-top-option-menu-in'>相关系数</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xcorr' class='nav-top-option-menu-in'>相关系数矩阵</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xsummary' class='nav-top-option-menu-in'>综合描述性统计</div><hr>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-ols' class='nav-top-option-menu-in'>OLS回归接口</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-probit' class='nav-top-option-menu-in'>Probit估计接口</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-logit' class='nav-top-option-menu-in'>Logit估计接口</div>`);
@@ -519,31 +504,12 @@
                             $("#nav-top-api-menu").hide();
                         });
 
-                        $("#nav-top-api-menu-tworeg").click(function(){
-                            layer.open({title:"一次散点拟合图接口",content:`
-                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
-                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
-                            </div>
-                            `,
-                            yes:function(e){
-                                call_img("dimg_regress");
-                            }
-                            });
-                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
-                            for(key in keys){
-                                $("select[keys='true']").append(`<option>${keys[key]}</option>`);
-                            }
-                            $("select[keys='true']").change(function(e){
-                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
-                            });
-                        });
-
                         $("#nav-top-api-menu-xsummary").click(function(){
                             s_cont="";
                             for(key in keys){
                                 s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
                             }
-                            layer.open({title:"中级描述性统计",content:`
+                            layer.open({title:"综合描述性统计",content:`
                             <div>选择计算变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
                             </div>
                             `,
@@ -559,7 +525,7 @@
                                     }
                                     if(e['respCode']==0){
                                         estr=Json2Table_describe(x2);
-                                        layer.open({title:"中级描述性统计结果",content:estr})
+                                        layer.open({title:"综合描述性统计结果",content:estr})
                                     }else{
                                         layer.msg(e['errMsg']);
                                     }
@@ -610,25 +576,6 @@
                             });
                             $("#all_c").click(function(e){
                                 $("input.ckeys").prop('checked','true');
-                            });
-                        });
-
-                        $("#nav-top-api-menu-typebar").click(function(e){
-                            layer.open({title:"分类均值柱状图接口",content:`
-                            <div>选择求均值变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
-                            选择分类变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
-                            </div>
-                            `,
-                            yes:function(e){
-                                call_img("dimg_bar_type");
-                            }
-                            });
-                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
-                            for(key in keys){
-                                $("select[keys='true']").append(`<option>${keys[key]}</option>`);
-                            }
-                            $("select[keys='true']").change(function(e){
-                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
                             });
                         });
 
@@ -761,28 +708,6 @@
                             });
                         });
 
-                        $("#nav-top-api-menu-heterreg").click(function(e){
-                            layer.open({title:"异质性散点拟合图接口",content:`
-                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
-                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br><br>
-                            选择门槛变量:<select keys='true' id='explain_v3' v_name='argu_type'></select><br><br>
-                            输入门槛划分值:<input keys='true' id='explain_v4' v_name='segment'>
-                            </div>
-                            `,
-                            yes:function(e){
-                                call_img("dimg_hetero_regress");
-                            }
-                            });
-                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
-                            for(key in keys){
-                                $("[keys='true']").append(`<option>${keys[key]}</option>`);
-                            }
-                            $("[keys='true']").change(function(e){
-                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
-                            });
-                        });
-
-
                         $("#nav-top-api-menu-corr").click(function(e){
                             layer.open({title:"相关系数接口",content:`
                             <div>选择变量1:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
@@ -850,11 +775,11 @@
                     if($("#nav-top-edit-menu").length==0){
                         $("body").append(`<div id='nav-top-edit-menu' class='nav-top-option-menu'></div>`);
                         $("#nav-top-edit-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
-                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-choose' class='nav-top-option-menu-in' debug="true">P1筛选</div>`);
-                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-loss' class='nav-top-option-menu-in' debug="true">P1缺失值处理</div><hr>`);
-                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-SelectSimple' class='nav-top-option-menu-in'>简单语句筛选</div>`);
-                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-SelectAdvance' class='nav-top-option-menu-in'>高级筛选接口(SQL)</div>`);
-                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-loss2' class='nav-top-option-menu-in'>P2缺失值处理</div>`);
+                        //("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-choose' class='nav-top-option-menu-in' debug="true">P1筛选</div>`);
+                        //$("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-loss' class='nav-top-option-menu-in' debug="true">P1缺失值处理</div><hr>`);
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-SelectSimple' class='nav-top-option-menu-in'>简单筛选</div>`);
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-SelectAdvance' class='nav-top-option-menu-in'>高级筛选(SQL)</div>`);
+                        $("#nav-top-edit-menu").append(`<div id='nav-top-edit-menu-loss2' class='nav-top-option-menu-in'>缺失值处理</div>`);
                         $("[debug=true]").click(function(e){
                             layer.msg($(e.target).html()+"接口正在开发中,暂时不可使用!");
                         });
@@ -932,7 +857,8 @@
                     if($("#nav-top-api2-menu").length==0){
                         $("body").append(`<div id='nav-top-api2-menu' class='nav-top-option-menu'></div>`);
                         $("#nav-top-api2-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
-                        $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-mean' class='nav-top-option-menu-in'>方差均值估计</div>`);
+                        $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-mean' class='nav-top-option-menu-in'>均值估计</div>`);
+                        $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-std' class='nav-top-option-menu-in'>方差估计</div>`);
                         $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-mean2' class='nav-top-option-menu-in'>均值差估计</div>`);
                         $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-std2' class='nav-top-option-menu-in'>方差比估计(F)</div><hr>`);
                         $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-meant' class='nav-top-option-menu-in'>均值检验(T-test)</div>`);
@@ -950,12 +876,15 @@
                             </div>
                             `,
                             yes:function(index){
-                                call_api("corr",function(e){
+                                call_api("test_mean",function(e){
                                     try{
                                         if(e['respCode']==0){
                                             layer.close(index);
-                                            estr=`变量1:${$("#argu1").val()}<br>变量2:${$("#argu2").val()}<br>相关系数:${e['respData']['Significance'][0]}<br>显著性:${e['respData']['Significance'][1]}`;
-                                            layer.open({title:"相关系数分析结果",content:estr});
+                                            estr="";
+                                            for (k in e['respData']){
+                                                estr+=`${k}:${e['respData'][k]}<br>`;
+                                            }
+                                            layer.open({title:"均值检验分析结果",content:estr});
                                         }else{
                                             layer.msg(e['errMsg']);
                                         }
@@ -984,8 +913,71 @@
                     if($("#nav-top-api3-menu").length==0){
                         $("body").append(`<div id='nav-top-api3-menu' class='nav-top-option-menu'></div>`);
                         $("#nav-top-api3-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
-                        $("#nav-top-api3-menu").append(`<div id='nav-top-api3-menu-mean' class='nav-top-option-menu-in'>QQ-Plot</div>`);
+                        $("#nav-top-api3-menu").append(`<div id='nav-top-api3-menu-tworeg' class='nav-top-option-menu-in'>一次散点拟合图</div>`);
+                        $("#nav-top-api3-menu").append(`<div id='nav-top-api3-menu-heterreg' class='nav-top-option-menu-in'>异质性散点拟合图</div>`);
+                        $("#nav-top-api3-menu").append(`<div id='nav-top-api3-menu-typebar' class='nav-top-option-menu-in'>分类均值柱状图</div><hr>`);
+                        $("#nav-top-api3-menu").append(`<div id='nav-top-api3-menu-qq' class='nav-top-option-menu-in'>QQ-Plot</div>`);
                         $("#nav-top-api3-menu").append(`<div id='nav-top-api3-menu-advance' class='nav-top-option-menu-in'>高级绘图接口(ggplot2)</div>`);
+
+                        $("#nav-top-api3-menu-tworeg").click(function(aim){
+                            img_std(aim,`
+                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
+                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            </div>
+                            `,"dimg_regress");
+                        });
+
+                        $("#nav-top-api3-menu-typebar").click(function(aim){
+                            img_std(aim,`
+                            <div>选择求均值变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
+                            选择分类变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br>
+                            </div>
+                            `,"dimg_bar_type");
+                        });
+
+                        $("#nav-top-api3-menu-heterreg").click(function(aim){
+                            img_std(aim,`
+                            <div>选择解释变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br><br>
+                            选择被解释变量:<select keys='true' id='explain_v2' v_name='argu2'></select><br><br>
+                            选择门槛变量:<select keys='true' id='explain_v3' v_name='argu_type'></select><br><br>
+                            输入门槛划分值:<input keys='true' id='explain_v4' v_name='segment'>
+                            </div>
+                            `,"dimg_hetero_regress");
+                        });
+                        
+                        $("#nav-top-api3-menu-qq").click(function(e){
+                            layer.open({title:$(e.target).html(),content:`
+                            <div>选择变量:<select keys='true' id='explain_v1' v_name='argu1'></select><br>
+                            </div>
+                            `,
+                            yes:function(e){
+                                call_img("dimg_qq");
+                            }
+                            });
+                            $("select[keys='true']").append(`<option value='null'>请选择</option>`);
+                            for(key in keys){
+                                $("[keys='true']").append(`<option>${keys[key]}</option>`);
+                            }
+                            $("[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+
+                        $("#nav-top-api3-menu-advance").click(function(e){
+                            layer.open({title:$(e.target).html(),content:`
+                            <div>作图命令(ggplot2格式,数据集名为dta): <br><textarea keys='true' id='explain_v1' v_name='argu1' value='ggplot(dta,aes())+...' style='width:600px;height:350px'>ggplot(dta,aes())+...</textarea><br>
+                            </div>
+                            `,
+                            yes:function(e){
+                                call_img("dimg_advance");
+                            }
+                            });
+                            $("[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+                        
+
                         $("#nav-top-api3-menu").mouseleave(function(e){
                             $("#nav-top-api3-menu").hide();
                         });
@@ -1006,8 +998,20 @@
 
             });
         </script>
-        <style>
+        <style type="text/css">
+            @media print{
+                .Noprint {
+                display:none;   
+            }
+            #nav-top{
+                display:none;
+            }
+            .NextPage {   
+                page-break-after:always;   
+            } 
+            }
             body{
+                font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
                 margin: 0px;
                 background: cornsilk;
             }
@@ -1132,6 +1136,7 @@
                 background: rgb(63, 63, 235);
             }
             table.gridtable {
+                page-break-after:always;
                 font-family: verdana,arial,sans-serif;
                 font-size:12px;
                 color:#333333;
@@ -1234,7 +1239,7 @@
             <input type="text" id="segment" name="segment">
         </form>
         <div>
-            <div step="2" id="nav-top" hidden="true">
+            <div step="2" id="nav-top" hidden="true" class="Noprint">
                 <div id="logo" style="display: inline-block;font-weight: bold;padding-right: 20px;user-select: none;cursor: default;-webkit-user-select: none;">CE Toolbox</div>
                 <div id="nav-top-file" class="nav-top-option">文件</div>
                 <div id="nav-top-edit" class="nav-top-option">编辑</div>
@@ -1244,14 +1249,14 @@
                 <div id="nav-top-api3" class="nav-top-option">绘图</div>
                 <div id="nav-top-more" class="nav-top-option">更多</div>
             </div>
-            <div step="2" id="nav-left" hidden="true">
+            <div step="2" id="nav-left" hidden="true" class="Noprint">
                 <div id="default-info">
 
                 </div>
                 <hr>
                 <div id="nav-left-menu" style="padding-left: 5px;">
                     提示:右键列名查看更多选项<br>
-                    为了保证浏览器速度,您的每次操作最多显示前1000条数据<br>请您设置合理的排序方式和筛选条件<br>
+                    您的每次操作最多显示前1000条数据<br>请您设置合理的排序方式和筛选条件<br>
                     <a href="https://www.apifox.cn/apidoc/shared-b79d3f14-e20a-4a46-ab68-9e8beabcf077/doc-453684" target="_blank">筛选语句帮助文档</a>
                 </div>
     

@@ -1,20 +1,31 @@
-import json
-import pandas as pd
-import numpy as npy
+from .ce import ret2,request_analyse
+from .filer import get_file_data
 import scipy.stats as st
-from django.http import HttpResponse,JsonResponse
-from . import ce
-from . import filer
 
 def meant(request):
     try:
-        dta = filer.get_file_data(request)
-        argu1=json.loads(request.body)['argu1']
-        argu2=json.loads(request.body)['argu2']
+        dta = get_file_data(request)
+        args = request_analyse(request)
         try:
-            pval=st.ttest_ind(dta[argu1],dta[argu2]).pvalue
-            return JsonResponse(ce.ret(0,{'pvalue':pval},None))
+            res=st.ttest_ind(dta[args['argu1']],dta[args['argu2']])
+            pval=res.pvalue
+            stat=res.statistic
+            return ret2(0,{'t-statistic':stat,'p-value':pval},None)
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+            return ret2(-1,None,"Error(#3:Internal).")
     except Exception as e:
-        return JsonResponse(ce.ret(-1,None,"Error(#3:Req)."))
+        return ret2(-1,None,"Error(#3:Req).")
+
+def test_std_api(request):
+    try:
+        dta = get_file_data(request)
+        args = request_analyse(request)
+        try:
+            res=st.ttest_ind(dta[args['argu1']],dta[args['argu2']])
+            pval=res.pvalue
+            stat=res.statistic
+            return ret2(0,{'t-statistic':stat,'p-value':pval},None)
+        except Exception as e:
+            return ret2(-1,None,"Error(#3:Internal).")
+    except Exception as e:
+        return ret2(-1,None,"Error(#3:Req).")

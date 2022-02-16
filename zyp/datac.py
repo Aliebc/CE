@@ -4,14 +4,14 @@ import numpy as npy
 import scipy.stats as st
 from django.http import JsonResponse
 from . import ce
-from .ce import ret2
-from . import filer
+from .ce import ret2,request_analyse
+from .filer import get_file_data
 import statsmodels.api as sm
 from sklearn import preprocessing
 
 def dcorr(request):
     try:
-        dta=filer.get_file_data(request)
+        dta=get_file_data(request)
         argu1=json.loads(request.body)['argu1']
         argu2=json.loads(request.body)['argu2']
         c2=st.pearsonr(dta[argu1],dta[argu2])
@@ -23,7 +23,7 @@ def dcorr(request):
 
 def xcorr(request):
     try:
-        dta=filer.get_file_data(request)
+        dta=get_file_data(request)
         cord=json.loads(dta.corr().to_json())
         ret={}
         for i in cord:
@@ -37,7 +37,7 @@ def xcorr(request):
 
 def dtype(request):
     try:
-        dta=filer.get_file_data(request)
+        dta=get_file_data(request)
         argu1=json.loads(request.body)['argu1']
         retu=dta[argu1]
         return JsonResponse(ce.ret(0,json.loads(retu.value_counts().to_json()),None))
@@ -46,7 +46,7 @@ def dtype(request):
 
 def dsummary(request):
     try:
-        dta=filer.get_file_data(request)
+        dta=get_file_data(request)
         argu1=json.loads(request.body)['argu1']
         retu=dta[argu1]
         return JsonResponse(ce.ret(0,json.loads(retu.describe().to_json()),None))
@@ -55,7 +55,7 @@ def dsummary(request):
 
 def xsummary(request):
     try:
-        dta=filer.get_file_data(request)
+        dta=get_file_data(request)
         a2={}
         for key in dta:
             r2=dta[key]
@@ -66,7 +66,7 @@ def xsummary(request):
 
 def dlm3(request):
     try:
-        dta=filer.get_file_data(request)
+        dta=get_file_data(request)
         argu1=json.loads(request.body)['argu1']
         argu2=json.loads(request.body)['argu2']
         reg=json.loads(request.body)['reg']
@@ -87,7 +87,7 @@ def heter_compare_df(df,col_name,s):
 
 def type_corr(request):
     try:
-        dta=filer.get_file_data(request)
+        dta=get_file_data(request)
         xe=json.loads(request.body)
         argu1=xe['argu1']
         argu2=xe['argu2']
@@ -106,7 +106,7 @@ def type_corr(request):
 
 def ols(request):
     try:
-        dta = filer.get_file_data(request)
+        dta = get_file_data(request)
         argu1=json.loads(request.body)['argu1']
         argu2=json.loads(request.body)['argu2']
         x=sm.add_constant(dta[argu1])
@@ -140,7 +140,7 @@ def ols(request):
 def binary_probit(request):
     try:
         label_encoder = preprocessing.LabelEncoder()
-        dta = filer.get_file_data(request)
+        dta = get_file_data(request)
         argu1=json.loads(request.body)['argu1']
         argu2=json.loads(request.body)['argu2']
         y=label_encoder.fit_transform(dta[argu2])
@@ -177,7 +177,7 @@ def binary_probit(request):
 def binary_logit(request):
     try:
         label_encoder = preprocessing.LabelEncoder()
-        dta = filer.get_file_data(request)
+        dta = get_file_data(request)
         argu1=json.loads(request.body)['argu1']
         argu2=json.loads(request.body)['argu2']
         y=label_encoder.fit_transform(dta[argu2])
