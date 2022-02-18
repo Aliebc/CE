@@ -1,7 +1,7 @@
 import json
 from django.http import HttpResponseNotFound,JsonResponse
 
-ce_version_str="1.1.8 Debug"
+ce_version_str="1.2.0 Pre-Release"
 
 def ret(code,data,err):
     return {"respCode":code,"respData":data,"errMsg":err}
@@ -29,3 +29,5 @@ def request_analyse(request):
         return srcq
     except:
         raise RuntimeError("JSON analyse Failed!")
+
+
