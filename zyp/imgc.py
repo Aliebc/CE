@@ -1,7 +1,7 @@
 import os
 from django.http import HttpResponse,JsonResponse
 from . import ce
-from .ce import ret2
+from .ce import ret2,ret_error,ret_success
 from .datac import heter_compare_df
 from .filer import get_file_data,generate_uid,image_path
 from plotnine import *
@@ -64,7 +64,6 @@ def density(request):
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
         img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title))
         return JsonResponse(ce.ret(0,{'tuid':sav_svg(img_density,width,height)},None))
-        return sav_and_ret_svg(img_density,width,height,request)
     else:
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
 
@@ -80,6 +79,23 @@ def hist(request):
         except Exception as e:
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
         img_density=(ggplot(dta,aes(x=argu1))+geom_histogram()+ggtitle(title)+theme(text=element_text(family='SimHei')))
+        return sav_and_ret_svg(img_density,width,height,request)
+    elif request.method =='POST':
+        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+    else:
+        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+
+def cdf(request):
+    if request.method =='GET':
+        try:
+            dta=get_file_data(request)
+            argu1=request.GET.get('argu1',default=None)
+            title=request.GET.get('title',default=str("CDF of "+argu1))
+            width=int(request.GET.get('width',default=12))
+            height=int(request.GET.get('height',default=8))
+        except Exception as e:
+            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+        img_density=(ggplot(dta,aes(x=argu1))+stat_ecdf()+ggtitle(title)+theme(text=element_text(family='SimHei')))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
@@ -166,6 +182,27 @@ def two_reg(request):
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
         try:
             img_density=(ggplot(dta,aes(x=argu1,y=argu2))+geom_smooth(method='lm')+geom_point(fill='blue')+ggtitle(title))
+        except Exception as e:
+            return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
+        return sav_and_ret_svg(img_density,width,height,request)
+    elif request.method =='POST':
+        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+    else:
+        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+
+def two_reg_d2(request):
+    if request.method =='GET':
+        try:
+            dta=get_file_data(request)
+            argu1=request.GET.get('argu1',default=None)
+            argu2=request.GET.get('argu2',default=None)
+            title=request.GET.get('title',default=str("Regression of "+argu2+" ~ "+argu1))
+            width=int(request.GET.get('width',default=12))
+            height=int(request.GET.get('height',default=8))
+        except Exception as e:
+            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+        try:
+            img_density=(ggplot(dta,aes(x=argu1,y=argu2))+geom_smooth(method='lm',formula='y~pow(x,2)')+geom_point(fill='blue')+ggtitle(title))
         except Exception as e:
             return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
         return sav_and_ret_svg(img_density,width,height,request)

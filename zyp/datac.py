@@ -4,7 +4,7 @@ import numpy as npy
 import scipy.stats as st
 from django.http import JsonResponse
 from . import ce
-from .ce import ret2,request_analyse
+from .ce import ret2,request_analyse,ret_error,ret_success
 from .filer import get_file_data
 import statsmodels.api as sm
 from sklearn import preprocessing
@@ -18,7 +18,7 @@ def dcorr(request):
         cord=dta.corr()
         d=cord.to_json()
     except Exception as e:
-        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
+        return ret_error(e)
     return ret2(0,{"CorrMartix":json.loads(d),"Significance":c2},None)
 
 def xcorr(request):
@@ -32,17 +32,17 @@ def xcorr(request):
                 cor=st.pearsonr(dta[i],dta[j])
                 ret[i][j]=cor
     except Exception as e:
-        return ret2(-1,None,repr(e))
+        return ret_error(e)
     return ret2(0,{"CorrMartix":ret},None)
 
 def dtype(request):
     try:
         dta=get_file_data(request)
-        argu1=json.loads(request.body)['argu1']
-        retu=dta[argu1]
-        return JsonResponse(ce.ret(0,json.loads(retu.value_counts().to_json()),None))
+        args=request_analyse(request)
+        retu=dta[args['argu1']]
+        return ret_success(json.loads(retu.value_counts().to_json()))
     except Exception as e:
-        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
+        return ret_error(e)
 
 def dsummary(request):
     try:
@@ -51,7 +51,7 @@ def dsummary(request):
         retu=dta[argu1]
         return JsonResponse(ce.ret(0,json.loads(retu.describe().to_json()),None))
     except Exception as e:
-        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
+        return ret_error(e)
 
 def xsummary(request):
     try:
@@ -62,7 +62,7 @@ def xsummary(request):
             a2[key]=json.loads(r2.describe().to_json())
         return JsonResponse(ce.ret(0,a2,None))
     except Exception as e:
-        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
+        return ret_error(e)
 
 def dlm3(request):
     try:
@@ -73,7 +73,7 @@ def dlm3(request):
         retu=npy.polyfit(dta[argu1],dta[argu2],reg)
         return JsonResponse(ce.ret(0,{"reg":reg,"RegList":retu.tolist(),"DataList":{argu1:json.loads(dta[argu1].to_json()),argu2:json.loads(dta[argu2].to_json())}},None))
     except Exception as e:
-        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
+        return ret_error(e)
 
 def heter_compare_apply(value,y,c_name):
     if value>y:
@@ -99,7 +99,7 @@ def type_corr(request):
         re2=st.pearsonr(dta3[argu1],dta3[argu2])
         return JsonResponse(ce.ret(0,{'More':re1,'Less':re2},None))
     except Exception as e:
-        return ret2(-1,None,"Error(#3:Internal):"+repr(e))
+        return ret_error(e)
 
 #By Andy at 2022/2/7 17:30
 #Modified By Aliebc at 2022/2/7 17:50
