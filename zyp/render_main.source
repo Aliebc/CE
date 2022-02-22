@@ -88,7 +88,6 @@
                     estr+=`<tr>`;
                 }
                 estr+=`</table>`;
-                console.log(estr);
                 return estr;
             }
 
@@ -596,7 +595,6 @@
                                         }catch(e){
                                             layer.msg("Error:"+e.message);
                                         }
-                                        console.log(x2);
                                         estr=Json2Table_xcorr(x2);
                                         layer.open({title:"中级相关系数矩阵",content:estr})
                                     }else{
@@ -828,14 +826,12 @@
                                 x3=[];
                                 $("input.ckeys:checked").each(function(){
                                     x3.push($(this).val());
-                                    console.log(x3);
                                 });
                                 v1="";
                                 for(i=0;i<x3.length-1;i++){
                                     v1+=x3[i]+" is not null AND ";
                                 }
                                 v1+=x3[x3.length-1]+" is not null";
-                                console.log(v1);
                                 $("#argu1").val(v1);
                                 layer.close(ind);
                                 table2_show("select_simple");
@@ -933,7 +929,6 @@
                                 x3=[];
                                 x3[0]=$("#explain-v1").val();
                                 x3[1]=$("#explain-v3").val();
-                                console.log(JSON.stringify(x3));
                                 $("#argu1").val(JSON.stringify(x3));
                             };
                             api_std(aim,`

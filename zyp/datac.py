@@ -6,6 +6,7 @@ from django.http import JsonResponse
 from . import ce
 from .ce import ret2,request_analyse,ret_error,ret_success
 from .filer import get_file_data
+from .filer import put_file_excel as put_file
 import statsmodels.api as sm
 from sklearn import preprocessing
 
@@ -60,7 +61,22 @@ def xsummary(request):
         for key in dta:
             r2=dta[key]
             a2[key]=json.loads(r2.describe().to_json())
-        return JsonResponse(ce.ret(0,a2,None))
+        return ret2(0,a2,None)
+    except Exception as e:
+        return ret_error(e)
+
+def xsummary2(request):
+    try:
+        argu1=json.loads(request.body)['argu1']
+        dta=get_file_data(request)
+        a2={}
+        for key in argu1:
+            r2=dta[key]
+            a2[key]=json.loads(r2.describe().to_json())
+        a3={}
+        df2=pd.read_json(json.dumps(a2),orient="index")
+        uid=put_file(df2,True,"Variable")
+        return ret_success({'ValueList':a2,'File':{'uid':uid,'f_suffix':'.xlsx'}})
     except Exception as e:
         return ret_error(e)
 
@@ -210,3 +226,102 @@ def binary_logit(request):
     except Exception as e:
         return JsonResponse(ce.ret(-1,None,"Error(#3:Internal). Check if argu2 is binary."))
     return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None))
+
+## This Part is developed by Jingwei Luo
+
+def loss_test(request):
+    try:
+        dta = get_file_data(request)
+        argu1 = json.loads(request.body)['argu1']
+        loss = 0
+        data = []
+        for x in dta.index:
+            if (pd.isnull(dta.loc[x, argu1]) or dta.loc[x, argu1] == " "):
+                loss = loss + 1
+                data.append(dta.loc[x])
+
+        result_df = pd.DataFrame(data)
+        sum1 = len(dta)
+        ob1 = sum1 - loss
+        return JsonResponse(ce.ret(0, {"loss": loss, "Observed": ob1, "Datalist": json.loads(result_df.to_json())}, None))
+    except Exception as e:
+        return ret_error(e)
+
+def loss_delete(request):
+    try:
+        dta = get_file_data(request)
+        xe = json.loads(request.body)
+        argu1 = xe['argu1']
+        f_suffix = xe['f_suffix']
+        data = []
+        for x in dta.index:
+            if (pd.notnull(dta.loc[x, argu1]) and dta.loc[x, argu1] != " "):
+                data.append(dta.loc[x])
+        result_df = pd.DataFrame(data)
+        uid = put_file(result_df)
+        return JsonResponse(ce.ret(0, {"uid":uid, "f_suffix":f_suffix, "Datalist": json.loads(result_df.to_json())}, None))
+    except Exception as e:
+        return ret_error(e)
+
+def str_filter(request):
+    try:
+        df = get_file_data(request)
+        xe = json.loads(request.body)
+        f_suffix = xe['f_suffix']
+        argu1 = xe['argu1']
+        str_select = xe['str_select']
+        delete_way = xe['delete_way']
+        if(delete_way == 0):
+            for x in df.index:
+                if (df.loc[x, argu1] == str_select):
+                    df.drop(index=x, inplace=True)
+        else:
+            df = df[~ df[argu1].str.contains(str_select)]
+        uid = put_file(df)
+        return JsonResponse(ce.ret(0, {"uid":uid, "f_suffix":f_suffix, "Datalist": json.loads(df.to_json())}, None))
+    except Exception as e:
+        return ret_error(e)
+
+def num_filter(request):
+    try:
+        df = get_file_data(request)
+        xe = json.loads(request.body)
+        argu1 = xe['argu1']
+        argu2 = xe['argu2']
+        f_suffix = xe['f_suffix']
+        num1 = argu2[0][1]
+        num2 = argu2[1][1]
+        if(argu2[0][0] == 0 and argu2[1][0] == 0):
+            for x in df.index:
+                if(pd.notnull(df.loc[x, argu1])):
+                    if (df.loc[x, argu1] >= num1 and df.loc[x, argu1] <= num2):
+                        df.drop(index=x, inplace=True)
+                else:
+                    df.drop(index=x, inplace=True)
+        elif(argu2[0][0] != 0 & argu2[1][0] == 0):
+            for x in df.index:
+                if (pd.notnull(df.loc[x, argu1])):
+                    if (df.loc[x, argu1] > num1 and df.loc[x, argu1] <= num2):
+                        df.drop(index=x, inplace=True)
+                else:
+                    df.drop(index=x, inplace=True)
+        elif (argu2[0][0] == 0 & argu2[1][0] != 0):
+            for x in df.index:
+                if (pd.notnull(df.loc[x, argu1])):
+                    if (df.loc[x, argu1] >= num1 and df.loc[x, argu1] < num2):
+                        df.drop(index=x, inplace=True)
+                else:
+                    df.drop(index=x, inplace=True)
+        else:
+            for x in df.index:
+                if (pd.notnull(df.loc[x, argu1])):
+                    if (df.loc[x, argu1] > num1 and df.loc[x, argu1] < num2):
+                        df.drop(index=x, inplace=True)
+                else:
+                    df.drop(index=x, inplace=True)
+        uid = put_file(df)
+        return JsonResponse(ce.ret(0, {"uid":uid, "f_suffix":f_suffix, "Datalist": json.loads(df.to_json())}, None))
+    except Exception as e:
+        return ret_error(e)
+
+## End this part
