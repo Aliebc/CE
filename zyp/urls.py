@@ -18,6 +18,7 @@ urlpatterns = [
     path('dtype/',datac.dtype),
     path('dsummary/',datac.dsummary),
     path('xsummary/',datac.xsummary),
+    path('xsummary2/',datac.xsummary2),
     path('lm3/',datac.dlm3),
     path('dimg_tuid/',imgc.tuid),
     path('dimg_density/',imgc.density),
@@ -48,6 +49,10 @@ urlpatterns = [
     path('binary_logit/',datac.binary_logit),
     path('select_simple/',editr.sql_select_simple),
     path('select_advance/',editr.sql_select_advance),
+    path('loss_test/', datac.loss_test),
+    path('loss_delete/', datac.loss_delete),
+    path('str_filter/', datac.str_filter),
+    path('num_filter/', datac.num_filter),
 ]
 
 #handler404=ce.ce_not_found

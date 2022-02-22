@@ -5,8 +5,8 @@ import json
 import hashlib
 import pathlib
 import pandas as pd
-from django.http import HttpResponse,JsonResponse
-from . import ce
+from django.http import HttpResponse
+from .ce import ret2,ret_error
 
 try:
     conf=json.loads(open(os.path.join('zyp','config.json'),encoding="utf-8").read())
@@ -16,7 +16,7 @@ try:
         print('Load config file successfully!')
     else:
         raise RuntimeError("Cannot open and load the config file!")
-except:
+except Exception as e:
     raise RuntimeError("Cannot open and load the config file!")
 
 def generate_uid(m_name='md5'):
@@ -40,7 +40,7 @@ def rend1(request):
     if request.method == 'GET':
         return HttpResponse(html_str)
     else:
-        return JsonResponse(ce.ret(-1,None,"Bad Method"))
+        return ret2(-1,None,"Bad Method")
 
 def recv_file(request):
     if request.method == 'POST':
@@ -52,18 +52,18 @@ def recv_file(request):
                 suffixinfo=str(pathlib.Path(str(myf.name)).suffix)
                 name_x=re.match(r'^(.*).(xls|xlsx|dta|csv)$',myf.name)
                 if not name_x:
-                    return JsonResponse(ce.ret(-1,None,"File type not allowed."))
+                    return ret2(-1,None,"File type not allowed.")
                 dest=open(os.path.join(file_dir_path,uid+suffixinfo),"wb+")
                 for chunk in myf.chunks():
                     dest.write(chunk)
                 dest.close()
-                return JsonResponse(ce.ret(0,{"f_name":myf.name,"f_suffix":suffixinfo,"uid":uid,"size":myf.size,"timestamp":int(time.time())},None))
+                return ret2(0,{"f_name":myf.name,"f_suffix":suffixinfo,"uid":uid,"size":myf.size,"timestamp":int(time.time())},None)
             else:
-                return JsonResponse(ce.ret(-1,None,"File(file) field not found."))
+                return ret2(-1,None,"File(file) field not found.")
         else:
-            return JsonResponse(ce.ret(-1,None,"Files field not found."))
+            return ret2(-1,None,"Files field not found.")
     else:
-        return JsonResponse(ce.ret(-1,None,"Only POST method is allowed."))
+        return ret2(-1,None,"Only POST method is allowed.")
 
 def get_file_data(request):
     if request.method in ['POST','GET']: 
@@ -72,14 +72,14 @@ def get_file_data(request):
                 rp=json.loads(request.body)
                 uid=rp['uid']
                 f_suffix=rp['f_suffix']
-            except:
+            except Exception as e:
                 uid=request.POST.get('uid',default=None)
                 f_suffix=request.POST.get('f_suffix',default=None)
         else:
             try:
                 uid=request.GET.get('uid',default=None)
                 f_suffix=request.GET.get('f_suffix',default=None)
-            except:
+            except Exception as e:
                 raise RuntimeError("Bad Request")
         if uid and f_suffix:
             f_name=str(uid)+str(f_suffix)
@@ -92,12 +92,11 @@ def get_file_data(request):
                 elif f_suffix == '.dta':
                     fdata=pd.read_stata(f_path)
                 elif f_suffix == '.csv':
-                    #f_sep=request.POST.get("f_sep",default=None)
                     fdata=pd.read_csv(f_path)
                 else:
                     raise RuntimeError("Suffix Not allowed")
                 return fdata
-            except:
+            except Exception as e:
                 raise RuntimeError("Read Error")
         else:
             raise RuntimeError("Suffix Not allowed")
@@ -110,8 +109,8 @@ def getd(request):
             rp=json.loads(request.body)
             uid=rp['uid']
             f_suffix=rp['f_suffix']
-        except:
-            return JsonResponse(ce.ret(-1,None,"Error(#1:Format)."))
+        except Exception as e:
+            return ret2(-1,None,"Error(#1:Format).")
         if uid and f_suffix:
             f_name=str(uid)+str(f_suffix)
             f_path=os.path.join(file_dir_path,f_name)
@@ -126,16 +125,16 @@ def getd(request):
                     fdata=pd.read_csv(f_path)
                     
                 else:
-                    return JsonResponse(ce.ret(-1,None,"Error(#2:Suffix)."))
+                    return ret2(-1,None,"Error(#2:Suffix).")
                 if fdata.shape[0]>1000:
                     fdata=fdata.head(1000)
-                return JsonResponse(ce.ret(0,{"DataList":json.loads(fdata.to_json(orient='records'))},None))
-            except:
-                return JsonResponse(ce.ret(-1,None,"Error(#3:Internal)."))
+                return ret2(0,{"DataList":json.loads(fdata.to_json(orient='records'))},None)
+            except Exception as e:
+                return ret2(-1,None,"Error(#3:Internal).")
         else:
-            return JsonResponse(ce.ret(-1,None,"Error(#1:Format)."))
+            return ret2(-1,None,"Error(#1:Format).")
     else:
-        return JsonResponse(ce.ret(-1,None,"Only POST method is allowed."))
+        return ret2(-1,None,"Only POST method is allowed.")
 
 def ret_file(request):
     try:
@@ -149,8 +148,8 @@ def ret_file(request):
         f_name=str(uid)+str(f_suffix)
         f_path=os.path.join(file_dir_path,f_name)
         f_cont=open(f_path,'rb').read()
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#1):Type"))
+    except Exception as e:
+        return ret_error(e)
     return HttpResponse(f_cont,headers={'Content-Type':'application/octet-stream',"Content-Disposition":"attachment ;filename="+f_name})
 
 def del_file(request):
@@ -165,12 +164,12 @@ def del_file(request):
         f_name=str(uid)+str(f_suffix)
         f_path=os.path.join(file_dir_path,f_name)
         os.remove(f_path)
-    except:
-        return JsonResponse(ce.ret(-1,None,"Error(#1):Type"))
-    return JsonResponse(ce.ret(0,"Your data has been deleted.",None))
+    except Exception as e:
+        return ret2(-1,None,"Error(#1):Type")
+    return ret2(0,"Your data has been deleted.",None)
 
-def put_file_excel(df):
+def put_file_excel(df,ind=False,index_label=None):
     uid=generate_uid()
     f_name=os.path.join(file_dir_path,uid+".xlsx")
-    df.to_excel(f_name,index=False,sheet_name="CE-API")
+    df.to_excel(f_name,index=ind,sheet_name="CE-API",index_label=index_label)
     return uid
