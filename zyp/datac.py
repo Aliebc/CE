@@ -236,14 +236,14 @@ def loss_test(request):
         loss = 0
         data = []
         for x in dta.index:
-            if (pd.isnull(dta.loc[x, argu1]) or dta.loc[x, argu1] == " "):
-                loss = loss + 1
-                data.append(dta.loc[x])
-
+            for y in argu1:
+                if (pd.isnull(dta.loc[x, y]) or dta.loc[x, y] == " "):
+                    loss = loss + 1
+                    data.append(dta.loc[x])
+                    break
         result_df = pd.DataFrame(data)
-        sum1 = len(dta)
-        ob1 = sum1 - loss
-        return JsonResponse(ce.ret(0, {"loss": loss, "Observed": ob1, "Datalist": json.loads(result_df.to_json())}, None))
+        ob1 = len(dta)
+        return ret_success({"loss": loss, "Observed": ob1, "Datalist": json.loads(result_df.to_json(orient='index'))})
     except Exception as e:
         return ret_error(e)
 
@@ -254,12 +254,18 @@ def loss_delete(request):
         argu1 = xe['argu1']
         f_suffix = xe['f_suffix']
         data = []
+
         for x in dta.index:
-            if (pd.notnull(dta.loc[x, argu1]) and dta.loc[x, argu1] != " "):
+            flag = 0
+            for y in argu1:
+                if (pd.isnull(dta.loc[x, y]) or dta.loc[x, y] == " "):
+                    flag = flag + 1
+                    break
+            if flag == 0:
                 data.append(dta.loc[x])
         result_df = pd.DataFrame(data)
-        uid = put_file(result_df)
-        return JsonResponse(ce.ret(0, {"uid":uid, "f_suffix":f_suffix, "Datalist": json.loads(result_df.to_json())}, None))
+        uid = put_file(result_df, f_suffix)
+        return ret_success({"uid": uid, "f_suffix": f_suffix, "Datalist": json.loads(result_df.to_json(orient='index'))})
     except Exception as e:
         return ret_error(e)
 
@@ -271,14 +277,14 @@ def str_filter(request):
         argu1 = xe['argu1']
         str_select = xe['str_select']
         delete_way = xe['delete_way']
-        if(delete_way == 0):
+        if (delete_way == 0):
             for x in df.index:
                 if (df.loc[x, argu1] == str_select):
                     df.drop(index=x, inplace=True)
         else:
             df = df[~ df[argu1].str.contains(str_select)]
-        uid = put_file(df)
-        return JsonResponse(ce.ret(0, {"uid":uid, "f_suffix":f_suffix, "Datalist": json.loads(df.to_json())}, None))
+        uid = put_file(df, f_suffix)
+        return ret_success({"uid": uid, "f_suffix": f_suffix, "Datalist": json.loads(df.to_json(orient='index'))})
     except Exception as e:
         return ret_error(e)
 
@@ -291,14 +297,14 @@ def num_filter(request):
         f_suffix = xe['f_suffix']
         num1 = argu2[0][1]
         num2 = argu2[1][1]
-        if(argu2[0][0] == 0 and argu2[1][0] == 0):
+        if (argu2[0][0] == 0 and argu2[1][0] == 0):
             for x in df.index:
-                if(pd.notnull(df.loc[x, argu1])):
+                if (pd.notnull(df.loc[x, argu1])):
                     if (df.loc[x, argu1] >= num1 and df.loc[x, argu1] <= num2):
                         df.drop(index=x, inplace=True)
                 else:
                     df.drop(index=x, inplace=True)
-        elif(argu2[0][0] != 0 & argu2[1][0] == 0):
+        elif (argu2[0][0] != 0 & argu2[1][0] == 0):
             for x in df.index:
                 if (pd.notnull(df.loc[x, argu1])):
                     if (df.loc[x, argu1] > num1 and df.loc[x, argu1] <= num2):
@@ -319,8 +325,8 @@ def num_filter(request):
                         df.drop(index=x, inplace=True)
                 else:
                     df.drop(index=x, inplace=True)
-        uid = put_file(df)
-        return JsonResponse(ce.ret(0, {"uid":uid, "f_suffix":f_suffix, "Datalist": json.loads(df.to_json())}, None))
+        uid = put_file(df, f_suffix)
+        return ret_success({"uid": uid, "f_suffix": f_suffix, "Datalist": json.loads(df.to_json(orient='index'))})
     except Exception as e:
         return ret_error(e)
 
