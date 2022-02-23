@@ -50,7 +50,7 @@ def density(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+            ret_error(e)
         img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
@@ -63,7 +63,7 @@ def density(request):
         except Exception as e:
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
         img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title))
-        return JsonResponse(ce.ret(0,{'tuid':sav_svg(img_density,width,height)},None))
+        return ret_success({'tuid':sav_svg(img_density,width,height)})
     else:
         return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
 
@@ -78,6 +78,24 @@ def hist(request):
             height=int(request.GET.get('height',default=8))
         except Exception as e:
             return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+        img_density=(ggplot(dta,aes(x=argu1))+geom_histogram()+ggtitle(title)+theme(text=element_text(family='SimHei')))
+        return sav_and_ret_svg(img_density,width,height,request)
+    elif request.method =='POST':
+        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+    else:
+        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+
+def bar(request):
+    if request.method =='GET':
+        try:
+            dta=get_file_data(request)
+            argu1=request.GET.get('argu1',default=None)
+            title=request.GET.get('title',default=str("Pie of "+argu1))
+            width=int(request.GET.get('width',default=12))
+            height=int(request.GET.get('height',default=8))
+        except Exception as e:
+            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+        dta2=dta.groupby([argu1]).count().reset_index()
         img_density=(ggplot(dta,aes(x=argu1))+geom_histogram()+ggtitle(title)+theme(text=element_text(family='SimHei')))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
