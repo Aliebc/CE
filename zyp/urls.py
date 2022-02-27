@@ -11,6 +11,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',filer.rend1),
     path('version/',ce.ce_version),
+    path('language/',ce.language),
     path('filer/',filer.recv_file),
     path('getd/',filer.getd),
     path('corr/',datac.dcorr),
