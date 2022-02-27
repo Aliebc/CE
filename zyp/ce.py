@@ -1,4 +1,5 @@
 import json
+import os
 from django.http import HttpResponseNotFound,JsonResponse
 
 ce_version_str="1.2.0 Pre-Release"
@@ -30,4 +31,13 @@ def request_analyse(request):
     except:
         raise RuntimeError("JSON analyse Failed!")
 
-
+def language(request):
+    try:
+        lang=json.loads(open(os.path.join('zyp','language.json'),encoding="utf-8").read())
+        args=request_analyse(request)
+        if args['language'] in lang:
+            return ret_success(lang[args['language']])
+        else:
+            raise RuntimeError("Language Package not found!")
+    except Exception as e:
+        return ret_error(e)
