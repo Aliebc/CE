@@ -72,7 +72,8 @@ def xsummary2(request):
         a2={}
         for key in argu1:
             r2=dta[key]
-            a2[key]=json.loads(r2.describe().to_json())
+            if not r2.dtype == 'object':
+                a2[key]=json.loads(r2.describe().to_json())
         a3={}
         df2=pd.read_json(json.dumps(a2),orient="index")
         uid=put_file(df2,True,"Variable")
