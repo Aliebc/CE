@@ -128,7 +128,7 @@ def getd(request):
                     return ret2(-1,None,"Error(#2:Suffix).")
                 if fdata.shape[0]>1000:
                     fdata=fdata.head(1000)
-                return ret2(0,{"DataList":json.loads(fdata.to_json(orient='records'))},None)
+                return ret2(0,{"DataList":json.loads(fdata.to_json(orient='records')),"Type":json.loads(fdata.dtypes.to_json())},None)
             except Exception as e:
                 return ret2(-1,None,"Error(#3:Internal).")
         else:

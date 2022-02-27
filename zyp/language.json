@@ -1,0 +1,54 @@
+{
+    "zh_cn":{
+        "config":{
+            "CET":"计算经济学数据分析工具箱"
+        },
+        "getd":{
+            "name":"数据预览",
+            "desc":"查看所有数据"
+        },
+        "dsummary":{
+            "name":"单变量描述性统计",
+            "desc":"单变量描述性统计是对数据表中某一列进行一个描述性的统计,具体包括最大值、最小值、标准差、四分位数等常见的统计变量"
+        },
+        "xsummary":{
+            "name":"综合描述性统计",
+            "desc":"综合描述性统计是对数据表中很多列分别进行一个描述性的统计,并将结果显示在一张表中,方便对数据有一个整体上的直观认识"
+        },
+        "xcorr":{
+            "name":"相关系数矩阵",
+            "desc":"相关矩阵是一个简单的表格,显示不同变量的相关系数。该矩阵描述了表中所有可能的值对之间的相关性。它是一种强大的工具,可以汇总大型数据集,并识别和可视化给定数据中的模式。"
+        },
+        "dimg_density":{
+            "name":"概率密度图",
+            "desc":"概率密度指事件随机发生的机率。概率密度等于一段区间(事件的取值范围)的概率除以该段区间的长度。由概率密度构成的图叫做概率密度图。",
+            "use":"请选择一列,系统将画出其对应的概率密度图"
+        }
+    },
+    "en_us":{
+        "config":{
+            "CET":"Computational economics data analysis toolbox"
+        },
+        "getd":{
+            "name":"数据预览",
+            "desc":"查看所有数据"
+        },
+        "dsummary":{
+            "name":"Univariate descriptive statistics",
+            "desc":"Univariate descriptive statistics is a descriptive statistics of a column in the data table, including the maximum, minimum, standard deviation, quartiles and other common statistical variables."
+        },
+        "xsummary":{
+            "name":"Comprehensive Descriptive Statistics",
+            "desc":"Comprehensive descriptive statistics is to perform a descriptive statistics on many columns in the data table, and display the results in a table, which is convenient to have an overall intuitive understanding of the data."
+        },
+        "xcorr":{
+            "name":"Correlation Matrix",
+            "desc":"A correlation matrix is simply a table which displays the correlation coefficients for different variables. The matrix depicts the correlation between all the possible pairs of values in a table. It is a powerful tool to summarize a large dataset and to identify and visualize patterns in the given data."
+        },
+        "dimg_density":{
+            "name":"Probability Density Curve",
+            "desc":"In probability theory, a probability density function (PDF), or density of a continuous random variable, is a function whose value at any given sample (or point) in the sample space (the set of possible values taken by the random variable) can be interpreted as providing a relative likelihood that the value of the random variable would be close to that sample. A density curve is a graph that shows PDF. The area under the curve is equal to 100 percent of all probabilities. As we usually use decimals in probabilities you can also say that the area is equal to 1.",
+            "use":"Please select a column, the system will draw its corresponding probability density map"
+        }
+    }
+}

@@ -11,6 +11,7 @@
                 "yl":"__DOMAIN__getd/",
                 "summary":"__DOMAIN__dsummary/",
                 "summary2":"__DOMAIN__xsummary/",
+                "summary3":"__DOMAIN__xsummary2/",
                 "hgt":"__DOMAIN__lm3/",
                 "corr":"__DOMAIN__corr/",
                 "xcorr":"__DOMAIN__xcorr/",
@@ -33,6 +34,8 @@
                 "est_var":"__DOMAIN__dest_var/",
                 "est_varr":"__DOMAIN__dest_varr/"
             };
+
+            
 
             function getQueryVariable(variable){
                 var query = window.location.search.substring(1);
@@ -68,6 +71,11 @@
                 }
                 estr+=`</table>`;
                 return estr;
+            }
+
+            function download_table(uid,f_suffix){
+                $("#lhref").attr("href",apid['down']+`?uid=${uid}&f_suffix=${f_suffix}`);
+                document.getElementById("lhref").click();
             }
 
             function Json2Table_xcorr(jso){
@@ -234,7 +242,7 @@
                         }
                         
                         for(key in cons['respData']['DataList'][0]){
-                            $("#table-main-head").append(`<th table-main-th-key='${key}' table-main-th-type='${typeof( cons['respData']['DataList'][0][key])}' cked='false'>${key}</th>`);
+                            $("#table-main-head").append(`<th table-main-th-key='${key}' table-main-th-type='${cons['respData']['Type'][key]['name']}' cked='false'>${key}</th>`);
                             keys.push(key);
                         }
                         for(x in cons['respData']['DataList']){
@@ -533,6 +541,10 @@
                         $("#nav-top-api-menu").mouseleave(function(e){
                             $("#nav-top-api-menu").hide();
                         });
+                        
+                        $("#nav-top-api-menu-xsummary2").click(function(){
+                            // This
+                        });
 
                         $("#nav-top-api-menu-xsummary").click(function(){
                             s_cont="";
@@ -548,14 +560,17 @@
                                 $("input.ckeys:checked").each(function(){
                                     x3.push($(this).val());
                                 });
-                                call_api("summary2",function(e){
+                                $("#argu1").val(JSON.stringify(x3));
+                                call_api("summary3",function(e){
                                     x2={};
                                     for(k in x3){
-                                        x2[x3[k]]=e['respData'][x3[k]]
+                                        x2[x3[k]]=e['respData']['ValueList'][x3[k]]
                                     }
                                     if(e['respCode']==0){
                                         estr=Json2Table_describe(x2);
-                                        layer.open({title:"综合描述性统计结果",content:estr})
+                                        layer.open({title:"综合描述性统计结果",content:estr,btn:['确定','下载'],btn2:function(i){
+                                            download_table(e['respData']['File']['uid'],e['respData']['File']['f_suffix']);
+                                        }})
                                     }else{
                                         layer.msg(e['errMsg']);
                                     }
