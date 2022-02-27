@@ -30,8 +30,8 @@
             "CET":"Computational economics data analysis toolbox"
         },
         "getd":{
-            "name":"数据预览",
-            "desc":"查看所有数据"
+            "name":"data preview",
+            "desc":"data preview"
         },
         "dsummary":{
             "name":"Univariate descriptive statistics",

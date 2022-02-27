@@ -2,7 +2,7 @@ import json
 import os
 from django.http import HttpResponseNotFound,JsonResponse
 
-ce_version_str="1.2.0 Pre-Release"
+ce_version_str="1.2.4 Pre-Release"
 
 def ret(code,data,err):
     return {"respCode":code,"respData":data,"errMsg":err}
@@ -36,7 +36,7 @@ def language(request):
         lang=json.loads(open(os.path.join('zyp','language.json'),encoding="utf-8").read())
         args=request_analyse(request)
         if args['language'] in lang:
-            return ret_success(lang[args['language']])
+            return ret_success({"Language":lang[args['language']]})
         else:
             raise RuntimeError("Language Package not found!")
     except Exception as e:
