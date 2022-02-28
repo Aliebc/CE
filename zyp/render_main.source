@@ -54,22 +54,29 @@
                     'std':'Std Dev.',
                     'min':'Min',
                     'max':'Max'
-                }
-                estr="<table class='gridtable'><thead><th>Variable</th>";
+                };
+                esth2={
+                    'count':['Obs.',null],
+                    'mean':['Mean',3],
+                    'std':['Std Dev.',3],
+                    'min':['Min',null],
+                    'max':['Max',null]
+                };
+                estr="<table style='text-align:center;border:0;border-collapse:collapse;font-size:14px'><thead style='border-bottom:1px solid black'><th style='text-align:left;width:120px'>Variable</th>";
                 for (k in esth){
-                    estr+=`<th>${esth[k]}</th>`;
+                    estr+=`<th style='width:80px'>${esth[k]}</th>`;
                 }
                 estr+=`</thead>`;
                 for(y in jso){
-                    estr+=`<tr><td>${y}</td>`;
+                    estr+=`<tr><td style='text-align:left;width:120px'>${y}</td>`;
                     for(i in jso[y]){
                         if(esth[i]){
-                            estr+=`<td>${jso[y][i]}</td>`;
+                            estr+=`<td>${esth2[i][1]?jso[y][i].toFixed(esth2[i][1]):jso[y][i]}</td>`;
                         }
                     }
                     estr+=`<tr>`;
                 }
-                estr+=`</table>`;
+                estr+=`</table><hr><p>选中表格并复制后可直接粘贴到Word!</p>`;
                 return estr;
             }
 
@@ -79,23 +86,40 @@
             }
 
             function Json2Table_xcorr(jso){
-                estr="<table class='gridtable'><thead><th>Variable</th>";
+                estr="<div id='xcorrc'><table id='corrtable' style='border:0;border-collapse:collapse;' class='corrtable'><thead style='border-bottom:1px solid black'><th style='width:100px'>Variable</th>";
                 let r=0;
                 for (k in jso){
                     r++;
-                    estr+=`<th>(${r})</th>`;
+                    estr+=`<th style='width:100px'>(${r})</th>`;
                 }
                 estr+=`</thead>`;
                 r=0;
                 for(y in jso){
                     r++;
                     estr+=`<tr><td>(${r})${y}</td>`;
+                    r2=0;
                     for(i in jso[y]){
-                        estr+=`<td>${jso[y][i][0].toFixed(3)}</td>`;
+                        r2++;
+                        if(r<r2){
+                            continue;
+                        }
+                        esq="";
+                        if(jso[y][i][1]<=0.01){
+                            esq="***";
+                        }else if(jso[y][i][1]<=0.05){
+                            esq="**";
+                        }else if(jso[y][i][1]<=0.1){
+                            esq="*";
+                        }
+                        if(r==r2){
+                            estr+=`<td>---</td>`;
+                        }else{
+                            estr+=`<td>${jso[y][i][0].toFixed(4)}<sup>${esq}</sup></td>`;
+                        }
                     }
                     estr+=`<tr>`;
                 }
-                estr+=`</table>`;
+                estr+=`</table><hr><span>注:表中***,**,*分别代表在1%,5%,10%统计意义上显著</span><p>选中表格并复制后可直接粘贴到Word!</p></div>`;
                 return estr;
             }
 
@@ -211,6 +235,7 @@
             }
 
             keys=[];
+            keys_t={};
 
             function copyright(){
                 call_api("version",function(e){
@@ -244,6 +269,7 @@
                         for(key in cons['respData']['DataList'][0]){
                             $("#table-main-head").append(`<th table-main-th-key='${key}' table-main-th-type='${cons['respData']['Type'][key]['name']}' cked='false'>${key}</th>`);
                             keys.push(key);
+                            keys_t[key]=cons['respData']['Type'][key]['kind'];
                         }
                         for(x in cons['respData']['DataList']){
                             $("#table-main-body").append(`<tr id='table-main-tr-${x}'></tr>`);
@@ -549,7 +575,9 @@
                         $("#nav-top-api-menu-xsummary").click(function(){
                             s_cont="";
                             for(key in keys){
-                                s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                                if(keys_t[keys[key]].match(/(i|f)/)){
+                                    s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                                }
                             }
                             layer.open({title:"综合描述性统计",content:`
                             <div>选择计算变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
@@ -585,9 +613,11 @@
                         $("#nav-top-api-menu-xcorr").click(function(){
                             s_cont="";
                             for(key in keys){
-                                s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                                if(keys_t[keys[key]].match(/(i|f)/)){
+                                    s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                                }
                             }
-                            layer.open({title:"中级相关系数",content:`
+                            layer.open({title:"相关系数矩阵",content:`
                             <div>选择计算变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
                             </div>
                             `,
@@ -599,7 +629,6 @@
                                 call_api("xcorr",function(e){
                                     if(e['respCode']==0){
                                         x2={};
-                                        
                                         try{
                                             for(i in x3){
                                             x2[x3[i]]={}
@@ -611,7 +640,7 @@
                                             layer.msg("Error:"+e.message);
                                         }
                                         estr=Json2Table_xcorr(x2);
-                                        layer.open({title:"中级相关系数矩阵",content:estr})
+                                        layer.open({title:"相关系数矩阵",content:estr});
                                     }else{
                                         layer.msg(e['errMsg']);
                                     }
@@ -1265,6 +1294,9 @@
                 padding-left: 20px;
                 height: 30px;
                 background: rgb(63, 63, 235);
+            }
+            table.corrtable{
+                text-align: center;
             }
             table.gridtable {
                 page-break-after:always;
