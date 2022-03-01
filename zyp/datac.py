@@ -351,6 +351,44 @@ def ols_plain_inter(df,argu_i,argu_e):
     res_js['r2']=r2
     return {"argu_i":argu_i,"Result":res_js}
 
+def ols_effect_inter(df,argu_i,argu_e,entity_effects,time_effects):
+    argu_e=sm.add_constant(df[argu_e])
+    mod=PanelOLS(df[argu_i],argu_e,entity_effects=entity_effects,time_effects=time_effects)
+    results=mod.fit()
+    pvalue = results.pvalues
+    coeff = results.params
+    std_err = results.std_errors
+    r2 = results.rsquared
+    res_df=pd.DataFrame({
+        "pvalue":pvalue,
+        "coeff":coeff,
+        "std_err":std_err,
+    })
+    res_js=json.loads(res_df.to_json())
+    res_js['n']=df.shape[0]
+    res_js['time_effect']=time_effects
+    res_js['entity_effect']=entity_effects
+    res_js['r2']=r2
+    return {"argu_i":argu_i,"Result":res_js}
+
+def ols_effect_repeat(request):
+    try:
+        args=request_analyse(request)
+        dta=get_file_data(request)
+        count=args['argu1']['count']
+        olss=args['argu1']['argus']
+        dta=dta.set_index(args['argu1']['argue'])
+        ols_res=[]
+        argu_il=set(olss[0]['argu_i'])
+        argu_el=set(olss[0]['argu_e'])
+        for i in range(0,count):
+            ols_res.append(ols_effect_inter(dta,olss[i]['argu_i'],olss[i]['argu_e'],olss[i]['entity_effect'],olss[i]['time_effect']))
+            argu_il=argu_il.union(olss[i]['argu_i'])
+            argu_el=argu_el.union(olss[i]['argu_e'])
+        return ret_success({"count":len(ols_res),"OLSList":ols_res,"ArgeList":list(argu_el)})
+    except Exception as e:
+        return ret_error(e)
+
 def ols_repeat(request):
     try:
         args=request_analyse(request)
