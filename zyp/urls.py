@@ -44,6 +44,7 @@ urlpatterns = [
     path('dest_varr/',testr.estimate_var_ratio),
     path('ols/',datac.ols),
     path('olss/',datac.ols_repeat),
+    path('olsse/',datac.ols_effect_repeat),
     path('dimg_hetero_corr/',datac.type_corr),
     path('getf/',filer.ret_file),
     path('delf/',filer.del_file),
