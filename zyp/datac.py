@@ -8,6 +8,7 @@ from .ce import ret2,request_analyse,ret_error,ret_success
 from .filer import get_file_data
 from .filer import put_file_excel as put_file
 import statsmodels.api as sm
+from linearmodels.panel import PanelOLS
 from sklearn import preprocessing
 
 def dcorr(request):
@@ -201,7 +202,6 @@ def binary_logit(request):
         x=sm.add_constant(dta[argu1])
         model = sm.Logit(y, x)
         results = model.fit()
-        
         pvals = results.pvalues
         coeff = results.params
         conf_lower = results.conf_int()[0]
@@ -332,3 +332,67 @@ def num_filter(request):
         return ret_error(e)
 
 ## End this part
+
+def ols_plain_inter(df,argu_i,argu_e):
+    argu_e=sm.add_constant(df[argu_e])
+    mod=sm.OLS(df[argu_i],argu_e)
+    results=mod.fit()
+    pvalue = results.pvalues
+    coeff = results.params
+    std_err = results.bse
+    r2 = results.rsquared
+    res_df=pd.DataFrame({
+        "pvalue":pvalue,
+        "coeff":coeff,
+        "std_err":std_err,
+        "r2":r2,
+    })
+    res_js=json.loads(res_df.to_json())
+    res_js['n']=df.shape[0]
+    return {"argu_i":argu_i,"Result":res_js}
+
+def ols_repeat(request):
+    try:
+        args=request_analyse(request)
+        dta=get_file_data(request)
+        count=args['argu1']['count']
+        olss=args['argu1']['argus']
+        ols_res=[]
+        argu_il=set(olss[0]['argu_i'])
+        argu_el=set(olss[0]['argu_e'])
+        for i in range(0,count):
+            ols_res.append(ols_plain_inter(dta,olss[i]['argu_i'],olss[i]['argu_e']))
+            argu_il=argu_il.union(olss[i]['argu_i'])
+            argu_el=argu_el.union(olss[i]['argu_e'])
+        
+        return ret_success({"count":len(ols_res),"OLSList":ols_res,"ArgeList":list(argu_el.union(['const']))})
+    except Exception as e:
+        return ret_error(e)
+    
+
+class OLS_ADVANCE:
+    def __init__(self,count,dta,argu_t,argu_effect):
+        self.df=dta
+        self.src=[]
+        self.point=0
+        if not argu_t:
+            self.df['__STIME__']=1
+        if not argu_effect:
+            self.df['__EFFECT__']=1
+        for i in range(0,count):
+            self.src[i]={}
+    def add_res(self,res):
+        self.src[self.point]=res
+        self.point+=1
+        return self.point
+    def any_ols(self,argu_i,argu_e,time_effect,entity_effect):
+        return None
+
+        
+
+
+def ols_effect(request):
+    args=request_analyse(request)
+    dta=get_file_data(request)
+    argu1=args['argu1']
+    return None

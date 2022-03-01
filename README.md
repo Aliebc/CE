@@ -7,12 +7,12 @@ This project provides HTTP interfaces for computing several commonly used analyt
 ## How to use?
 Our project use django, so you should install **python3** and the following packages:
 
-Numpy Scipy Pandas openpyxl xlrd Django plotnine matplotlib sklearn pandasql
+Numpy Scipy Pandas openpyxl xlrd Django plotnine matplotlib sklearn pandasql linearmodels
 
 If you are in China, we suggest you install packages from Tsinghua University pypi mirrors.
 
 ```
-python3 -m pip install numpy scipy pandas openpyxl xlrd Django plotnine pandasql sklearn -i https://pypi.tuna.tsinghua.edu.cn/simple/
+python3 -m pip install numpy scipy pandas openpyxl xlrd Django plotnine pandasql linearmodels sklearn -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
 Now config your path to save files and image, open the file **zyp/config.json**
 
