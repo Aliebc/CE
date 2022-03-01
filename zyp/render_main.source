@@ -112,7 +112,7 @@
                             esq="*";
                         }
                         if(r==r2){
-                            estr+=`<td>---</td>`;
+                            estr+=`<td>1.0000</td>`;
                         }else{
                             estr+=`<td>${jso[y][i][0].toFixed(4)}<sup>${esq}</sup></td>`;
                         }
@@ -655,7 +655,9 @@
                         $("#nav-top-api-menu-ols").click(function(e){
                             s_cont="";
                             for(key in keys){
-                                s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                                if(keys_t[keys[key]].match(/(i|f)/)){
+                                    s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                                }
                             }
                             layer.open({title:"OLS接口",content:`
                             <div>
@@ -862,7 +864,7 @@
                             for(key in keys){
                                 s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
                             }
-                            layer.open({title:"P2缺失值处理",content:`
+                            layer.open({title:"缺失值处理",content:`
                             <div>选择删去缺失值的变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
                             </div>
                             `,
@@ -1171,7 +1173,7 @@
             } 
             }
             body{
-                font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+                font-family: "Times New Roman",Times,serif;
                 margin: 0px;
                 background: cornsilk;
             }
