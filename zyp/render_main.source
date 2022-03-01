@@ -18,6 +18,7 @@
                 "fl":"__DOMAIN__dtype/",
                 "hist":"__DOMAIN__dhist/",
                 "ols":"__DOMAIN__ols/",
+                "olss":"__DOMAIN__olss/",
                 "down":"__DOMAIN__getf/",
                 "version":"__DOMAIN__version/",
                 "probit":"__DOMAIN__binary_probit/",
@@ -85,6 +86,62 @@
                 document.getElementById("lhref").click();
             }
 
+            function Json2Table_olss(jso){
+                estr="<div id='xolss' style='margin:40px;'><table id='corrtable' style='border:0;border-collapse:collapse;' class='corrtable'><thead style='border-bottom:1px solid black;border-top:2px solid black;'><th style='width:100px'></th>";
+                let r=0;
+                let count=jso["count"];
+                while(r<count){
+                    r++;
+                    estr+=`<th style='width:100px'>(${r})</th>`;
+                }
+                estr+=`</thead>`;
+                r=0;
+                estr+=`<tr><td>被解释变量</td>`;
+                for(i in jso['OLSList']){
+                    estr+=`<td>${jso['OLSList'][i]['argu_i']}</td>`;
+                }
+                estr+="<tr>";
+                let pstr=function(pval){
+                    esq="";
+                    if(pval<=0.01){
+                        esq="***";
+                    }else if(pval<=0.05){
+                        esq="**";
+                    }else if(pval<=0.1){
+                        esq="*";
+                    }
+                    return "<sup>"+esq+"</sup>";
+                }
+                jso["ArgeList"].push("const");
+                for(arge in jso["ArgeList"]){
+                    estr+=`<tr><td>${jso["ArgeList"][arge]}</td>`;
+                    for(i in jso['OLSList']){
+                        estr+=`
+                        <td>${jso["OLSList"][i]["Result"]['coeff'][jso["ArgeList"][arge]]?jso["OLSList"][i]["Result"]['coeff'][jso["ArgeList"][arge]].toFixed(3)+pstr(jso["OLSList"][i]["Result"]['pvalue'][jso["ArgeList"][arge]]):""}<br>
+                        ${jso["OLSList"][i]["Result"]['std_err'][jso["ArgeList"][arge]]?'('+jso["OLSList"][i]["Result"]['std_err'][jso["ArgeList"][arge]].toFixed(3)+')':""}</td>
+                        `;
+                    }
+                    r++;
+                    estr+=`<tr>`;
+                }
+                estr+=`<tr><td>观测值</td>`;
+                    for(i in jso['OLSList']){
+                        estr+=`
+                        <td>${jso["OLSList"][i]["Result"]['n']}</td>
+                        `;
+                    }
+                estr+=`<tr>`;
+                estr+=`<tr style='border-bottom:2px solid black'><td>R<sup>2</sup></td>`;
+                    for(i in jso['OLSList']){
+                        estr+=`
+                        <td>${jso["OLSList"][i]["Result"]['r2'].toFixed(3)}</td>
+                        `;
+                    }
+                estr+=`<tr></table><p>注:表中***,**,*分别代表在1%,5%,10%统计意义上显著<p>选中表格并复制后可直接粘贴到Word!</p></p></div>`;
+                
+                return estr;
+            }
+
             function Json2Table_xcorr(jso){
                 estr="<div id='xcorrc'><table id='corrtable' style='border:0;border-collapse:collapse;' class='corrtable'><thead style='border-bottom:1px solid black'><th style='width:100px'>Variable</th>";
                 let r=0;
@@ -97,7 +154,7 @@
                 for(y in jso){
                     r++;
                     estr+=`<tr><td>(${r})${y}</td>`;
-                    r2=0;
+                    let r2=0;
                     for(i in jso[y]){
                         r2++;
                         if(r<r2){
@@ -121,6 +178,50 @@
                 }
                 estr+=`</table><hr><span>注:表中***,**,*分别代表在1%,5%,10%统计意义上显著</span><p>选中表格并复制后可直接粘贴到Word!</p></div>`;
                 return estr;
+            }
+
+            function olss_query(coo){
+                estr=`<input id='olss-count' value='${coo}' hidden='true'>`;
+                let r=0;
+                while(r<coo){
+                    r++;
+                    s_cont="";
+                    s_cont2="<option value='null'>请选择</option>";
+                    for(key in keys){
+                        if(keys_t[keys[key]].match(/(i|f)/)){
+                            s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys' olss-arge="${r}">${keys[key]}</option><br>`;
+                            s_cont2+=`<option>${keys[key]}</option>`;
+                        }
+                    }
+                    estr+=`
+                    <hr>
+                    <span>OLS${r}</span><br>
+                    选择被解释变量:<select keys='true' id='olss_argi${r}' olss-argi="${r}">${s_cont2}</select><br><br>
+                    选择解释变量:<button class='all_c' olss="${r}" onclick=''>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
+                    <hr>
+                    `;
+                }
+                return estr;
+            }
+
+            function olss_query_analyse(){
+                let argr={};
+                let count=parseInt($("#olss-count").val());
+                let r=0;
+                argr['count']=count;
+                argr['argus']=[];
+                while(r<count){
+                    r++;
+                    s={};
+                    s['argu_i']=$(`select[olss-argi="${r}"]`).val();
+                    s['argu_e']=[];
+                    $(`input.ckeys[olss-arge=${r}]:checked`).each(function(){
+                        s['argu_e'].push($(this).val());
+                    });
+                    argr['argus'].push(s);
+                }
+                $("#argu1").val(JSON.stringify(argr));
+                return true;
             }
 
             function form2JsonString(formId) {
@@ -562,6 +663,7 @@
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xcorr' class='nav-top-option-menu-in'>相关系数矩阵</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-xsummary' class='nav-top-option-menu-in'>综合描述性统计</div><hr>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-ols' class='nav-top-option-menu-in'>多元线性回归(OLS)</div>`);
+                        $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-olss' class='nav-top-option-menu-in'>绘制回归表格(普通OLS)</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-probit' class='nav-top-option-menu-in'>Probit估计</div>`);
                         $("#nav-top-api-menu").append(`<div id='nav-top-api-menu-logit' class='nav-top-option-menu-in'>Logit估计</div>`);
                         $("#nav-top-api-menu").mouseleave(function(e){
@@ -694,6 +796,39 @@
                             }
                             $("select[keys='true']").change(function(e){
                                 $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
+                        });
+
+                        $("#nav-top-api-menu-olss").click(function(e){
+                            s_cont="";
+                            for(key in keys){
+                                if(keys_t[keys[key]].match(/(i|f)/)){
+                                    s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                                }
+                            }
+                            layer.open({title:"多次OLS",content:`
+                            <div>
+                                请输入OLS的次数: <input id='olss_count' oninput="value=value.match(/[1-9]/)">
+                            </div>
+                            `,
+                            yes:function(index){
+                                layer.close(index);
+                                layer.open({title:"多次OLS",content:olss_query(parseInt($("#olss_count").val())),
+                                yes:function(ind){
+                                    olss_query_analyse();
+                                    call_api("olss",function(e){
+                                        if(e['respCode']==0){
+                                            layer.close(ind);
+                                            eee=Json2Table_olss(e['respData']);
+                                            layer.open({type:1,title:false,"content":eee});
+                                        }else{
+                                            layer.msg(e['errMsg']);
+                                        }
+                                    })
+                                }
+                            });
+                                $("button.all_c").click(e=>{$(`input[olss-arge=${$(e.target).attr('olss')}]`).prop('checked','true')});
+                            }
                             });
                         });
 
