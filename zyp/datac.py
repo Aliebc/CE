@@ -345,10 +345,10 @@ def ols_plain_inter(df,argu_i,argu_e):
         "pvalue":pvalue,
         "coeff":coeff,
         "std_err":std_err,
-        "r2":r2,
     })
     res_js=json.loads(res_df.to_json())
     res_js['n']=df.shape[0]
+    res_js['r2']=r2
     return {"argu_i":argu_i,"Result":res_js}
 
 def ols_repeat(request):
@@ -365,7 +365,7 @@ def ols_repeat(request):
             argu_il=argu_il.union(olss[i]['argu_i'])
             argu_el=argu_el.union(olss[i]['argu_e'])
         
-        return ret_success({"count":len(ols_res),"OLSList":ols_res,"ArgeList":list(argu_el.union(['const']))})
+        return ret_success({"count":len(ols_res),"OLSList":ols_res,"ArgeList":list(argu_el)})
     except Exception as e:
         return ret_error(e)
     
