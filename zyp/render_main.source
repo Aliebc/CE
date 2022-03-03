@@ -53,6 +53,7 @@
                 esth={
                     'count':'Obs.',
                     'mean':'Mean',
+                    '50%':'Median',
                     'std':'Std Dev.',
                     'min':'Min',
                     'max':'Max'
@@ -60,11 +61,12 @@
                 esth2={
                     'count':['Obs.',null],
                     'mean':['Mean',3],
+                    '50%':['Median',3],
                     'std':['Std Dev.',3],
                     'min':['Min',null],
                     'max':['Max',null]
                 };
-                estr="<table style='text-align:center;border:0;border-collapse:collapse;font-size:14px'><thead style='border-bottom:1px solid black'><th style='text-align:left;width:120px'>Variable</th>";
+                estr="<table style='text-align:center;border:0;border-collapse:collapse;font-size:14px'><thead style='border-bottom:1px solid black;border-top:2px solid black'><th style='text-align:left;width:120px'>Variable</th>";
                 for (k in esth){
                     estr+=`<th style='width:80px'>${esth[k]}</th>`;
                 }
@@ -78,7 +80,8 @@
                     }
                     estr+=`<tr>`;
                 }
-                estr+=`</table><hr><p>选中表格并复制后可直接粘贴到Word!</p>`;
+                estr=estr.substr(0,estr.length-4)+"<tr style='border-bottom:2px solid black;'>";
+                estr+=`</table><p>选中表格并复制后可直接粘贴到Word!</p>`;
                 return estr;
             }
 
@@ -963,7 +966,7 @@
                                     s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
                                 }
                             }
-                            layer.open({title:"多次OLS(面板固定效应)",content:`
+                            layer.open({title:"OLS(面板固定效应)",content:`
                             <div>
                                 请输入OLS的次数: <input id='olsse_count' oninput="value=value.match(/[1-9]/)"><br><br>
                                 选择时间变量:<select id='time_var' keys='true'></select><br><br>
@@ -973,7 +976,7 @@
                             yes:function(index){
                                 layer.close(index);
                                 x4=[$("#entity_var").val(),$("#time_var").val()];
-                                layer.open({title:"多次OLS(面板固定效应)",content:olsse_query(parseInt($("#olsse_count").val()),x4),
+                                layer.open({title:"OLS(面板固定效应)",content:olsse_query(parseInt($("#olsse_count").val()),x4),
                                 yes:function(ind){
                                     olsse_query_analyse();
                                     call_api("olsse",function(e){
