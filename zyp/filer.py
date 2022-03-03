@@ -8,6 +8,8 @@ import pandas as pd
 from django.http import HttpResponse
 from .ce import ret2,ret_error
 
+MAX_LINES=1000
+
 try:
     conf=json.loads(open(os.path.join('zyp','config.json'),encoding="utf-8").read())
     file_dir_path=conf['file_path']
@@ -28,7 +30,7 @@ def rend1(request):
     skey={
         '__DOMAIN__':conf['api_domain'],
         '__YEAR__':time.strftime("%Y",time.localtime()),
-        '__CET_VERSION__':'0.4.1',
+        '__CET_VERSION__':'0.4.2',
         '__CDN_JQUERY__':'https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js',
         '__CDN_LAYER__':'https://www.layuicdn.com/layer-v3.5.1/layer.js',
         '__REGION__':'中国大陆地区'
@@ -94,12 +96,12 @@ def get_file_data(request):
                 elif f_suffix == '.csv':
                     fdata=pd.read_csv(f_path)
                 else:
-                    raise RuntimeError("Suffix Not allowed")
+                    raise RuntimeError("Suffix Error")
                 return fdata
             except Exception as e:
                 raise RuntimeError("Read Error")
         else:
-            raise RuntimeError("Suffix Not allowed")
+            raise RuntimeError("Incomplete arguments")
     else:
         raise RuntimeError("Method Not allowed")
 
@@ -126,8 +128,8 @@ def getd(request):
                     
                 else:
                     return ret2(-1,None,"Error(#2:Suffix).")
-                if fdata.shape[0]>1000:
-                    fdata=fdata.head(1000)
+                if fdata.shape[0]>MAX_LINES:
+                    fdata=fdata.head(MAX_LINES)
                 return ret2(0,{"DataList":json.loads(fdata.to_json(orient='records')),"Type":json.loads(fdata.dtypes.to_json())},None)
             except Exception as e:
                 return ret2(-1,None,"Error(#3:Internal).")
