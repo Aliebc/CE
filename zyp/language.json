@@ -17,12 +17,52 @@
         },
         "xcorr":{
             "name":"相关系数矩阵",
-            "desc":"相关矩阵是一个简单的表格,显示不同变量的相关系数。该矩阵描述了表中所有可能的值对之间的相关性。它是一种强大的工具,可以汇总大型数据集,并识别和可视化给定数据中的模式。"
+            "desc":"相关矩阵是一个简单的表格,显示不同变量的相关系数。该矩阵描述了表中所有可能的值对之间的相关性和显著性。它是一种强大的工具,可以汇总大型数据集,并识别和可视化给定数据中的模式。"
         },
         "dimg_density":{
             "name":"概率密度图",
             "desc":"概率密度指事件随机发生的机率。概率密度等于一段区间(事件的取值范围)的概率除以该段区间的长度。由概率密度构成的图叫做概率密度图。",
             "use":"请选择一列,系统将画出其对应的概率密度图"
+        },
+        "dimg_hist":{
+            "name":"直方图",
+            "desc":"直方图，又称质量分布图，是一种统计报告图，由一系列高度不等的纵向条纹或线段表示数据分布的情况。 一般用横轴表示数据类型，纵轴表示分布情况。",
+            "use":"请选择一列,系统将画出其对应的直方图"
+        },
+        "dimg_line":{
+            "name":"折线图",
+            "desc":"折线图是排列在工作表的列或行中的数据可以绘制到折线图中。折线图可以显示随时间（根据常用比例设置）而变化的连续数据，因此非常适用于显示在相等时间间隔下数据的趋势。",
+            "use":"请选择两列变量,系统将画出其对应的折线图"
+        },
+        "dimg_regress":{
+            "name":"散点拟合图",
+            "desc":"散点图是指在回归分析中，数据点在直角坐标系平面上的分布图，散点图表示因变量随自变量而变化的大致趋势，据此可以选择合适的函数对数据点进行拟合。",
+            "use":"请选择解释变量和被解释变量,系统将画出其对应的拟合图"
+        },
+        "dimg_density_type":{
+            "name":"分类概率密度图",
+            "desc":"分类概率密度图是按照一个分类变量将数据集划分为不同的部分，每部分单独绘制概率密度图并将结果绘制在一张图表上。",
+            "use":"请选择分类变量和数值变量，系统将画出其对应的分类密度图"
+        },
+        "dimg_bar_type":{
+            "name":"分类柱状图",
+            "desc":"分类柱状图是按照一个分类变量将数据集划分为不同的部分，将每部分的数值变量的均值绘制为柱状图，并使用标准差作为错误栏。",
+            "use":"请选择分类变量和数值变量，系统将画出其对应的分类柱状图"
+        },
+        "dimg_hetero_density":{
+            "name":"异质性分析-核密度图",
+            "desc":"分类柱状图是依据选定的数值变量和分割点将数据集划分为不同的部分，每部分单独绘制概率密度图并将结果绘制在一张图表上。",
+            "use":"请选择数值变量并输入分割值，系统将画出其对应的异质性分析-核密度图"
+        },
+        "dimg_hetero_regress":{
+            "name":"异质性分析-散点拟合图",
+            "desc":"分类柱状图是依据选定的数值变量和分割点将数据集划分为不同的部分，每部分单独绘制散点拟合图并将结果绘制在一张图表上。",
+            "use":"请选择数值变量并输入分割值，系统将画出其对应的异质性分析-散点拟合图"
+        },
+        "dimg_hetero_corr":{
+            "name":"异质性分析-相关系数",
+            "desc":"分类柱状图是依据选定的数值变量和分割点将数据集划分为不同的部分，每部分单独计算相关系数。",
+            "use":"请选择数值变量并输入分割值，系统将计算每部分的相关系数和其显著性"
         }
     },
     "en_us":{
@@ -49,6 +89,46 @@
             "name":"Probability Density Curve",
             "desc":"In probability theory, a probability density function (PDF), or density of a continuous random variable, is a function whose value at any given sample (or point) in the sample space (the set of possible values taken by the random variable) can be interpreted as providing a relative likelihood that the value of the random variable would be close to that sample. A density curve is a graph that shows PDF. The area under the curve is equal to 100 percent of all probabilities. As we usually use decimals in probabilities you can also say that the area is equal to 1.",
             "use":"Please select a column, the system will draw its corresponding probability density map"
+        },
+        "dimg_hist":{
+            "name":"Histogram",
+            "desc":"A histogram is a graphical representation that organizes a group of data points into user-specified ranges.",
+            "use":"Please select a column, the system will draw its corresponding histogram map"
+        },
+        "dimg_line":{
+            "name":"Line Chart",
+            "desc":"A line chart or line plot or line graph or curve chart is a type of chart which displays information as a series of data points called 'markers' connected by straight line segments. It is a basic type of chart common in many fields. It is similar to a scatter plot except that the measurement points are ordered (typically by their x-axis value) and joined with straight line segments. A line chart is often used to visualize a trend in data over intervals of time - a time series - thus the line is often drawn chronologically. In these cases they are known as run charts.",
+            "use":"Please select two columns, the system will draw its line chart"
+        },
+        "dimg_regress":{
+            "name":"Scatter plot",
+            "desc":"A scatter plot uses dots to represent values for two different numeric variables. The position of each dot on the horizontal and vertical axis indicates values for an individual data point. Scatter plots are used to observe relationships between variables.",
+            "use":"Please select dependent variables and independent variables, the system will draw its scatter plot."
+        },
+        "dimg_density_type":{
+            "name":"Categorical probability density plot",
+            "desc":"A categorical probability density plot divides the data set into different parts according to a categorical variable, plots the probability density plot for each part separately and plots the results on a graph。",
+            "use":"Please select the categorical and numerical variables, and the system will draw their corresponding categorical density maps"
+        },
+        "dimg_bar_type":{
+            "name":"Categorical bar chart",
+            "desc":"A categorical bar chart divides the data set into different parts according to a categorical variable, plots the mean of the numerical variable in each part as a bar chart, and uses the standard deviation as the error bar.",
+            "use":"Please select the categorical and numerical variables, and the system will draw their corresponding categorical bar graphs"
+        },
+        "dimg_hetero_density":{
+            "name":"Heterogeneity analysis-nuclear density map",
+            "desc":"A categorical histogram divides the data set into different parts based on selected numerical variables and split points, and each part is plotted separately as a probability density graph and the results are plotted on a single graph.",
+            "use":"Please select the numerical variable and enter the split value, the system will draw its corresponding heterogeneity analysis-kernel density map"
+        },
+        "dimg_hetero_regress":{
+            "name":"Heterogeneity Analysis - Scatter Fit Plot",
+            "desc":"A categorical histogram divides the data set into different parts based on selected numerical variables and split points, and each part is plotted separately as a scatter fit and the results are plotted on a single graph.",
+            "use":"Please select the numerical variables and enter the split values, the system will draw its corresponding heterogeneity analysis - scatter fit graph"
+        },
+        "dimg_hetero_corr":{
+            "name":"Heterogeneity analysis - correlation coefficient",
+            "desc":"Categorical histograms are used to divide the data set into different parts based on selected numerical variables and split points, and correlation coefficients are calculated separately for each part.",
+            "use":"Please select the numerical variables and enter the split values, the system will calculate the correlation coefficient for each part and its significance"
         }
     }
 }
