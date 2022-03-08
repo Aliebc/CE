@@ -63,6 +63,21 @@
             "name":"异质性分析-相关系数",
             "desc":"分类柱状图是依据选定的数值变量和分割点将数据集划分为不同的部分，每部分单独计算相关系数。",
             "use":"请选择数值变量并输入分割值，系统将计算每部分的相关系数和其显著性"
+        },
+        "loss_test":{
+            "name":"缺失值预览",
+            "desc":"缺失值预览是显示选择变量列中为缺失值的部分，并返回缺失值总数和观测值总数。",
+            "use":"请选择一个或多个变量，系统将展示相应变量列为缺失值的部分"
+        },
+        "loss_delete":{
+            "name":"缺失值删减",
+            "desc":"缺失值删减是将原数据中所选变量列中为缺失值的部分删除，返回一个新的数据集。",
+            "use":"请选择一个或多个变量，系统将删除相应变量列为缺失值的部分并将新数据展示"
+        },
+        "var_filter":{
+            "name":"观测值删减",
+            "desc":"观测值删减是将所选变量列中符合所选条件的观测值进行删除，对于数值型数据，可根据范围进行限定，如删去年龄大于5且小于等于10的观测值。对于字符串型数据，可进行准确删除，如删去小区变量为“幸福里”的观测值，也可以进行模糊删除，如删去小区变量包含“幸福”字符串的观测值。",
+            "use":"请选择一个或多个变量，系统将删除符合相应条件的观测值"
         }
     },
     "en_us":{
@@ -129,6 +144,21 @@
             "name":"Heterogeneity analysis - correlation coefficient",
             "desc":"Categorical histograms are used to divide the data set into different parts based on selected numerical variables and split points, and correlation coefficients are calculated separately for each part.",
             "use":"Please select the numerical variables and enter the split values, the system will calculate the correlation coefficient for each part and its significance"
+        },
+        "loss_test":{
+            "name":"Missing value preview",
+            "desc":"The missing value preview shows the portion of the selection variable column that is missing and returns the total number of missing values and the total number of observed values.",
+            "use":"Please select one or more variables and the system will display the corresponding variables as missing values"
+        },
+        "loss_delete":{
+            "name":"Missing values - deleting",
+            "desc":"Missing value deletion returns a new data set by deleting the missing value in the selected variable column of the original data.",
+            "use":"Please select one or more variables and the system will delete the corresponding variables as missing values and display the new data"
+        },
+        "var_filter":{
+            "name":"Observed values - deleting",
+            "desc":"Observation value deletion is to delete the observation values that meet the selected conditions in the selected variable column. For numerical data, it can be limited according to the range, such as deleting the observation values whose age is greater than 5 and less than or equal to 10. For string data, accurate deletion can be carried out, such as deleting the observation value of the small variable as \"happiness\", can also be blurred deletion, such as deleting the observation value of the small variable containing \"happiness\" string. ",
+            "use":"Please select one or more variables and the system will delete the observed values that meet the corresponding conditions"
         }
     }
 }
