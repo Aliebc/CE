@@ -42,20 +42,23 @@ urlpatterns = [
     path('dest_mean/',testr.estimate_mean),
     path('dest_var/',testr.estimate_var),
     path('dest_varr/',testr.estimate_var_ratio),
-    path('ols/',datac.ols),
     path('olss/',datac.ols_repeat),
     path('olsse/',datac.ols_effect_repeat),
     path('dimg_hetero_corr/',datac.type_corr),
     path('getf/',filer.ret_file),
     path('delf/',filer.del_file),
+    ## Andy
+    path('ols/',datac.ols),
     path('binary_probit/',datac.binary_probit),
     path('binary_logit/',datac.binary_logit),
+    ## End this part
     path('select_simple/',editr.sql_select_simple),
     path('select_advance/',editr.sql_select_advance),
+    ## Jing Wei Luo
     path('loss_test/', datac.loss_test),
     path('loss_delete/', datac.loss_delete),
-    path('str_filter/', datac.str_filter),
-    path('num_filter/', datac.num_filter),
+    path('var_filter/', datac.var_filter),
+    ## End this part
 ]
 
 #handler404=ce.ce_not_found

@@ -270,62 +270,62 @@ def loss_delete(request):
     except Exception as e:
         return ret_error(e)
 
-def str_filter(request):
+def var_filter(request):
     try:
         df = get_file_data(request)
         xe = json.loads(request.body)
         f_suffix = xe['f_suffix']
-        argu1 = xe['argu1']
-        str_select = xe['str_select']
-        delete_way = xe['delete_way']
-        if (delete_way == 0):
-            for x in df.index:
-                if (df.loc[x, argu1] == str_select):
-                    df.drop(index=x, inplace=True)
-        else:
-            df = df[~ df[argu1].str.contains(str_select)]
-        uid = put_file(df, f_suffix)
-        return ret_success({"uid": uid, "f_suffix": f_suffix, "Datalist": json.loads(df.to_json(orient='index'))})
-    except Exception as e:
-        return ret_error(e)
+        params = xe['params']
+        for param in params:
+            variable = param['variable']
+            type = param['type']
+            where = param['where']
+            if(type == 1):
+                label1 = where[0]['condition']
+                num1 = where[0]['number']
+                label2 = where[1]['condition']
+                num2 = where[1]['number']
+                if (label1 != 1 and label2 != 1):
+                    for x in df.index:
+                        if (pd.notnull(df.loc[x, variable])):
+                            if (df.loc[x, variable] > num1 and df.loc[x, variable] < num2):
+                                df.drop(index=x, inplace=True)
+                        else:
+                            df.drop(index=x, inplace=True)
+                elif (label1 == 1 & label2 != 1):
+                    for x in df.index:
+                        if (pd.notnull(df.loc[x, variable])):
+                            if (df.loc[x, variable] >= num1 and df.loc[x, variable] < num2):
+                                df.drop(index=x, inplace=True)
+                        else:
+                            df.drop(index=x, inplace=True)
+                elif (label1 != 1 & label2 == 1):
+                    for x in df.index:
+                        if (pd.notnull(df.loc[x, variable])):
+                            if (df.loc[x, variable] > num1 and df.loc[x, variable] <= num2):
+                                df.drop(index=x, inplace=True)
+                        else:
+                            df.drop(index=x, inplace=True)
+                else:
+                    for x in df.index:
+                        if (pd.notnull(df.loc[x, variable])):
+                            if (df.loc[x, variable] >= num1 and df.loc[x, variable] <= num2):
+                                df.drop(index=x, inplace=True)
+                        else:
+                            df.drop(index=x, inplace=True)
 
-def num_filter(request):
-    try:
-        df = get_file_data(request)
-        xe = json.loads(request.body)
-        argu1 = xe['argu1']
-        argu2 = xe['argu2']
-        f_suffix = xe['f_suffix']
-        num1 = argu2[0][1]
-        num2 = argu2[1][1]
-        if (argu2[0][0] == 0 and argu2[1][0] == 0):
-            for x in df.index:
-                if (pd.notnull(df.loc[x, argu1])):
-                    if (df.loc[x, argu1] >= num1 and df.loc[x, argu1] <= num2):
-                        df.drop(index=x, inplace=True)
+            elif(type == 2):
+                delete_way = where[0]['way']
+                str_select = where[0]['str_select']
+                if(delete_way == 1):
+                    for x in df.index:
+                        if (df.loc[x, variable] == str_select):
+                            df.drop(index=x, inplace=True)
                 else:
-                    df.drop(index=x, inplace=True)
-        elif (argu2[0][0] != 0 & argu2[1][0] == 0):
-            for x in df.index:
-                if (pd.notnull(df.loc[x, argu1])):
-                    if (df.loc[x, argu1] > num1 and df.loc[x, argu1] <= num2):
-                        df.drop(index=x, inplace=True)
-                else:
-                    df.drop(index=x, inplace=True)
-        elif (argu2[0][0] == 0 & argu2[1][0] != 0):
-            for x in df.index:
-                if (pd.notnull(df.loc[x, argu1])):
-                    if (df.loc[x, argu1] >= num1 and df.loc[x, argu1] < num2):
-                        df.drop(index=x, inplace=True)
-                else:
-                    df.drop(index=x, inplace=True)
-        else:
-            for x in df.index:
-                if (pd.notnull(df.loc[x, argu1])):
-                    if (df.loc[x, argu1] > num1 and df.loc[x, argu1] < num2):
-                        df.drop(index=x, inplace=True)
-                else:
-                    df.drop(index=x, inplace=True)
+                    df = df[~ df[variable].str.contains(str_select)]
+
+            else:
+                return ret2(-1, None, "Error(#:Type).")
         uid = put_file(df, f_suffix)
         return ret_success({"uid": uid, "f_suffix": f_suffix, "Datalist": json.loads(df.to_json(orient='index'))})
     except Exception as e:
@@ -425,9 +425,6 @@ class OLS_ADVANCE:
         return self.point
     def any_ols(self,argu_i,argu_e,time_effect,entity_effect):
         return None
-
-        
-
 
 def ols_effect(request):
     args=request_analyse(request)
