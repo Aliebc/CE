@@ -5,6 +5,7 @@ from .ce import ret2,ret_error,ret_success
 from .datac import heter_compare_df
 from .filer import get_file_data,generate_uid,image_path
 from plotnine import *
+from scipy.stats import t
 
 right="<!--This image is created by computational economics project(CE-API) by Aliebc, Tsinghua University(E-mail:ad_xyz@outlook.com).-->\n"
 
@@ -260,17 +261,20 @@ def type_bar(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
-        dta2=dta.groupby([argu2]).mean().reset_index()
-        dta3=dta.groupby([argu2]).std().reset_index()
-        dta2['errbar_max']=dta2[argu1]+dta3[argu1]
-        dta2['errbar_min']=dta2[argu1]-dta3[argu1]
-        img_density=(ggplot(dta2,aes(x=argu2,y=argu1,fill=argu2))+geom_bar(stat = 'identity')+geom_errorbar(aes(ymax='errbar_max',ymin='errbar_min'))+ggtitle(title))
+            ret_error(e)
+        dta['argu1_mean']=dta[argu1]
+        dta['argu1_std']=dta[argu1]
+        dta['argu1_len']=dta[argu1]
+        dta4=dta.groupby([argu2]).agg({'argu1_mean':'mean','argu1_std':'std','argu1_len':'count'}).reset_index()
+        dta4['errbar_min']=t.interval(0.95,dta4['argu1_len']-1,dta4['argu1_mean'],dta4['argu1_std'])[0]
+        dta4['errbar_max']=t.interval(0.95,dta4['argu1_len']-1,dta4['argu1_mean'],dta4['argu1_std'])[1]
+        dta4[argu1]=dta4['argu1_mean']
+        img_density=(ggplot(dta4,aes(x=argu2,y=argu1,fill=argu2))+geom_bar(stat = 'identity')+geom_errorbar(aes(ymax='errbar_max',ymin='errbar_min'))+ggtitle(title))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+        ret2(-1,None,'Method Not Allowed.')
     else:
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+        ret2(-1,None,'Method Not Allowed.')
 
 def tuid(request):
     return None
