@@ -75,7 +75,7 @@ def check_memory():
         n_time=int(time.time())
         dlist=[]
         for i in dtalist:
-            if int(n_time-dtalist[i]['time'])>60:
+            if int(n_time-dtalist[i]['time'])>300:
                 dlist.append(i)
         for k in dlist:
             dtalist.pop(k)
@@ -102,7 +102,6 @@ def get_file_data(request):
             except Exception as e:
                 raise RuntimeError("Bad Request")
         if uid and f_suffix:
-            print(dtalist)
             if uid in dtalist:
                 dtalist[uid]['time']=int(time.time())
                 return dtalist[uid]['df']
@@ -136,39 +135,6 @@ def getd(request):
         return ret2(0,{"DataList":json.loads(fdata.to_json(orient='records')),"Type":json.loads(fdata.dtypes.to_json())},None)
     except Exception as e:
         ret_error(e)
-
-def getd2(request):
-    if request.method == 'POST':
-        try:
-            rp=json.loads(request.body)
-            uid=rp['uid']
-            f_suffix=rp['f_suffix']
-        except Exception as e:
-            return ret2(-1,None,"Error(#1:Format).")
-        if uid and f_suffix:
-            f_name=str(uid)+str(f_suffix)
-            f_path=os.path.join(file_dir_path,f_name)
-            try:
-                if f_suffix == '.xlsx':
-                    fdata=pd.read_excel(f_path,engine='openpyxl')
-                elif f_suffix == '.xls':
-                    fdata=pd.read_excel(f_path)
-                elif f_suffix == '.dta':
-                    fdata=pd.read_stata(f_path)
-                elif f_suffix == '.csv':
-                    fdata=pd.read_csv(f_path)
-                    
-                else:
-                    return ret2(-1,None,"Error(#2:Suffix).")
-                if fdata.shape[0]>MAX_LINES:
-                    fdata=fdata.head(MAX_LINES)
-                return ret2(0,{"DataList":json.loads(fdata.to_json(orient='records')),"Type":json.loads(fdata.dtypes.to_json())},None)
-            except Exception as e:
-                return ret2(-1,None,"Error(#3:Internal).")
-        else:
-            return ret2(-1,None,"Error(#1:Format).")
-    else:
-        return ret2(-1,None,"Only POST method is allowed.")
 
 def ret_file(request):
     try:
