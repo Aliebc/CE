@@ -1234,7 +1234,7 @@
                         $("#nav-top-api2-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
                         $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-mean' class='nav-top-option-menu-in'>均值估计</div>`);
                         $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-var' class='nav-top-option-menu-in'>方差估计</div>`);
-                        $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-mean2' class='nav-top-option-menu-in'>均值差估计</div>`);
+                        //$("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-mean2' class='nav-top-option-menu-in'>均值差估计</div>`);
                         $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-var2' class='nav-top-option-menu-in'>方差比估计(F)</div><hr>`);
                         $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-meant' class='nav-top-option-menu-in'>均值检验(T-test)</div>`);
                         $("#nav-top-api2-menu").append(`<div id='nav-top-api2-menu-kst' class='nav-top-option-menu-in'>同分布检验(KS-test)</div>`);

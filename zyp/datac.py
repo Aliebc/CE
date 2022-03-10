@@ -31,6 +31,8 @@ def xcorr(request):
             for j in cord[i]:
                 cor=st.pearsonr(dta[i],dta[j])
                 ret[i][j]=cor
+                if i==j:
+                    ret[i][j]=[1,0]
     except Exception as e:
         return ret_error(e)
     return ret2(0,{"CorrMartix":ret},None)

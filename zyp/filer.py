@@ -6,6 +6,7 @@ import hashlib
 import pathlib
 import pandas as pd
 import threading
+import gc
 from django.http import HttpResponse
 from .ce import ret2,ret_error
 
@@ -75,10 +76,11 @@ def check_memory():
         n_time=int(time.time())
         dlist=[]
         for i in dtalist:
-            if int(n_time-dtalist[i]['time'])>300:
+            if (n_time-dtalist[i]['time'])>600:
                 dlist.append(i)
         for k in dlist:
             dtalist.pop(k)
+        gc.collect()
         time.sleep(15)
 
 cmr=threading.Thread(target=check_memory)
@@ -134,7 +136,7 @@ def getd(request):
             fdata=fdata.head(MAX_LINES)
         return ret2(0,{"DataList":json.loads(fdata.to_json(orient='records')),"Type":json.loads(fdata.dtypes.to_json())},None)
     except Exception as e:
-        ret_error(e)
+        return ret_error(e)
 
 def ret_file(request):
     try:
@@ -164,6 +166,9 @@ def del_file(request):
         f_name=str(uid)+str(f_suffix)
         f_path=os.path.join(file_dir_path,f_name)
         os.remove(f_path)
+        global dtalist
+        del dtalist[uid]
+        gc.collect()
     except Exception as e:
         return ret2(-1,None,"Error(#1):Type")
     return ret2(0,"Your data has been deleted.",None)
