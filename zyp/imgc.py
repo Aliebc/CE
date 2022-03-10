@@ -29,7 +29,7 @@ def sav_and_ret_svg(img,width,height,request=None):
             else:
                 res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
         except Exception as e:
-            res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
+            ret_error(e)
     else:
         res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
     return res
@@ -38,7 +38,7 @@ def ret_svg_tuid(request):
     try:
         img_uid=request.GET.get('tuid')
     except Exception as e:
-        return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+        ret_error(e)
     return None
 
 
@@ -62,7 +62,7 @@ def density(request):
             width=int(request.POST.get('width',default=12))
             height=int(request.POST.get('height',default=8))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+            ret_error(e)
         img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title))
         return ret_success({'tuid':sav_svg(img_density,width,height)})
     else:
@@ -78,7 +78,7 @@ def hist(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+            ret_error(e)
         img_density=(ggplot(dta,aes(x=argu1))+geom_histogram()+ggtitle(title)+theme(text=element_text(family='SimHei')))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
@@ -95,7 +95,7 @@ def bar(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+            ret_error(e)
         dta2=dta.groupby([argu1]).count().reset_index()
         img_density=(ggplot(dta,aes(x=argu1))+geom_histogram()+ggtitle(title)+theme(text=element_text(family='SimHei')))
         return sav_and_ret_svg(img_density,width,height,request)
@@ -113,7 +113,7 @@ def cdf(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+            ret_error(e)
         img_density=(ggplot(dta,aes(x=argu1))+stat_ecdf()+ggtitle(title)+theme(text=element_text(family='SimHei')))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
@@ -133,7 +133,7 @@ def hetero_density(request):
             segment=float(request.GET.get('segment',default=None))
             height=int(request.GET.get('height',default=8))+'_type'
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+            ret_error(e)
         try:
             dta2=heter_compare_df(dta,argu_type,float(segment))
             img_density=(ggplot(dta2,aes(x=argu1,colour=argu_type+'_type'))+geom_density()+ggtitle(title))
@@ -155,7 +155,7 @@ def type_density(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+            ret_error(e)
         img_density=(ggplot(dta,aes(x=argu1,colour=argu2))+geom_density()+ggtitle(title))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
@@ -176,7 +176,7 @@ def type_regress(request):
             segment=float(request.GET.get('segment',default=None))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+            ret_error(e)
         try:
             dta2=heter_compare_df(dta,argu_type,float(segment))
             img_density=(ggplot(dta2,aes(x=argu1,y=argu2,colour=argu_type+'_type'))+geom_smooth(method='lm')+geom_point()+ggtitle(title))
@@ -198,7 +198,7 @@ def two_reg(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+            ret_error(e)
         try:
             img_density=(ggplot(dta,aes(x=argu1,y=argu2))+geom_smooth(method='lm')+geom_point(fill='blue')+ggtitle(title))
         except Exception as e:
@@ -219,9 +219,9 @@ def two_reg_d2(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+            ret_error(e)
         try:
-            img_density=(ggplot(dta,aes(x=argu1,y=argu2))+geom_smooth(method='lm',formula='y~pow(x,2)')+geom_point(fill='blue')+ggtitle(title))
+            img_density=(ggplot(dta,aes(x=argu1,y=argu2))+geom_smooth(method='lm',formula='y~pow(x,2)+x')+geom_point(fill='blue')+ggtitle(title))
         except Exception as e:
             return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
         return sav_and_ret_svg(img_density,width,height,request)
@@ -240,7 +240,7 @@ def two_line(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#3):Request.'))
+            ret_error(e)
         try:
             img_density=(ggplot(dta,aes(x=argu1,y=argu2,group=1))+geom_line()+geom_point(fill='blue')+ggtitle(title))
         except Exception as e:
