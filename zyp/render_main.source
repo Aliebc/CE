@@ -820,8 +820,10 @@
                                 $("#argu1").val(JSON.stringify(x3));
                                 call_api("summary3",function(e){
                                     x2={};
-                                    for(k in x3){
+                                    if(e['respCode']==0){
+                                        for(k in x3){
                                         x2[x3[k]]=e['respData']['ValueList'][x3[k]]
+                                        }
                                     }
                                     if(e['respCode']==0){
                                         estr=Json2Table_describe(x2);

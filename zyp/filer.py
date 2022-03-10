@@ -5,10 +5,12 @@ import json
 import hashlib
 import pathlib
 import pandas as pd
+import threading
 from django.http import HttpResponse
 from .ce import ret2,ret_error
 
 MAX_LINES=1000
+dtalist={}
 
 try:
     conf=json.loads(open(os.path.join('zyp','config.json'),encoding="utf-8").read())
@@ -67,7 +69,23 @@ def recv_file(request):
     else:
         return ret2(-1,None,"Only POST method is allowed.")
 
+def check_memory():
+    global dtalist
+    while(True):
+        n_time=int(time.time())
+        dlist=[]
+        for i in dtalist:
+            if int(n_time-dtalist[i]['time'])>60:
+                dlist.append(i)
+        for k in dlist:
+            dtalist.pop(k)
+        time.sleep(15)
+
+cmr=threading.Thread(target=check_memory)
+cmr.start()
+
 def get_file_data(request):
+    global dtalist
     if request.method in ['POST','GET']: 
         if request.method=='POST':
             try:
@@ -84,6 +102,10 @@ def get_file_data(request):
             except Exception as e:
                 raise RuntimeError("Bad Request")
         if uid and f_suffix:
+            print(dtalist)
+            if uid in dtalist:
+                dtalist[uid]['time']=int(time.time())
+                return dtalist[uid]['df']
             f_name=str(uid)+str(f_suffix)
             f_path=os.path.join(file_dir_path,f_name)
             try:
@@ -97,6 +119,7 @@ def get_file_data(request):
                     fdata=pd.read_csv(f_path)
                 else:
                     raise RuntimeError("Suffix Error")
+                dtalist[uid]={'df':fdata,'time':int(time.time())}
                 return fdata
             except Exception as e:
                 raise RuntimeError("Read Error")
@@ -106,6 +129,15 @@ def get_file_data(request):
         raise RuntimeError("Method Not allowed")
 
 def getd(request):
+    try:
+        fdata=get_file_data(request)
+        if fdata.shape[0]>MAX_LINES:
+            fdata=fdata.head(MAX_LINES)
+        return ret2(0,{"DataList":json.loads(fdata.to_json(orient='records')),"Type":json.loads(fdata.dtypes.to_json())},None)
+    except Exception as e:
+        ret_error(e)
+
+def getd2(request):
     if request.method == 'POST':
         try:
             rp=json.loads(request.body)
