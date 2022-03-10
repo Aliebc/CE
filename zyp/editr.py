@@ -3,6 +3,7 @@ from .ce import ret_success,ret_error,request_analyse
 from pandasql import sqldf
 
 pysqldf = lambda q: sqldf(q, globals())
+dtasql=True
 
 class SQL_API_STD:
     def __init__(self,request):
@@ -10,8 +11,8 @@ class SQL_API_STD:
         self.args = request_analyse(self.request)
     def execute(self,sql_str):
         try:
-            global dta
-            dta = get_file_data(self.request)
+            global dtasql
+            dtasql = get_file_data(self.request)
             dta2=pysqldf(sql_str)
             uid=put_file_excel(dta2)
             return ret_success({"uid":uid,"f_suffix":".xlsx"})
@@ -32,8 +33,8 @@ class EDIT_API_STD:
 
 def sql_select_simple(request):
     r=SQL_API_STD(request)
-    return r.execute("SELECT * FROM dta WHERE "+r.args['argu1'])
+    return r.execute("SELECT * FROM dtasql WHERE "+r.args['argu1'])
 
 def sql_select_advance(request):
     r=SQL_API_STD(request)
-    return r.execute(r.args['argu1']+" FROM dta "+r.args['argu2'])
+    return r.execute(r.args['argu1']+" FROM dtasql "+r.args['argu2'])

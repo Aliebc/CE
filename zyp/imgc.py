@@ -4,7 +4,7 @@ from .ce import ret2,ret_error,ret_success
 from .datac import heter_compare_df
 from .filer import get_file_data,generate_uid,image_path
 from plotnine import *
-from scipy.stats import t
+from scipy.stats import t,tsem
 
 right="<!--This image is created by computational economics project(CE-API) by Aliebc, Tsinghua University(E-mail:ad_xyz@outlook.com).-->\n"
 
@@ -261,10 +261,11 @@ def type_bar(request):
             height=int(request.GET.get('height',default=8))
         except Exception as e:
             return ret_error(e)
-        dta['argu1_mean']=dta[argu1]
-        dta['argu1_std']=dta[argu1]
-        dta['argu1_len']=dta[argu1]
-        dta4=dta.groupby([argu2]).agg({'argu1_mean':'mean','argu1_std':'std','argu1_len':'count'}).reset_index()
+        dta2=dta
+        dta2['argu1_mean']=dta[argu1]
+        dta2['argu1_std']=dta[argu1]
+        dta2['argu1_len']=dta[argu1]
+        dta4=dta2.groupby([argu2]).agg({'argu1_mean':'mean','argu1_std':tsem,'argu1_len':'count'}).reset_index()
         dta4['errbar_min']=t.interval(0.95,dta4['argu1_len']-1,dta4['argu1_mean'],dta4['argu1_std'])[0]
         dta4['errbar_max']=t.interval(0.95,dta4['argu1_len']-1,dta4['argu1_mean'],dta4['argu1_std'])[1]
         dta4[argu1]=dta4['argu1_mean']

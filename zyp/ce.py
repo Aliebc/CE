@@ -2,7 +2,7 @@ import json
 import os
 from django.http import HttpResponseNotFound,JsonResponse
 
-ce_version_str="1.3.0 Pre-Release"
+ce_version_str="1.4.0 Pre-Release"
 
 def ret(code,data,err):
     return {"respCode":code,"respData":data,"errMsg":err}
