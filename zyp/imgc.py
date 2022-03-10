@@ -1,6 +1,5 @@
 import os
-from django.http import HttpResponse,JsonResponse
-from . import ce
+from django.http import HttpResponse
 from .ce import ret2,ret_error,ret_success
 from .datac import heter_compare_df
 from .filer import get_file_data,generate_uid,image_path
@@ -29,7 +28,7 @@ def sav_and_ret_svg(img,width,height,request=None):
             else:
                 res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
     else:
         res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
     return res
@@ -38,7 +37,7 @@ def ret_svg_tuid(request):
     try:
         img_uid=request.GET.get('tuid')
     except Exception as e:
-        ret_error(e)
+        return ret_error(e)
     return None
 
 
@@ -51,7 +50,7 @@ def density(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
@@ -62,11 +61,11 @@ def density(request):
             width=int(request.POST.get('width',default=12))
             height=int(request.POST.get('height',default=8))
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title))
         return ret_success({'tuid':sav_svg(img_density,width,height)})
     else:
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
 
 
 def hist(request):
@@ -78,13 +77,13 @@ def hist(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         img_density=(ggplot(dta,aes(x=argu1))+geom_histogram()+ggtitle(title)+theme(text=element_text(family='SimHei')))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
     else:
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
 
 def bar(request):
     if request.method =='GET':
@@ -95,14 +94,14 @@ def bar(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         dta2=dta.groupby([argu1]).count().reset_index()
         img_density=(ggplot(dta,aes(x=argu1))+geom_histogram()+ggtitle(title)+theme(text=element_text(family='SimHei')))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
     else:
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
 
 def cdf(request):
     if request.method =='GET':
@@ -113,13 +112,13 @@ def cdf(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         img_density=(ggplot(dta,aes(x=argu1))+stat_ecdf()+ggtitle(title)+theme(text=element_text(family='SimHei')))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
     else:
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
 
 
 def hetero_density(request):
@@ -133,17 +132,17 @@ def hetero_density(request):
             segment=float(request.GET.get('segment',default=None))
             height=int(request.GET.get('height',default=8))+'_type'
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         try:
             dta2=heter_compare_df(dta,argu_type,float(segment))
             img_density=(ggplot(dta2,aes(x=argu1,colour=argu_type+'_type'))+geom_density()+ggtitle(title))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
+            return ret_error(e)
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
     else:
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+        return ret2(-1,None,'Method Not Allowed.')
 
 def type_density(request):
     if request.method =='GET':
@@ -155,13 +154,13 @@ def type_density(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         img_density=(ggplot(dta,aes(x=argu1,colour=argu2))+geom_density()+ggtitle(title))
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
     else:
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
 
 
 def type_regress(request):
@@ -176,17 +175,17 @@ def type_regress(request):
             segment=float(request.GET.get('segment',default=None))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         try:
             dta2=heter_compare_df(dta,argu_type,float(segment))
             img_density=(ggplot(dta2,aes(x=argu1,y=argu2,colour=argu_type+'_type'))+geom_smooth(method='lm')+geom_point()+ggtitle(title))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
+            return ret_error(e)
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
     else:
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
 
 def two_reg(request):
     if request.method =='GET':
@@ -198,16 +197,16 @@ def two_reg(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         try:
             img_density=(ggplot(dta,aes(x=argu1,y=argu2))+geom_smooth(method='lm')+geom_point(fill='blue')+ggtitle(title))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
+            return ret_error(e)
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
     else:
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
 
 def two_reg_d2(request):
     if request.method =='GET':
@@ -219,16 +218,16 @@ def two_reg_d2(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         try:
             img_density=(ggplot(dta,aes(x=argu1,y=argu2))+geom_smooth(method='lm',formula='y~pow(x,2)+x')+geom_point(fill='blue')+ggtitle(title))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
+            return ret_error(e)
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
     else:
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
 
 def two_line(request):
     if request.method =='GET':
@@ -240,16 +239,16 @@ def two_line(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         try:
             img_density=(ggplot(dta,aes(x=argu1,y=argu2,group=1))+geom_line()+geom_point(fill='blue')+ggtitle(title))
         except Exception as e:
-            return JsonResponse(ce.ret(-1,None,'Error(#4):Plot.'))
+            return ret_error(e)
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
     else:
-        return JsonResponse(ce.ret(-1,None,'Method Not Allowed.'))
+       return ret2(-1,None,'Method Not Allowed.')
 
 def type_bar(request):
     if request.method =='GET':
@@ -261,7 +260,7 @@ def type_bar(request):
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
-            ret_error(e)
+            return ret_error(e)
         dta['argu1_mean']=dta[argu1]
         dta['argu1_std']=dta[argu1]
         dta['argu1_len']=dta[argu1]
