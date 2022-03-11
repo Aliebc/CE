@@ -9,6 +9,7 @@
             tesm="";
             apid={
                 "yl":"__DOMAIN__getd/",
+                "swif":"__DOMAIN__swif/",
                 "summary":"__DOMAIN__dsummary/",
                 "summary2":"__DOMAIN__xsummary/",
                 "summary3":"__DOMAIN__xsummary2/",
@@ -706,6 +707,7 @@
                         $("#nav-top-file-menu").css({"top":$("#nav-top").height(),"left":$(e.target).offset().left});
                         $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-uid' class='nav-top-option-menu-in'>查看UID</div>`);
                         $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-save' class='nav-top-option-menu-in'>下载数据表</div>`);
+                        $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-switch' class='nav-top-option-menu-in'>转换数据表</div>`);
                         $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-open' class='nav-top-option-menu-in'>打开新文件</div><hr>`);
                         $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-share' class='nav-top-option-menu-in'>复制分享链接</div>`);
                         $("#nav-top-file-menu").append(`<div id='nav-top-file-menu-remove' class='nav-top-option-menu-in'>删除数据</div>`);
@@ -722,6 +724,20 @@
                             }else{
 
                             }
+                        });
+                        $("#nav-top-file-menu-switch").click(function(e){
+                            layer.open({title:"转换数据表",content:`<div>请选择转换成的数据表类型:<select keys='true' v_name='argu1'><option value='null'>请选择</option><option value='.xls'>Excel 2003(*.xls)</option><option value='.xlsx'>Excel 2010(*.xlsx)</option><option value='.dta'>STATA(*.dta)</option><option value='.csv'>CSV with ',' and UTF-8(*.csv)</option></select></div>`,yes:ind=>{
+                                call_api("swif",e=>{
+                                    if(e['respCode']==0){
+                                        window.open("__DOMAIN__?uid="+e['respData']['uid']+"&f_suffix="+e['respData']['f_suffix']);
+                                    }else{
+                                        layer.msg(e['errMsg']);
+                                    }
+                                });
+                            }});
+                            $("select[keys='true']").change(function(e){
+                                $(`#${$(e.target).attr('v_name')}`).val($(e.target).val());
+                            });
                         });
                         $("#nav-top-file-menu").mouseleave(function(e){
                             $("#nav-top-file-menu").hide();
@@ -1166,7 +1182,7 @@
                         $("#nav-top-edit-menu-loss2").click(function(e){
                             s_cont="";
                             for(key in keys){
-                                s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys'>${keys[key]}</option><br>`;
+                                s_cont+=`<input type='checkbox' value='${keys[key]}' class='ckeys' class='magic-radio'>${keys[key]}<br>`;
                             }
                             layer.open({title:"缺失值处理",content:`
                             <div>选择删去缺失值的变量:<button id='all_c'>全选</button><br><div id='explain' keys='true'>${s_cont}</div>
@@ -1195,7 +1211,7 @@
                             layer.open({title:"高级语句筛选",content:`
                             <div>查询语句:<br><input type='text' keys='true' id='explain_v1' v_name='argu1' value='SELECT ...'></input><br>
                                 FROM YOUR_TABLE <br>
-                                <input type='text' keys='true' id='explain_v2' v_name='argu2' value='WHERE ...'></input><br><br>基于SQLite3
+                                <input type='text' keys='true' id='explain_v2' v_name='argu2' value='WHERE 1=1'></input><br><br>基于SQLite3
                             </div>
                             `,
                             yes:function(index){
@@ -1431,7 +1447,7 @@
 
                         $("#nav-top-api3-menu-advance").click(function(e){
                             layer.open({title:$(e.target).html(),content:`
-                            <div>作图命令(ggplot2格式,数据集名为dta): <br><textarea keys='true' id='explain_v1' v_name='argu1' value='ggplot(dta,aes())+...' style='width:600px;height:350px'>ggplot(dta,aes())+...</textarea><br>
+                            <div>作图命令(ggplot2格式,数据集名为dta): <br><textarea style='border:0;border-radius:5px;background-color:rgba(241,241,241,.98);width: 355px;height: 100px;padding: 10px;resize: none;' keys='true' id='explain_v1' v_name='argu1' value='ggplot(dta,aes())+...' style='width:600px;height:350px' spellcheck="false">ggplot(dta,aes())+...</textarea><br>
                             </div>
                             `,
                             yes:function(e){
@@ -1675,6 +1691,148 @@
             .nav-top-option-menu-in:hover{
                 background: #9198e5;
             }
+            input{
+                border: 1px solid #ccc;
+                padding: 7px 0px;
+                border-radius: 3px;
+                padding-left:5px;
+                margin-left: 5px;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+                -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+                -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s
+            }
+            input:focus{
+                    border-color: #66afe9;
+                    outline: 0;
+                    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+                    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+            }
+            select{  
+                background:#fafdfe;  
+                margin-left: 5px;
+                height:28px;  
+                width:180px;  
+                line-height:28px;  
+                border:1px solid #9bc0dd;  
+                -moz-border-radius:2px;  
+                -webkit-border-radius:2px;  
+                border-radius:2px;  
+            }  
+        </style>
+        <style>
+            @keyframes hover-color {
+            from {
+                border-color: #c0c0c0; }
+            to {
+                border-color: #3e97eb; } }
+
+            .magic-radio,
+            .magic-checkbox {
+            position: absolute;
+            display: none; }
+
+            .magic-radio[disabled],
+            .magic-checkbox[disabled] {
+            cursor: not-allowed; }
+
+            .magic-radio + label,
+            .magic-checkbox + label {
+            position: relative;
+            display: block;
+            padding-left: 30px;
+            cursor: pointer;
+            vertical-align: middle; }
+            .magic-radio + label:hover:before,
+            .magic-checkbox + label:hover:before {
+                animation-duration: 0.4s;
+                animation-fill-mode: both;
+                animation-name: hover-color; }
+            .magic-radio + label:before,
+            .magic-checkbox + label:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                content: '';
+                border: 1px solid #c0c0c0; }
+            .magic-radio + label:after,
+            .magic-checkbox + label:after {
+                position: absolute;
+                display: none;
+                content: ''; }
+
+            .magic-radio[disabled] + label,
+            .magic-checkbox[disabled] + label {
+            cursor: not-allowed;
+            color: #e4e4e4; }
+            .magic-radio[disabled] + label:hover, .magic-radio[disabled] + label:before, .magic-radio[disabled] + label:after,
+            .magic-checkbox[disabled] + label:hover,
+            .magic-checkbox[disabled] + label:before,
+            .magic-checkbox[disabled] + label:after {
+                cursor: not-allowed; }
+            .magic-radio[disabled] + label:hover:before,
+            .magic-checkbox[disabled] + label:hover:before {
+                border: 1px solid #e4e4e4;
+                animation-name: none; }
+            .magic-radio[disabled] + label:before,
+            .magic-checkbox[disabled] + label:before {
+                border-color: #e4e4e4; }
+
+            .magic-radio:checked + label:before,
+            .magic-checkbox:checked + label:before {
+            animation-name: none; }
+
+            .magic-radio:checked + label:after,
+            .magic-checkbox:checked + label:after {
+            display: block; }
+
+            .magic-radio + label:before {
+            border-radius: 50%; }
+
+            .magic-radio + label:after {
+            top: 7px;
+            left: 7px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #3e97eb; }
+
+            .magic-radio:checked + label:before {
+            border: 1px solid #3e97eb; }
+
+            .magic-radio:checked[disabled] + label:before {
+            border: 1px solid #c9e2f9; }
+
+            .magic-radio:checked[disabled] + label:after {
+            background: #c9e2f9; }
+
+            .magic-checkbox + label:before {
+            border-radius: 3px; }
+
+            .magic-checkbox + label:after {
+            top: 2px;
+            left: 7px;
+            box-sizing: border-box;
+            width: 6px;
+            height: 12px;
+            transform: rotate(45deg);
+            border-width: 2px;
+            border-style: solid;
+            border-color: #fff;
+            border-top: 0;
+            border-left: 0; }
+
+            .magic-checkbox:checked + label:before {
+            border: #3e97eb;
+            background: #3e97eb; }
+
+            .magic-checkbox:checked[disabled] + label:before {
+            border: #c9e2f9;
+            background: #c9e2f9; }
         </style>
     </head>
     <body>

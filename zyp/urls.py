@@ -46,6 +46,7 @@ urlpatterns = [
     path('olsse/',datac.ols_effect_repeat),
     path('dimg_hetero_corr/',datac.type_corr),
     path('getf/',filer.ret_file),
+    path('swif/',filer.switch_file_type),
     path('delf/',filer.del_file),
     ## Andy
     path('ols/',datac.ols),

@@ -3,8 +3,8 @@ import pandas as pd
 import numpy as npy
 import scipy.stats as st
 from .ce import ret2,request_analyse,ret_error,ret_success
-from .filer import get_file_data
-from .filer import put_file_excel as put_file
+from .filer import get_file_data,put_file_excel
+from .filer import put_file_all as put_file
 import statsmodels.api as sm
 from linearmodels.panel import PanelOLS
 from sklearn import preprocessing
@@ -77,7 +77,7 @@ def xsummary2(request):
                 a2[key]=json.loads(r2.describe().to_json())
         a3={}
         df2=pd.read_json(json.dumps(a2),orient="index")
-        uid=put_file(df2,True,"Variable")
+        uid=put_file_excel(df2,True,"Variable")
         return ret_success({'ValueList':a2,'File':{'uid':uid,'f_suffix':'.xlsx'}})
     except Exception as e:
         return ret_error(e)
@@ -402,7 +402,6 @@ def ols_repeat(request):
             ols_res.append(ols_plain_inter(dta,olss[i]['argu_i'],olss[i]['argu_e']))
             argu_il=argu_il.union(olss[i]['argu_i'])
             argu_el=argu_el.union(olss[i]['argu_e'])
-        
         return ret_success({"count":len(ols_res),"OLSList":ols_res,"ArgeList":list(argu_el)})
     except Exception as e:
         return ret_error(e)
