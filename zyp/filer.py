@@ -8,7 +8,7 @@ import pandas as pd
 import threading
 import gc
 from django.http import HttpResponse
-from .ce import ret2,ret_error
+from .ce import request_analyse, ret2,ret_error,ret_success
 
 MAX_LINES=1000
 dtalist={}
@@ -152,7 +152,7 @@ def ret_file(request):
         f_cont=open(f_path,'rb').read()
     except Exception as e:
         return ret_error(e)
-    return HttpResponse(f_cont,headers={'Content-Type':'application/octet-stream',"Content-Disposition":"attachment ;filename="+f_name})
+    return HttpResponse(f_cont,headers={'Content-Type':'application/octet-stream','Content-Length':str(len(f_cont)),"Content-Disposition":"attachment ;filename="+f_name})
 
 def del_file(request):
     try:
@@ -178,3 +178,25 @@ def put_file_excel(df,ind=False,index_label=None):
     f_name=os.path.join(file_dir_path,uid+".xlsx")
     df.to_excel(f_name,index=ind,sheet_name="CE-API",index_label=index_label)
     return uid
+
+def put_file_all(df,f_suffix):
+    uid=generate_uid()
+    f_name=os.path.join(file_dir_path,uid+f_suffix)
+    if f_suffix == '.xlsx':
+        df.to_excel(f_name,index=False,sheet_name="CE-API",index_label=None)
+    elif f_suffix == '.dta':
+        df.to_stata(f_name,write_index=False)
+    elif f_suffix == '.xls':
+        df.to_excel(f_name,index=False,sheet_name="CE-API",index_label=None)
+    elif f_suffix == '.csv':
+        df.to_csv(f_name,index=False)
+    return uid
+
+def switch_file_type(request):
+    try:
+        dta1=get_file_data(request)
+        args=request_analyse(request)
+        uid2=put_file_all(dta1,args['argu1'])
+        return ret_success({"uid":uid2,"f_suffix":args['argu1']})
+    except Exception as e:
+        return ret_error(e)
