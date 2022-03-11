@@ -142,8 +142,7 @@
                         <td>${jso["OLSList"][i]["Result"]['r2'].toFixed(3)}</td>
                         `;
                     }
-                estr+=`<tr></table><p>注:表中***,**,*分别代表在1%,5%,10%统计意义上显著<p>选中表格并复制后可直接粘贴到Word!</p></p></div>`;
-                
+                estr+=`<tr></table><p>注:表中***,**,*分别代表在1%,5%,10%统计意义上显著</p></div>`;
                 return estr;
             }
 
@@ -251,7 +250,7 @@
                     }
                     estr+=`<tr>`;
                 }
-                estr+=`</table><hr><span>注:表中***,**,*分别代表在1%,5%,10%统计意义上显著</span><p>选中表格并复制后可直接粘贴到Word!</p></div>`;
+                estr+=`</table><hr><span>注:表中***,**,*分别代表在1%,5%,10%统计意义上显著</span></div>`;
                 return estr;
             }
 
@@ -382,6 +381,23 @@
                     } else if (document.webkitCancelFullScreen) {
                         document.webkitCancelFullScreen();
                     }
+                }
+            }
+
+            function selectText(element) {
+                var text = document.getElementById(element);
+                if (document.body.createTextRange) {
+                    var range = document.body.createTextRange();
+                    range.moveToElementText(text);
+                    range.select();
+                } else if (window.getSelection) {
+                    var selection = window.getSelection();
+                    var range = document.createRange();
+                    range.selectNodeContents(text);
+                    selection.removeAllRanges();
+                    selection.addRange(range);
+                } else {
+                    console.log('none');
                 }
             }
 
@@ -887,7 +903,11 @@
                                             layer.msg("Error:"+e.message);
                                         }
                                         estr=Json2Table_xcorr(x2);
-                                        layer.open({title:"相关系数矩阵",content:estr});
+                                        layer.open({title:"相关系数矩阵",content:estr,btn:['关闭','复制'],btn2:()=>{
+                                            selectText("xcorrc");
+                                            document.execCommand('copy');
+                                            layer.msg('已复制到剪切板,可直接粘贴至word');
+                                        }});
                                     }else{
                                         layer.msg(e['errMsg']);
                                     }
@@ -965,7 +985,11 @@
                                         if(e['respCode']==0){
                                             layer.close(ind);
                                             eee=Json2Table_olss(e['respData']);
-                                            layer.open({type:1,title:false,"content":eee});
+                                            layer.open({type:0,title:false,"content":eee,btn:['关闭','复制'],btn2:()=>{
+                                                selectText("xolss");
+                                                document.execCommand('copy');
+                                                layer.msg('已复制到剪切板,可直接粘贴至word');
+                                            }});
                                         }else{
                                             layer.msg(e['errMsg']);
                                         }
