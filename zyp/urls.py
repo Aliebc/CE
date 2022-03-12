@@ -16,6 +16,7 @@ urlpatterns = [
     path('getd/',filer.getd),
     path('corr/',datac.dcorr),
     path('xcorr/',datac.xcorr),
+    path('xcorrs/',datac.xcorr_safe),
     path('dtype/',datac.dtype),
     path('dsummary/',datac.dsummary),
     path('xsummary/',datac.xsummary),

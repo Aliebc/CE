@@ -37,6 +37,23 @@ def xcorr(request):
         return ret_error(e)
     return ret2(0,{"CorrMartix":ret},None)
 
+def xcorr_safe(request):
+    try:
+        dta=get_file_data(request)
+        args=request_analyse(request)
+        cord=args['argu1']
+        ret={}
+        for i in cord:
+            ret[i]={}
+            for j in cord:
+                if i==j:
+                    ret[i][j]=[1,0]
+                cor=st.pearsonr(dta[i],dta[j])
+                ret[i][j]=cor
+    except Exception as e:
+        return ret_error(e)
+    return ret2(0,{"CorrMartix":ret},None)
+
 def dtype(request):
     try:
         dta=get_file_data(request)
@@ -270,6 +287,7 @@ def loss_delete(request):
     except Exception as e:
         return ret_error(e)
 
+
 def var_filter(request):
     try:
         df = get_file_data(request)
@@ -283,36 +301,77 @@ def var_filter(request):
             if(type == 1):
                 label1 = where[0]['condition']
                 num1 = where[0]['number']
-                label2 = where[1]['condition']
-                num2 = where[1]['number']
-                if (label1 != 1 and label2 != 1):
-                    for x in df.index:
-                        if (pd.notnull(df.loc[x, variable])):
-                            if (df.loc[x, variable] > num1 and df.loc[x, variable] < num2):
+                if(len(where) == 1):
+                    if(label1 == 1):
+                        for x in df.index:
+                            if (pd.notnull(df.loc[x, variable])):
+                                if (df.loc[x, variable] > num1):
+                                    df.drop(index=x, inplace=True)
+                            else:
                                 df.drop(index=x, inplace=True)
-                        else:
-                            df.drop(index=x, inplace=True)
-                elif (label1 == 1 & label2 != 1):
-                    for x in df.index:
-                        if (pd.notnull(df.loc[x, variable])):
-                            if (df.loc[x, variable] >= num1 and df.loc[x, variable] < num2):
+                    elif(label1 == 2):
+                        for x in df.index:
+                            if (pd.notnull(df.loc[x, variable])):
+                                if (df.loc[x, variable] >= num1):
+                                    df.drop(index=x, inplace=True)
+                            else:
                                 df.drop(index=x, inplace=True)
-                        else:
-                            df.drop(index=x, inplace=True)
-                elif (label1 != 1 & label2 == 1):
-                    for x in df.index:
-                        if (pd.notnull(df.loc[x, variable])):
-                            if (df.loc[x, variable] > num1 and df.loc[x, variable] <= num2):
+                    elif (label1 == 3):
+                        for x in df.index:
+                            if (pd.notnull(df.loc[x, variable])):
+                                if (df.loc[x, variable] == num1):
+                                    df.drop(index=x, inplace=True)
+                            else:
                                 df.drop(index=x, inplace=True)
-                        else:
-                            df.drop(index=x, inplace=True)
+                    elif (label1 == 4):
+                        for x in df.index:
+                            if (pd.notnull(df.loc[x, variable])):
+                                if (df.loc[x, variable] <= num1):
+                                    df.drop(index=x, inplace=True)
+                            else:
+                                df.drop(index=x, inplace=True)
+                    elif (label1 == 5):
+                        for x in df.index:
+                            if (pd.notnull(df.loc[x, variable])):
+                                if (df.loc[x, variable] < num1):
+                                    df.drop(index=x, inplace=True)
+                            else:
+                                df.drop(index=x, inplace=True)
+                elif(len(where) == 2):
+                    label2 = where[1]['condition']
+                    num2 = where[1]['number']
+                    if (label1 == 1 & label2 == 5):
+                        for x in df.index:
+                            if (pd.notnull(df.loc[x, variable])):
+                                if (df.loc[x, variable] > num1 and df.loc[x, variable] < num2):
+                                    df.drop(index=x, inplace=True)
+                            else:
+                                df.drop(index=x, inplace=True)
+                    elif (label1 == 2 & label2 == 5):
+                        for x in df.index:
+                            if (pd.notnull(df.loc[x, variable])):
+                                if (df.loc[x, variable] >= num1 and df.loc[x, variable] < num2):
+                                    df.drop(index=x, inplace=True)
+                            else:
+                                df.drop(index=x, inplace=True)
+                    elif (label1 == 1 & label2 == 4):
+                        for x in df.index:
+                            if (pd.notnull(df.loc[x, variable])):
+                                if (df.loc[x, variable] > num1 and df.loc[x, variable] <= num2):
+                                    df.drop(index=x, inplace=True)
+                            else:
+                                df.drop(index=x, inplace=True)
+                    elif (label1 == 2 & label2 == 4):
+                        for x in df.index:
+                            if (pd.notnull(df.loc[x, variable])):
+                                if (df.loc[x, variable] >= num1 and df.loc[x, variable] <= num2):
+                                    df.drop(index=x, inplace=True)
+                            else:
+                                df.drop(index=x, inplace=True)
+                    else:
+                        return ret2(-1, None, "Error(#:label_choose).")
                 else:
-                    for x in df.index:
-                        if (pd.notnull(df.loc[x, variable])):
-                            if (df.loc[x, variable] >= num1 and df.loc[x, variable] <= num2):
-                                df.drop(index=x, inplace=True)
-                        else:
-                            df.drop(index=x, inplace=True)
+                    return ret2(-1, None, "Error(#:num_length).")
 
             elif(type == 2):
                 delete_way = where[0]['way']
