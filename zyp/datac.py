@@ -2,9 +2,11 @@ import json
 import pandas as pd
 import numpy as npy
 import scipy.stats as st
+from django.http import JsonResponse
+from . import ce
 from .ce import ret2,request_analyse,ret_error,ret_success
-from .filer import get_file_data,put_file_excel
-from .filer import put_file_all as put_file
+from .filer import get_file_data
+from .filer import put_file_excel as put_file
 import statsmodels.api as sm
 from linearmodels.panel import PanelOLS
 from sklearn import preprocessing
@@ -31,25 +33,6 @@ def xcorr(request):
             for j in cord[i]:
                 cor=st.pearsonr(dta[i],dta[j])
                 ret[i][j]=cor
-                if i==j:
-                    ret[i][j]=[1,0]
-    except Exception as e:
-        return ret_error(e)
-    return ret2(0,{"CorrMartix":ret},None)
-
-def xcorr_safe(request):
-    try:
-        dta=get_file_data(request)
-        args=request_analyse(request)
-        cord=args['argu1']
-        ret={}
-        for i in cord:
-            ret[i]={}
-            for j in cord:
-                if i==j:
-                    ret[i][j]=[1,0]
-                cor=st.pearsonr(dta[i],dta[j])
-                ret[i][j]=cor
     except Exception as e:
         return ret_error(e)
     return ret2(0,{"CorrMartix":ret},None)
@@ -68,7 +51,7 @@ def dsummary(request):
         dta=get_file_data(request)
         argu1=json.loads(request.body)['argu1']
         retu=dta[argu1]
-        return ret2(0,json.loads(retu.describe().to_json()),None)
+        return JsonResponse(ce.ret(0,json.loads(retu.describe().to_json()),None))
     except Exception as e:
         return ret_error(e)
 
@@ -94,7 +77,7 @@ def xsummary2(request):
                 a2[key]=json.loads(r2.describe().to_json())
         a3={}
         df2=pd.read_json(json.dumps(a2),orient="index")
-        uid=put_file_excel(df2,True,"Variable")
+        uid=put_file(df2,True,"Variable")
         return ret_success({'ValueList':a2,'File':{'uid':uid,'f_suffix':'.xlsx'}})
     except Exception as e:
         return ret_error(e)
@@ -106,7 +89,7 @@ def dlm3(request):
         argu2=json.loads(request.body)['argu2']
         reg=json.loads(request.body)['reg']
         retu=npy.polyfit(dta[argu1],dta[argu2],reg)
-        return ret2(0,{"reg":reg,"RegList":retu.tolist(),"DataList":{argu1:json.loads(dta[argu1].to_json()),argu2:json.loads(dta[argu2].to_json())}},None)
+        return JsonResponse(ce.ret(0,{"reg":reg,"RegList":retu.tolist(),"DataList":{argu1:json.loads(dta[argu1].to_json()),argu2:json.loads(dta[argu2].to_json())}},None))
     except Exception as e:
         return ret_error(e)
 
@@ -132,7 +115,7 @@ def type_corr(request):
         re1=st.pearsonr(dta2[argu1],dta2[argu2])
         dta3=dta[dta[argu_type]<=segment]
         re2=st.pearsonr(dta3[argu1],dta3[argu2])
-        return ret2(0,{'More':re1,'Less':re2},None)
+        return JsonResponse(ce.ret(0,{'More':re1,'Less':re2},None))
     except Exception as e:
         return ret_error(e)
 
@@ -169,8 +152,8 @@ def ols(request):
     #Reordering...
         #results_df = results_df[["r_squared","r_squared_adj","coeff","pvals","conf_lower","conf_higher"]]
     except Exception as e:
-        return ret_error(e)
-    return ret2(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None)
+        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal):"+str(e)))
+    return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None))
 
 def binary_probit(request):
     try:
@@ -206,8 +189,8 @@ def binary_probit(request):
                                 })
         results_df = results_df[["pseudo_r_squared","log_likelihood","ll_null","llr_p_value","f_statistic","coeff","pvals","conf_lower","conf_higher"]]
     except Exception as e:
-        return ret2(-1,None,"Error(#3:Internal). Check if argu2 is binary.")
-    return ret2(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None)
+        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal). Check if argu2 is binary."))
+    return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None))
 
 def binary_logit(request):
     try:
@@ -242,8 +225,8 @@ def binary_logit(request):
                                 })
         results_df = results_df[["pseudo_r_squared","log_likelihood","ll_null","llr_p_value","f_statistic","coeff","pvals","conf_lower","conf_higher"]]
     except Exception as e:
-        return ret2(-1,None,"Error(#3:Internal). Check if argu2 is binary.")
-    return ret2(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None)
+        return JsonResponse(ce.ret(-1,None,"Error(#3:Internal). Check if argu2 is binary."))
+    return JsonResponse(ce.ret(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None))
 
 ## This Part is developed by Jingwei Luo
 
@@ -286,7 +269,6 @@ def loss_delete(request):
         return ret_success({"uid": uid, "f_suffix": f_suffix, "Datalist": json.loads(result_df.to_json(orient='index'))})
     except Exception as e:
         return ret_error(e)
-
 
 def var_filter(request):
     try:
@@ -340,28 +322,28 @@ def var_filter(request):
                 elif(len(where) == 2):
                     label2 = where[1]['condition']
                     num2 = where[1]['number']
-                    if (label1 == 1 & label2 == 5):
+                    if ((label1 == 1 & label2 == 5) or (label1 == 5 & label2 == 1)):
                         for x in df.index:
                             if (pd.notnull(df.loc[x, variable])):
                                 if (df.loc[x, variable] > num1 and df.loc[x, variable] < num2):
                                     df.drop(index=x, inplace=True)
                             else:
                                 df.drop(index=x, inplace=True)
-                    elif (label1 == 2 & label2 == 5):
+                    elif ((label1 == 2 & label2 == 5) or (label1 == 5 & label2 == 2)):
                         for x in df.index:
                             if (pd.notnull(df.loc[x, variable])):
                                 if (df.loc[x, variable] >= num1 and df.loc[x, variable] < num2):
                                     df.drop(index=x, inplace=True)
                             else:
                                 df.drop(index=x, inplace=True)
-                    elif (label1 == 1 & label2 == 4):
+                    elif ((label1 == 1 & label2 == 4) or (label1 == 4 & label2 == 1)):
                         for x in df.index:
                             if (pd.notnull(df.loc[x, variable])):
                                 if (df.loc[x, variable] > num1 and df.loc[x, variable] <= num2):
                                     df.drop(index=x, inplace=True)
                             else:
                                 df.drop(index=x, inplace=True)
-                    elif (label1 == 2 & label2 == 4):
+                    elif ((label1 == 2 & label2 == 4) or (label1 == 4 & label2 == 2)):
                         for x in df.index:
                             if (pd.notnull(df.loc[x, variable])):
                                 if (df.loc[x, variable] >= num1 and df.loc[x, variable] <= num2):
@@ -461,6 +443,32 @@ def ols_repeat(request):
             ols_res.append(ols_plain_inter(dta,olss[i]['argu_i'],olss[i]['argu_e']))
             argu_il=argu_il.union(olss[i]['argu_i'])
             argu_el=argu_el.union(olss[i]['argu_e'])
+        
         return ret_success({"count":len(ols_res),"OLSList":ols_res,"ArgeList":list(argu_el)})
     except Exception as e:
         return ret_error(e)
+    
+
+class OLS_ADVANCE:
+    def __init__(self,count,dta,argu_t,argu_effect):
+        self.df=dta
+        self.src=[]
+        self.point=0
+        if not argu_t:
+            self.df['__STIME__']=1
+        if not argu_effect:
+            self.df['__EFFECT__']=1
+        for i in range(0,count):
+            self.src[i]={}
+    def add_res(self,res):
+        self.src[self.point]=res
+        self.point+=1
+        return self.point
+    def any_ols(self,argu_i,argu_e,time_effect,entity_effect):
+        return None
+
+def ols_effect(request):
+    args=request_analyse(request)
+    dta=get_file_data(request)
+    argu1=args['argu1']
+    return None
