@@ -484,7 +484,7 @@
 
             function copyright(){
                 call_api("version",function(e){
-                    layer.open({"title":"关于","content":"CE-Toolbox __CET_VERSION__<br>计算经济学工具箱(CE-API内置图形交互界面)<br>CE-Toolbox作者:AliebcX<br>&copy; 2021-__YEAR__ CE-Toolbox All rights reserved.<hr>CE-API "+e['respData']['version']+"<br>CE-API由清华大学经管学院刘潇老师助研项目组共同维护<br>CE-API当前配置在__DOMAIN__<br><a href='https://github.com/Aliebc/CE/graphs/contributors'>查看贡献者</a><br>&copy; 2021-__YEAR__ CE-API All rights reserved.<hr>CE版本以CE-API版本为主<br>本项目在<a href='https://github.com/Aliebc/CE' target='_blank'>GitHub</a>开源,使用本项目需要遵守相关协议和__REGION__相关法律法规",maxHeight:'100%'});
+                    layer.open({"title":"关于","content":"CE-Toolbox __CET_VERSION__<br>计算经济学工具箱(CE-API内置图形交互界面)<br>CE-Toolbox作者:AliebcX<br>&copy; 2021-__YEAR__ CE-Toolbox All rights reserved.<hr>CE-API "+e['respData']['version']+"<br>CE-API由清华大学经管学院刘潇老师助研项目组共同维护<br>CE-API当前配置在__DOMAIN__<br>&copy; 2021-__YEAR__ CE-API All rights reserved.<p>使用本项目需要遵守相关协议和__REGION__相关法律法规",maxHeight:'100%'});
                 });
             }
 
