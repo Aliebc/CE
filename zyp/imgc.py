@@ -130,12 +130,12 @@ def hetero_density(request):
             title=request.GET.get('title',default=str("Heterogeneity Density of "+argu1))
             width=int(request.GET.get('width',default=12))
             segment=float(request.GET.get('segment',default=None))
-            height=int(request.GET.get('height',default=8))+'_type'
+            height=int(request.GET.get('height',default=8))
         except Exception as e:
             return ret_error(e)
         try:
-            dta2=heter_compare_df(dta,argu_type,float(segment))
-            img_density=(ggplot(dta2,aes(x=argu1,colour=argu_type+'_type'))+geom_density()+ggtitle(title))
+            dta2_h=heter_compare_df(dta,argu_type,float(segment))
+            img_density=(ggplot(dta2_h,aes(x=argu1,colour=argu_type+'_type'))+geom_density()+ggtitle(title)+theme_classic())
         except Exception as e:
             return ret_error(e)
         return sav_and_ret_svg(img_density,width,height,request)

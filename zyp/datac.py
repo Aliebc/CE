@@ -37,19 +37,24 @@ def xcorr(request):
         return ret_error(e)
     return ret2(0,{"CorrMartix":ret},None)
 
+def xcorr_single(dataset,cord):
+    dta=dataset
+    ret={}
+    for i in cord:
+        ret[i]={}
+        for j in cord:
+            if i==j:
+                ret[i][j]=[1,0]
+            cor=st.pearsonr(dta[i],dta[j])
+            ret[i][j]=cor
+    return ret
+
 def xcorr_safe(request):
     try:
         dta=get_file_data(request)
         args=request_analyse(request)
         cord=args['argu1']
-        ret={}
-        for i in cord:
-            ret[i]={}
-            for j in cord:
-                if i==j:
-                    ret[i][j]=[1,0]
-                cor=st.pearsonr(dta[i],dta[j])
-                ret[i][j]=cor
+        ret=xcorr_single(dta,cord)
     except Exception as e:
         return ret_error(e)
     return ret2(0,{"CorrMartix":ret},None)
@@ -125,13 +130,12 @@ def type_corr(request):
         dta=get_file_data(request)
         xe=json.loads(request.body)
         argu1=xe['argu1']
-        argu2=xe['argu2']
         argu_type=xe['argu_type']
         segment=xe['segment']
-        dta2=dta[dta[argu_type]>segment]
-        re1=st.pearsonr(dta2[argu1],dta2[argu2])
-        dta3=dta[dta[argu_type]<=segment]
-        re2=st.pearsonr(dta3[argu1],dta3[argu2])
+        dta2_t=dta[dta[argu_type]>segment]
+        re1=xcorr_single(dta2_t,argu1)
+        dta3_t=dta[dta[argu_type]<=segment]
+        re2=xcorr_single(dta3_t,argu1)
         return ret2(0,{'More':re1,'Less':re2},None)
     except Exception as e:
         return ret_error(e)
