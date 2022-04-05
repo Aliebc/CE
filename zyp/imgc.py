@@ -51,7 +51,7 @@ def density(request):
             height=int(request.GET.get('height',default=8))
         except Exception as e:
             return ret_error(e)
-        img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title))
+        img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title)+theme_classic())
         return sav_and_ret_svg(img_density,width,height,request)
     elif request.method =='POST':
         try:
@@ -62,7 +62,7 @@ def density(request):
             height=int(request.POST.get('height',default=8))
         except Exception as e:
             return ret_error(e)
-        img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title))
+        img_density=(ggplot(dta,aes(x=argu1))+geom_density()+ggtitle(title)+theme_classic())
         return ret_success({'tuid':sav_svg(img_density,width,height)})
     else:
        return ret2(-1,None,'Method Not Allowed.')

@@ -43,10 +43,10 @@ def xcorr_single(dataset,cord):
     for i in cord:
         ret[i]={}
         for j in cord:
-            if i==j:
-                ret[i][j]=[1,0]
             cor=st.pearsonr(dta[i],dta[j])
             ret[i][j]=cor
+            if i==j:
+                ret[i][j]=[1,0]
     return ret
 
 def xcorr_safe(request):

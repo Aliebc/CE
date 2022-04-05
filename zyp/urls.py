@@ -15,7 +15,7 @@ urlpatterns = [
     path('filer/',filer.recv_file),
     path('getd/',filer.getd),
     path('corr/',datac.dcorr),
-    path('xcorr/',datac.xcorr),
+    path('xcorr/',datac.xcorr_safe),
     path('xcorrs/',datac.xcorr_safe),
     path('dtype/',datac.dtype),
     path('dsummary/',datac.dsummary),
