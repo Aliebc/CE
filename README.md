@@ -5,7 +5,7 @@
 This project provides HTTP interfaces for computing several commonly used analytical formulas in computational economics and data analysis, such as OLS or logit regression.
 
 ## How to use?
-Our project use django, so you should install **python3** and the following packages:
+Our project use django, so you should install **python3** (Recommended version:3.6.8) and the following packages:
 
 Numpy Scipy Pandas openpyxl xlrd xlwt Django plotnine matplotlib sklearn pandasql linearmodels
 
@@ -29,9 +29,9 @@ Now change the value of **file_path** and **img_path** to your custom settings(b
 
 After installing the required packages, you should enter the main directory of our project which is named after **zyp**, and execute following commands.
 ```
-cd zyp
+cd CE
 python3 manage.py runserver 0.0.0.0:Port
-#Port is a positive integer(we suggest you select a port >1024 when you debug it, 8000 is common)
+#Port is a positive integer(we suggest you select a port more than 1024 when you debug it, 8000 is common)
 ```
 Now our project is running on your computer!
 
