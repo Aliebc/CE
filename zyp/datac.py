@@ -8,6 +8,7 @@ from .filer import put_file_all as put_file
 import statsmodels.api as sm
 from linearmodels.panel import PanelOLS
 from sklearn import preprocessing
+import re
 
 def dcorr(request):
     try:
@@ -174,7 +175,8 @@ def ols(request):
         #results_df = results_df[["r_squared","r_squared_adj","coeff","pvals","conf_lower","conf_higher"]]
     except Exception as e:
         return ret_error(e)
-    return ret2(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":str(y)},None)
+    return ret2(0,{"Regression Summary":json.loads(results_df.to_json()),"s_text":
+    re.sub(r"Notes(.|\n)*","",str(y))},None)
 
 def binary_probit(request):
     try:

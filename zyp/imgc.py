@@ -24,7 +24,8 @@ def sav_and_ret_svg(img,width,height,request=None):
     if request:
         try:
             if request.GET.get('dl',default=None)=='1':
-                res=HttpResponse(img_cont,headers={'Content-Type':'application/octet-stream','image-tuid':img_uid,"Content-Disposition":"attachment ;filename="+img_uid+".svg"})
+                res=HttpResponse(img_cont,headers={'Content-Type':'application/octet-stream',
+                'image-tuid':img_uid,"Content-Disposition":"attachment ;filename="+img_uid+".svg"})
             else:
                 res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
         except Exception as e:
@@ -235,13 +236,14 @@ def two_line(request):
             dta=get_file_data(request)
             argu1=request.GET.get('argu1',default=None)
             argu2=request.GET.get('argu2',default=None)
-            title=request.GET.get('title',default=str("Broken line of "+argu2+" ~ "+argu1))
+            title=request.GET.get('title',default=str("Polygonal line of "+argu1+" ~ "+argu2))
             width=int(request.GET.get('width',default=12))
             height=int(request.GET.get('height',default=8))
         except Exception as e:
             return ret_error(e)
         try:
-            img_density=(ggplot(dta,aes(x=argu1,y=argu2,group=1))+geom_line()+geom_point(fill='blue')+ggtitle(title))
+            dta4=dta.groupby(argu2).mean(argu1).reset_index()
+            img_density=(ggplot(dta4,aes(x=argu2,y=argu1))+geom_line()+geom_point(fill='blue')+ggtitle(title))
         except Exception as e:
             return ret_error(e)
         return sav_and_ret_svg(img_density,width,height,request)

@@ -104,6 +104,9 @@ def get_file_data(request):
             except Exception as e:
                 raise RuntimeError("Bad Request")
         if uid and f_suffix:
+            print("[CE-API LOG][%s]READ %s %s" % 
+            (time.strftime("%d/%m/%Y %H:%M:%S", time.localtime()),"d",uid))
+            
             if uid in dtalist:
                 dtalist[uid]['time']=int(time.time())
                 return dtalist[uid]['df']
