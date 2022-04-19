@@ -6,12 +6,13 @@ import hashlib
 import pathlib
 import pandas as pd
 import threading
+import multiprocessing
 import gc
 from django.http import HttpResponse
-from .ce import request_analyse, ret2,ret_error,ret_success
+from .ce import request_analyse, ret2, ret_error, ret_success
 
 MAX_LINES=1000
-dtalist={}
+dtalist=multiprocessing.Manager().dict()
 
 try:
     conf=json.loads(open(os.path.join('zyp','config.json'),encoding="utf-8").read())
@@ -88,10 +89,25 @@ cmr.start()
 
 def get_file_data(request):
     global dtalist
+    rp=request_analyse(request)
+    uid=rp['uid']
+    if __name__ == 'zyp.filer':
+        try:
+            pread=multiprocessing.Process(target=get_file_data_src,args=(request,))
+            pread.start()
+            pread.join()
+            fd=get_file_data_src(request)
+            return fd
+        except Exception as e:
+            return ret_error(e)
+    return ret2(-1,None,"Some errors happened in __name__")
+
+def get_file_data_src(request):
+    global dtalist
     if request.method in ['POST','GET']: 
         if request.method=='POST':
             try:
-                rp=json.loads(request.body)
+                rp=request_analyse(request)
                 uid=rp['uid']
                 f_suffix=rp['f_suffix']
             except Exception as e:
@@ -106,7 +122,6 @@ def get_file_data(request):
         if uid and f_suffix:
             print("[CE-API LOG][%s]READ %s %s" % 
             (time.strftime("%d/%m/%Y %H:%M:%S", time.localtime()),"d",uid))
-            
             if uid in dtalist:
                 dtalist[uid]['time']=int(time.time())
                 return dtalist[uid]['df']
