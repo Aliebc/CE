@@ -89,8 +89,6 @@ cmr.start()
 
 def get_file_data(request):
     global dtalist
-    rp=request_analyse(request)
-    uid=rp['uid']
     if __name__ == 'zyp.filer':
         try:
             pread=multiprocessing.Process(target=get_file_data_src,args=(request,))
