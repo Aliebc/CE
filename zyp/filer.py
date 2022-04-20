@@ -90,14 +90,11 @@ cmr.start()
 def get_file_data(request):
     global dtalist
     if __name__ == 'zyp.filer':
-        try:
-            pread=multiprocessing.Process(target=get_file_data_src,args=(request,))
-            pread.start()
-            pread.join()
-            fd=get_file_data_src(request)
-            return fd
-        except Exception as e:
-            return ret_error(e)
+        pread=multiprocessing.Process(target=get_file_data_src,args=(request,))
+        pread.start()
+        pread.join()
+        fd=get_file_data_src(request)
+        return fd
     return ret2(-1,None,"Some errors happened in __name__")
 
 def get_file_data_src(request):
