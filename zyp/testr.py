@@ -1,8 +1,33 @@
+"""
+   ___                            _        _   _                   _                                        _          
+  / __\___  _ __ ___  _ __  _   _| |_ __ _| |_(_) ___  _ __   __ _| |   ___  ___ ___  _ __   ___  _ __ ___ (_) ___ ___ 
+ / /  / _ \| '_ ` _ \| '_ \| | | | __/ _` | __| |/ _ \| '_ \ / _` | |  / _ \/ __/ _ \| '_ \ / _ \| '_ ` _ \| |/ __/ __|
+/ /__| (_) | | | | | | |_) | |_| | || (_| | |_| | (_) | | | | (_| | | |  __/ (_| (_) | | | | (_) | | | | | | | (__\__ \
+\____/\___/|_| |_| |_| .__/ \__,_|\__\__,_|\__|_|\___/|_| |_|\__,_|_|  \___|\___\___/|_| |_|\___/|_| |_| |_|_|\___|___/
+                     |_|                                                                                               
+
+计算经济学数据处理工具箱 API
+FILER.PY
+统计假设检验处理函数,提供统计量估计相关处理的方法,以单个函数的方式提供
+包括但不仅限于:
+均值估计
+方差估计
+K-S检验
+
+本页作者:
+Aliebc (aliebcx@outlook.com)
+
+Copyright(C)2022 All Rights reserved. 
+"""
+
 from .ce import ret2,request_analyse,ret_error,ret_success
 from .filer import get_file_data
 import scipy.stats as st
 
 class TEST_API_STD:
+    """
+    标准API调用类
+    """
     def __init__(self,request):
         self.request=request
         self.args = request_analyse(self.request)

@@ -1,5 +1,26 @@
+"""
+   ___                            _        _   _                   _                                        _          
+  / __\___  _ __ ___  _ __  _   _| |_ __ _| |_(_) ___  _ __   __ _| |   ___  ___ ___  _ __   ___  _ __ ___ (_) ___ ___ 
+ / /  / _ \| '_ ` _ \| '_ \| | | | __/ _` | __| |/ _ \| '_ \ / _` | |  / _ \/ __/ _ \| '_ \ / _ \| '_ ` _ \| |/ __/ __|
+/ /__| (_) | | | | | | |_) | |_| | || (_| | |_| | (_) | | | | (_| | | |  __/ (_| (_) | | | | (_) | | | | | | | (__\__ \
+\____/\___/|_| |_| |_| .__/ \__,_|\__\__,_|\__|_|\___/|_| |_|\__,_|_|  \___|\___\___/|_| |_|\___/|_| |_| |_|_|\___|___/
+                     |_|                                                                                               
+
+计算经济学数据处理工具箱 API
+IMGC.PY
+画图处理函数,以函数的方式提供所有画图的功能
+包括但不仅限于:
+数据读取
+数据写入
+
+本页作者:
+Aliebc (aliebcx@outlook.com)
+
+Copyright(C)2022 All Rights reserved. 
+"""
+
 import os
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse, JsonResponse
 from .ce import ret2,ret_error,ret_success
 from .datac import heter_compare_df
 from .filer import get_file_data,generate_uid,image_path
@@ -24,8 +45,10 @@ def sav_and_ret_svg(img,width,height,request=None):
     if request:
         try:
             if request.GET.get('dl',default=None)=='1':
-                res=HttpResponse(img_cont,headers={'Content-Type':'application/octet-stream',
-                'image-tuid':img_uid,"Content-Disposition":"attachment ;filename="+img_uid+".svg"})
+                res=HttpResponse(img_cont,headers={
+                    'Content-Type':'application/octet-stream',
+                    'image-tuid':img_uid,
+                    "Content-Disposition":"attachment ;filename="+img_uid+".svg"})
             else:
                 res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
         except Exception as e:
@@ -34,7 +57,7 @@ def sav_and_ret_svg(img,width,height,request=None):
         res=HttpResponse(img_cont,headers={'Content-Type':'image/svg+xml','image-tuid':img_uid})
     return res
 
-def ret_svg_tuid(request):
+def ret_svg_tuid(request:HttpRequest)->JsonResponse:
     try:
         img_uid=request.GET.get('tuid')
     except Exception as e:
@@ -42,7 +65,7 @@ def ret_svg_tuid(request):
     return None
 
 
-def density(request):
+def density(request:HttpRequest)->HttpResponse:
     if request.method =='GET':
         try:
             dta=get_file_data(request)
@@ -69,7 +92,7 @@ def density(request):
        return ret2(-1,None,'Method Not Allowed.')
 
 
-def hist(request):
+def hist(request:HttpRequest)->HttpResponse:
     if request.method =='GET':
         try:
             dta=get_file_data(request)
@@ -86,7 +109,7 @@ def hist(request):
     else:
        return ret2(-1,None,'Method Not Allowed.')
 
-def bar(request):
+def bar(request:HttpRequest)->HttpResponse:
     if request.method =='GET':
         try:
             dta=get_file_data(request)
@@ -104,7 +127,7 @@ def bar(request):
     else:
        return ret2(-1,None,'Method Not Allowed.')
 
-def cdf(request):
+def cdf(request:HttpRequest)->HttpResponse:
     if request.method =='GET':
         try:
             dta=get_file_data(request)
@@ -122,7 +145,7 @@ def cdf(request):
        return ret2(-1,None,'Method Not Allowed.')
 
 
-def hetero_density(request):
+def hetero_density(request:HttpRequest)->HttpResponse:
     if request.method =='GET':
         try:
             dta=get_file_data(request)
@@ -145,7 +168,7 @@ def hetero_density(request):
     else:
         return ret2(-1,None,'Method Not Allowed.')
 
-def type_density(request):
+def type_density(request:HttpRequest)->HttpResponse:
     if request.method =='GET':
         try:
             dta=get_file_data(request)
@@ -164,7 +187,7 @@ def type_density(request):
        return ret2(-1,None,'Method Not Allowed.')
 
 
-def type_regress(request):
+def type_regress(request:HttpRequest)->HttpResponse:
     if request.method =='GET':
         try:
             dta=get_file_data(request)
@@ -188,7 +211,7 @@ def type_regress(request):
     else:
        return ret2(-1,None,'Method Not Allowed.')
 
-def two_reg(request):
+def two_reg(request:HttpRequest)->HttpResponse:
     if request.method =='GET':
         try:
             dta=get_file_data(request)
@@ -209,7 +232,7 @@ def two_reg(request):
     else:
        return ret2(-1,None,'Method Not Allowed.')
 
-def two_reg_d2(request):
+def two_reg_d2(request:HttpRequest)->HttpResponse:
     if request.method =='GET':
         try:
             dta=get_file_data(request)
@@ -230,7 +253,7 @@ def two_reg_d2(request):
     else:
        return ret2(-1,None,'Method Not Allowed.')
 
-def two_line(request):
+def two_line(request:HttpRequest)->HttpResponse:
     if request.method =='GET':
         try:
             dta=get_file_data(request)
@@ -252,7 +275,7 @@ def two_line(request):
     else:
        return ret2(-1,None,'Method Not Allowed.')
 
-def type_bar(request):
+def type_bar(request:HttpRequest)->HttpResponse:
     if request.method =='GET':
         try:
             dta=get_file_data(request)
@@ -279,7 +302,7 @@ def type_bar(request):
         ret2(-1,None,'Method Not Allowed.')
 
 def tuid(request):
-    return None
+    pass
 
 def qqplot(request):
     if request.method =='GET':

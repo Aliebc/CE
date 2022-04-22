@@ -7,17 +7,25 @@
                      |_|                                                                                               
 
 计算经济学数据处理工具箱 API
-WSGI.PY
-WSGI配置
+CONFIGURE.PY
+CE-API配置文件
 
-官方文档:
-https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/
+包括:
+文件类配置(临时存储文件夹)
+技术类配置(线程/进程类)
+语言包配置(多语言支持)
+
+本页作者:
+Aliebc (aliebcx@outlook.com)
+
+Copyright(C)2022 All Rights reserved. 
 """
 
-import os
+#文件类配置
+file_conf={
+    "file_path":"/opt/zypfile", #临时文件的存储路径
+    "img_path":"/opt/zypimg", #临时图片的存储路径
+    "api_domain":"https://api2.abxmc.live/CE" #CE-Toolbox的域名配置
+}
 
-from django.core.wsgi import get_wsgi_application
-
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'zyp.settings')
-
-application = get_wsgi_application()
+#技术类配置
