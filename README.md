@@ -14,7 +14,7 @@ If you are in China, we suggest you install packages from Tsinghua University py
 ```
 python3 -m pip install numpy scipy pandas openpyxl xlrd xlwt Django plotnine pandasql linearmodels sklearn -i https://pypi.tuna.tsinghua.edu.cn/simple/
 ```
-Now config your path to save files and image, open the file **zyp/config.json**
+Now config your path to save files and image, open the file **zyp/configure.py**
 
 ```
 {
