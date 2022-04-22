@@ -553,6 +553,35 @@ def ols_effect_inter(df,argu_i,argu_e,entity_effects,time_effects):
     res_js['r2']=r2
     return {"argu_i":argu_i,"Result":res_js}
 
+def g_p_str(pval):
+    if pval <0.01:
+        return "***"
+    elif pval >=0.01 and pval<0.05:
+        return "**"
+    elif pval >=0.05 and pval<0.1:
+        return "*"
+    else:
+        return ""
+
+def smols2excel(ols_res_dict:dict):
+    ret_dict={}
+    ols_res_dict['ArgeList'].append("const")
+    for i in range(0,ols_res_dict['count']):
+        ret_dict['('+str(i+1)+')']={"被解释变量":ols_res_dict['OLSList'][i]['argu_i']}
+        for key in ols_res_dict['ArgeList']:
+            if key in ols_res_dict['OLSList'][i]['Result']['coeff']:
+                p_str=g_p_str(ols_res_dict['OLSList'][i]['Result']['pvalue'][key])
+                ret_dict['('+str(i+1)+')'][key]=str(round(ols_res_dict['OLSList'][i]['Result']['coeff'][key],3))+p_str
+            else:
+                ret_dict['('+str(i+1)+')'][key]=""
+        if 'entity_effect' in ols_res_dict['OLSList'][i]['Result']:
+            ret_dict['('+str(i+1)+')']['时间固定效应']=ols_res_dict['OLSList'][i]['Result']['entity_effect']
+            ret_dict['('+str(i+1)+')']['个体固定效应']=ols_res_dict['OLSList'][i]['Result']['time_effect']
+        ret_dict['('+str(i+1)+')']['观测值']=str(ols_res_dict['OLSList'][i]['Result']['n'])
+        ret_dict['('+str(i+1)+')']['R^2']=str(round(ols_res_dict['OLSList'][i]['Result']['r2'],3))
+    ret_df=pd.DataFrame(ret_dict)
+    return ret_df
+
 def ols_effect_repeat(request):
     try:
         args=request_analyse(request)
@@ -567,7 +596,11 @@ def ols_effect_repeat(request):
             ols_res.append(ols_effect_inter(dta,olss[i]['argu_i'],olss[i]['argu_e'],olss[i]['entity_effect'],olss[i]['time_effect']))
             argu_il=argu_il.union(olss[i]['argu_i'])
             argu_el=argu_el.union(olss[i]['argu_e'])
-        return ret_success({"count":len(ols_res),"OLSList":ols_res,"ArgeList":list(argu_el)})
+        ret_s={"count":len(ols_res),"OLSList":ols_res,"ArgeList":list(argu_el)}
+        ret_df=smols2excel(ret_s)
+        ret_uid=put_file_excel(ret_df,True)
+        ret_s['File']={"uid":ret_uid,"f_suffix":".xlsx"}
+        return ret_success(ret_s)
     except Exception as e:
         return ret_error(e)
 
@@ -584,6 +617,10 @@ def ols_repeat(request):
             ols_res.append(ols_plain_inter(dta,olss[i]['argu_i'],olss[i]['argu_e']))
             argu_il=argu_il.union(olss[i]['argu_i'])
             argu_el=argu_el.union(olss[i]['argu_e'])
-        return ret_success({"count":len(ols_res),"OLSList":ols_res,"ArgeList":list(argu_el)})
+        ret_s={"count":len(ols_res),"OLSList":ols_res,"ArgeList":list(argu_el)}
+        ret_df=smols2excel(ret_s)
+        ret_uid=put_file_excel(ret_df,True)
+        ret_s['File']={"uid":ret_uid,"f_suffix":".xlsx"}
+        return ret_success(ret_s)
     except Exception as e:
         return ret_error(e)
